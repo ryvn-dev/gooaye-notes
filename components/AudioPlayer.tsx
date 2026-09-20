@@ -10,6 +10,7 @@ export default function AudioPlayer({ src, title }: { src: string; title: string
   const ref = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [pos, setPos] = useState(0);
+  const [hint, setHint] = useState<string | null>(null);
 
   useEffect(() => {
     document.body.dataset.player = '1';
@@ -21,9 +22,15 @@ export default function AudioPlayer({ src, title }: { src: string; title: string
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    let clear: ReturnType<typeof setTimeout>;
     const onJump = (e: Event) => {
-      el.currentTime = (e as CustomEvent<number>).detail;
+      const at = (e as CustomEvent<number>).detail;
+      el.currentTime = at;
       void el.play().catch(() => {});
+      // 從逐字稿深處按 ▶ 時，頂欄只有 3px 進度條在動，補一行「從 mm:ss 開始播」。
+      setHint(`從 ${Math.floor(at / 60)}:${String(Math.floor(at % 60)).padStart(2, '0')} 開始播`);
+      clearTimeout(clear);
+      clear = setTimeout(() => setHint(null), 2500);
     };
     const onTime = () => setPos(el.duration ? el.currentTime / el.duration : 0);
     const onPlay = () => setPlaying(true);
@@ -33,6 +40,7 @@ export default function AudioPlayer({ src, title }: { src: string; title: string
     el.addEventListener('play', onPlay);
     el.addEventListener('pause', onPause);
     return () => {
+      clearTimeout(clear);
       window.removeEventListener('gooaye:seek', onJump);
       el.removeEventListener('timeupdate', onTime);
       el.removeEventListener('play', onPlay);
@@ -80,8 +88,11 @@ export default function AudioPlayer({ src, title }: { src: string; title: string
         >
           {playing ? <Pause size={14} fill="currentColor" /> : <Play size={14} fill="currentColor" />}
         </button>
-        <span className="max-w-[40%] overflow-hidden text-ellipsis whitespace-nowrap text-[14px] text-[#242424]">
-          {title}
+        <span
+          className="max-w-[40%] overflow-hidden text-ellipsis whitespace-nowrap text-[14px] text-[#242424]"
+          aria-live="polite"
+        >
+          {hint ?? title}
         </span>
         <div
           className="h-[2px] flex-1 cursor-pointer touch-none bg-[#ececec]"

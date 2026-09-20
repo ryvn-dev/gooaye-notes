@@ -81,6 +81,12 @@
   .font-medium, .font-semibold { font-weight: 700; }
   p, li { overflow-wrap: anywhere; line-break: strict; }
 
+  /* 逐字稿：一節一個 section，捲到才算版面（長頁 37,000px 一次全渲染會掉幀） */
+  .tx-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 900px;
+  }
+
   .divider::after {
     content: "\2022 \2022 \2022";
     display: block;

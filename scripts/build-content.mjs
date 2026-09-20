@@ -149,7 +149,7 @@ const loadStructured = (ep) => {
 };
 
 // ── 句子層 ─────────────────────────────────────────────────────────────────
-// 提到個股的句子給虛線底線、重點句給黃底，兩種都只在 hover 才出現 tooltip。
+// 提到個股的句子與重點句都是同一種淡黃螢光筆；tap／hover 才出現 tooltip（代碼 + 立場 icon）。
 
 const ALIASES = (() => {
   const f = path.join(FIN, 'data', 'podcasts', 'aliases.csv');
@@ -162,8 +162,38 @@ const ALIASES = (() => {
   return map;
 })();
 
+// 句子是標記與 tooltip 的單位，所以切分有三條規矩（稽核 F §1）：
+// 1. 先在句末標點切；2. 轉折詞不得當句尾（「…但是。」的重點在下一句，兩句要黏在一起）；
+// 3. 還是超過 200 字就在逗號處再切，只切標點、不改任何字。
 const SENT_END = /(?<=[。！？!?])/;
-const splitSentences = (t) => t.split(SENT_END).map((x) => x.trim()).filter(Boolean);
+const TURN_END = /(但是|可是|不過|然而|而且|所以|然後|因為)[，。！？,.!?]*$/;
+const MAX_SENT = 200;
+const AIM_SENT = 120;
+
+const splitByComma = (t) => {
+  const out = [];
+  let rest = t;
+  while (rest.length > MAX_SENT) {
+    const window = rest.slice(0, MAX_SENT);
+    let cut = -1;
+    for (const mark of ['，', '；', '、', ',']) cut = Math.max(cut, window.lastIndexOf(mark));
+    const at = cut >= AIM_SENT ? cut + 1 : MAX_SENT;
+    out.push(rest.slice(0, at));
+    rest = rest.slice(at);
+  }
+  if (rest) out.push(rest);
+  return out;
+};
+
+const splitSentences = (t) => {
+  const raw = t.split(SENT_END).map((x) => x.trim()).filter(Boolean);
+  const joined = [];
+  for (const piece of raw) {
+    if (joined.length && TURN_END.test(joined[joined.length - 1])) joined[joined.length - 1] += piece;
+    else joined.push(piece);
+  }
+  return joined.flatMap(splitByComma).map((x) => x.trim()).filter(Boolean);
+};
 
 const buildTranscript = (blocks, sum, mentions) => {
   if (!blocks?.length) return null;
@@ -201,7 +231,7 @@ const buildTranscript = (blocks, sum, mentions) => {
   // 逐字稿是口語長句），照那個門檻會一句都反白不到。改用「重點的字元 bigram 有多少比例出現在這一句」
   // （recall，長句不會因為長而被罰），再加分離度：要贏過同一個時間窗裡的第二名 1.4 倍；
   // 兩句幾乎同分又相鄰時兩句都反白（一個重點常常橫跨兩句）。門檻與命中數每次 build 都會印出來。
-  const MIN_R = 0.25;
+  const MIN_R = 0.3;
   const bigrams = (t) => {
     const c = t.replace(/[^\u4e00-\u9fffA-Za-z0-9]/g, '');
     const set = new Set();
@@ -237,18 +267,26 @@ const buildTranscript = (blocks, sum, mentions) => {
     kpHits++;
   }
 
-  // 個股 → 句子：句子裡出現代碼或別名就給虛線底線；摘要 lane 的逐字 quote 優先當錨點。
+  // 個股 → 句子：句子裡出現代碼或別名就上螢光筆。兩條限制（稽核 F §4）：
+  // 一段裡同一檔最多畫一句（EP693 整節每句都有線等於沒標）；來信（引用段）不畫，
+  // 聽眾的話不該掛上主持人的立場。摘要 lane 的逐字 quote 優先當錨點。
   const anchor = {};
+  const taken = new Set(); // `${blockIndex}:${ticker}`
   for (const s of sents) {
-    const hits = names.filter((n) => n.words.some((w) => s.text.includes(w))).map((n) => n.ticker);
+    if (body[s.bi].kind === 'quote') continue;
+    const hits = names
+      .filter((n) => n.words.some((w) => s.text.includes(w)))
+      .map((n) => n.ticker)
+      .filter((tk) => !taken.has(`${s.bi}:${tk}`));
     if (!hits.length) continue;
+    for (const tk of hits) taken.add(`${s.bi}:${tk}`);
     body[s.bi].sentences[s.si].tickers = hits;
     for (const tk of hits) if (anchor[tk] === undefined) anchor[tk] = `s-${s.bi}-${s.si}`;
   }
   for (const m of mentions) {
     const q = (m.quote ?? '').trim();
     if (q.length < 6) continue;
-    const found = sents.find((s) => s.text.includes(q) || q.includes(s.text));
+    const found = sents.find((s) => body[s.bi].kind !== 'quote' && (s.text.includes(q) || q.includes(s.text)));
     if (!found) continue;
     const cell = body[found.bi].sentences[found.si];
     if (!cell.tickers.includes(m.ticker)) cell.tickers = [...cell.tickers, m.ticker];
@@ -259,6 +297,15 @@ const buildTranscript = (blocks, sum, mentions) => {
     (a, b) => a + b.sentences.filter((s) => s.key_point !== null || s.tickers.length).length,
     0,
   );
+  // 無標題區：不在任何小標底下的字數占比（稽核 F §2，>25% 就讓 build 紅）。
+  let untitled = 0;
+  let total = 0;
+  let titled = false;
+  for (const b of body) {
+    if (b.kind === 'h2') { titled = true; continue; }
+    total += b.text.length;
+    if (!titled) untitled += b.text.length;
+  }
   return {
     blocks: body,
     anchor,
@@ -268,6 +315,8 @@ const buildTranscript = (blocks, sum, mentions) => {
     marked_count: marked,
     key_point_hits: kpHits,
     key_point_count: kps.length,
+    untitled_share: total ? untitled / total : 0,
+    chars: total,
   };
 };
 
@@ -392,14 +441,18 @@ for (let i = 0; i < episodes.length; i++) {
   const structured = buildTranscript(tx, sum, shown);
   if (structured) {
     for (const m of shown) m.first_anchor = structured.anchor[m.ticker] ?? null;
+    const ps = structured.blocks.filter((b) => b.kind === 'p' && !b.ad);
+    const avg = Math.round(ps.reduce((a, b) => a + b.text.length, 0) / Math.max(1, ps.length));
+    const density = structured.marked_count / Math.max(1, ps.length);
     STATS.push(
-      `EP${ep} h2=${structured.heading_count} 引用=${structured.quote_count} 代言段=${structured.ad_count} ` +
-        `段=${structured.blocks.filter((b) => b.kind === 'p' && !b.ad).length} ` +
-        `平均${Math.round(
-          structured.blocks.filter((b) => b.kind === 'p' && !b.ad).reduce((a, b) => a + b.text.length, 0) /
-            Math.max(1, structured.blocks.filter((b) => b.kind === 'p' && !b.ad).length),
-        )}字 標記句=${structured.marked_count} 重點命中=${structured.key_point_hits}/${structured.key_point_count}`,
+      `EP${ep} 小標=${structured.heading_count} 段=${ps.length}（平均${avg}字） 引用=${structured.quote_count} ` +
+        `代言段=${structured.ad_count} 螢光句=${structured.marked_count}（每段 ${density.toFixed(2)}） ` +
+        `重點命中=${structured.key_point_hits}/${structured.key_point_count} ` +
+        `無標題區=${Math.round(structured.untitled_share * 100)}%`,
     );
+    if (structured.untitled_share > 0.25) {
+      throw new Error(`EP${ep} 無標題區 ${Math.round(structured.untitled_share * 100)}%（>25%）：小標不足`);
+    }
   }
 
   const doc = {

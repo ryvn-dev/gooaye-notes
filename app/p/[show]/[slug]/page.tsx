@@ -162,7 +162,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
 
       <h2 className="mt-10">逐字稿</h2>
       {ep.blocks?.length ? (
-        <Transcript blocks={ep.blocks} mentions={shown} keyPoints={ep.key_points} />
+        <Transcript blocks={ep.blocks} mentions={shown} />
       ) : (
         <p className="mt-3 text-[15px] text-[#6b6b6b]">逐字稿待補。</p>
       )}

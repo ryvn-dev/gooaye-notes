@@ -54,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
           </div>
         </div>
-        <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
+        <main className="mx-auto max-w-[680px] px-4 pt-6 pb-[72px]">{children}</main>
         <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
           <p>地端 AI 模型與站主自我判斷，仍有可能出錯。非投資建議。</p>
           <p className="mt-1">

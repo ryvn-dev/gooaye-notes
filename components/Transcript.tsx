@@ -1,93 +1,49 @@
-import PerfLine from '@/components/PerfLine';
-import StanceIcon from '@/components/StanceIcon';
-import SeekDot from '@/components/SeekDot';
-import { stancesOf, type Block, type Mention, type Sentence } from '@/lib/content';
+import MarkedSentence, { type Tip } from '@/components/MarkedSentence';
+import TimecodeButton from '@/components/TimecodeButton';
+import { stancesOf, type Block, type Mention } from '@/lib/content';
 
 /**
- * 結構化逐字稿：小標、主文段、引用段、代言段，層級只靠排版，不貼任何說明文字。
- * 提到個股的句子是細虛線底線、重點句是黃底，兩種都只在 hover／聚焦時才跳出 tooltip。
+ * 結構化逐字稿：小標、主文段、來信引用、代言段。層級只靠排版，不貼任何說明文字。
+ * 提到個股與對到重點的句子都是同一種淡黃螢光筆，點了才出現「代碼 + 立場」的小 tooltip。
  */
-function Tip({
-  s,
-  keyPoints,
-  byTicker,
-}: {
-  s: Sentence;
-  keyPoints: { text: string }[];
-  byTicker: Record<string, Mention>;
-}) {
-  const ms = s.tickers.map((t) => byTicker[t]).filter(Boolean);
-  return (
-    <span className="pointer-events-none absolute left-0 top-full z-30 mt-1 hidden w-full border border-[#e5e5e5] bg-white px-2 py-1 text-[13px] leading-6 font-normal whitespace-normal text-[#242424] no-underline group-hover:block group-focus-within:block">
-      {s.key_point !== null && keyPoints[s.key_point] && (
-        <span className="block font-medium">{keyPoints[s.key_point].text}</span>
-      )}
-      {ms.map((m) => (
-        <span key={m.ticker} className="mt-1 block first:mt-0">
-          <span className="block">
-            <span className="font-mono">{m.ticker.replace('TW:', '')}</span> {m.display_name}{' '}
-            <StanceIcon stance={stancesOf(m)[0] ?? 'mentioned'} p={m.jev_prob} />
-          </span>
-          <span className="block text-[12px] text-[#6b6b6b]">
-            <PerfLine perf={m.perf} />
-          </span>
-        </span>
-      ))}
-    </span>
-  );
-}
-
-function Body({
-  block,
-  bi,
-  keyPoints,
-  byTicker,
-}: {
-  block: Block;
-  bi: number;
-  keyPoints: { text: string }[];
-  byTicker: Record<string, Mention>;
-}) {
+function Body({ block, bi, byTicker }: { block: Block; bi: number; byTicker: Record<string, Mention> }) {
   return (
     <>
-      {block.t !== null && block.t !== undefined && <SeekDot seconds={block.t} />}
+      {block.t !== null && block.t !== undefined && (
+        <>
+          <TimecodeButton seconds={block.t} big />{' '}
+        </>
+      )}
       {block.sentences.map((s, si) => {
-        const marked = s.key_point !== null || s.tickers.length > 0;
-        if (!marked) return <span key={si}>{s.text}</span>;
-        const cls = [
-          'group',
-          s.key_point !== null ? 'bg-[#fff3b0]' : '',
-          s.tickers.length ? 'underline decoration-dotted decoration-[#b3b3b3] underline-offset-4' : '',
-        ]
+        if (s.key_point === null && s.tickers.length === 0) return <span key={si}>{s.text}</span>;
+        const tips: Tip[] = s.tickers
+          .map((t) => byTicker[t])
           .filter(Boolean)
-          .join(' ');
-        return (
-          <span key={si} id={`s-${bi}-${si}`} tabIndex={0} className={`scroll-mt-16 ${cls}`}>
-            {s.text}
-            <Tip s={s} keyPoints={keyPoints} byTicker={byTicker} />
-          </span>
-        );
+          .map((m) => ({
+            code: m.ticker.replace('TW:', ''),
+            stance: stancesOf(m)[0] ?? 'mentioned',
+            p: m.jev_prob ?? null,
+          }));
+        return <MarkedSentence key={si} id={`s-${bi}-${si}`} text={s.text} tips={tips} />;
       })}
     </>
   );
 }
 
-export default function Transcript({
-  blocks,
-  mentions,
-  keyPoints,
-}: {
-  blocks: Block[];
-  mentions: Mention[];
-  keyPoints: { text: string }[];
-}) {
+export default function Transcript({ blocks, mentions }: { blocks: Block[]; mentions: Mention[] }) {
   const byTicker = Object.fromEntries(mentions.map((m) => [m.ticker, m]));
-  const out: React.ReactNode[] = [];
+  const sections: React.ReactNode[][] = [[]];
+  const titles: (string | null)[] = [null];
   let ads: React.ReactNode[] = [];
+
+  const cur = () => sections[sections.length - 1];
   const flushAds = () => {
     if (!ads.length) return;
-    out.push(
-      <div key={`ad-${out.length}`} className="my-7 bg-[#f7f7f7] px-3 py-2 text-[13px] leading-7 text-[#6b6b6b]">
+    cur().push(
+      <div
+        key={`ad-${cur().length}`}
+        className="my-7 bg-[#f7f7f7] px-3 py-2 text-[14px] leading-[1.7] text-[#6b6b6b]"
+      >
         {ads}
       </div>,
     );
@@ -97,30 +53,47 @@ export default function Transcript({
   blocks.forEach((b, bi) => {
     if (b.kind === 'h2') {
       flushAds();
-      out.push(
-        <h2 key={bi} className="mt-10 mb-0 text-[17px] leading-[1.9] font-semibold">
-          {b.text}
-        </h2>,
-      );
+      sections.push([]);
+      titles.push(b.text);
       return;
     }
-    const inner = <Body block={b} bi={bi} keyPoints={keyPoints} byTicker={byTicker} />;
+    const inner = <Body block={b} bi={bi} byTicker={byTicker} />;
     if (b.ad) {
       ads.push(
-        <p key={bi} className="relative m-0 mt-3 first:mt-0">
+        <p key={bi} className="m-0 mt-3 first:mt-0">
           {inner}
         </p>,
       );
       return;
     }
     flushAds();
-    out.push(
+    const prev = blocks[bi - 1];
+    const next = blocks[bi + 1];
+    // 口誤自糾：來信 → 主持人一句短插話 → 同一封信的更正，三塊是同一封信，包成一個引用塊。
+    const interjection = b.kind === 'p' && b.text.length <= 40 && prev?.kind === 'quote' && next?.kind === 'quote';
+    const continues = b.kind === 'quote' && prev?.kind === 'p' && prev.text.length <= 40 && blocks[bi - 2]?.kind === 'quote';
+    if (interjection || continues) {
+      const box = cur()[cur().length - 1] as React.ReactElement<{ children?: React.ReactNode }>;
+      const kids = Array.isArray(box.props.children) ? box.props.children : [box.props.children];
+      cur()[cur().length - 1] = (
+        <blockquote key={`q-${bi}`} className="my-[1.6em] border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
+          {kids}
+          <span key={bi} className={interjection ? 'mt-2 block text-[#242424]' : 'mt-2 block'}>
+            {inner}
+          </span>
+        </blockquote>
+      );
+      return;
+    }
+    // 來信之後的回答貼著來信（稽核 F §2-2：回答與下一封信等距時看不出在回誰）。
+    const tight = prev?.kind === 'quote' && b.kind === 'p';
+    cur().push(
       b.kind === 'quote' ? (
-        <blockquote key={bi} className="relative my-[1.2em] border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
-          {inner}
+        <blockquote key={bi} className="my-[1.6em] border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
+          <span className="block">{inner}</span>
         </blockquote>
       ) : (
-        <p key={bi} className="relative mt-[1.2em] mb-0">
+        <p key={bi} className={tight ? 'mt-[0.6em] mb-0' : 'mt-[1.2em] mb-0'}>
           {inner}
         </p>
       ),
@@ -128,5 +101,18 @@ export default function Transcript({
   });
   flushAds();
 
-  return <div className="mt-3">{out}</div>;
+  return (
+    <div className="mt-3">
+      {sections.map((nodes, i) =>
+        nodes.length === 0 && titles[i] === null ? null : (
+          <section key={i} className="tx-section">
+            {titles[i] && (
+              <h3 className="mt-[2.2em] mb-2 scroll-mt-20 text-[20px] leading-[1.5] font-bold">{titles[i]}</h3>
+            )}
+            {nodes}
+          </section>
+        ),
+      )}
+    </div>
+  );
 }
