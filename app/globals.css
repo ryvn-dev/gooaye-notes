@@ -6,7 +6,7 @@
   --font-serif: "Noto Serif TC", Georgia, "Songti TC", serif;
 }
 
-:root { color-scheme: light dark; }
+:root { color-scheme: only light; }
 html { -webkit-text-size-adjust: 100%; }
 
 /* 內文排版照 justfont 那一套：sans、18px、行高 2.0、字距 0.02em、段距 1.6em */
@@ -66,12 +66,4 @@ p, li { overflow-wrap: anywhere; line-break: strict; }
   color: #b3b3b3;
   margin: 2rem 0;
   font-size: 15px;
-}
-
-@media (prefers-color-scheme: dark) {
-  body { background: #0b0b0b; color: #e6e6e6; }
-  main p, main li { color: #d4d4d4; }
-  h1, h2 { color: #fff; }
-  h2 { border-bottom-color: #27272a; }
-  time, dt { color: #a3a3a3; }
 }

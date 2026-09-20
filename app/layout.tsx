@@ -21,18 +21,23 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export const viewport = { width: 'device-width', initialScale: 1 };
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  colorScheme: 'light' as const,
+  themeColor: '#ffffff',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-Hant-TW">
       <body className="antialiased">
-        <header className="border-b border-slate-200 dark:border-slate-800">
+        <header className="border-b border-slate-200">
           <div className="mx-auto flex max-w-[680px] items-baseline gap-3 px-4 py-4">
             <Link href="/" className="text-xl font-bold tracking-tight">
               {site.name}
             </Link>
-            <span className="text-sm text-slate-500 dark:text-slate-400">{site.tagline}</span>
+            <span className="text-sm text-slate-500">{site.tagline}</span>
             <nav className="ml-auto text-[15px]">
               <Link href="/search/" className="hover:underline">
                 搜尋
@@ -42,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
         <SecondaryNav active="" />
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
-        <footer className="mx-auto max-w-[680px] px-4 pb-12 pt-4 text-sm text-slate-500 dark:text-slate-400">
+        <footer className="mx-auto max-w-[680px] px-4 pb-12 pt-4 text-sm text-slate-500">
           <p>
             {site.name} · 非官方第三方整理 · 不構成投資建議 ·{' '}
             <Link href="/ticker/" className="underline underline-offset-2">

@@ -25,7 +25,7 @@ function TipBox({ active, payload }: { active?: boolean; payload?: { payload: Po
   if (!active || !payload?.length) return null;
   const p = payload[0].payload;
   return (
-    <div className="border border-slate-300 bg-white px-2 py-1 text-[13px] leading-6 dark:border-slate-700 dark:bg-slate-900">
+    <div className="border border-slate-300 bg-white px-2 py-1 text-[13px] leading-6">
       <div>
         EP{p.ep} · {p.date}
       </div>

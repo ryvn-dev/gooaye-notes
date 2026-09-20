@@ -85,7 +85,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
 
-      <nav className="text-sm text-slate-500 dark:text-slate-400">
+      <nav className="text-sm text-slate-500">
         <Link href="/" className="underline underline-offset-2">{site.name}</Link>
         <span className="mx-1">/</span>
         <Link href="/ticker/" className="underline underline-offset-2">個股</Link>
@@ -103,13 +103,13 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       <div className="mt-6">
         <TickerChart data={points} />
       </div>
-      <p className="mt-1 text-sm text-[#6b6b6b] dark:text-[#a3a3a3]">
+      <p className="mt-1 text-sm text-[#6b6b6b]">
         n={t.episode_count} 集 · 起算 {t.first_seen} · 長條＝該集提及次數，顏色＝立場，黑點＝Jev 機率
         {points.filter((p) => p.count === null).length > 0 &&
           `（${points.filter((p) => p.count === null).length} 集的次數待補，圖上沒有長條）`}
       </p>
 
-      <ul className="mt-6 divide-y divide-slate-200 dark:divide-slate-800">
+      <ul className="mt-6 divide-y divide-slate-200">
         {t.timeline.map((r) => (
           <li key={r.slug} className="flex flex-wrap items-center gap-x-3 py-2.5 text-[15px]">
             <Link href={`/gooaye/${r.slug}/`} className="font-semibold underline underline-offset-2">

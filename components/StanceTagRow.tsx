@@ -9,7 +9,7 @@ export default function StanceTagRow({ items }: { items: Item[] }) {
     items: items.filter((i) => stancesOf({ stance: i.stance, stances: i.stances }).includes(s)),
   })).filter((b) => b.items.length > 0);
 
-  if (buckets.length === 0) return <p className="text-sm text-slate-500 dark:text-slate-400">立場待補</p>;
+  if (buckets.length === 0) return <p className="text-sm text-slate-500">立場待補</p>;
 
   return (
     <ul className="flex flex-wrap gap-1.5">

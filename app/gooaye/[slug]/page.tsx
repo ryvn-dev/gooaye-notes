@@ -88,7 +88,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
 
-      <nav className="text-sm text-slate-500 dark:text-slate-400">
+      <nav className="text-sm text-slate-500">
         <Link href="/" className="underline underline-offset-2">
           {site.name}
         </Link>
@@ -101,13 +101,13 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       </div>
 
       <h1 className="mt-4 leading-tight">股癌 EP{ep.ep_number} 重點筆記</h1>
-      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+      <p className="mt-1 text-sm text-slate-500">
         {ep.ep_inferred ? '集號為推定' : ''}
       </p>
 
-      <p className="mt-3 text-[20px] text-[#6b6b6b] dark:text-[#a3a3a3]">{answerFirst(ep) ?? '一句摘要待補'}</p>
+      <p className="mt-3 text-[20px] text-[#6b6b6b]">{answerFirst(ep) ?? '一句摘要待補'}</p>
 
-      <p className="mt-4 text-sm text-[#6b6b6b] dark:text-[#a3a3a3]">
+      <p className="mt-4 text-sm text-[#6b6b6b]">
         {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time> · 主持人
       </p>
 
@@ -120,7 +120,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       {ep.summary ? (
         <p className="mt-2">{ep.summary}</p>
       ) : (
-        <p className="mt-2 rounded-lg border border-dashed border-slate-300 p-4 text-slate-500 dark:border-slate-700 dark:text-slate-400">
+        <p className="mt-2 rounded-lg border border-dashed border-slate-300 p-4 text-slate-500">
           AI 摘要待補。
         </p>
       )}
@@ -137,44 +137,44 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
           ))}
         </ul>
       ) : (
-        <p className="mt-2 text-slate-500 dark:text-slate-400">重點整理待補。</p>
+        <p className="mt-2 text-slate-500">重點整理待補。</p>
       )}
 
       <h2 className="mt-8">重點段標籤</h2>
       {ep.segment_tags.length > 0 ? (
         <ul className="mt-2 flex flex-wrap gap-2">
           {ep.segment_tags.map((t) => (
-            <li key={t} className="rounded-full bg-slate-100 px-3 py-1 text-[15px] dark:bg-slate-800">
+            <li key={t} className="rounded-full bg-slate-100 px-3 py-1 text-[15px]">
               {t}
             </li>
           ))}
         </ul>
       ) : (
-        <p className="mt-2 text-slate-500 dark:text-slate-400">段落標籤待補。</p>
+        <p className="mt-2 text-slate-500">段落標籤待補。</p>
       )}
 
       <div className="divider" />
       <h2 className="mt-8">本集提到的個股</h2>
-      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+      <p className="mt-1 text-sm text-slate-500">
         [observed] 次數與時間碼由自動轉寫抽出。缺值一律顯示「待補」，不填估計值。
       </p>
 
       {shown.length > 0 ? (
-        <ul className="mt-3 divide-y divide-slate-200 dark:divide-slate-800">
+        <ul className="mt-3 divide-y divide-slate-200">
           {shown.map((m) => (
             <MentionCard key={m.ticker} m={m} />
           ))}
         </ul>
       ) : (
-        <p className="mt-3 text-slate-500 dark:text-slate-400">本集沒有抽到任何個股代號。</p>
+        <p className="mt-3 text-slate-500">本集沒有抽到任何個股代號。</p>
       )}
 
       {review.length > 0 && (
-        <details className="mt-6 border-y border-slate-200 py-4 dark:border-slate-800">
+        <details className="mt-6 border-y border-slate-200 py-4">
           <summary className="cursor-pointer font-medium">
             待人工確認：{review.length} 個可能是誤抓的代號
           </summary>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          <p className="mt-2 text-sm text-slate-500">
             抽取器已知會把一般英文詞當成代號。以下這幾個還沒有人確認過，
             <strong>不會進個股頁</strong>，也不列入任何統計。
           </p>
@@ -182,7 +182,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
             {review.map((m) => (
               <li
                 key={m.ticker}
-                className="rounded-full bg-slate-100 px-2.5 py-1 font-mono text-sm dark:bg-slate-800"
+                className="rounded-full bg-slate-100 px-2.5 py-1 font-mono text-sm"
               >
                 {m.ticker} · {mmss(m.first_ts_s)}
               </li>
@@ -192,9 +192,9 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       )}
 
       <h2 className="mt-8">全文逐字稿</h2>
-      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">逐字稿為 AI 轉錄，可能有錯。</p>
+      <p className="mt-1 text-sm text-slate-500">逐字稿為 AI 轉錄，可能有錯。</p>
       {ep.transcript_available && ep.transcript ? (
-        <details className="mt-2 border-y border-slate-200 py-4 dark:border-slate-800">
+        <details className="mt-2 border-y border-slate-200 py-4">
           <summary className="cursor-pointer font-medium">展開全文（{ep.transcript.length} 段）</summary>
           <div className="mt-3 space-y-3">
             {ep.transcript.map((seg) => (
@@ -206,10 +206,10 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
           </div>
         </details>
       ) : (
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">全文待補。</p>
+        <p className="mt-2 text-sm text-slate-500">全文待補。</p>
       )}
 
-      <nav className="mt-8 flex justify-between gap-4 border-t border-slate-200 pt-4 text-[15px] dark:border-slate-800">
+      <nav className="mt-8 flex justify-between gap-4 border-t border-slate-200 pt-4 text-[15px]">
         {older ? (
           <Link href={`/gooaye/${older.slug}/`} className="underline underline-offset-2">
             ← EP{older.ep_number}
@@ -232,7 +232,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       {ep.audio_url ? (
         <AudioPlayer src={ep.audio_url} title={`股癌 EP${ep.ep_number}`} />
       ) : (
-        <p className="mt-4 rounded-xl border border-slate-200 p-4 text-slate-500 dark:border-slate-800 dark:text-slate-400">
+        <p className="mt-4 rounded-xl border border-slate-200 p-4 text-slate-500">
           報價／音檔暫時抓不到。
         </p>
       )}
