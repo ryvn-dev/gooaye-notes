@@ -80,7 +80,8 @@ for (let i = 0; i < episodes.length; i++) {
     }))
     .sort((a, b) => b.mention_count - a.mention_count || a.first_ts_s - b.first_ts_s);
 
-  const top3 = ms.slice(0, 3).map((m) => m.display_name);
+  // 首頁與搜尋只呈現通過白名單的那幾檔；待人工確認的只留在集頁的摺疊區。
+  const shown = ms.filter((m) => !m.needs_review);
   const doc = {
     schema_version: 1,
     episode_id: e.episode_id,
@@ -114,8 +115,8 @@ for (let i = 0; i < episodes.length; i++) {
   index.push({
     ep_number: ep, slug, published_at: e.published, duration_s: doc.duration_s,
     site_title: doc.site_title, summary_answer_first: null, has_summary: false,
-    top_tickers: ms.slice(0, 5).map((m) => ({ ticker: m.ticker, display_name: m.display_name, stance: m.stance })),
-    mention_total: ms.length,
+    top_tickers: shown.slice(0, 5).map((m) => ({ ticker: m.ticker, display_name: m.display_name, stance: m.stance })),
+    mention_total: shown.length,
   });
 
   for (const m of ms) {

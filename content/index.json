@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T21:33:45.356Z",
+  "generated_at": "2026-09-20T21:35:26.968Z",
   "episode_count": 52,
   "coverage": {
     "from": "2026-03-25",
@@ -22,11 +22,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "CCL",
-          "display_name": "CCL",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
           "stance": "mentioned"
@@ -42,7 +37,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 7
+      "mention_total": 4
     },
     {
       "ep_number": 697,
@@ -121,14 +116,9 @@
           "ticker": "GOOGL",
           "display_name": "Alphabet",
           "stance": "mentioned"
-        },
-        {
-          "ticker": "TGS",
-          "display_name": "TGS",
-          "stance": "mentioned"
         }
       ],
-      "mention_total": 2
+      "mention_total": 1
     },
     {
       "ep_number": 694,
@@ -202,7 +192,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 10
+      "mention_total": 9
     },
     {
       "ep_number": 692,
@@ -217,19 +207,9 @@
           "ticker": "GOOGL",
           "display_name": "Alphabet",
           "stance": "mentioned"
-        },
-        {
-          "ticker": "DSP",
-          "display_name": "DSP",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "VIA",
-          "display_name": "VIA",
-          "stance": "mentioned"
         }
       ],
-      "mention_total": 3
+      "mention_total": 1
     },
     {
       "ep_number": 691,
@@ -249,14 +229,9 @@
           "ticker": "JD",
           "display_name": "京東",
           "stance": "mentioned"
-        },
-        {
-          "ticker": "NEO",
-          "display_name": "NEO",
-          "stance": "mentioned"
         }
       ],
-      "mention_total": 3
+      "mention_total": 2
     },
     {
       "ep_number": 690,
@@ -293,7 +268,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 7
+      "mention_total": 6
     },
     {
       "ep_number": 689,
@@ -318,14 +293,9 @@
           "ticker": "GOOGL",
           "display_name": "Alphabet",
           "stance": "mentioned"
-        },
-        {
-          "ticker": "MTD",
-          "display_name": "MTD",
-          "stance": "mentioned"
         }
       ],
-      "mention_total": 4
+      "mention_total": 3
     },
     {
       "ep_number": 688,
@@ -347,22 +317,22 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "WSE",
-          "display_name": "WSE",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "ACDC",
-          "display_name": "ACDC",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "STM",
           "display_name": "意法半導體",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "VSH",
+          "display_name": "Vishay",
+          "stance": "mentioned"
+        },
+        {
+          "ticker": "MCD",
+          "display_name": "麥當勞",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 7
+      "mention_total": 5
     },
     {
       "ep_number": 687,
@@ -389,17 +359,17 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "BHE",
-          "display_name": "BHE",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "AAPL",
           "display_name": "蘋果",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "TW:2345",
+          "display_name": "智邦",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 7
+      "mention_total": 6
     },
     {
       "ep_number": 686,
@@ -413,11 +383,6 @@
         {
           "ticker": "TW:2454",
           "display_name": "聯發科",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "SIM",
-          "display_name": "SIM",
           "stance": "mentioned"
         },
         {
@@ -436,7 +401,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 5
+      "mention_total": 4
     },
     {
       "ep_number": 685,
@@ -480,17 +445,12 @@
       "has_summary": false,
       "top_tickers": [
         {
-          "ticker": "FCN",
-          "display_name": "FCN",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "MSFT",
           "display_name": "微軟",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 2
+      "mention_total": 1
     },
     {
       "ep_number": 683,
@@ -522,12 +482,12 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "FOR",
-          "display_name": "FOR",
+          "ticker": "MU",
+          "display_name": "美光",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 10
+      "mention_total": 8
     },
     {
       "ep_number": 682,
@@ -591,17 +551,17 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "ICE",
-          "display_name": "ICE",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "META",
           "display_name": "Meta",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "STM",
+          "display_name": "意法半導體",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 6
+      "mention_total": 5
     },
     {
       "ep_number": 680,
@@ -628,17 +588,12 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "MAX",
-          "display_name": "MAX",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "TW:2454",
           "display_name": "聯發科",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 5
+      "mention_total": 4
     },
     {
       "ep_number": 679,
@@ -650,11 +605,6 @@
       "has_summary": false,
       "top_tickers": [
         {
-          "ticker": "CCL",
-          "display_name": "CCL",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "MU",
           "display_name": "美光",
           "stance": "mentioned"
@@ -665,7 +615,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 3
+      "mention_total": 2
     },
     {
       "ep_number": 678,
@@ -682,11 +632,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "SIM",
-          "display_name": "SIM",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "ADI",
           "display_name": "亞德諾",
           "stance": "mentioned"
@@ -697,7 +642,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 4
+      "mention_total": 3
     },
     {
       "ep_number": 677,
@@ -714,16 +659,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "CCL",
-          "display_name": "CCL",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "NVR",
-          "display_name": "NVR",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "META",
           "display_name": "Meta",
           "stance": "mentioned"
@@ -732,9 +667,14 @@
           "ticker": "TSM",
           "display_name": "台積電 ADR",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "TSLA",
+          "display_name": "特斯拉",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 6
+      "mention_total": 4
     },
     {
       "ep_number": 676,
@@ -766,12 +706,12 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "MAX",
-          "display_name": "MAX",
+          "ticker": "TW:3711",
+          "display_name": "日月光投控",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 7
+      "mention_total": 6
     },
     {
       "ep_number": 675,
@@ -882,7 +822,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 11
+      "mention_total": 9
     },
     {
       "ep_number": 672,
@@ -931,11 +871,6 @@
       "has_summary": false,
       "top_tickers": [
         {
-          "ticker": "MOS",
-          "display_name": "MOS",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "TW:2317",
           "display_name": "鴻海",
           "stance": "mentioned"
@@ -954,9 +889,14 @@
           "ticker": "TXN",
           "display_name": "德州儀器",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "MU",
+          "display_name": "美光",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 8
+      "mention_total": 7
     },
     {
       "ep_number": 670,
@@ -1037,11 +977,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "ROG",
-          "display_name": "ROG",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "AMD",
           "display_name": "超微",
           "stance": "mentioned"
@@ -1057,7 +992,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 5
+      "mention_total": 4
     },
     {
       "ep_number": 667,
@@ -1079,22 +1014,22 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "DSP",
-          "display_name": "DSP",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "DGX",
-          "display_name": "DGX",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "QCOM",
           "display_name": "高通",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "stance": "mentioned"
+        },
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 9
+      "mention_total": 7
     },
     {
       "ep_number": 666,
@@ -1126,12 +1061,12 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "CON",
-          "display_name": "CON",
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 10
+      "mention_total": 8
     },
     {
       "ep_number": 665,
@@ -1210,14 +1145,9 @@
           "ticker": "AAPL",
           "display_name": "蘋果",
           "stance": "mentioned"
-        },
-        {
-          "ticker": "MTD",
-          "display_name": "MTD",
-          "stance": "mentioned"
         }
       ],
-      "mention_total": 3
+      "mention_total": 2
     },
     {
       "ep_number": 662,
@@ -1229,11 +1159,6 @@
       "has_summary": false,
       "top_tickers": [
         {
-          "ticker": "FCN",
-          "display_name": "FCN",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "TW:2454",
           "display_name": "聯發科",
           "stance": "mentioned"
@@ -1244,7 +1169,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 3
+      "mention_total": 2
     },
     {
       "ep_number": 661,
@@ -1303,11 +1228,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "DAO",
-          "display_name": "DAO",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
           "stance": "mentioned"
@@ -1316,9 +1236,14 @@
           "ticker": "AMD",
           "display_name": "超微",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "SNDK",
+          "display_name": "閃迪",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 6
+      "mention_total": 5
     },
     {
       "ep_number": 659,
@@ -1345,17 +1270,17 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "SIM",
-          "display_name": "SIM",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "AMZN",
+          "display_name": "亞馬遜",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 8
+      "mention_total": 7
     },
     {
       "ep_number": 658,
@@ -1429,7 +1354,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 11
+      "mention_total": 10
     },
     {
       "ep_number": 656,
@@ -1451,11 +1376,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "AIP",
-          "display_name": "AIP",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "COST",
           "display_name": "好市多",
           "stance": "mentioned"
@@ -1466,7 +1386,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 5
+      "mention_total": 4
     },
     {
       "ep_number": 655,
@@ -1493,17 +1413,17 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "MOMO",
-          "display_name": "MOMO",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "META",
           "display_name": "Meta",
           "stance": "mentioned"
+        },
+        {
+          "ticker": "AAOI",
+          "display_name": "應用光電",
+          "stance": "mentioned"
         }
       ],
-      "mention_total": 8
+      "mention_total": 7
     },
     {
       "ep_number": 654,
@@ -1528,14 +1448,9 @@
           "ticker": "AAPL",
           "display_name": "蘋果",
           "stance": "mentioned"
-        },
-        {
-          "ticker": "XYZ",
-          "display_name": "XYZ",
-          "stance": "mentioned"
         }
       ],
-      "mention_total": 4
+      "mention_total": 3
     },
     {
       "ep_number": 653,
@@ -1572,7 +1487,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 10
+      "mention_total": 9
     },
     {
       "ep_number": 652,
@@ -1626,11 +1541,6 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "SIM",
-          "display_name": "SIM",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "TSLA",
           "display_name": "特斯拉",
           "stance": "mentioned"
@@ -1646,7 +1556,7 @@
           "stance": "mentioned"
         }
       ],
-      "mention_total": 5
+      "mention_total": 4
     },
     {
       "ep_number": 650,
@@ -1673,17 +1583,12 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "DGX",
-          "display_name": "DGX",
-          "stance": "mentioned"
-        },
-        {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 5
+      "mention_total": 4
     },
     {
       "ep_number": 649,
@@ -1710,17 +1615,12 @@
           "stance": "mentioned"
         },
         {
-          "ticker": "FIX",
-          "display_name": "FIX",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "NIC",
-          "display_name": "NIC",
+          "ticker": "AAPL",
+          "display_name": "蘋果",
           "stance": "mentioned"
         }
       ],
-      "mention_total": 7
+      "mention_total": 4
     },
     {
       "ep_number": 648,
