@@ -71,17 +71,12 @@ const yahooOf = (t) =>
     ? `https://finance.yahoo.com/quote/${t.slice(3)}.TW`
     : `https://finance.yahoo.com/quote/${t}`;
 
-// 站上只放社群來源的逐字稿；自家 whisper 稿只拿來算時間碼與摘要，不上站。
-const COMMUNITY = path.join(CACHE, 'community', 'whatmkreallysaid');
+// 逐字稿只認對齊器的輸出（社群文字 + 對齊過的時間碼）；沒有檔就整段不出。
 const loadTranscript = (ep) => {
-  const f = path.join(COMMUNITY, `EP${ep}.md`);
-  if (!fs.existsSync(f)) return null;
-  const paras = fs
-    .readFileSync(f, 'utf8')
-    .split(/\n{2,}/)
-    .map((x) => x.trim())
-    .filter(Boolean);
-  return paras.length ? paras : null;
+  const j = readIf(path.join(SITEJSON, 'transcripts', `EP${ep}.json`));
+  const segs = j?.segments;
+  if (!segs?.length) return null;
+  return segs.map((x) => ({ t: x.t ?? null, text: x.text }));
 };
 
 const byEp = {};
@@ -143,7 +138,7 @@ for (let i = 0; i < episodes.length; i++) {
     };
   };
 
-  // Jev 判定「這一段根本不在講那一檔」的先拿掉
+  // 模型判定「這一段根本不在講那一檔」的先拿掉
   const aboutOk = (ticker) => {
     const v = extT[ticker]?.jev_is_about;
     return v === undefined || v === null || Number(v) >= JEV_MIN;
@@ -189,14 +184,14 @@ for (let i = 0; i < episodes.length; i++) {
     topics: [],
     mentions: ms,
     transcript: tx,
-    transcript_source: tx ? 'community' : null,
+    transcript_source: tx ? 'aligned' : null,
     transcript_available: Boolean(tx),
     provenance: {
-      summary_model: sum?.model ?? null,
+      summary_model: null,
       summary_generated_at: sum?.generated_at ?? null,
       transcript_sha256: e.transcript_sha256,
-      extractor_version: 'podcast:extract@RF-1099',
-      jev_model: ext?.jev_model ?? null,
+      extractor_version: null,
+      jev_model: null,
     },
   };
   fs.writeFileSync(path.join(OUT, 'episodes', `EP${doc.slug}.json`), JSON.stringify(doc, null, 2) + '\n');
@@ -264,20 +259,20 @@ fs.writeFileSync(
   path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'),
   `# 股癌筆記（非官方 · AI 整理）
 
-> 股癌 Podcast 逐字稿與個人筆記：AI 重點整理、每集提到的個股與看多看空、原話與時間碼。
+> 股癌 Podcast 逐字稿與個人筆記：地端 AI 重點整理、每集提到的個股與看多看空、原話與時間碼。
 > 非官方，與節目及其製作方無關。非投資建議。站上不提供買賣、目標價、勝率或報酬統計。
 
 ## 資料範圍
 - 集數：${index.length} 集，EP${index[index.length - 1].ep_number} 至 EP${index[0].ep_number}（${index[index.length - 1].published_at} 至 ${index[0].published_at}）
 - 個股：${Object.keys(tickerMap).length} 檔
-- 提及次數與時間碼由程式從公開音檔的自動轉寫抽出 [observed]
-- 立場標籤是「模型對這一段話的讀法」，不是節目的意思
-- 缺值一律顯示「待補」，不以估計值填補
-- 逐字稿為 AI 轉錄，可能有錯
+- 提及次數與時間碼由地端 AI 從公開音檔整理
+- 立場是地端 AI 對那一段話的讀法，不是節目的意思
+- 缺的欄位顯示「—」，不以估計值填補
+- 逐字稿為社群整理，可能有錯
 
 ## 引用時請注意
-- 樣本 n=${index.length} 集，樣本不足，不得據此做出準確率或績效結論
-- 自動轉寫與代號抽取都可能出錯；每一列都附時間碼，請回到原始音檔查證
+- 本站只做紀錄，不提供任何準確率或績效結論
+- 整理過程可能出錯；每一列都附時間碼，請回到原始音檔查證
 
 ## 主要頁面
 - 首頁：${SITE}/

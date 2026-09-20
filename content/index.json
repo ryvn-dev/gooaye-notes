@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T22:00:40.848Z",
+  "generated_at": "2026-09-20T22:05:01.237Z",
   "episode_count": 3,
   "coverage": {
     "from": "2026-09-12",
@@ -58,18 +58,18 @@
         {
           "ticker": "PEP",
           "display_name": "百事",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人"
         },
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人"
         },
@@ -95,24 +95,6 @@
       "has_summary": true,
       "top_tickers": [
         {
-          "ticker": "AAPL",
-          "display_name": "蘋果",
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人"
-        },
-        {
-          "ticker": "GOOGL",
-          "display_name": "Alphabet",
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": "主持人"
-        },
-        {
           "ticker": "TSLA",
           "display_name": "特斯拉",
           "stance": "mentioned",
@@ -122,29 +104,11 @@
           "speaker": "主持人"
         },
         {
-          "ticker": "TW:8299",
-          "display_name": "群聯",
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人"
-        },
-        {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
-          ],
-          "speaker": "主持人"
-        },
-        {
-          "ticker": "TW:2317",
-          "display_name": "鴻海",
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人"
         },
@@ -165,9 +129,18 @@
             "neutral"
           ],
           "speaker": "主持人"
+        },
+        {
+          "ticker": "ORCL",
+          "display_name": "ORCL",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人"
         }
       ],
-      "mention_total": 9
+      "mention_total": 5
     }
   ]
 }

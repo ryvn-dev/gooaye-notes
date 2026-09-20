@@ -312,10 +312,10 @@
   "transcript_source": null,
   "transcript_available": false,
   "provenance": {
-    "summary_model": "opus-lane-2026-09-21",
+    "summary_model": null,
     "summary_generated_at": "2026-09-20T21:39:25Z",
     "transcript_sha256": "f60cc14adaecda80ddc88916a605d78e50d81130f1fd38200c38549980a05f2f",
-    "extractor_version": "podcast:extract@RF-1099",
+    "extractor_version": null,
     "jev_model": null
   }
 }

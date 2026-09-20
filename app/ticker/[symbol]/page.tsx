@@ -49,7 +49,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
     count: r.mention_count,
     stance: stancesOf(r)[0] ?? 'mentioned',
     stanceLabel: STANCE[stancesOf(r)[0] ?? 'mentioned'].label,
-    jev: r.jev_prob,
+    conf: r.jev_prob,
   }));
 
   const faqLd: WithContext<FAQPage> = {

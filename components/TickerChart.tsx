@@ -11,7 +11,7 @@ export type Point = {
   count: number | null;
   stance: Stance;
   stanceLabel: string;
-  jev: number | null;
+  conf: number | null;
 };
 
 import { STANCE_COLOR } from '@/components/StanceIcon';
@@ -33,7 +33,6 @@ function TipBox({ active, payload }: { active?: boolean; payload?: { payload: Po
         {p.stanceLabel}
         {p.count === null ? '' : ` · 提到 ${p.count} 次`}
       </div>
-      {p.jev !== null && <div>信心 {Math.round(p.jev * 100)}%</div>}
     </div>
   );
 }
@@ -54,10 +53,23 @@ export default function TickerChart({ data }: { data: Point[] }) {
           </Bar>
           <Line
             yAxisId="p"
-            dataKey="jev"
+            dataKey="conf"
             stroke="none"
             isAnimationActive={false}
-            dot={{ r: 3, fill: '#242424' }}
+            dot={(props: { cx?: number; cy?: number; payload?: Point }) =>
+              props.payload?.conf === null || props.cx === undefined || props.cy === undefined ? (
+                <g key={`${props.payload?.ep ?? 'x'}-none`} />
+              ) : (
+                <circle
+                  key={props.payload?.ep}
+                  cx={props.cx}
+                  cy={props.cy}
+                  r={3}
+                  fill="#242424"
+                  opacity={Math.min(1, Math.max(0.35, props.payload?.conf ?? 1))}
+                />
+              )
+            }
             connectNulls={false}
           />
         </ComposedChart>

@@ -49,7 +49,7 @@ export type Episode = {
   topics: string[];
   mentions: Mention[];
   ep_inferred?: boolean;
-  transcript: string[] | null;
+  transcript: { t: number | null; text: string }[] | null;
   transcript_source: string | null;
   transcript_available: boolean;
   provenance: Record<string, string | null>;

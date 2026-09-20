@@ -81,15 +81,15 @@
       "market": "US",
       "mention_count": 4,
       "first_ts_s": 2822,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": "百事生可樂真的超好喝，日本人把啤酒釀造的過濾技術移植到可樂",
       "reason": "生活閒聊提到的飲料，不是投資討論",
       "t": 2775,
-      "jev_prob": 0.43,
+      "jev_prob": 0.59,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
       "yahoo_url": "https://finance.yahoo.com/quote/PEP",
       "px_1d": -0.0051,
@@ -108,15 +108,15 @@
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1232,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": "在 Tesla 或 SpaceX 或 xAI 的馬斯克這邊，我覺得他打的算盤是另外一個",
       "reason": "以馬斯克的公司談他附議的動機",
       "t": 1216,
-      "jev_prob": 0.05,
+      "jev_prob": 0.47,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
       "yahoo_url": "https://finance.yahoo.com/quote/TSLA",
       "px_1d": 0.0227,
@@ -186,10 +186,10 @@
   "transcript_source": null,
   "transcript_available": false,
   "provenance": {
-    "summary_model": "opus-lane-2026-09-21",
+    "summary_model": null,
     "summary_generated_at": "2026-09-20T21:38:27Z",
     "transcript_sha256": "fc851bdf4f05833dc89e33245852dbc34a09e33f8e25da0cbbaf715962abb841",
-    "extractor_version": "podcast:extract@RF-1099",
+    "extractor_version": null,
     "jev_model": null
   }
 }

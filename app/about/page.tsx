@@ -3,7 +3,7 @@ import { site, abs } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: '關於本站與免責聲明',
-  description: '股癌筆記是非官方的第三方整理，與節目及其製作方沒有任何關係。內容由 AI 自動轉寫與抽取，可能有錯，不構成投資建議。',
+  description: '股癌筆記是非官方的第三方整理，與節目及其製作方沒有任何關係。內容由地端 AI 整理，可能有錯，不構成投資建議。',
   alternates: { canonical: abs('/about/') },
 };
 
@@ -19,7 +19,7 @@ export default function About() {
     <>
       <h1 className="">關於本站</h1>
       <p className="mt-2">
-        {site.name}是股癌 Podcast 的個人筆記：每一集用 AI 做重點整理與逐字稿，
+        {site.name}是股癌 Podcast 的個人筆記：每一集用地端 AI 做重點整理，
         列出提到的個股與看多看空，每一句都附原話與時間碼，在手機上點一下就跳回那一段。
       </p>
 
@@ -32,8 +32,7 @@ export default function About() {
 
       <Section h="內容是怎麼來的">
         <p>
-          音檔取自節目公開 RSS；文字由語音模型自動轉寫；個股代號由程式從轉寫結果抽出；
-          摘要與立場判讀由 AI 產生。<strong>這幾段都可能出錯</strong>——
+          音檔取自節目公開 RSS；文字由地端 AI 轉寫；個股代號由程式從轉寫結果抽出；摘要與立場判讀也由地端 AI 產生。<strong>這幾段都可能出錯</strong>——
           已知的錯法包含把一般英文詞當成股票代號、以及漏掉只用中文講的公司名。
         </p>
         <p>
