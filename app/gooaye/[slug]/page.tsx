@@ -24,13 +24,13 @@ const answerFirst = (ep: ReturnType<typeof getEpisode>) => {
 const metaLine = (ep: ReturnType<typeof getEpisode>) => {
   const shown = ep.mentions.filter((m) => !m.needs_review);
   if (shown.length === 0) {
-    return `股癌 EP${ep.ep_number} 於 ${ep.published_at} 發布，全長 ${minutes(ep.duration_s)} 分鐘。本集的自動抽取沒有抓到任何個股代號，因此本頁只有音檔與集數資訊。`;
+    return `股癌 EP${ep.ep_number}（${ep.published_at}，${minutes(ep.duration_s)} 分鐘）的重點筆記與播放器。`;
   }
   const top = shown
     .slice(0, 3)
-    .map((m) => `${m.display_name}（${m.mention_count} 次，第一次在 ${mmss(m.first_ts_s)}）`)
+    .map((m) => m.display_name)
     .join('、');
-  return `股癌 EP${ep.ep_number} 於 ${ep.published_at} 發布，全長 ${minutes(ep.duration_s)} 分鐘，自動抽取到 ${shown.length} 檔個股：提到最多次的是 ${top}。下表列出每一檔的提及次數與時間碼，點時間碼可以跳到那一段自己聽。`;
+  return `股癌 EP${ep.ep_number}（${ep.published_at}）提到 ${top}，附原話與時間碼，可以直接跳著聽。`;
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -59,7 +59,6 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
   const newer = i > 0 ? list[i - 1] : null;
   const older = i >= 0 && i < list.length - 1 ? list[i + 1] : null;
   const shown = ep.mentions.filter((m) => !m.needs_review);
-  const review = ep.mentions.filter((m) => m.needs_review);
 
   const episodeLd: WithContext<PodcastEpisode> = {
     '@context': 'https://schema.org',
@@ -88,128 +87,82 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
 
-      <nav className="text-sm text-slate-500">
+      <nav className="text-[13px] text-[#6b6b6b]">
         <Link href="/" className="underline underline-offset-2">
           {site.name}
         </Link>
-        <span className="mx-1">/</span>
-        <span>股癌 EP{ep.ep_number}</span>
       </nav>
 
       <div className="mt-3">
-        <StanceTagRow items={shown} />
+        <StanceTagRow items={shown} max={4} />
       </div>
 
       <h1 className="mt-4 leading-tight">股癌 EP{ep.ep_number} 重點筆記</h1>
-      <p className="mt-1 text-sm text-slate-500">
-        {ep.ep_inferred ? '集號為推定' : ''}
-      </p>
 
-      <p className="mt-3 text-[20px] text-[#6b6b6b]">{answerFirst(ep) ?? '一句摘要待補'}</p>
+      <p className="mt-3 text-[18px] leading-8 text-[#6b6b6b]">{answerFirst(ep) ?? ''}</p>
 
-      <p className="mt-4 text-sm text-[#6b6b6b]">
-        {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time> · 主持人
+      <p className="mt-4 text-[13px] text-[#6b6b6b]">
+        {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time>
       </p>
 
       <div className="divider" />
 
+      {ep.summary && <p>{ep.summary}</p>}
 
       <AdSlot id="episode-mid" />
 
-      <h2 className="mt-8">AI 摘要</h2>
-      {ep.summary ? (
-        <p className="mt-2">{ep.summary}</p>
-      ) : (
-        <p className="mt-2 rounded-lg border border-dashed border-slate-300 p-4 text-slate-500">
-          AI 摘要待補。
-        </p>
+      {ep.key_points.length > 0 && (
+        <>
+          <h2 className="mt-8">重點整理</h2>
+          <ul className="mt-3 space-y-2">
+            {ep.key_points.map((k) => (
+              <li key={k.text} className="flex gap-2">
+                {k.t !== null && <TimecodeButton seconds={k.t} label={mmss(k.t)} />}
+                <span>{k.text}</span>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
 
-      <div className="divider" />
-      <h2 className="mt-8">AI 重點整理</h2>
-      {ep.key_points.length > 0 ? (
-        <ul className="mt-2 space-y-2">
-          {ep.key_points.map((k) => (
-            <li key={k.text} className="flex gap-2">
-              {k.t !== null && <TimecodeButton seconds={k.t} label={mmss(k.t)} />}
-              <span>{k.text}</span>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="mt-2 text-slate-500">重點整理待補。</p>
-      )}
-
-      <h2 className="mt-8">重點段標籤</h2>
-      {ep.segment_tags.length > 0 ? (
-        <ul className="mt-2 flex flex-wrap gap-2">
+      {ep.segment_tags.length > 0 && (
+        <ul className="mt-6 flex flex-wrap gap-1.5">
           {ep.segment_tags.map((t) => (
-            <li key={t} className="rounded-full bg-slate-100 px-3 py-1 text-[15px]">
+            <li key={t} className="rounded-full border border-[#e5e5e5] px-2.5 py-0.5 text-[13px]">
               {t}
             </li>
           ))}
         </ul>
-      ) : (
-        <p className="mt-2 text-slate-500">段落標籤待補。</p>
       )}
 
-      <div className="divider" />
-      <h2 className="mt-8">本集提到的個股</h2>
-      <p className="mt-1 text-sm text-slate-500">
-        [observed] 次數與時間碼由自動轉寫抽出。缺值一律顯示「待補」，不填估計值。
-      </p>
-
-      {shown.length > 0 ? (
-        <ul className="mt-3 divide-y divide-slate-200">
-          {shown.map((m) => (
-            <MentionCard key={m.ticker} m={m} />
-          ))}
-        </ul>
-      ) : (
-        <p className="mt-3 text-slate-500">本集沒有抽到任何個股代號。</p>
+      {shown.length > 0 && (
+        <>
+          <h2 className="mt-8">本集提到的個股</h2>
+          <table className="mt-3 w-full border-collapse text-[16px]">
+            <tbody>
+              {shown.map((m) => (
+                <MentionCard key={m.ticker} m={m} />
+              ))}
+            </tbody>
+          </table>
+        </>
       )}
 
-      {review.length > 0 && (
-        <details className="mt-6 border-y border-slate-200 py-4">
-          <summary className="cursor-pointer font-medium">
-            待人工確認：{review.length} 個可能是誤抓的代號
-          </summary>
-          <p className="mt-2 text-sm text-slate-500">
-            抽取器已知會把一般英文詞當成代號。以下這幾個還沒有人確認過，
-            <strong>不會進個股頁</strong>，也不列入任何統計。
-          </p>
-          <ul className="mt-2 flex flex-wrap gap-2">
-            {review.map((m) => (
-              <li
-                key={m.ticker}
-                className="rounded-full bg-slate-100 px-2.5 py-1 font-mono text-sm"
-              >
-                {m.ticker} · {mmss(m.first_ts_s)}
-              </li>
-            ))}
-          </ul>
-        </details>
-      )}
-
-      <h2 className="mt-8">全文逐字稿</h2>
-      <p className="mt-1 text-sm text-slate-500">逐字稿為 AI 轉錄，可能有錯。</p>
-      {ep.transcript_available && ep.transcript ? (
-        <details className="mt-2 border-y border-slate-200 py-4">
-          <summary className="cursor-pointer font-medium">展開全文（{ep.transcript.length} 段）</summary>
-          <div className="mt-3 space-y-3">
+      {ep.transcript_available && ep.transcript && (
+        <>
+          <h2 className="mt-10">全文</h2>
+          <div className="mt-3 space-y-4">
             {ep.transcript.map((seg) => (
               <div key={seg.t} className="flex gap-2">
                 <TimecodeButton seconds={seg.t} label={mmss(seg.t)} />
-                <p className="text-[15px] leading-relaxed">{seg.text}</p>
+                <p className="m-0 text-[17px] leading-8">{seg.text}</p>
               </div>
             ))}
           </div>
-        </details>
-      ) : (
-        <p className="mt-2 text-sm text-slate-500">全文待補。</p>
+        </>
       )}
 
-      <nav className="mt-8 flex justify-between gap-4 border-t border-slate-200 pt-4 text-[15px]">
+      <nav className="mt-10 flex justify-between gap-4 border-t border-[#eee] pt-4 text-[15px]">
         {older ? (
           <Link href={`/gooaye/${older.slug}/`} className="underline underline-offset-2">
             ← EP{older.ep_number}

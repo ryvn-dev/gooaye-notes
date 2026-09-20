@@ -14,11 +14,11 @@ export type Point = {
   jev: number | null;
 };
 
+import { STANCE_COLOR } from '@/components/StanceIcon';
+
 const FILL: Record<Stance, string> = {
-  bullish: '#16a34a',
-  bearish: '#dc2626',
-  neutral: '#737373',
-  mentioned: '#d4d4d8',
+  ...STANCE_COLOR,
+  mentioned: '#d9d9d9',
 };
 
 function TipBox({ active, payload }: { active?: boolean; payload?: { payload: Point }[] }) {
@@ -30,9 +30,10 @@ function TipBox({ active, payload }: { active?: boolean; payload?: { payload: Po
         EP{p.ep} · {p.date}
       </div>
       <div>
-        {p.stanceLabel} · 提到 {p.count === null ? '待補' : `${p.count} 次`}
+        {p.stanceLabel}
+        {p.count === null ? '' : ` · 提到 ${p.count} 次`}
       </div>
-      <div>Jev 讀法 {p.jev === null ? '待補' : `${Math.round(p.jev * 100)}%`}</div>
+      {p.jev !== null && <div>信心 {Math.round(p.jev * 100)}%</div>}
     </div>
   );
 }

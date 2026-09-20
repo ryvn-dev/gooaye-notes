@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import type { FAQPage, BreadcrumbList, WithContext } from 'schema-dts';
 import { getTickers, getIndex, findTicker, tickerSlug, STANCE, STANCE_ORDER, stancesOf } from '@/lib/content';
 import TickerChart, { type Point } from '@/components/TickerChart';
+import StanceIcon from '@/components/StanceIcon';
 import Disclaimer from '@/components/Disclaimer';
 import { site, abs } from '@/lib/site';
 
@@ -16,7 +17,7 @@ const faqAnswer = (t: NonNullable<ReturnType<typeof findTicker>>, episodes: numb
   `本站紀錄到 ${t.display_name}（${t.ticker.replace('TW:', '')}）在 ${t.episode_count} 集股癌節目中被提到，合計 ${t.mention_total} 次，` +
   `最早 ${t.first_seen}、最近一次是 EP${t.timeline[0].ep_number}（${t.last_seen}）。` +
   `本站 v1 只紀錄「有沒有提到、提到幾次、講在第幾分幾秒」，還沒有產出多空立場判讀；` +
-  `樣本 n=${episodes} 集，樣本不足，不提供任何勝率或報酬統計。`;
+  `本站只紀錄他講了什麼、講在第幾分幾秒，不提供任何買賣建議。`;
 
 export async function generateMetadata({ params }: { params: Promise<{ symbol: string }> }): Promise<Metadata> {
   const { symbol } = await params;
@@ -104,9 +105,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
         <TickerChart data={points} />
       </div>
       <p className="mt-1 text-sm text-[#6b6b6b]">
-        n={t.episode_count} 集 · 起算 {t.first_seen} · 長條＝該集提及次數，顏色＝立場，黑點＝Jev 機率
-        {points.filter((p) => p.count === null).length > 0 &&
-          `（${points.filter((p) => p.count === null).length} 集的次數待補，圖上沒有長條）`}
+        {t.episode_count} 集 · 起算 {t.first_seen}
       </p>
 
       <ul className="mt-6 divide-y divide-slate-200">
@@ -120,9 +119,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             </time>
             <span className="ml-auto flex flex-wrap gap-1">
               {stancesOf(r).map((st) => (
-                <span key={st} className={`rounded-full px-2 py-0.5 text-[13px] ${STANCE[st].cls}`}>
-                  {STANCE[st].label}
-                </span>
+                <StanceIcon key={st} stance={st} />
               ))}
             </span>
           </li>

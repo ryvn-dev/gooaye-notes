@@ -34,10 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <header className="border-b border-slate-200">
           <div className="mx-auto flex max-w-[680px] items-baseline gap-3 px-4 py-4">
-            <Link href="/" className="text-xl font-bold tracking-tight">
+            <Link href="/" className="font-serif text-2xl font-bold tracking-tight">
               {site.name}
             </Link>
-            <span className="text-sm text-slate-500">{site.tagline}</span>
             <nav className="ml-auto text-[15px]">
               <Link href="/search/" className="hover:underline">
                 搜尋
@@ -49,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
         <footer className="mx-auto max-w-[680px] px-4 pb-12 pt-4 text-sm text-slate-500">
           <p>
-            {site.name} · 非官方第三方整理 · 不構成投資建議 ·{' '}
+            {site.name} · {site.tagline} · 非官方第三方整理，不構成投資建議 ·{' '}
             <Link href="/ticker/" className="underline underline-offset-2">
               個股
             </Link>{' '}

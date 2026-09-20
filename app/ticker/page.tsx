@@ -42,10 +42,6 @@ export default function TickerIndex() {
         共 {ticker_count} 檔，來自 {idx.episode_count} 集節目（{idx.coverage.from} 至 {idx.coverage.to}）。
         點進去可以看到這一檔歷次被提到的集數、次數與時間碼。
       </p>
-      <p className="mt-2 text-sm text-slate-500">
-        [observed] 由自動轉寫抽取，樣本 n={idx.episode_count} 集、<strong>樣本不足</strong>；
-        疑似誤抓的代號已擋在個股頁之外，只留在該集頁的「待人工確認」區。
-      </p>
       {group('美股', us)}
       {group('台股', tw)}
       <Disclaimer />
