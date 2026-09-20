@@ -1,61 +1,7 @@
 {
   "schema_version": 1,
-  "ticker_count": 12,
+  "ticker_count": 13,
   "tickers": [
-    {
-      "ticker": "GOOGL",
-      "display_name": "Alphabet",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
-      "episode_count": 3,
-      "mention_total": 6,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-19",
-      "timeline": [
-        {
-          "ep_number": 698,
-          "slug": "0698",
-          "published_at": "2026-09-19",
-          "mention_count": 1,
-          "first_ts_s": 244,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "ep_number": 697,
-          "slug": "0697",
-          "published_at": "2026-09-16",
-          "mention_count": 1,
-          "first_ts_s": 2373,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 4,
-          "first_ts_s": 895,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ]
-    },
     {
       "ticker": "TSLA",
       "display_name": "特斯拉",
@@ -71,12 +17,15 @@
           "slug": "0697",
           "published_at": "2026-09-16",
           "mention_count": 1,
-          "first_ts_s": 1232,
+          "first_ts_s": 1216,
           "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.05,
+          "quote": "在 Tesla 或 SpaceX 或 xAI 的馬斯克這邊，我覺得他打的算盤是另外一個",
+          "px_1d": 0.0227,
           "px_5d": null,
           "px_21d": null
         },
@@ -85,12 +34,61 @@
           "slug": "0696",
           "published_at": "2026-09-12",
           "mention_count": 2,
-          "first_ts_s": 1317,
+          "first_ts_s": 1660,
           "stance": "mentioned",
-          "stances": [],
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.07,
+          "quote": "像 Tesla 這邊就有一個傳說，對外放出了大量的太陽能訂單",
+          "px_1d": -0.0067,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "display_name": "台積電 ADR",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
+      "episode_count": 2,
+      "mention_total": 1,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": null,
+          "first_ts_s": 866,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
           "jev_prob": null,
-          "quote": null,
+          "quote": "如果真的很缺的話，價格去做一些調整、去反映成本，其實是非常合理的操作",
           "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 1,
+          "first_ts_s": 779,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.31,
+          "quote": "利多出盡的話，NVIDIA 跟 TSM 他們利多發幾次了，那也沒有完全出盡",
+          "px_1d": -0.0102,
           "px_5d": null,
           "px_21d": null
         }
@@ -111,12 +109,15 @@
           "slug": "0696",
           "published_at": "2026-09-12",
           "mention_count": 13,
-          "first_ts_s": 532,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
+          "first_ts_s": 1064,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.08,
+          "quote": "它用更強大的 UI/UX 去包裝，結果價格只有稍微貴一點點，我認為它的銷量會很不錯",
+          "px_1d": -0.0052,
           "px_5d": null,
           "px_21d": null
         }
@@ -139,9 +140,12 @@
           "mention_count": 9,
           "first_ts_s": 735,
           "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.08,
+          "quote": "AMD 要去轉嫁他在晶圓代工被漲的 10%，把這個價格轉出去",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -149,25 +153,28 @@
       ]
     },
     {
-      "ticker": "BABA",
-      "display_name": "阿里巴巴",
+      "ticker": "CRWD",
+      "display_name": "CRWD",
       "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/BABA",
+      "yahoo_url": "https://finance.yahoo.com/quote/CRWD",
       "episode_count": 1,
-      "mention_total": 1,
-      "first_seen": "2026-09-19",
-      "last_seen": "2026-09-19",
+      "mention_total": 0,
+      "first_seen": "2026-09-16",
+      "last_seen": "2026-09-16",
       "timeline": [
         {
-          "ep_number": 698,
-          "slug": "0698",
-          "published_at": "2026-09-19",
-          "mention_count": 1,
-          "first_ts_s": 529,
-          "stance": "mentioned",
-          "stances": [],
+          "ep_number": 697,
+          "slug": "0697",
+          "published_at": "2026-09-16",
+          "mention_count": null,
+          "first_ts_s": 1735,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
           "jev_prob": null,
-          "quote": null,
+          "quote": "最新 CrowdStrike 推出的一些方案，說其實不用最尖端的東西也可以把資安做好",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -175,12 +182,41 @@
       ]
     },
     {
-      "ticker": "META",
-      "display_name": "Meta",
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
       "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/META",
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
       "episode_count": 1,
-      "mention_total": 1,
+      "mention_total": 4,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 4,
+          "first_ts_s": 1739,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.09,
+          "quote": "我們上集聊到 Google 在 Goldman Sachs 的會議上提到的東西",
+          "px_1d": -0.0126,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "display_name": "輝達",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/NVDA",
+      "episode_count": 1,
+      "mention_total": 0,
       "first_seen": "2026-09-19",
       "last_seen": "2026-09-19",
       "timeline": [
@@ -188,12 +224,44 @@
           "ep_number": 698,
           "slug": "0698",
           "published_at": "2026-09-19",
-          "mention_count": 1,
-          "first_ts_s": 729,
+          "mention_count": null,
+          "first_ts_s": 943,
           "stance": "mentioned",
-          "stances": [],
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
           "jev_prob": null,
-          "quote": null,
+          "quote": "NVIDIA 的賣法是一個 set 一起出去，AIC 收到的東西是漲價的",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "ORCL",
+      "display_name": "ORCL",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/ORCL",
+      "episode_count": 1,
+      "mention_total": 0,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": null,
+          "first_ts_s": 1453,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "不用出錢的魔術：客戶預付、客戶自帶硬體，再加上供應商融資",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -215,12 +283,15 @@
           "slug": "0697",
           "published_at": "2026-09-16",
           "mention_count": 4,
-          "first_ts_s": 2822,
+          "first_ts_s": 2775,
           "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.43,
+          "quote": "百事生可樂真的超好喝，日本人把啤酒釀造的過濾技術移植到可樂",
+          "px_1d": -0.0051,
           "px_5d": null,
           "px_21d": null
         }
@@ -241,38 +312,15 @@
           "slug": "0696",
           "published_at": "2026-09-12",
           "mention_count": 1,
-          "first_ts_s": 1273,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ]
-    },
-    {
-      "ticker": "TSM",
-      "display_name": "台積電 ADR",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
-      "episode_count": 1,
-      "mention_total": 1,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-12",
-      "timeline": [
-        {
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 1,
-          "first_ts_s": 784,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
-          "px_1d": null,
+          "first_ts_s": 1270,
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.07,
+          "quote": "可以想像高通在後面扮演的角色，一定就是慢慢的被擠掉",
+          "px_1d": 0.0425,
           "px_5d": null,
           "px_21d": null
         }
@@ -293,11 +341,14 @@
           "slug": "0696",
           "published_at": "2026-09-12",
           "mention_count": 1,
-          "first_ts_s": 1152,
+          "first_ts_s": 1140,
           "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.21,
+          "quote": "它畢竟要去跟鴻海拆帳，所以股價也相對難掌握",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -305,12 +356,12 @@
       ]
     },
     {
-      "ticker": "TW:6239",
-      "display_name": "力成",
+      "ticker": "TW:3376",
+      "display_name": "TW:3376",
       "market": "TW",
-      "yahoo_url": "https://finance.yahoo.com/quote/6239.TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/3376.TW",
       "episode_count": 1,
-      "mention_total": 2,
+      "mention_total": 0,
       "first_seen": "2026-09-12",
       "last_seen": "2026-09-12",
       "timeline": [
@@ -318,12 +369,15 @@
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
-          "mention_count": 2,
-          "first_ts_s": 1353,
-          "stance": "mentioned",
-          "stances": [],
+          "mention_count": null,
+          "first_ts_s": 1193,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
           "jev_prob": null,
-          "quote": null,
+          "quote": "它是 major share，只是毛利好像沒有，蘋果壓得蠻嚴格的",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -345,11 +399,14 @@
           "slug": "0696",
           "published_at": "2026-09-12",
           "mention_count": 2,
-          "first_ts_s": 2225,
-          "stance": "mentioned",
-          "stances": [],
-          "jev_prob": null,
-          "quote": null,
+          "first_ts_s": 2356,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.57,
+          "quote": "這個 idea 是蠻好的，重點還是要看有多少客戶會去採用",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null

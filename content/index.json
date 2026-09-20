@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T21:36:23.248Z",
+  "generated_at": "2026-09-20T21:42:46.280Z",
   "episode_count": 3,
   "coverage": {
     "from": "2026-09-12",
@@ -13,31 +13,38 @@
       "published_at": "2026-09-19",
       "duration_s": 3148,
       "site_title": "股癌 EP698 重點筆記",
-      "summary_answer_first": null,
-      "has_summary": false,
+      "summary_answer_first": "這集反駁 CCL 與記憶體「降規」的恐慌：他認為高速訊號還是需要好板材，降規只是短期利空；對做板材、記憶體與 AI 硬體供應鏈的人最相關。",
+      "has_summary": true,
       "top_tickers": [
         {
           "ticker": "AMD",
           "display_name": "超微",
-          "stance": "mentioned"
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
         },
         {
-          "ticker": "GOOGL",
-          "display_name": "Alphabet",
-          "stance": "mentioned"
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
         },
         {
-          "ticker": "BABA",
-          "display_name": "阿里巴巴",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "META",
-          "display_name": "Meta",
-          "stance": "mentioned"
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
         }
       ],
-      "mention_total": 4
+      "mention_total": 3
     },
     {
       "ep_number": 697,
@@ -45,23 +52,35 @@
       "published_at": "2026-09-16",
       "duration_s": 2997,
       "site_title": "股癌 EP697 重點筆記",
-      "summary_answer_first": null,
-      "has_summary": false,
+      "summary_answer_first": "這集拆 Anthropic 那篇要求管制前沿模型的文章：他讀成監管捕獲，並認為驗證與監控反而會吃掉更多算力；對做 AI 硬體與資安的人最相關。",
+      "has_summary": true,
       "top_tickers": [
         {
           "ticker": "PEP",
           "display_name": "百事",
-          "stance": "mentioned"
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
         },
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
-          "stance": "mentioned"
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
         },
         {
-          "ticker": "GOOGL",
-          "display_name": "Alphabet",
-          "stance": "mentioned"
+          "ticker": "CRWD",
+          "display_name": "CRWD",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
         }
       ],
       "mention_total": 3
@@ -72,36 +91,83 @@
       "published_at": "2026-09-12",
       "duration_s": 3151,
       "site_title": "股癌 EP696 重點筆記",
-      "summary_answer_first": null,
-      "has_summary": false,
+      "summary_answer_first": "這集拆蘋果折疊機的定價與供應鏈、Oracle 的融資循環，以及 AI 基建卡在電力與地方政治；對追消費電子與 AI 基建供應鏈的人最相關。",
+      "has_summary": true,
       "top_tickers": [
         {
           "ticker": "AAPL",
           "display_name": "蘋果",
-          "stance": "mentioned"
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
         },
         {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
-          "stance": "mentioned"
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
         },
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
-          "stance": "mentioned"
-        },
-        {
-          "ticker": "TW:6239",
-          "display_name": "力成",
-          "stance": "mentioned"
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
         },
         {
           "ticker": "TW:8299",
           "display_name": "群聯",
-          "stance": "mentioned"
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "TW:2317",
+          "display_name": "鴻海",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "QCOM",
+          "display_name": "高通",
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "TW:3376",
+          "display_name": "TW:3376",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人"
         }
       ],
-      "mention_total": 8
+      "mention_total": 9
     }
   ]
 }

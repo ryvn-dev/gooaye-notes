@@ -21,6 +21,7 @@ export type Mention = {
   stances: Stance[];
   jev_prob: number | null;
   jev_question: string | null;
+  speaker: string | null;
   quote: string | null;
   t: number | null;
   yahoo_url: string;
@@ -47,7 +48,8 @@ export type Episode = {
   segment_tags: string[];
   topics: string[];
   mentions: Mention[];
-  transcript: string | null;
+  ep_inferred?: boolean;
+  transcript: { t: number; text: string }[] | null;
   transcript_available: boolean;
   provenance: Record<string, string | null>;
 };
@@ -60,7 +62,7 @@ export type IndexEntry = {
   site_title: string;
   summary_answer_first: string | null;
   has_summary: boolean;
-  top_tickers: { ticker: string; display_name: string; stance: Stance }[];
+  top_tickers: { ticker: string; display_name: string; stance: Stance; stances: Stance[]; speaker: string | null }[];
   mention_total: number;
 };
 
@@ -81,6 +83,7 @@ export type TickerRow = {
     first_ts_s: number;
     stance: Stance;
     stances: Stance[];
+    speaker: string | null;
     jev_prob: number | null;
     quote: string | null;
     px_1d: number | null;
@@ -110,6 +113,10 @@ export const minutes = (s: number) => Math.round(s / 60);
 
 export const stancesOf = (m: { stance: Stance; stances?: Stance[] }): Stance[] =>
   m.stances && m.stances.length > 0 ? m.stances : [m.stance];
+
+export const speakerLabel = (s: string | null) => s ?? '主持人';
+
+export const STANCE_ORDER: Stance[] = ['bullish', 'bearish', 'neutral', 'mentioned'];
 
 export const pct = (v: number | null) => (v === null ? '—' : `${v > 0 ? '+' : ''}${v.toFixed(1)}%`);
 

@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { FAQPage, BreadcrumbList, WithContext } from 'schema-dts';
-import { getTickers, getIndex, findTicker, tickerSlug, mmss, pct, STANCE, stancesOf } from '@/lib/content';
+import { getTickers, getIndex, findTicker, tickerSlug, mmss, pct, speakerLabel, STANCE, STANCE_ORDER, stancesOf } from '@/lib/content';
+import StanceTagRow from '@/components/StanceTagRow';
 import Disclaimer from '@/components/Disclaimer';
 import AdSlot from '@/components/AdSlot';
 import { site, abs } from '@/lib/site';
@@ -116,10 +117,28 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
 
       <AdSlot id="ticker-below-timeline" />
 
+      <h2 className="mt-8 text-lg font-bold">哪幾集看多、哪幾集看空</h2>
+      <ul className="mt-2 space-y-2">
+        {STANCE_ORDER.map((st) => {
+          const rows = t.timeline.filter((r) => stancesOf(r).includes(st));
+          return (
+            <li key={st} className="flex flex-wrap items-baseline gap-2">
+              <span className={`rounded-full px-2 py-0.5 text-sm ${STANCE[st].cls}`}>{STANCE[st].label}</span>
+              <span className="text-sm tabular-nums text-slate-500 dark:text-slate-400">{rows.length} 集</span>
+              {rows.map((r) => (
+                <Link key={r.slug} href={`/gooaye/${r.slug}/`} className="text-[15px] underline underline-offset-2">
+                  EP{r.ep_number}
+                </Link>
+              ))}
+            </li>
+          );
+        })}
+      </ul>
+
       <h2 className="mt-8 text-lg font-bold">提及時間線</h2>
-      <ul className="mt-3 space-y-3">
+      <ul className="mt-3 divide-y divide-slate-200 dark:divide-slate-800">
         {t.timeline.map((r) => (
-          <li key={r.slug} className="rounded-xl border border-slate-200 p-3 dark:border-slate-800">
+          <li key={r.slug} className="py-4">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
               <Link href={`/gooaye/${r.slug}/`} className="font-semibold underline underline-offset-2">
                 EP{r.ep_number}
@@ -136,6 +155,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
                   {STANCE[s].label}
                 </span>
               ))}
+              <span className="text-sm text-slate-500 dark:text-slate-400">{speakerLabel(r.speaker)}</span>
               <span className="text-sm text-slate-500 dark:text-slate-400">
                 Jev 讀法 {r.jev_prob === null ? '—' : `${Math.round(r.jev_prob * 100)}%`}
               </span>

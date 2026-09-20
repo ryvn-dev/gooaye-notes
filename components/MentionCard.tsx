@@ -1,18 +1,19 @@
 import Link from 'next/link';
-import { mmss, pct, tickerSlug, type Mention } from '@/lib/content';
+import { mmss, pct, speakerLabel, tickerSlug, type Mention } from '@/lib/content';
 import StanceChips from '@/components/StanceChips';
 import TimecodeButton from '@/components/TimecodeButton';
 
 export default function MentionCard({ m }: { m: Mention }) {
   const code = m.ticker.replace('TW:', '');
   return (
-    <li className="rounded-xl border border-slate-200 p-3 dark:border-slate-800">
+    <li className="py-4">
       <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
         <Link href={`/ticker/${tickerSlug(m.ticker)}/`} className="text-[17px] font-semibold underline underline-offset-2">
           {m.display_name}
         </Link>
         <span className="font-mono text-sm text-slate-500 dark:text-slate-400">{code}</span>
         <StanceChips stance={m.stance} stances={m.stances} />
+        <span className="text-sm text-slate-500 dark:text-slate-400">{speakerLabel(m.speaker)}</span>
         <span className="ml-auto text-sm text-slate-500 dark:text-slate-400">提到 {m.mention_count} 次</span>
       </div>
 

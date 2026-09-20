@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import type { PodcastEpisode, BreadcrumbList, WithContext } from 'schema-dts';
 import { getIndex, getEpisode, mmss, minutes } from '@/lib/content';
 import MentionCard from '@/components/MentionCard';
+import StanceTagRow from '@/components/StanceTagRow';
 import AudioPlayer from '@/components/AudioPlayer';
 import TimecodeButton from '@/components/TimecodeButton';
 import AdSlot from '@/components/AdSlot';
@@ -17,6 +18,10 @@ export function generateStaticParams() {
 
 const answerFirst = (ep: ReturnType<typeof getEpisode>) => {
   if (ep.summary_answer_first) return ep.summary_answer_first;
+  return null;
+};
+
+const metaLine = (ep: ReturnType<typeof getEpisode>) => {
   const shown = ep.mentions.filter((m) => !m.needs_review);
   if (shown.length === 0) {
     return `股癌 EP${ep.ep_number} 於 ${ep.published_at} 發布，全長 ${minutes(ep.duration_s)} 分鐘。本集的自動抽取沒有抓到任何個股代號，因此本頁只有音檔與集數資訊。`;
@@ -35,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = top.length
     ? `股癌 EP${ep.ep_number} 重點筆記｜提到 ${top.join('、')}`
     : `股癌 EP${ep.ep_number} 重點筆記`;
-  const description = answerFirst(ep).slice(0, 155);
+  const description = (answerFirst(ep) ?? metaLine(ep)).slice(0, 155);
   const url = abs(`/gooaye/${slug}/`);
   return {
     title,
@@ -64,7 +69,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
     datePublished: ep.published_at,
     timeRequired: `PT${Math.round(ep.duration_s / 60)}M`,
     url: abs(`/gooaye/${slug}/`),
-    description: answerFirst(ep),
+    description: answerFirst(ep) ?? metaLine(ep),
     partOfSeries: { '@type': 'PodcastSeries', name: '股癌', url: ep.source_url },
     ...(ep.audio_url ? { associatedMedia: { '@type': 'MediaObject', contentUrl: ep.audio_url } } : {}),
   };
@@ -93,13 +98,20 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       <h1 className="mt-2 text-2xl font-bold leading-snug">股癌 EP{ep.ep_number} 重點筆記</h1>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        <time dateTime={ep.published_at}>{ep.published_at}</time> · {minutes(ep.duration_s)} 分鐘 ·
-        集號由發布日推定（節目為週三、週六各一集）
+        <time dateTime={ep.published_at}>{ep.published_at}</time> · {minutes(ep.duration_s)} 分鐘
+        {ep.ep_inferred ? ' · 集號為推定' : ''}
       </p>
 
-      <section className="mt-4 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
-        <h2 className="sr-only">這一集在講什麼</h2>
-        <p>{answerFirst(ep)}</p>
+      <section className="mt-4">
+        <h2 className="text-lg font-bold">立場標籤</h2>
+        <div className="mt-2">
+          <StanceTagRow items={shown} />
+        </div>
+      </section>
+
+      <section className="mt-4">
+        <h2 className="sr-only">一句摘要</h2>
+        <p>{answerFirst(ep) ?? '一句摘要待補'}</p>
       </section>
 
 
@@ -110,8 +122,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         <p className="mt-2">{ep.summary}</p>
       ) : (
         <p className="mt-2 rounded-lg border border-dashed border-slate-300 p-4 text-slate-500 dark:border-slate-700 dark:text-slate-400">
-          AI 摘要待補。這一集的摘要還沒產出，這裡不會先放一段猜的文字；
-          下面的提及紀錄與時間碼是機器量出來的，可以直接用。
+          AI 摘要待補。
         </p>
       )}
 
@@ -144,13 +155,11 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       <h2 className="mt-8 text-lg font-bold">本集提到的個股</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        [observed] 次數與時間碼由自動轉寫抽出。立場、Jev 讀法、原話、提到後 1／5／21 日
-        這四欄的真資料還沒接上，<strong>沒有的東西一律顯示「待補」，不填假值</strong>。
-        這裡是紀錄，不是勝率，也不是建議。
+        [observed] 次數與時間碼由自動轉寫抽出。缺值一律顯示「待補」，不填估計值。
       </p>
 
       {shown.length > 0 ? (
-        <ul className="mt-3 space-y-3">
+        <ul className="mt-3 divide-y divide-slate-200 dark:divide-slate-800">
           {shown.map((m) => (
             <MentionCard key={m.ticker} m={m} />
           ))}
@@ -182,19 +191,21 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       )}
 
       <h2 className="mt-8 text-lg font-bold">全文逐字稿</h2>
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">逐字稿為 AI 轉錄，可能有錯。</p>
       {ep.transcript_available && ep.transcript ? (
         <details className="mt-2 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
-          <summary className="cursor-pointer font-medium">展開全文（機器轉寫，可能有錯）</summary>
-          <div className="mt-3 whitespace-pre-wrap text-[15px] leading-relaxed">{ep.transcript}</div>
+          <summary className="cursor-pointer font-medium">展開全文（{ep.transcript.length} 段）</summary>
+          <div className="mt-3 space-y-3">
+            {ep.transcript.map((seg) => (
+              <div key={seg.t} className="flex gap-2">
+                <TimecodeButton seconds={seg.t} label={mmss(seg.t)} />
+                <p className="text-[15px] leading-relaxed">{seg.text}</p>
+              </div>
+            ))}
+          </div>
         </details>
       ) : (
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-          本站目前不收錄全文逐字稿（版權邊界待拍板）。要聽原句請用上面的時間碼回到音檔，或到{' '}
-          <a href={ep.source_url} className="underline underline-offset-2" rel="noopener nofollow">
-            節目官方頁面
-          </a>
-          。
-        </p>
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">全文待補。</p>
       )}
 
       <nav className="mt-8 flex justify-between gap-4 border-t border-slate-200 pt-4 text-[15px] dark:border-slate-800">

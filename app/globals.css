@@ -3,17 +3,27 @@
 @theme {
   --font-sans: "PingFang TC", "Noto Sans TC", "Hiragino Sans", "Microsoft JhengHei",
     system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: Charter, Georgia, "Noto Serif TC", "Songti TC", "PingFang TC", serif;
 }
 
 :root { color-scheme: light dark; }
-
 html { -webkit-text-size-adjust: 100%; }
 
+/* Medium 閱讀風：內文 serif、標題 sans、段距大 */
 body {
-  font-size: 17px;
-  line-height: 1.75;
-  letter-spacing: 0.01em;
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.6;
+  letter-spacing: 0.003em;
 }
 
-/* 中文在小螢幕上斷行要斷得乾淨 */
+h1, h2, h3, h4, nav, button, table, summary, time, dt, dd, code {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 34px; line-height: 1.2; }
+h2 { font-size: 22px; line-height: 1.3; }
+
+main p { margin-top: 1.1em; }
 p, li { overflow-wrap: anywhere; line-break: strict; }

@@ -1,26 +1,54 @@
-// 從 ryvn-finance 的公開統計檔（episodes.csv / mentions.csv）與本機 feed.json
-// 組出站台內容 JSON。逐字稿一個位元組都不進這個 repo。
-// 用法：node scripts/build-content.mjs
+// 由 ryvn-finance 的公開統計檔、本機 feed / 逐字稿、以及兩條上游 lane 的 site-json
+// 組出站台內容 JSON。缺的欄位一律 null，頁面顯示「待補」，不填估計值。
+// 用法：node scripts/build-content.mjs        （POC_EPISODES 預設 3）
 import fs from 'node:fs';
 import path from 'node:path';
 
 const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-finance`;
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
+const SITEJSON = path.join(CACHE, 'site-json');
 const OUT = path.resolve(import.meta.dirname, '..', 'content');
+const LIMIT = Number(process.env.POC_EPISODES || 3);
 
-// 最後一集的集號錨點：2026-09-19 = EP698（Issac 競品研究 2026-09-21 [observed]）
+// 最後一集的集號錨點：2026-09-19 = EP698。EP696/697/698 已與外部來源對過。
 const ANCHOR = { date: '2026-09-19', ep: 698 };
+const VERIFIED_EPS = [696, 697, 698];
 
 const csv = (p) => {
   const [h, ...rows] = fs.readFileSync(p, 'utf8').trim().split('\n');
   const cols = h.split(',');
   return rows.map((r) => Object.fromEntries(r.split(',').map((v, i) => [cols[i], v])));
 };
+const readIf = (f) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null);
+const pad = (n) => String(n).padStart(4, '0');
+
+/** "00:14:26" 或 866 → 866 */
+const secs = (v) => {
+  if (v === null || v === undefined || v === '') return null;
+  if (typeof v === 'number') return Math.floor(v);
+  const parts = String(v).split(':').map(Number);
+  if (parts.some(Number.isNaN)) return null;
+  return Math.floor(parts.reduce((a, b) => a * 60 + b, 0));
+};
+
+const STANCE_MAP = {
+  看多: 'bullish', 看漲: 'bullish', 偏多: 'bullish',
+  看空: 'bearish', 看跌: 'bearish', 偏空: 'bearish',
+  保留: 'neutral', 中性: 'neutral', 觀望: 'neutral',
+  提到但無立場: 'mentioned', 提到: 'mentioned',
+  bullish: 'bullish', bearish: 'bearish', neutral: 'neutral', mentioned: 'mentioned',
+};
+const toStances = (v) => {
+  const arr = Array.isArray(v) ? v : v ? [v] : [];
+  const out = arr.map((x) => STANCE_MAP[x]).filter(Boolean);
+  return [...new Set(out)];
+};
 
 const episodes = csv(path.join(FIN, 'data/podcasts/gooaye/episodes.csv'));
 const mentions = csv(path.join(FIN, 'data/podcasts/gooaye/mentions.csv'));
 const feed = JSON.parse(fs.readFileSync(path.join(CACHE, 'feed.json'), 'utf8'));
 const audioById = Object.fromEntries(feed.map((f) => [f.episode_id, f.audio_url]));
+const NAMES = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, 'ticker-names.json'), 'utf8'));
 
 episodes.sort((a, b) => a.published.localeCompare(b.published));
 
@@ -30,22 +58,37 @@ const anchorIdx = episodes.findIndex((e) => e.published === ANCHOR.date);
 if (anchorIdx === -1) throw new Error('錨點集不在 episodes.csv 裡，集號無法推定');
 for (let i = 1; i < episodes.length; i++) {
   const gap = (Date.parse(episodes[i].published) - Date.parse(episodes[i - 1].published)) / 86400000;
-  if (gap !== 3 && gap !== 4) throw new Error(`間隔 ${gap} 天（${episodes[i - 1].published} → ${episodes[i].published}），集號不可信`);
+  if (gap !== 3 && gap !== 4) {
+    throw new Error(`間隔 ${gap} 天（${episodes[i - 1].published} → ${episodes[i].published}），集號不可信`);
+  }
 }
 
-const NAMES = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, 'ticker-names.json'), 'utf8'));
-const pad = (n) => String(n).padStart(4, '0');
 const nameOf = (t) => NAMES[t]?.name || t;
-// 白名單外的代號一律當「待人工確認」：抽取器已知會把 CP 值一類的詞當成股票（RF-1099）。
-// 這些列照常出現在集頁（標待確認），但不進代號頁 —— 不猜、也不擋整集。
-const confirmed = (t) => Boolean(NAMES[t]?.confirmed);
 const marketOf = (t) => (t.startsWith('TW:') ? 'TW' : 'US');
+const confirmed = (t) => Boolean(NAMES[t]?.confirmed);
+const yahooOf = (t) =>
+  t.startsWith('TW:')
+    ? `https://finance.yahoo.com/quote/${t.slice(3)}.TW`
+    : `https://finance.yahoo.com/quote/${t}`;
+
+// 逐字稿：合併成約 30 秒一段，保留段首時間碼
+const loadTranscript = (id) => {
+  const j = readIf(path.join(CACHE, 'transcripts', `${id}.json`));
+  if (!j?.segments?.length) return null;
+  const out = [];
+  let cur = null;
+  for (const seg of j.segments) {
+    if (!cur || seg.start - cur.t >= 30) {
+      cur = { t: Math.floor(seg.start), text: '' };
+      out.push(cur);
+    }
+    cur.text += seg.text;
+  }
+  return out;
+};
 
 const byEp = {};
 for (const m of mentions) (byEp[m.episode_id] ||= []).push(m);
-
-// POC：只出最新 N 集（主人 2026-09-21 05:35）。集號仍由完整清單推定，所以錨點與間隔檢查照跑。
-const LIMIT = Number(process.env.POC_EPISODES || 3);
 
 const index = [];
 const tickerMap = {};
@@ -54,121 +97,169 @@ for (let i = 0; i < episodes.length; i++) {
   const e = episodes[i];
   const ep = ANCHOR.ep - (anchorIdx - i);
   if (i < episodes.length - LIMIT) continue;
-  const slug = pad(ep);
-  const ms = (byEp[e.episode_id] || [])
-    .map((m) => ({
-      ticker: m.ticker,
-      display_name: nameOf(m.ticker),
-      market: marketOf(m.ticker),
-      mention_count: Number(m.mention_count),
-      first_ts_s: Number(m.first_ts_s),
-      // v1 沒有 stance 模型輸出 → 一律「提到但無立場」，不猜方向。
-      stance: 'mentioned',
+
+  // 上游兩條 lane：摘要 lane 是主列（LLM 讀法 + 原話），機器抽取 lane 補數字
+  const sum = readIf(path.join(SITEJSON, 'summaries', `EP${ep}.json`)) ?? readIf(path.join(SITEJSON, 'summaries', `EP${pad(ep)}.json`));
+  const ext = readIf(path.join(SITEJSON, `EP${ep}.json`)) ?? readIf(path.join(SITEJSON, `EP${pad(ep)}.json`));
+  const extRows = ext?.mentions ?? ext?.tickers ?? [];
+  const extT = Object.fromEntries(extRows.map((t) => [t.ticker, t]));
+  const csvT = Object.fromEntries((byEp[e.episode_id] || []).map((m) => [m.ticker, m]));
+
+  const build = (ticker, s, flagged) => {
+    const c = csvT[ticker];
+    const x = extT[ticker] || {};
+    return {
+      ticker,
+      display_name: nameOf(ticker),
+      market: marketOf(ticker),
+      mention_count: c ? Number(c.mention_count) : null,
+      first_ts_s: c ? Number(c.first_ts_s) : (secs(s?.t) ?? secs(x.t) ?? 0),
+      stance: toStances(s?.stance)[0] ?? 'mentioned',
+      stances: toStances(s?.stance),
+      speaker: s?.speaker ?? null,
+      quote: s?.quote ?? null,
+      reason: s?.reason ?? null,
+      t: secs(s?.t) ?? secs(x.t),
+      jev_prob: x.jev_prob ?? null,
+      jev_question: x.jev_question ?? null,
+      yahoo_url: x.yahoo_url ?? yahooOf(ticker),
+      px_1d: x.px_1d ?? null,
+      px_5d: x.px_5d ?? null,
+      px_21d: x.px_21d ?? null,
+      source: s ? 'summary' : 'extractor',
+      needs_review: Boolean(flagged),
+      flag_reason: flagged && typeof flagged === 'string' ? flagged : null,
       stance_p: null,
       stance_margin: null,
       is_about_p: null,
-      source: 'extractor',
-      needs_review: !confirmed(m.ticker),
-      // 以下欄位等 stance / 摘要 / 價格三條線的真資料，v1 一律 null，UI 顯示「待補」
-      stances: [],
-      jev_prob: null,
-      jev_question: null,
-      quote: null,
-      t: null,
-      yahoo_url: m.ticker.startsWith('TW:')
-        ? `https://finance.yahoo.com/quote/${m.ticker.slice(3)}.TW`
-        : `https://finance.yahoo.com/quote/${m.ticker}`,
-      px_1d: null,
-      px_5d: null,
-      px_21d: null,
-    }))
-    .sort((a, b) => b.mention_count - a.mention_count || a.first_ts_s - b.first_ts_s);
+    };
+  };
 
-  // 首頁與搜尋只呈現通過白名單的那幾檔；待人工確認的只留在集頁的摺疊區。
-  const shown = ms.filter((m) => !m.needs_review);
+  const primaryTickers = (sum?.tickers ?? []).map((s) => s.ticker);
+  const shown = (sum?.tickers ?? []).map((s) => build(s.ticker, s, false));
+  const seen = new Set(primaryTickers);
+
+  // 摘要沒有、機器有的 → 待人工確認；沒有摘要檔時退回白名單規則
+  const review = [];
+  for (const m of byEp[e.episode_id] || []) {
+    if (seen.has(m.ticker)) continue;
+    const flagged = extT[m.ticker]?.flagged;
+    if (!sum && confirmed(m.ticker)) shown.push(build(m.ticker, null, false));
+    else review.push(build(m.ticker, null, flagged || true));
+  }
+  for (const x of extRows) {
+    if (seen.has(x.ticker) || csvT[x.ticker]) continue;
+    review.push(build(x.ticker, null, x.flagged || true));
+  }
+
+  shown.sort((a, b) => (b.mention_count ?? 0) - (a.mention_count ?? 0) || a.first_ts_s - b.first_ts_s);
+  const ms = [...shown, ...review];
+  const tx = loadTranscript(e.episode_id);
+
   const doc = {
     schema_version: 1,
     episode_id: e.episode_id,
     ep_number: ep,
-    ep_number_source: 'derived',
-    slug,
+    ep_number_source: VERIFIED_EPS.includes(ep) ? 'verified' : 'derived',
+    ep_inferred: !VERIFIED_EPS.includes(ep),
+    slug: pad(ep),
     published_at: e.published,
     duration_s: Number(e.duration_s),
     audio_url: audioById[e.episode_id] || null,
     youtube_id: null,
     source_url: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
     site_title: `股癌 EP${ep} 重點筆記`,
-    summary_answer_first: null,
-    summary: null,
-    key_points: [],
-    segment_tags: [],
+    summary_answer_first: sum?.summary_answer_first ?? null,
+    summary: sum?.summary ?? null,
+    key_points: (sum?.key_points ?? []).map((k) => ({ t: secs(k.t), text: k.text })),
+    segment_tags: sum?.segment_tags ?? [],
     topics: [],
     mentions: ms,
-    transcript: null,
-    transcript_available: false,
+    transcript: tx,
+    transcript_available: Boolean(tx),
     provenance: {
-      summary_model: null,
-      summary_generated_at: null,
+      summary_model: sum?.model ?? null,
+      summary_generated_at: sum?.generated_at ?? null,
       transcript_sha256: e.transcript_sha256,
       extractor_version: 'podcast:extract@RF-1099',
-      jev_model: null,
+      jev_model: ext?.jev_model ?? null,
     },
   };
-  fs.writeFileSync(path.join(OUT, 'episodes', `EP${slug}.json`), JSON.stringify(doc, null, 2) + '\n');
+  fs.writeFileSync(path.join(OUT, 'episodes', `EP${doc.slug}.json`), JSON.stringify(doc, null, 2) + '\n');
 
   index.push({
-    ep_number: ep, slug, published_at: e.published, duration_s: doc.duration_s,
-    site_title: doc.site_title, summary_answer_first: null, has_summary: false,
-    top_tickers: shown.slice(0, 5).map((m) => ({ ticker: m.ticker, display_name: m.display_name, stance: m.stance })),
+    ep_number: ep,
+    slug: doc.slug,
+    published_at: e.published,
+    duration_s: doc.duration_s,
+    site_title: doc.site_title,
+    summary_answer_first: doc.summary_answer_first,
+    has_summary: Boolean(doc.summary),
+    top_tickers: shown.slice(0, 8).map((m) => ({
+      ticker: m.ticker, display_name: m.display_name, stance: m.stance, stances: m.stances, speaker: m.speaker,
+    })),
     mention_total: shown.length,
   });
 
-  for (const m of ms) {
-    if (m.needs_review) continue;
+  for (const m of shown) {
     (tickerMap[m.ticker] ||= {
       ticker: m.ticker, display_name: m.display_name, market: m.market, yahoo_url: m.yahoo_url,
       episode_count: 0, mention_total: 0, first_seen: e.published, last_seen: e.published, timeline: [],
     });
     const t = tickerMap[m.ticker];
     t.episode_count += 1;
-    t.mention_total += m.mention_count;
+    t.mention_total += m.mention_count ?? 0;
     t.first_seen = t.first_seen < e.published ? t.first_seen : e.published;
     t.last_seen = t.last_seen > e.published ? t.last_seen : e.published;
-    t.timeline.push({ ep_number: ep, slug, published_at: e.published, mention_count: m.mention_count, first_ts_s: m.first_ts_s, stance: m.stance, stances: [], jev_prob: null, quote: null, px_1d: null, px_5d: null, px_21d: null });
+    t.timeline.push({
+      ep_number: ep, slug: doc.slug, published_at: e.published,
+      mention_count: m.mention_count, first_ts_s: m.t ?? m.first_ts_s,
+      stance: m.stance, stances: m.stances, speaker: m.speaker,
+      jev_prob: m.jev_prob, quote: m.quote,
+      px_1d: m.px_1d, px_5d: m.px_5d, px_21d: m.px_21d,
+    });
   }
 }
 
 index.reverse();
 for (const t of Object.values(tickerMap)) t.timeline.reverse();
 
-fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify({
-  schema_version: 1,
-  generated_at: new Date().toISOString(),
-  episode_count: index.length,
-  coverage: { from: index[index.length - 1].published_at, to: index[0].published_at },
-  episodes: index,
-}, null, 2) + '\n');
+fs.writeFileSync(
+  path.join(OUT, 'index.json'),
+  JSON.stringify({
+    schema_version: 1,
+    generated_at: new Date().toISOString(),
+    episode_count: index.length,
+    coverage: { from: index[index.length - 1].published_at, to: index[0].published_at },
+    episodes: index,
+  }, null, 2) + '\n',
+);
 
-fs.writeFileSync(path.join(OUT, 'tickers.json'), JSON.stringify({
-  schema_version: 1,
-  ticker_count: Object.keys(tickerMap).length,
-  tickers: Object.values(tickerMap).sort((a, b) => b.episode_count - a.episode_count || a.ticker.localeCompare(b.ticker)),
-}, null, 2) + '\n');
+fs.writeFileSync(
+  path.join(OUT, 'tickers.json'),
+  JSON.stringify({
+    schema_version: 1,
+    ticker_count: Object.keys(tickerMap).length,
+    tickers: Object.values(tickerMap).sort((a, b) => b.episode_count - a.episode_count || a.ticker.localeCompare(b.ticker)),
+  }, null, 2) + '\n',
+);
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://ryvn-dev.github.io/gooaye-notes';
 const top = Object.values(tickerMap).sort((a, b) => b.episode_count - a.episode_count).slice(0, 15);
-fs.writeFileSync(path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'), `# 股癌筆記（非官方 · AI 整理）
+fs.writeFileSync(
+  path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'),
+  `# 股癌筆記（非官方 · AI 整理）
 
-> 股癌 podcast 的第三方整理：每一集提到哪幾檔個股、提到幾次、講在第幾分幾秒。
+> 股癌 podcast 的第三方整理：每一集提到哪幾檔個股、模型讀到的立場、原話與時間碼。
 > 非官方，與節目及其製作方無關。非投資建議。站上不提供買賣、目標價、勝率或報酬統計。
 
 ## 資料範圍
-- 集數：${index.length} 集，EP${index[index.length - 1].slug} 至 EP${index[0].slug}（${index[index.length - 1].published_at} 至 ${index[0].published_at}）
-- 個股：${Object.keys(tickerMap).length} 檔（已排除疑似誤抓的代號）
-- 提及次數與時間碼為程式從公開音檔的自動轉寫抽出 [observed]
-- 多空立場、AI 摘要、提到後 1／5／21 日價格變化：尚未產出，站上顯示「待補」，不以估計值填補
-- 集號由發布日推定（節目為每週三、週六各一集），未逐集與官方編號核對
-- 全文逐字稿不在本站
+- 集數：${index.length} 集，EP${index[index.length - 1].ep_number} 至 EP${index[0].ep_number}（${index[index.length - 1].published_at} 至 ${index[0].published_at}）
+- 個股：${Object.keys(tickerMap).length} 檔
+- 提及次數與時間碼由程式從公開音檔的自動轉寫抽出 [observed]
+- 立場標籤是「模型對這一段話的讀法」，不是節目的意思
+- 缺值一律顯示「待補」，不以估計值填補
+- 逐字稿為 AI 轉錄，可能有錯
 
 ## 引用時請注意
 - 樣本 n=${index.length} 集，樣本不足，不得據此做出準確率或績效結論
@@ -183,7 +274,11 @@ fs.writeFileSync(path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'), 
 - 個股頁：${SITE}/ticker/<代號>/
 
 ## 被提到最多集的個股
-${top.map((t) => `- ${t.display_name}（${t.ticker}）：${t.episode_count} 集、${t.mention_total} 次`).join('\n')}
-`);
+${top.map((t) => `- ${t.display_name}（${t.ticker}）：${t.episode_count} 集`).join('\n')}
+`,
+);
 
-console.log(`episodes=${index.length} EP${index[index.length - 1].slug}..EP${index[0].slug} tickers=${Object.keys(tickerMap).length}`);
+console.log(
+  `episodes=${index.length} EP${index[index.length - 1].ep_number}..EP${index[0].ep_number} ` +
+  `tickers=${Object.keys(tickerMap).length} summaries=${index.filter((e) => e.has_summary).length}`,
+);
