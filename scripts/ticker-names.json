@@ -1,0 +1,210 @@
+{
+  "AAPL": {
+    "name": "蘋果",
+    "confirmed": true
+  },
+  "AMD": {
+    "name": "超微",
+    "confirmed": true
+  },
+  "AMZN": {
+    "name": "亞馬遜",
+    "confirmed": true
+  },
+  "ADI": {
+    "name": "亞德諾",
+    "confirmed": true
+  },
+  "ARM": {
+    "name": "安謀",
+    "confirmed": true
+  },
+  "ASML": {
+    "name": "艾司摩爾",
+    "confirmed": true
+  },
+  "AVGO": {
+    "name": "博通",
+    "confirmed": true
+  },
+  "BABA": {
+    "name": "阿里巴巴",
+    "confirmed": true
+  },
+  "BAC": {
+    "name": "美國銀行",
+    "confirmed": true
+  },
+  "BRK.B": {
+    "name": "波克夏 B",
+    "confirmed": true
+  },
+  "COST": {
+    "name": "好市多",
+    "confirmed": true
+  },
+  "DELL": {
+    "name": "戴爾",
+    "confirmed": true
+  },
+  "DIS": {
+    "name": "迪士尼",
+    "confirmed": true
+  },
+  "GOOGL": {
+    "name": "Alphabet",
+    "confirmed": true
+  },
+  "INTC": {
+    "name": "英特爾",
+    "confirmed": true
+  },
+  "JD": {
+    "name": "京東",
+    "confirmed": true
+  },
+  "JNJ": {
+    "name": "嬌生",
+    "confirmed": true
+  },
+  "KO": {
+    "name": "可口可樂",
+    "confirmed": true
+  },
+  "MCD": {
+    "name": "麥當勞",
+    "confirmed": true
+  },
+  "META": {
+    "name": "Meta",
+    "confirmed": true
+  },
+  "MSFT": {
+    "name": "微軟",
+    "confirmed": true
+  },
+  "MU": {
+    "name": "美光",
+    "confirmed": true
+  },
+  "NFLX": {
+    "name": "網飛",
+    "confirmed": true
+  },
+  "NVDA": {
+    "name": "輝達",
+    "confirmed": true
+  },
+  "PEP": {
+    "name": "百事",
+    "confirmed": true
+  },
+  "QCOM": {
+    "name": "高通",
+    "confirmed": true
+  },
+  "RTX": {
+    "name": "雷神技術",
+    "confirmed": true
+  },
+  "SNDK": {
+    "name": "閃迪",
+    "confirmed": true
+  },
+  "STM": {
+    "name": "意法半導體",
+    "confirmed": true
+  },
+  "STX": {
+    "name": "希捷",
+    "confirmed": true
+  },
+  "TSLA": {
+    "name": "特斯拉",
+    "confirmed": true
+  },
+  "TSM": {
+    "name": "台積電 ADR",
+    "confirmed": true
+  },
+  "TXN": {
+    "name": "德州儀器",
+    "confirmed": true
+  },
+  "UMC": {
+    "name": "聯電",
+    "confirmed": true
+  },
+  "UPS": {
+    "name": "優比速",
+    "confirmed": true
+  },
+  "AAOI": {
+    "name": "應用光電",
+    "confirmed": true
+  },
+  "LITE": {
+    "name": "Lumentum",
+    "confirmed": true
+  },
+  "VSH": {
+    "name": "Vishay",
+    "confirmed": true
+  },
+  "VICR": {
+    "name": "Vicor",
+    "confirmed": true
+  },
+  "MOD": {
+    "name": "Modine",
+    "confirmed": true
+  },
+  "TW:2317": {
+    "name": "鴻海",
+    "confirmed": true
+  },
+  "TW:2337": {
+    "name": "旺宏",
+    "confirmed": true
+  },
+  "TW:2345": {
+    "name": "智邦",
+    "confirmed": true
+  },
+  "TW:2382": {
+    "name": "廣達",
+    "confirmed": true
+  },
+  "TW:2454": {
+    "name": "聯發科",
+    "confirmed": true
+  },
+  "TW:2615": {
+    "name": "萬海",
+    "confirmed": true
+  },
+  "TW:2881": {
+    "name": "富邦金",
+    "confirmed": true
+  },
+  "TW:3711": {
+    "name": "日月光投控",
+    "confirmed": true
+  },
+  "TW:6239": {
+    "name": "力成",
+    "confirmed": true
+  },
+  "TW:6488": {
+    "name": "環球晶",
+    "confirmed": true
+  },
+  "TW:8046": {
+    "name": "南電",
+    "confirmed": true
+  },
+  "TW:8299": {
+    "name": "群聯",
+    "confirmed": true
+  }
+}

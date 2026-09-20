@@ -1,0 +1,27 @@
+{
+  "name": "gooaye-notes",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "content": "node scripts/build-content.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fuse.js": "^7.5.0",
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "schema-dts": "^1.1.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.7.2"
+  }
+}

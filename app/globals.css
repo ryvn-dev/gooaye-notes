@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "PingFang TC", "Noto Sans TC", "Hiragino Sans", "Microsoft JhengHei",
+    system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root { color-scheme: light dark; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* 中文在小螢幕上斷行要斷得乾淨 */
+p, li { overflow-wrap: anywhere; line-break: strict; }
