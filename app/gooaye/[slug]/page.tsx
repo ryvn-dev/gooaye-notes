@@ -107,13 +107,18 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       <div className="divider" />
 
-      {ep.summary && <p>{ep.summary}</p>}
+      {ep.summary && (
+        <>
+          <h2 className="mt-8">摘要</h2>
+          <p>{ep.summary}</p>
+        </>
+      )}
 
       <AdSlot id="episode-mid" />
 
       {ep.key_points.length > 0 && (
         <>
-          <h2 className="mt-8">重點整理</h2>
+          <h2 className="mt-8">重點</h2>
           <ul className="mt-3 space-y-2">
             {ep.key_points.map((k) => (
               <li key={k.text} className="flex gap-2">
@@ -137,7 +142,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       {shown.length > 0 && (
         <>
-          <h2 className="mt-8">本集提到的個股</h2>
+          <h2 className="mt-8">相關個股</h2>
           <table className="mt-3 w-full border-collapse text-[16px]">
             <tbody>
               {shown.map((m) => (
@@ -150,7 +155,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       {ep.transcript_available && ep.transcript && (
         <>
-          <h2 className="mt-10">全文</h2>
+          <h2 className="mt-10">逐字稿</h2>
           <div className="mt-3 space-y-3">
             {ep.transcript.map((seg, i) => (
               <div key={i} className="flex gap-2">

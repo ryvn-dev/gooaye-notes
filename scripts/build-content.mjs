@@ -97,7 +97,7 @@ for (let i = 0; i < episodes.length; i++) {
   const extT = Object.fromEntries(extRows.map((t) => [t.ticker, t]));
   const csvT = Object.fromEntries((byEp[e.episode_id] || []).map((m) => [m.ticker, m]));
 
-  const JEV_MIN = 0.66;
+  const JEV_MIN = 0.7;
   const jevStance = (x) => {
     const st = toStances(x.jev_stance);
     if (!st.length) return { stances: [], p: null };
@@ -259,14 +259,14 @@ fs.writeFileSync(
   path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'),
   `# 股癌筆記（非官方 · AI 整理）
 
-> 股癌 Podcast 逐字稿與個人筆記：地端 AI 重點整理、每集提到的個股與看多看空、原話與時間碼。
+> 股癌 Podcast 逐字稿與個人筆記：每一集的重點、相關個股與看多看空、原話與可跳播的段落。
 > 非官方，與節目及其製作方無關。非投資建議。站上不提供買賣、目標價、勝率或報酬統計。
 
 ## 資料範圍
 - 集數：${index.length} 集，EP${index[index.length - 1].ep_number} 至 EP${index[0].ep_number}（${index[index.length - 1].published_at} 至 ${index[0].published_at}）
 - 個股：${Object.keys(tickerMap).length} 檔
-- 提及次數與時間碼由地端 AI 從公開音檔整理
-- 立場是地端 AI 對那一段話的讀法，不是節目的意思
+- 內容整理自節目的公開音檔
+- 立場是模型對那一段話的讀法，不是節目的意思
 - 缺的欄位顯示「—」，不以估計值填補
 - 逐字稿為社群整理，可能有錯
 
