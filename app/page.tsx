@@ -53,14 +53,20 @@ export default function Home() {
           <li key={e.slug}>
             <article className="py-5">
               <Link href={`/gooaye/${e.slug}/`} className="block">
-                <div className="flex items-baseline gap-2 text-sm text-slate-500 dark:text-slate-400">
-                  <span className="font-mono tabular-nums">EP{Number(e.slug)}</span>
+                <div className="flex items-center gap-2 text-sm text-[#6b6b6b] dark:text-[#a3a3a3]">
+                  <span className="grid h-5 w-5 place-items-center rounded-full bg-slate-700 text-[10px] font-bold text-white">
+                    股
+                  </span>
+                  <span>主持人</span>
+                  <span>·</span>
                   <time dateTime={e.published_at}>{e.published_at}</time>
-                  <span>{minutes(e.duration_s)} 分鐘</span>
                 </div>
-                <h3 className="mt-1 text-lg font-semibold">{e.site_title}</h3>
-                <p className="mt-1 text-[15px] text-slate-600 dark:text-slate-300">
+                <h3 className="mt-1 text-[20px] font-bold leading-snug">{e.site_title}</h3>
+                <p className="mt-1 text-[16px] text-[#6b6b6b] dark:text-[#a3a3a3]">
                   {e.summary_answer_first ?? '一句摘要待補'}
+                </p>
+                <p className="mt-2 text-sm text-[#6b6b6b] dark:text-[#a3a3a3]">
+                  提及 {e.mention_total} 檔 · {minutes(e.duration_s)} 分鐘
                 </p>
               </Link>
               <div className="mt-2">

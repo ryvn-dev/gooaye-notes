@@ -147,7 +147,9 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
                 {r.published_at}
               </time>
               <span className="font-mono text-sm text-slate-500 dark:text-slate-400">{mmss(r.first_ts_s)} 起</span>
-              <span className="ml-auto text-sm text-slate-500 dark:text-slate-400">{r.mention_count} 次</span>
+              {r.mention_count !== null && (
+                <span className="ml-auto text-sm text-slate-500 dark:text-slate-400">{r.mention_count} 次</span>
+              )}
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-2">
               {stancesOf(r).map((s) => (

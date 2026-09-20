@@ -27,3 +27,34 @@ h2 { font-size: 22px; line-height: 1.3; }
 
 main p { margin-top: 1.1em; }
 p, li { overflow-wrap: anywhere; line-break: strict; }
+
+/* Medium 亮色那套為預設；深色只在系統要求時跟上 */
+:root { color-scheme: light dark; }
+
+body {
+  background: #fff;
+  color: #242424;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+h1 { color: #242424; font-size: 32px; font-weight: 700; }
+h2 { color: #242424; font-weight: 700; }
+
+time, dt { color: #6b6b6b; }
+
+.divider::after {
+  content: "\2022 \2022 \2022";
+  display: block;
+  text-align: center;
+  letter-spacing: 0.6em;
+  color: #b3b3b3;
+  margin: 2rem 0;
+  font-size: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body { background: #0b0b0b; color: #e6e6e6; }
+  h1, h2 { color: #fff; }
+  time, dt { color: #a3a3a3; }
+}

@@ -14,7 +14,11 @@ export default function MentionCard({ m }: { m: Mention }) {
         <span className="font-mono text-sm text-slate-500 dark:text-slate-400">{code}</span>
         <StanceChips stance={m.stance} stances={m.stances} />
         <span className="text-sm text-slate-500 dark:text-slate-400">{speakerLabel(m.speaker)}</span>
-        <span className="ml-auto text-sm text-slate-500 dark:text-slate-400">提到 {m.mention_count} 次</span>
+        {m.mention_count !== null && (
+          <span className="ml-auto whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">
+            提到 {m.mention_count} 次
+          </span>
+        )}
       </div>
 
       <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">

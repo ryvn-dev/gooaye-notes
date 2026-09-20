@@ -25,7 +25,7 @@ export const viewport = { width: 'device-width', initialScale: 1 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-Hant-TW">
-      <body className="bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+      <body className="antialiased">
         <header className="border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto flex max-w-[680px] items-baseline gap-3 px-4 py-4">
             <Link href="/" className="text-xl font-bold tracking-tight">

@@ -96,23 +96,22 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         <span>股癌 EP{ep.ep_number}</span>
       </nav>
 
-      <h1 className="mt-2 text-2xl font-bold leading-snug">股癌 EP{ep.ep_number} 重點筆記</h1>
+      <div className="mt-3">
+        <StanceTagRow items={shown} />
+      </div>
+
+      <h1 className="mt-4 leading-tight">股癌 EP{ep.ep_number} 重點筆記</h1>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        <time dateTime={ep.published_at}>{ep.published_at}</time> · {minutes(ep.duration_s)} 分鐘
-        {ep.ep_inferred ? ' · 集號為推定' : ''}
+        {ep.ep_inferred ? '集號為推定' : ''}
       </p>
 
-      <section className="mt-4">
-        <h2 className="text-lg font-bold">立場標籤</h2>
-        <div className="mt-2">
-          <StanceTagRow items={shown} />
-        </div>
-      </section>
+      <p className="mt-3 text-[20px] text-[#6b6b6b] dark:text-[#a3a3a3]">{answerFirst(ep) ?? '一句摘要待補'}</p>
 
-      <section className="mt-4">
-        <h2 className="sr-only">一句摘要</h2>
-        <p>{answerFirst(ep) ?? '一句摘要待補'}</p>
-      </section>
+      <p className="mt-4 text-sm text-[#6b6b6b] dark:text-[#a3a3a3]">
+        {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time> · 主持人
+      </p>
+
+      <div className="divider" />
 
 
       <AdSlot id="episode-mid" />
@@ -126,6 +125,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         </p>
       )}
 
+      <div className="divider" />
       <h2 className="mt-8 text-lg font-bold">AI 重點整理</h2>
       {ep.key_points.length > 0 ? (
         <ul className="mt-2 space-y-2">
@@ -153,6 +153,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         <p className="mt-2 text-slate-500 dark:text-slate-400">段落標籤待補。</p>
       )}
 
+      <div className="divider" />
       <h2 className="mt-8 text-lg font-bold">本集提到的個股</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         [observed] 次數與時間碼由自動轉寫抽出。缺值一律顯示「待補」，不填估計值。
