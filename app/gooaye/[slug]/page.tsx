@@ -121,7 +121,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
           <h2 className="mt-8">重點</h2>
           <ul className="mt-3 space-y-2">
             {ep.key_points.map((k) => (
-              <li key={k.text} className="flex gap-2">
+              <li key={k.text} className="flex items-start gap-2">
                 {k.t !== null && <TimecodeButton seconds={k.t} />}
                 <span>{k.text}</span>
               </li>
@@ -140,6 +140,20 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         </ul>
       )}
 
+      {ep.transcript_available && ep.transcript && (
+        <>
+          <h2 className="mt-10">逐字稿</h2>
+          <div className="mt-3 space-y-3">
+            {ep.transcript.map((seg, i) => (
+              <div key={i} className="flex items-start gap-2">
+                {seg.t !== null ? <TimecodeButton seconds={seg.t} /> : <span className="w-5 shrink-0" />}
+                <p className="m-0 text-[17px] leading-8">{seg.text}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
       {shown.length > 0 && (
         <>
           <h2 className="mt-8">相關個股</h2>
@@ -150,20 +164,6 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
               ))}
             </tbody>
           </table>
-        </>
-      )}
-
-      {ep.transcript_available && ep.transcript && (
-        <>
-          <h2 className="mt-10">逐字稿</h2>
-          <div className="mt-3 space-y-3">
-            {ep.transcript.map((seg, i) => (
-              <div key={i} className="flex gap-2">
-                {seg.t !== null ? <TimecodeButton seconds={seg.t} /> : <span className="w-6 shrink-0" />}
-                <p className="m-0 text-[17px] leading-8">{seg.text}</p>
-              </div>
-            ))}
-          </div>
         </>
       )}
 
