@@ -34,3 +34,14 @@ NEXT_PUBLIC_BASE_PATH= npm run dev   # 本機開發（不帶子路徑）
 
 目前 `content/` 只放最新 3 集（`POC_EPISODES=3`，主人 2026-09-21 拍）。
 要回補更多集：`POC_EPISODES=52 npm run content`。
+
+## 字體
+
+`public/fonts/huninn-subset.woff2` 是 jf open 粉圓（jf-openhuninn v2.1，SIL OFL 1.1）子集化後的版本：
+Big5 常用字 ＋ 目前內容用到的字，5,620 字、1.1 MB。要重新產生：
+
+```bash
+python3 -m fontTools.subset jf-openhuninn-2.1.ttf --text-file=chars.txt \
+  --flavor=woff2 --layout-features='*' --no-hinting --desubroutinize \
+  --output-file=public/fonts/huninn-subset.woff2
+```

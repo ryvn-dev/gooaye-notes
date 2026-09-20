@@ -4,6 +4,7 @@ import './globals.css';
 import SiteHeader from '@/components/SiteHeader';
 import BottomNav from '@/components/BottomNav';
 import { site, abs } from '@/lib/site';
+import { huninn } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -32,7 +33,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-Hant-TW">
+    <html lang="zh-Hant-TW" className={huninn.variable}>
       <body className="antialiased">
         <script
           type="application/ld+json"

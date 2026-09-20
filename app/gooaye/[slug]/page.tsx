@@ -99,7 +99,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       <h1 className="mt-4 leading-tight">股癌 EP{ep.ep_number} 重點筆記</h1>
 
-      <p className="mt-3 text-[18px] leading-8 text-[#6b6b6b]">{answerFirst(ep) ?? ''}</p>
+      <p className="mt-3 text-[16px] leading-7 text-[#6b6b6b]">{answerFirst(ep) ?? ''}</p>
 
       <p className="mt-4 text-[13px] text-[#6b6b6b]">
         {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time>
@@ -147,7 +147,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
             {ep.transcript.map((seg, i) => (
               <div key={i} className="flex items-start gap-2">
                 {seg.t !== null ? <TimecodeButton seconds={seg.t} /> : <span className="w-5 shrink-0" />}
-                <p className="m-0 text-[17px] leading-8">{seg.text}</p>
+                <p className="m-0 text-[16px] leading-8">{seg.text}</p>
               </div>
             ))}
           </div>
