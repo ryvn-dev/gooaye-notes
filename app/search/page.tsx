@@ -33,7 +33,7 @@ export default function SearchPage() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold">搜尋</h1>
+      <h1>搜尋</h1>
       <p className="mt-2 text-[15px] text-slate-600 dark:text-slate-300">
         目前可以搜集號、日期、個股名與代號。逐字稿不在本站，因此搜不到節目內文。
       </p>

@@ -170,7 +170,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       )}
 
       {review.length > 0 && (
-        <details className="mt-6 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+        <details className="mt-6 border-y border-slate-200 py-4 dark:border-slate-800">
           <summary className="cursor-pointer font-medium">
             待人工確認：{review.length} 個可能是誤抓的代號
           </summary>
@@ -194,7 +194,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       <h2 className="mt-8 text-lg font-bold">全文逐字稿</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">逐字稿為 AI 轉錄，可能有錯。</p>
       {ep.transcript_available && ep.transcript ? (
-        <details className="mt-2 rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+        <details className="mt-2 border-y border-slate-200 py-4 dark:border-slate-800">
           <summary className="cursor-pointer font-medium">展開全文（{ep.transcript.length} 段）</summary>
           <div className="mt-3 space-y-3">
             {ep.transcript.map((seg) => (

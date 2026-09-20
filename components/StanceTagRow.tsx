@@ -17,7 +17,7 @@ export default function StanceTagRow({ items }: { items: Item[] }) {
         b.items.map((i) => (
           <li
             key={`${b.stance}-${i.ticker}`}
-            className={`inline-flex items-baseline gap-1 rounded-full px-2.5 py-1 text-[15px] ${STANCE[b.stance].cls}`}
+            className={`inline-flex items-baseline gap-1 rounded-full px-2.5 py-0.5 text-[14px] ${STANCE[b.stance].cls}`}
           >
             <span className="font-medium">{STANCE[b.stance].label}</span>
             <span>{i.display_name}</span>

@@ -86,7 +86,7 @@ export default function Home() {
           <li key={t.ticker}>
             <Link
               href={`/ticker/${tickerSlug(t.ticker)}/`}
-              className="inline-flex items-baseline gap-1.5 rounded-full border border-slate-300 px-3 py-1.5 text-[15px] hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
+              className="inline-flex items-baseline gap-1.5 border border-slate-300 px-3 py-1.5 text-[15px] hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-900"
             >
               <span className="font-medium">{t.display_name}</span>
               <span className="font-mono text-sm tabular-nums text-slate-500 dark:text-slate-400">{t.episode_count} 集</span>

@@ -93,7 +93,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
         </a>
       </p>
 
-      <section className="mt-4 rounded-xl bg-slate-50 p-4 dark:bg-slate-900">
+      <section className="mt-4">
         <h2 className="text-base font-bold">股癌最近怎麼看 {t.display_name}？</h2>
         <p className="mt-1">{answer}</p>
       </section>
@@ -105,7 +105,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
           ['最早', t.first_seen],
           ['最近', t.last_seen],
         ].map(([k, v]) => (
-          <div key={k} className="rounded-lg border border-slate-200 p-3 dark:border-slate-800">
+          <div key={k} className="border border-slate-200 p-3 dark:border-slate-800">
             <dt className="text-sm text-slate-500 dark:text-slate-400">{k}</dt>
             <dd className="text-lg font-semibold tabular-nums">{v}</dd>
           </div>

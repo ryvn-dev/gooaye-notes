@@ -31,7 +31,7 @@ export default function SearchClient({ docs }: { docs: SearchDoc[] }) {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="輸入集號、個股名或代號，例如 輝達、NVDA、EP698"
-        className="w-full rounded-xl border border-slate-300 px-4 py-3 text-[17px] outline-none focus:border-slate-500 dark:border-slate-700 dark:bg-slate-900"
+        className="w-full border border-slate-300 px-4 py-3 text-[17px] outline-none focus:border-slate-500 dark:border-slate-700 dark:bg-slate-900"
       />
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
         {q.trim() ? `${hits.length} 筆結果` : `共 ${docs.length} 筆可搜尋（集數與個股）。全文逐字稿不在本站，搜不到內文。`}
