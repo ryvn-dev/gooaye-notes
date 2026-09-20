@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
-import SecondaryNav from '@/components/SecondaryNav';
 import SiteHeader from '@/components/SiteHeader';
 import BottomNav from '@/components/BottomNav';
 import { site, abs } from '@/lib/site';
@@ -49,7 +48,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <SiteHeader />
-        <SecondaryNav active="" />
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
         <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
           <p>
