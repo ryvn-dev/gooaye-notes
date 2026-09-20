@@ -47,8 +47,8 @@ export default function Home() {
       ))}
     </ul>
     <p className="mt-8 text-[13px] leading-7 text-[#6b6b6b]">
-      股癌 Podcast 的個人筆記：每一集用地端 AI 做重點整理，列出提到的個股、看多看空與原話時間碼，
-      點一下就能跳回那一段自己聽。
+      股癌 Podcast 的個人筆記：每一集整理成重點、相關個股與看多看空，附上原話與可跳播的段落，
+      點一下就能回到那一段自己聽。
     </p>
     </>
   );

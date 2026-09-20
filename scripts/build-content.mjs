@@ -257,7 +257,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://ryvn-dev.github.io/goo
 const top = Object.values(tickerMap).sort((a, b) => b.episode_count - a.episode_count).slice(0, 15);
 fs.writeFileSync(
   path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'),
-  `# 股癌筆記（非官方 · AI 整理）
+  `# 股癌筆記（非官方個人筆記）
 
 > 股癌 Podcast 逐字稿與個人筆記：每一集的重點、相關個股與看多看空、原話與可跳播的段落。
 > 非官方，與節目及其製作方無關。非投資建議。站上不提供買賣、目標價、勝率或報酬統計。
