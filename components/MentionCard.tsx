@@ -34,9 +34,9 @@ export default function MentionCard({ m }: { m: Mention }) {
         {m.quote ? `「${m.quote.slice(0, 60)}」` : '原話待補'}
       </p>
 
-      <dl className="mt-2 flex gap-4 text-sm text-slate-500 dark:text-slate-400">
+      <dl className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-400">
         {(['px_1d', 'px_5d', 'px_21d'] as const).map((k, i) => (
-          <div key={k} className="flex gap-1">
+          <div key={k} className="flex gap-1 whitespace-nowrap">
             <dt>提到後 {[1, 5, 21][i]} 日</dt>
             <dd className="font-mono tabular-nums">{m[k] === null ? '待補' : pct(m[k])}</dd>
           </div>
