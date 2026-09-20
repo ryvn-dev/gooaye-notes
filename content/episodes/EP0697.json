@@ -1,5 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "show": "gooaye",
+  "show_name": "股癌",
   "episode_id": "gooaye-2026-09-16-164f4a64",
   "ep_number": 697,
   "ep_number_source": "feed",
@@ -10,9 +12,9 @@
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/eb3399a6-5fd2-4191-a7ae-b7ab77ec2358/rssFileVip.mp3?timestamp=1789584979542",
   "youtube_id": null,
   "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
-  "feed_title": "EP697 🔥",
-  "site_title": "股癌 EP697 🔥 重點筆記",
-  "summary_answer_first": "簡單說：他覺得 Anthropic 那篇是監管捕獲。就是用法規擋住後面想進來的人。真要做驗證和監控，反而更吃算力。",
+  "feed_title": "EP697 | 🔥",
+  "site_title": "EP697 | 🔥",
+  "summary_answer_first": "他覺得 Anthropic 那篇是監管捕獲。就是用法規擋住後面想進來的人。真要做驗證和監控，反而更吃算力。",
   "summary": "開場聊出差日本、小孩大哭這些生活小事。他說做功能性訓練後，抽血數字變好看。市場這段，盤面低波動，像死掉一半。抽籤凍結的錢放出來，是短線變數。美股那邊，那斯達克跑到盤整區下緣，偏弱。主軸是 Anthropic 執行長那篇長文。文章三千八百字。他要求管制前沿技術進步的速度。文章出來隔天，費半跌 6%。資安股反而逆勢噴 13%。他的讀法是監管捕獲。領先的人用合規成本，擋住後面的人。馬斯克的算盤不一樣，別人慢下來他才追得上。對齊就是讓它照人的意思做事。他舉 OpenAI 當例子。講好給對齊兩成預算，最後只給一兩%。結論是硬體不該跟著跌。資料消毒、第三方重考、危險能力測試，每一關都吃算力。對齊考試還要重考上千次。訓練也許慢一點，推論和監控用得更多。",
   "key_points": [
     {
@@ -82,9 +84,9 @@
       "market": "US",
       "mention_count": 4,
       "first_ts_s": 2822,
-      "stance": "bullish",
+      "stance": "mentioned",
       "stances": [
-        "bullish"
+        "mentioned"
       ],
       "speaker": "主持人",
       "quote": "百事生可樂真的超好喝，日本人把啤酒釀造的過濾技術移植到可樂",
@@ -109,9 +111,9 @@
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1232,
-      "stance": "bullish",
+      "stance": "mentioned",
       "stances": [
-        "bullish"
+        "mentioned"
       ],
       "speaker": "主持人",
       "quote": "在 Tesla 或 SpaceX 或 xAI 的馬斯克這邊，我覺得他打的算盤是另外一個",

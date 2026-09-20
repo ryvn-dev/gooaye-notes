@@ -1,12 +1,5 @@
-import type { Metadata } from 'next';
-import type { PodcastEpisode, BreadcrumbList, WithContext } from 'schema-dts';
-import { getIndex, getEpisode, minutes } from '@/lib/content';
-import MentionCard from '@/components/MentionCard';
-import StanceTagRow from '@/components/StanceTagRow';
-import AudioPlayer from '@/components/AudioPlayer';
-import TimecodeButton from '@/components/TimecodeButton';
-import AdSlot from '@/components/AdSlot';
-import { site, abs } from '@/lib/site';
+import { getIndex } from '@/lib/content';
+import Redirect from '@/components/Redirect';
 
 export const dynamicParams = false;
 
@@ -14,154 +7,11 @@ export function generateStaticParams() {
   return getIndex().episodes.map((e) => ({ slug: e.slug }));
 }
 
-const answerFirst = (ep: ReturnType<typeof getEpisode>) => {
-  if (ep.summary_answer_first) return ep.summary_answer_first;
-  return null;
-};
+export const metadata = { robots: { index: false, follow: true } };
 
-const metaLine = (ep: ReturnType<typeof getEpisode>) => {
-  const shown = ep.mentions.filter((m) => !m.needs_review);
-  if (shown.length === 0) {
-    return `股癌 EP${ep.ep_number}（${ep.published_at}，${minutes(ep.duration_s)} 分鐘）的重點筆記與播放器。`;
-  }
-  const top = shown
-    .slice(0, 3)
-    .map((m) => m.display_name)
-    .join('、');
-  return `股癌 EP${ep.ep_number}（${ep.published_at}）提到 ${top}，附原話與時間碼，可以直接跳著聽。`;
-};
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+/** 舊網址 /gooaye/<集號>/：保留成轉址頁，sitemap 只列新的 /p/<節目>/<集號>/。 */
+export default async function LegacyEpisode({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const ep = getEpisode(slug);
-  const top = ep.mentions.filter((m) => !m.needs_review).slice(0, 3).map((m) => m.display_name);
-  const title = top.length
-    ? `${ep.site_title}｜提到 ${top.join('、')}`
-    : ep.site_title;
-  const description = (answerFirst(ep) ?? metaLine(ep)).slice(0, 155);
-  const url = abs(`/gooaye/${slug}/`);
-  return {
-    title,
-    description,
-    alternates: { canonical: url },
-    openGraph: { type: 'article', url, title, description, siteName: site.name, locale: 'zh_TW', publishedTime: ep.published_at },
-    twitter: { card: 'summary', title, description },
-  };
-}
-
-export default async function EpisodePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const ep = getEpisode(slug);
-  const shown = ep.mentions.filter((m) => !m.needs_review);
-
-  const episodeLd: WithContext<PodcastEpisode> = {
-    '@context': 'https://schema.org',
-    '@type': 'PodcastEpisode',
-    name: `股癌 EP${ep.ep_number}`,
-    episodeNumber: ep.ep_number,
-    datePublished: ep.published_at,
-    timeRequired: `PT${Math.round(ep.duration_s / 60)}M`,
-    url: abs(`/gooaye/${slug}/`),
-    description: answerFirst(ep) ?? metaLine(ep),
-    partOfSeries: { '@type': 'PodcastSeries', name: '股癌', url: ep.source_url },
-    ...(ep.audio_url ? { associatedMedia: { '@type': 'MediaObject', contentUrl: ep.audio_url } } : {}),
-  };
-
-  const crumbLd: WithContext<BreadcrumbList> = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: site.name, item: abs('/') },
-      { '@type': 'ListItem', position: 2, name: `股癌 EP${ep.ep_number}`, item: abs(`/gooaye/${slug}/`) },
-    ],
-  };
-
-  return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
-
-      <div>
-        <StanceTagRow items={shown} max={4} />
-      </div>
-
-      <h1 className="mt-4 leading-tight">{ep.site_title}</h1>
-
-      <p className="mt-3 text-[16px] leading-7 text-[#6b6b6b]">{answerFirst(ep) ?? ''}</p>
-
-      <p className="mt-4 text-[13px] text-[#6b6b6b]">
-        {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time>
-      </p>
-
-      <div className="divider" />
-
-      {ep.summary && (
-        <>
-          <h2 className="mt-8">摘要</h2>
-          <p>{ep.summary}</p>
-        </>
-      )}
-
-      <AdSlot id="episode-mid" />
-
-      {ep.key_points.length > 0 && (
-        <>
-          <h2 className="mt-8">重點</h2>
-          <ul className="mt-3 space-y-2">
-            {ep.key_points.map((k) => (
-              <li key={k.text} className="flex items-start gap-2">
-                {k.t !== null && <TimecodeButton seconds={k.t} />}
-                <span>{k.text}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-
-      {ep.segment_tags.length > 0 && (
-        <ul className="mt-6 flex flex-wrap gap-1.5">
-          {ep.segment_tags.map((t) => (
-            <li key={t} className="rounded-full border border-[#e5e5e5] px-2.5 py-0.5 text-[13px]">
-              {t}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {ep.transcript_available && ep.transcript && (
-        <>
-          <h2 className="mt-10">逐字稿</h2>
-          <div className="mt-3 space-y-3">
-            {ep.transcript.map((seg, i) => (
-              <div key={i} className="flex items-start gap-2">
-                {seg.t !== null ? <TimecodeButton seconds={seg.t} /> : <span className="w-5 shrink-0" />}
-                <p className="m-0 text-[16px] leading-8">{seg.text}</p>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
-
-      {shown.length > 0 && (
-        <>
-          <h2 className="mt-8">相關個股</h2>
-          <table className="mt-3 w-full border-collapse text-[16px]">
-            <tbody>
-              {shown.map((m) => (
-                <MentionCard key={m.ticker} m={m} />
-              ))}
-            </tbody>
-          </table>
-        </>
-      )}
-
-
-
-      {ep.audio_url ? (
-        <AudioPlayer src={ep.audio_url} title={ep.feed_title ?? `股癌 EP${ep.ep_number}`} />
-      ) : (
-        <p className="mt-4 text-[#6b6b6b]">音檔暫時抓不到。</p>
-      )}
-    </>
-  );
+  const e = getIndex().episodes.find((x) => x.slug === slug);
+  return <Redirect to={`/p/${e?.show ?? 'gooaye'}/${slug}/`} />;
 }

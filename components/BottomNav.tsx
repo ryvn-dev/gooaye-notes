@@ -47,7 +47,7 @@ export default function BottomNav() {
                 href={href}
                 aria-label={label}
                 className="flex h-14 flex-col items-center justify-center gap-0.5"
-                style={{ color: active ? '#242424' : '#9a9a9a' }}
+                style={{ color: active ? '#242424' : '#767676' }}
               >
                 <Icon size={20} strokeWidth={1.75} aria-hidden />
                 <span className="text-[10px]">{label}</span>

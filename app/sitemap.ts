@@ -6,13 +6,14 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const idx = getIndex();
+  const latest = idx.episodes[0]?.published_at;
   return [
-    { url: abs('/'), changeFrequency: 'daily', priority: 1 },
-    { url: abs('/ticker/'), changeFrequency: 'daily', priority: 0.8 },
+    { url: abs('/'), lastModified: latest, changeFrequency: 'daily', priority: 1 },
+    { url: abs('/ticker/'), lastModified: latest, changeFrequency: 'daily', priority: 0.8 },
     { url: abs('/search/'), changeFrequency: 'monthly', priority: 0.3 },
     { url: abs('/about/'), changeFrequency: 'monthly', priority: 0.3 },
     ...idx.episodes.map((e) => ({
-      url: abs(`/gooaye/${e.slug}/`),
+      url: abs(`/p/${e.show}/${e.slug}/`),
       lastModified: e.published_at,
       changeFrequency: 'monthly' as const,
       priority: 0.7,

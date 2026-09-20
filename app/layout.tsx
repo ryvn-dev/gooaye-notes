@@ -7,7 +7,7 @@ import { huninn } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: site.name, template: `%s｜${site.name}` },
+  title: { default: site.name, template: `%s - ${site.name}` },
   description: site.description,
   alternates: { canonical: '/' },
   openGraph: {
@@ -47,6 +47,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+        <div id="site-bar" className="fixed inset-x-0 top-0 z-40 h-12 border-b border-[#e5e5e5] bg-white">
+          <div className="mx-auto flex h-full max-w-[680px] items-center px-4">
+            <Link href="/" className="text-[20px] font-bold tracking-tight text-[#242424]">
+              {site.name}
+            </Link>
+          </div>
+        </div>
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
         <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
           <p>地端 AI 模型與站主自我判斷，仍有可能出錯。非投資建議。</p>

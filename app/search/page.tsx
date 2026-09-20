@@ -16,7 +16,7 @@ export default function SearchPage() {
   const docs: SearchDoc[] = [
     ...idx.episodes.map((e) => ({
       kind: 'episode' as const,
-      href: `/gooaye/${e.slug}/`,
+      href: `/p/${e.show}/${e.slug}/`,
       title: `股癌 EP${e.ep_number} 重點筆記`,
       sub: `${e.published_at} · 抽到 ${e.mention_total} 檔 · ${e.top_tickers.map((t) => t.display_name).join('、')}`,
       keywords: `EP${e.ep_number} ${e.published_at} ${e.top_tickers.map((t) => `${t.ticker} ${t.display_name}`).join(' ')}`,

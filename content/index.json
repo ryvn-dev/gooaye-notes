@@ -1,20 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T22:25:48.306Z",
-  "episode_count": 3,
+  "generated_at": "2026-09-20T22:43:42.940Z",
+  "episode_count": 6,
   "coverage": {
-    "from": "2026-09-12",
+    "from": "2026-08-26",
     "to": "2026-09-19"
   },
   "episodes": [
     {
+      "show": "gooaye",
+      "show_name": "股癌",
       "ep_number": 698,
       "slug": "0698",
       "published_at": "2026-09-19",
       "duration_s": 3148,
-      "feed_title": "EP698 🎮",
-      "site_title": "股癌 EP698 🎮 重點筆記",
-      "summary_answer_first": "簡單說：他覺得降規只是短期利空。高速訊號還是得用好板材。",
+      "feed_title": "EP698 | 🎮",
+      "site_title": "EP698 | 🎮",
+      "summary_answer_first": "他覺得降規只是短期利空。高速訊號還是得用好板材。",
       "has_summary": true,
       "top_tickers": [
         {
@@ -48,30 +50,32 @@
       "mention_total": 3
     },
     {
+      "show": "gooaye",
+      "show_name": "股癌",
       "ep_number": 697,
       "slug": "0697",
       "published_at": "2026-09-16",
       "duration_s": 2997,
-      "feed_title": "EP697 🔥",
-      "site_title": "股癌 EP697 🔥 重點筆記",
-      "summary_answer_first": "簡單說：他覺得 Anthropic 那篇是監管捕獲。就是用法規擋住後面想進來的人。真要做驗證和監控，反而更吃算力。",
+      "feed_title": "EP697 | 🔥",
+      "site_title": "EP697 | 🔥",
+      "summary_answer_first": "他覺得 Anthropic 那篇是監管捕獲。就是用法規擋住後面想進來的人。真要做驗證和監控，反而更吃算力。",
       "has_summary": true,
       "top_tickers": [
         {
           "ticker": "PEP",
           "display_name": "百事",
-          "stance": "bullish",
+          "stance": "mentioned",
           "stances": [
-            "bullish"
+            "mentioned"
           ],
           "speaker": "主持人"
         },
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
-          "stance": "bullish",
+          "stance": "mentioned",
           "stances": [
-            "bullish"
+            "mentioned"
           ],
           "speaker": "主持人"
         },
@@ -88,15 +92,35 @@
       "mention_total": 3
     },
     {
+      "show": "gooaye",
+      "show_name": "股癌",
       "ep_number": 696,
       "slug": "0696",
       "published_at": "2026-09-12",
       "duration_s": 3151,
-      "feed_title": "EP696 🎖️",
-      "site_title": "股癌 EP696 🎖️ 重點筆記",
-      "summary_answer_first": "簡單說：蘋果折疊機定價比想像便宜。Oracle 靠客戶先付錢撐業績。電力和執照卡住，資料中心蓋不下去。",
+      "feed_title": "EP696 | 🎖️",
+      "site_title": "EP696 | 🎖️",
+      "summary_answer_first": "蘋果折疊機定價比想像便宜。Oracle 靠客戶先付錢撐業績。電力和執照卡住，資料中心蓋不下去。",
       "has_summary": true,
       "top_tickers": [
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
@@ -107,11 +131,29 @@
           "speaker": "主持人"
         },
         {
+          "ticker": "TW:8299",
+          "display_name": "群聯",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人"
+        },
+        {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
-          "stance": "bullish",
+          "stance": "mentioned",
           "stances": [
-            "bullish"
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "TW:2317",
+          "display_name": "鴻海",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
           ],
           "speaker": "主持人"
         },
@@ -132,18 +174,153 @@
             "neutral"
           ],
           "speaker": "主持人"
+        }
+      ],
+      "mention_total": 9
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 693,
+      "slug": "0693",
+      "published_at": "2026-09-02",
+      "duration_s": 2984,
+      "feed_title": "EP693 | 🍖",
+      "site_title": "EP693 | 🍖",
+      "summary_answer_first": "NVIDIA 和 Google 策略投資聯發科。市場當成利多。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "TW:2454",
+          "display_name": "聯發科",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
         },
         {
-          "ticker": "ORCL",
-          "display_name": "ORCL",
-          "stance": "neutral",
+          "ticker": "AVGO",
+          "display_name": "博通",
+          "stance": "bullish",
           "stances": [
-            "neutral"
+            "bullish"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "AMD",
+          "display_name": "超微",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "MU",
+          "display_name": "美光",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "TW:3661",
+          "display_name": "TW:3661",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
           ],
           "speaker": "主持人"
         }
       ],
-      "mention_total": 5
+      "mention_total": 7
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 692,
+      "slug": "0692",
+      "published_at": "2026-08-29",
+      "duration_s": 2999,
+      "feed_title": "EP692 | 🍺",
+      "site_title": "EP692 | 🍺",
+      "summary_answer_first": "軟體不會被整鍋端。供應鏈卡好位的公司才是贏家。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "MRVL",
+          "display_name": "MRVL",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人"
+        }
+      ],
+      "mention_total": 3
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 691,
+      "slug": "0691",
+      "published_at": "2026-08-26",
+      "duration_s": 2994,
+      "feed_title": "EP691 | 🎂",
+      "site_title": "EP691 | 🎂",
+      "summary_answer_first": "工具幫他省了看財報的時間。盤感還是得自己看盤。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人"
+        }
+      ],
+      "mention_total": 1
     }
   ]
 }

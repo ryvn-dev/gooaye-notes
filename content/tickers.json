@@ -1,7 +1,214 @@
 {
   "schema_version": 1,
-  "ticker_count": 9,
+  "ticker_count": 18,
   "tickers": [
+    {
+      "ticker": "NVDA",
+      "display_name": "輝達",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/NVDA",
+      "episode_count": 4,
+      "mention_total": 1,
+      "first_seen": "2026-08-26",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": null,
+          "first_ts_s": 943,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "NVIDIA 的賣法是一個 set 一起出去，AIC 收到的東西是漲價的",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 1,
+          "first_ts_s": 701,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.17,
+          "quote": "絕大多數的份額就是被輝達給拿走了",
+          "px_1d": 0.018,
+          "px_5d": -0.0258,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": null,
+          "first_ts_s": 1439,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "其實 NVIDIA 它都有一個非常強大的採購地位，它 secure 超級多的產能",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 691,
+          "slug": "0691",
+          "published_at": "2026-08-26",
+          "mention_count": null,
+          "first_ts_s": 1506,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.46,
+          "quote": "可能像前陣子跟大家講說這個輝達的 Power 的白皮書",
+          "px_1d": 0.0874,
+          "px_5d": 0.0704,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
+      "episode_count": 3,
+      "mention_total": 17,
+      "first_seen": "2026-08-29",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 4,
+          "first_ts_s": 1739,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.09,
+          "quote": "我們上集聊到 Google 在 Goldman Sachs 的會議上提到的東西",
+          "px_1d": -0.0126,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 9,
+          "first_ts_s": 878,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.14,
+          "quote": "大家看到 Google 也有進來，可能會想說這個合作跟 Google 有沒有什麼關係",
+          "px_1d": 0.0159,
+          "px_5d": -0.0128,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": 4,
+          "first_ts_s": 1101,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.58,
+          "quote": "可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
+          "px_1d": -0.0128,
+          "px_5d": -0.0023,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "display_name": "超微",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/AMD",
+      "episode_count": 2,
+      "mention_total": 10,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": 9,
+          "first_ts_s": 735,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.08,
+          "quote": "AMD 要去轉嫁他在晶圓代工被漲的 10%，把這個價格轉出去",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 1,
+          "first_ts_s": 974,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.19,
+          "quote": "大家第一個想像就是受害的可能就是 GPGPU，像是 NVIDIA 或是 AMD 這類的業者",
+          "px_1d": -0.002,
+          "px_5d": 0.1018,
+          "px_21d": null
+        }
+      ]
+    },
     {
       "ticker": "TSLA",
       "display_name": "特斯拉",
@@ -13,14 +220,16 @@
       "last_seen": "2026-09-16",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 697,
           "slug": "0697",
           "published_at": "2026-09-16",
           "mention_count": 1,
           "first_ts_s": 1216,
-          "stance": "bullish",
+          "stance": "mentioned",
           "stances": [
-            "bullish"
+            "mentioned"
           ],
           "speaker": "主持人",
           "jev_prob": 0.47,
@@ -30,6 +239,8 @@
           "px_21d": null
         },
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
@@ -59,6 +270,8 @@
       "last_seen": "2026-09-19",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 698,
           "slug": "0698",
           "published_at": "2026-09-19",
@@ -76,14 +289,16 @@
           "px_21d": null
         },
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
           "mention_count": 1,
           "first_ts_s": 779,
-          "stance": "bullish",
+          "stance": "mentioned",
           "stances": [
-            "bullish"
+            "mentioned"
           ],
           "speaker": "主持人",
           "jev_prob": 0.61,
@@ -95,30 +310,63 @@
       ]
     },
     {
-      "ticker": "AMD",
-      "display_name": "超微",
+      "ticker": "AAPL",
+      "display_name": "蘋果",
       "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/AMD",
+      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
       "episode_count": 1,
-      "mention_total": 9,
-      "first_seen": "2026-09-19",
-      "last_seen": "2026-09-19",
+      "mention_total": 13,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
       "timeline": [
         {
-          "ep_number": 698,
-          "slug": "0698",
-          "published_at": "2026-09-19",
-          "mention_count": 9,
-          "first_ts_s": 735,
-          "stance": "mentioned",
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 13,
+          "first_ts_s": 1064,
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": 0.08,
-          "quote": "AMD 要去轉嫁他在晶圓代工被漲的 10%，把這個價格轉出去",
-          "px_1d": null,
+          "quote": "它用更強大的 UI/UX 去包裝，結果價格只有稍微貴一點點，我認為它的銷量會很不錯",
+          "px_1d": -0.0052,
           "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "display_name": "博通",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/AVGO",
+      "episode_count": 1,
+      "mention_total": 12,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 12,
+          "first_ts_s": 1434,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.47,
+          "quote": "我覺得可能還是跟博通有非常深度的 know-how 有很大的一個關係",
+          "px_1d": -0.0274,
+          "px_5d": -0.0175,
           "px_21d": null
         }
       ]
@@ -134,6 +382,8 @@
       "last_seen": "2026-09-16",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 697,
           "slug": "0697",
           "published_at": "2026-09-16",
@@ -153,30 +403,63 @@
       ]
     },
     {
-      "ticker": "NVDA",
-      "display_name": "輝達",
+      "ticker": "MRVL",
+      "display_name": "MRVL",
       "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/NVDA",
+      "yahoo_url": "https://finance.yahoo.com/quote/MRVL",
       "episode_count": 1,
       "mention_total": 0,
-      "first_seen": "2026-09-19",
-      "last_seen": "2026-09-19",
+      "first_seen": "2026-08-29",
+      "last_seen": "2026-08-29",
       "timeline": [
         {
-          "ep_number": 698,
-          "slug": "0698",
-          "published_at": "2026-09-19",
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
           "mention_count": null,
-          "first_ts_s": 943,
+          "first_ts_s": 1141,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "已經蠻多人在前面就賭說 Marvell 的 DSP、或是光通相關的東西，在這一次的電話會議裡面會去做上修",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "MU",
+      "display_name": "美光",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/MU",
+      "episode_count": 1,
+      "mention_total": 1,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 1,
+          "first_ts_s": 1234,
           "stance": "mentioned",
           "stances": [
             "mentioned"
           ],
           "speaker": "主持人",
-          "jev_prob": null,
-          "quote": "NVIDIA 的賣法是一個 set 一起出去，AIC 收到的東西是漲價的",
-          "px_1d": null,
-          "px_5d": null,
+          "jev_prob": 0.42,
+          "quote": "因為前面沒有辦法滿足 NVIDIA 的要求，所以把 base die 丟給 TSM 去做",
+          "px_1d": 0.0022,
+          "px_5d": 0.0223,
           "px_21d": null
         }
       ]
@@ -192,6 +475,8 @@
       "last_seen": "2026-09-12",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
@@ -221,14 +506,16 @@
       "last_seen": "2026-09-16",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 697,
           "slug": "0697",
           "published_at": "2026-09-16",
           "mention_count": 4,
           "first_ts_s": 2775,
-          "stance": "bullish",
+          "stance": "mentioned",
           "stances": [
-            "bullish"
+            "mentioned"
           ],
           "speaker": "主持人",
           "jev_prob": 0.59,
@@ -250,6 +537,8 @@
       "last_seen": "2026-09-12",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
@@ -269,6 +558,68 @@
       ]
     },
     {
+      "ticker": "TW:2317",
+      "display_name": "鴻海",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/2317.TW",
+      "episode_count": 1,
+      "mention_total": 1,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 1,
+          "first_ts_s": 1140,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.21,
+          "quote": "它畢竟要去跟鴻海拆帳，所以股價也相對難掌握",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "TW:2454",
+      "display_name": "聯發科",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/2454.TW",
+      "episode_count": 1,
+      "mention_total": 16,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 16,
+          "first_ts_s": 724,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.88,
+          "quote": "其實聯發科本身就是一個財務健全也很賺錢的公司",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
       "ticker": "TW:3376",
       "display_name": "TW:3376",
       "market": "TW",
@@ -279,6 +630,8 @@
       "last_seen": "2026-09-12",
       "timeline": [
         {
+          "show": "gooaye",
+          "show_name": "股癌",
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
@@ -291,6 +644,68 @@
           "speaker": "主持人",
           "jev_prob": null,
           "quote": "它是 major share，只是毛利好像沒有，蘋果壓得蠻嚴格的",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "TW:3661",
+      "display_name": "TW:3661",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/3661.TW",
+      "episode_count": 1,
+      "mention_total": 0,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": null,
+          "first_ts_s": 798,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.95,
+          "quote": "都知道世芯有拿到 Amazon 的一個投資",
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "TW:8299",
+      "display_name": "群聯",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/8299.TW",
+      "episode_count": 1,
+      "mention_total": 2,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 2,
+          "first_ts_s": 2356,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.57,
+          "quote": "這個 idea 是蠻好的，重點還是要看有多少客戶會去採用",
           "px_1d": null,
           "px_5d": null,
           "px_21d": null

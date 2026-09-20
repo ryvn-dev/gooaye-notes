@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "shows": [
+    {
+      "id": "gooaye",
+      "name": "股癌",
+      "language": "zh-TW",
+      "rss": "https://feeds.soundon.fm/podcasts/954689a5-3096-43a4-a80b-7810b219cef3.xml",
+      "site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63"
+    }
+  ]
+}

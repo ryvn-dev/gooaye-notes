@@ -20,7 +20,7 @@ export default function Home() {
       {idx.episodes.map((e) => (
         <li key={e.slug}>
           <article className="py-6">
-            <Link href={`/gooaye/${e.slug}/`} className="block">
+            <Link href={`/p/${e.show}/${e.slug}/`} className="block">
               <div className="flex items-center gap-2 text-[13px] text-[#6b6b6b]">
                 <span className="grid h-5 w-5 place-items-center rounded-full bg-[#242424] text-[10px] font-bold text-white">
                   股
@@ -30,8 +30,7 @@ export default function Home() {
                 <time dateTime={e.published_at}>{e.published_at}</time>
               </div>
               <h2 className="mt-2 border-0 p-0 font-sans text-[20px] font-bold leading-snug">
-                {e.feed_title ?? `EP${e.ep_number}`}｜
-                {e.top_tickers.slice(0, 2).map((t) => t.display_name).join('、') || '本集筆記'}
+                {e.site_title}
               </h2>
               <p className="mt-1 line-clamp-2 text-[15px] leading-7 text-[#6b6b6b]">
                 {e.summary_answer_first ?? ''}

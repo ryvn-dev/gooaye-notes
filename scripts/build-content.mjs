@@ -8,7 +8,28 @@ const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-f
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
 const SITEJSON = path.join(CACHE, 'site-json');
 const OUT = path.resolve(import.meta.dirname, '..', 'content');
-const LIMIT = Number(process.env.POC_EPISODES || 3);
+
+// 節目登記表。之後加別的 podcast 就在這裡多一列，網址結構 /p/<show>/<集號> 不用改。
+const SHOWS = [
+  {
+    id: 'gooaye',
+    name: '股癌',
+    language: 'zh-TW',
+    rss: 'https://feeds.soundon.fm/podcasts/954689a5-3096-43a4-a80b-7810b219cef3.xml',
+    site: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
+  },
+];
+const SHOW = SHOWS[0];
+// 站上只放「摘要 lane 審過」的集數：summaries/index.json 就是那張清單。
+const SUM_INDEX = (() => {
+  try {
+    const j = JSON.parse(fs.readFileSync(path.join(process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`, 'site-json', 'summaries', 'index.json'), 'utf8'));
+    return new Set((j.episodes ?? []).map((e) => Number(String(e.ep).replace(/\D/g, ''))));
+  } catch {
+    return null;
+  }
+})();
+const LIMIT = Number(process.env.POC_EPISODES || 0) || null;
 
 // 最後一集的集號錨點：2026-09-19 = EP698。EP696/697/698 已與外部來源對過。
 const ANCHOR = { date: '2026-09-19', ep: 698 };
@@ -21,6 +42,8 @@ const csv = (p) => {
 };
 const readIf = (f) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null);
 const pad = (n) => String(n).padStart(4, '0');
+/** 摘要句首的「簡單說：」「簡單講：」是 lane 的口頭禪，站上不出現。 */
+const noLead = (v) => (typeof v === 'string' ? v.replace(/^\s*(簡單說|簡單講)\s*[：:，,]?\s*/, '') : v);
 
 /** "00:14:26" 或 866 → 866 */
 const secs = (v) => {
@@ -55,7 +78,8 @@ const TITLES = readIf(path.join(CACHE, 'titles.json')) ?? {};
 const feedTitle = (id) => {
   const raw = TITLES[id]?.title;
   if (!raw) return null;
-  return String(raw).replace(/^\s*股癌\s*[|｜]?\s*/, '').replace(/\s*\|\s*/g, ' ').replace(/\s+/g, ' ').trim() || null;
+  // 主人 2026-09-21 拍板：標題用 RSS 原標逐字（含 emoji），不加字也不去字。
+  return String(raw).trim() || null;
 };
 const feedEpNo = (id) => {
   const n = Number(TITLES[id]?.itunes_episode);
@@ -105,7 +129,7 @@ for (let i = 0; i < episodes.length; i++) {
     throw new Error(`集號對不上：feed 說 EP${fromFeed}，錨點推定 EP${derivedEp}（${e.published}）`);
   }
   const ep = fromFeed ?? derivedEp;
-  if (i < episodes.length - LIMIT) continue;
+  if (SUM_INDEX ? !SUM_INDEX.has(ep) : LIMIT && i < episodes.length - LIMIT) continue;
 
   // 上游兩條 lane：摘要 lane 是主列（LLM 讀法 + 原話），機器抽取 lane 補數字
   const sum = readIf(path.join(SITEJSON, 'summaries', `EP${ep}.json`)) ?? readIf(path.join(SITEJSON, 'summaries', `EP${pad(ep)}.json`));
@@ -132,10 +156,9 @@ for (let i = 0; i < episodes.length; i++) {
       market: marketOf(ticker),
       mention_count: c ? Number(c.mention_count) : null,
       first_ts_s: c ? Number(c.first_ts_s) : (secs(s?.t) ?? secs(x.t) ?? 0),
-      stance: (jevStance(extT[ticker] || {}).stances[0] ?? toStances(s?.stance)[0]) ?? 'mentioned',
-      stances: jevStance(extT[ticker] || {}).stances.length
-        ? jevStance(extT[ticker] || {}).stances
-        : toStances(s?.stance),
+      // 立場以摘要 lane（審過的那一份）為準；摘要沒寫才退回機器抽取的讀法。
+      stance: (toStances(s?.stance)[0] ?? jevStance(extT[ticker] || {}).stances[0]) ?? 'mentioned',
+      stances: toStances(s?.stance).length ? toStances(s?.stance) : jevStance(extT[ticker] || {}).stances,
       speaker: s?.speaker ?? null,
       quote: s?.quote ?? null,
       reason: s?.reason ?? null,
@@ -160,8 +183,9 @@ for (let i = 0; i < episodes.length; i++) {
     const v = extT[ticker]?.jev_is_about;
     return v === undefined || v === null || Number(v) >= JEV_MIN;
   };
-  const primaryTickers = (sum?.tickers ?? []).filter((s) => aboutOk(s.ticker)).map((s) => s.ticker);
-  const shown = (sum?.tickers ?? []).filter((s) => aboutOk(s.ticker)).map((s) => build(s.ticker, s, false));
+  // 摘要 lane 那一份是審過的主列，直接採用；0.70 閘只用在「摘要沒列、機器補上來」的那些。
+  const primaryTickers = (sum?.tickers ?? []).map((s) => s.ticker);
+  const shown = (sum?.tickers ?? []).map((s) => build(s.ticker, s, false));
   const seen = new Set(primaryTickers);
 
   // 摘要沒有、機器有的 → 待人工確認；沒有摘要檔時退回白名單規則
@@ -182,7 +206,9 @@ for (let i = 0; i < episodes.length; i++) {
   const tx = loadTranscript(ep);
 
   const doc = {
-    schema_version: 1,
+    schema_version: 2,
+    show: SHOW.id,
+    show_name: SHOW.name,
     episode_id: e.episode_id,
     ep_number: ep,
     ep_number_source: fromFeed !== null ? 'feed' : VERIFIED_EPS.includes(ep) ? 'verified' : 'derived',
@@ -194,10 +220,10 @@ for (let i = 0; i < episodes.length; i++) {
     youtube_id: null,
     source_url: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
     feed_title: feedTitle(e.episode_id),
-    site_title: `股癌 ${feedTitle(e.episode_id) ?? `EP${ep}`} 重點筆記`,
-    summary_answer_first: sum?.summary_answer_first ?? null,
-    summary: sum?.summary ?? null,
-    key_points: (sum?.key_points ?? []).map((k) => ({ t: secs(k.t), text: k.text })),
+    site_title: feedTitle(e.episode_id) ?? `EP${ep}`,
+    summary_answer_first: noLead(sum?.summary_answer_first ?? null),
+    summary: noLead(sum?.summary ?? null),
+    key_points: (sum?.key_points ?? []).map((k) => ({ t: secs(k.t), text: noLead(k.text) })),
     segment_tags: sum?.segment_tags ?? [],
     topics: [],
     mentions: ms,
@@ -215,6 +241,8 @@ for (let i = 0; i < episodes.length; i++) {
   fs.writeFileSync(path.join(OUT, 'episodes', `EP${doc.slug}.json`), JSON.stringify(doc, null, 2) + '\n');
 
   index.push({
+    show: SHOW.id,
+    show_name: SHOW.name,
     ep_number: ep,
     slug: doc.slug,
     published_at: e.published,
@@ -240,6 +268,7 @@ for (let i = 0; i < episodes.length; i++) {
     t.first_seen = t.first_seen < e.published ? t.first_seen : e.published;
     t.last_seen = t.last_seen > e.published ? t.last_seen : e.published;
     t.timeline.push({
+      show: SHOW.id, show_name: SHOW.name,
       ep_number: ep, slug: doc.slug, published_at: e.published,
       mention_count: m.mention_count, first_ts_s: m.t ?? m.first_ts_s,
       stance: m.stance, stances: m.stances, speaker: m.speaker,
@@ -272,6 +301,8 @@ fs.writeFileSync(
   }, null, 2) + '\n',
 );
 
+fs.writeFileSync(path.join(OUT, 'shows.json'), JSON.stringify({ schema_version: 1, shows: SHOWS }, null, 2) + '\n');
+
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://ryvn-dev.github.io/gooaye-notes';
 const top = Object.values(tickerMap).sort((a, b) => b.episode_count - a.episode_count).slice(0, 15);
 fs.writeFileSync(
@@ -298,11 +329,20 @@ fs.writeFileSync(
 - 個股索引：${SITE}/ticker/
 - 搜尋：${SITE}/search/
 - 關於與免責：${SITE}/about/
-- 每集頁：${SITE}/gooaye/<4 位集號>/
+- 每集頁：${SITE}/p/<節目>/<4 位集號>/（目前節目只有 gooaye）
 - 個股頁：${SITE}/ticker/<代號>/
+
+## 收錄的節目
+${SHOWS.map((s2) => `- ${s2.name}（${s2.id}，${s2.language}）：${s2.site}`).join('\n')}
 
 ## 被提到最多集的個股
 ${top.map((t) => `- ${t.display_name}（${t.ticker}）：${t.episode_count} 集`).join('\n')}
+
+## 全部個股與頁面
+${Object.values(tickerMap)
+  .sort((a, b) => a.ticker.localeCompare(b.ticker))
+  .map((t) => `- ${t.display_name}（${t.ticker}，${t.market}）：${t.episode_count} 集，最近 ${t.last_seen}，${SITE}/ticker/${t.ticker.replace(/[.:]/g, '-')}/`)
+  .join('\n')}
 `,
 );
 

@@ -1,5 +1,7 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "show": "gooaye",
+  "show_name": "股癌",
   "episode_id": "gooaye-2026-09-19-68582aa3",
   "ep_number": 698,
   "ep_number_source": "feed",
@@ -10,9 +12,9 @@
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/fd5c07ef-4122-424e-8567-baad5d2b8b7d/rssFileVip.mp3?timestamp=1789841096640",
   "youtube_id": null,
   "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
-  "feed_title": "EP698 🎮",
-  "site_title": "股癌 EP698 🎮 重點筆記",
-  "summary_answer_first": "簡單說：他覺得降規只是短期利空。高速訊號還是得用好板材。",
+  "feed_title": "EP698 | 🎮",
+  "site_title": "EP698 | 🎮",
+  "summary_answer_first": "他覺得降規只是短期利空。高速訊號還是得用好板材。",
   "summary": "市場這段有兩塊。一是漲價。他說 MSRP（官方參考售價）參考價值不高。板卡上從晶片、記憶體到基板，每個零件都在漲。NVIDIA 是整包出給 AIC，漲價自然反映到終端。漲最多的其實是記憶體，晶圓代工只是背鍋。他覺得明年代工調漲很合理。二是 CCL（電路板用的基板材料）降規的傳言。有人說高速訊號在晶片旁邊就轉成光。那主機板只要低階材料就夠。盤面因此殺了一波。他不同意這個說法。PCIe、CXL 這些還是跑高速，低階料撐不住。材料長期還是會往上走。他也覺得大盤在新高附近，一堆人卻轉空，很奇怪。",
   "key_points": [
     {

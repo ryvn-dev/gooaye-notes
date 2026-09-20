@@ -30,8 +30,14 @@ export type Mention = {
   px_21d: number | null;
 };
 
+export type Show = { id: string; name: string; language: string; rss: string; site: string };
+
+export type Bar = { d: string; o: number; h: number; l: number; c: number; v: number };
+
 export type Episode = {
   schema_version: number;
+  show: string;
+  show_name: string;
   episode_id: string;
   ep_number: number;
   ep_number_source: string;
@@ -57,6 +63,8 @@ export type Episode = {
 };
 
 export type IndexEntry = {
+  show: string;
+  show_name: string;
   ep_number: number;
   slug: string;
   published_at: string;
@@ -79,6 +87,8 @@ export type TickerRow = {
   first_seen: string;
   last_seen: string;
   timeline: {
+    show: string;
+    show_name: string;
     ep_number: number;
     slug: string;
     published_at: string;
@@ -97,6 +107,16 @@ export type TickerRow = {
 
 export const getIndex = () =>
   read<{ episode_count: number; coverage: { from: string; to: string }; episodes: IndexEntry[] }>('index.json');
+
+export const getShows = () => read<{ shows: Show[] }>('shows.json');
+
+export const getPrices = (ticker: string): { rows: Bar[]; source: string } | null => {
+  const f = path.join(DIR, 'prices', `${tickerSlug(ticker)}.json`);
+  if (!fs.existsSync(f)) return null;
+  const j = JSON.parse(fs.readFileSync(f, 'utf8')) as { rows: Bar[]; source: string };
+  const cut = new Date(Date.now() - 366 * 86400000).toISOString().slice(0, 10);
+  return { source: j.source, rows: j.rows.filter((r) => r.d >= cut) };
+};
 
 export const getTickers = () => read<{ ticker_count: number; tickers: TickerRow[] }>('tickers.json');
 

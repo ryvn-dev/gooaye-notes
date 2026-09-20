@@ -10,8 +10,12 @@
   html { -webkit-text-size-adjust: 100%; }
 
   :root { --nav-h: 56px; }
-  body[data-player="1"] {
-    padding-top: 50px;
+  body {
+    padding-top: 48px;
+  }
+
+  body[data-player="1"] #site-bar {
+    display: none;
   }
 
   body[data-nav-hidden="1"] { --nav-h: 0px; }
