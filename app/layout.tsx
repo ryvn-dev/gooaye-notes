@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import SecondaryNav from '@/components/SecondaryNav';
+import SiteHeader from '@/components/SiteHeader';
+import BottomNav from '@/components/BottomNav';
 import { site, abs } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -46,21 +48,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <header className="border-b border-slate-200">
-          <div className="mx-auto flex max-w-[680px] items-baseline gap-3 px-4 py-4">
-            <Link href="/" className="font-serif text-2xl font-bold tracking-tight">
-              {site.name}
-            </Link>
-            <nav className="ml-auto text-[15px]">
-              <Link href="/search/" className="hover:underline">
-                搜尋
-              </Link>
-            </nav>
-          </div>
-        </header>
+        <SiteHeader />
         <SecondaryNav active="" />
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
-        <footer className="mx-auto max-w-[680px] px-4 pb-12 pt-4 text-sm text-slate-500">
+        <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
           <p>
             {site.name} · {site.tagline} · 非官方第三方整理，不構成投資建議 ·{' '}
             <Link href="/ticker/" className="underline underline-offset-2">
@@ -72,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
           </p>
         </footer>
+        <BottomNav />
       </body>
     </html>
   );

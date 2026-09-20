@@ -3,7 +3,6 @@ import Link from 'next/link';
 const TABS = [
   { href: '/', label: '最新' },
   { href: '/ticker/', label: '個股' },
-  { href: '/about/', label: '關於' },
 ];
 
 /** Medium 的 For you｜Featured 樣式：文字 tab，選中者底下一條細線。 */
