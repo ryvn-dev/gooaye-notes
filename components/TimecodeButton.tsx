@@ -1,14 +1,17 @@
 'use client';
 
-export default function TimecodeButton({ seconds, label }: { seconds: number; label: string }) {
+import { Play } from 'lucide-react';
+
+/** 只有一個 ▶，不印秒數。 */
+export default function TimecodeButton({ seconds, label }: { seconds: number; label?: string }) {
   return (
     <button
       type="button"
       onClick={() => window.dispatchEvent(new CustomEvent('gooaye:seek', { detail: seconds }))}
-      className="rounded-md bg-slate-100 px-2 py-1 font-mono text-[15px] tabular-nums text-slate-700 underline-offset-2 hover:underline"
-      aria-label={`跳到 ${label}`}
+      aria-label={label ? `播放 ${label}` : '從這裡播放'}
+      className="inline-flex h-6 w-6 shrink-0 items-center justify-center text-[#9a9a9a] transition-colors hover:text-[#242424]"
     >
-      {label}
+      <Play size={14} strokeWidth={1.75} aria-hidden />
     </button>
   );
 }

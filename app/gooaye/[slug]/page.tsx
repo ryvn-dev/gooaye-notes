@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { PodcastEpisode, BreadcrumbList, WithContext } from 'schema-dts';
-import { getIndex, getEpisode, mmss, minutes } from '@/lib/content';
+import { getIndex, getEpisode, minutes } from '@/lib/content';
 import MentionCard from '@/components/MentionCard';
 import StanceTagRow from '@/components/StanceTagRow';
 import AudioPlayer from '@/components/AudioPlayer';
@@ -117,7 +117,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
           <ul className="mt-3 space-y-2">
             {ep.key_points.map((k) => (
               <li key={k.text} className="flex gap-2">
-                {k.t !== null && <TimecodeButton seconds={k.t} label={mmss(k.t)} />}
+                {k.t !== null && <TimecodeButton seconds={k.t} />}
                 <span>{k.text}</span>
               </li>
             ))}
@@ -154,11 +154,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
           <div className="mt-3 space-y-3">
             {ep.transcript.map((seg, i) => (
               <div key={i} className="flex gap-2">
-                {seg.t !== null ? (
-                  <TimecodeButton seconds={seg.t} label={mmss(seg.t)} />
-                ) : (
-                  <span className="w-[52px] shrink-0" />
-                )}
+                {seg.t !== null ? <TimecodeButton seconds={seg.t} /> : <span className="w-6 shrink-0" />}
                 <p className="m-0 text-[17px] leading-8">{seg.text}</p>
               </div>
             ))}
