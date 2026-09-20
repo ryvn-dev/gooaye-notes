@@ -50,6 +50,18 @@ const feed = JSON.parse(fs.readFileSync(path.join(CACHE, 'feed.json'), 'utf8'));
 const audioById = Object.fromEntries(feed.map((f) => [f.episode_id, f.audio_url]));
 const NAMES = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, 'ticker-names.json'), 'utf8'));
 
+// 節目官方 feed 的原標題（本機快取，不進 repo）：{ episode_id: { title, pubDate, itunes_episode } }
+const TITLES = readIf(path.join(CACHE, 'titles.json')) ?? {};
+const feedTitle = (id) => {
+  const raw = TITLES[id]?.title;
+  if (!raw) return null;
+  return String(raw).replace(/^\s*股癌\s*[|｜]?\s*/, '').replace(/\s*\|\s*/g, ' ').replace(/\s+/g, ' ').trim() || null;
+};
+const feedEpNo = (id) => {
+  const n = Number(TITLES[id]?.itunes_episode);
+  return Number.isFinite(n) && n > 0 ? n : null;
+};
+
 episodes.sort((a, b) => a.published.localeCompare(b.published));
 
 // 集號推定：以錨點往前每集減一。節目為週三 / 週六各一集，間隔只會是 3 或 4 天；
@@ -87,7 +99,12 @@ const tickerMap = {};
 
 for (let i = 0; i < episodes.length; i++) {
   const e = episodes[i];
-  const ep = ANCHOR.ep - (anchorIdx - i);
+  const derivedEp = ANCHOR.ep - (anchorIdx - i);
+  const fromFeed = feedEpNo(e.episode_id);
+  if (fromFeed !== null && fromFeed !== derivedEp) {
+    throw new Error(`集號對不上：feed 說 EP${fromFeed}，錨點推定 EP${derivedEp}（${e.published}）`);
+  }
+  const ep = fromFeed ?? derivedEp;
   if (i < episodes.length - LIMIT) continue;
 
   // 上游兩條 lane：摘要 lane 是主列（LLM 讀法 + 原話），機器抽取 lane 補數字
@@ -168,15 +185,16 @@ for (let i = 0; i < episodes.length; i++) {
     schema_version: 1,
     episode_id: e.episode_id,
     ep_number: ep,
-    ep_number_source: VERIFIED_EPS.includes(ep) ? 'verified' : 'derived',
-    ep_inferred: !VERIFIED_EPS.includes(ep),
+    ep_number_source: fromFeed !== null ? 'feed' : VERIFIED_EPS.includes(ep) ? 'verified' : 'derived',
+    ep_inferred: fromFeed === null && !VERIFIED_EPS.includes(ep),
     slug: pad(ep),
     published_at: e.published,
     duration_s: Number(e.duration_s),
     audio_url: audioById[e.episode_id] || null,
     youtube_id: null,
     source_url: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
-    site_title: `股癌 EP${ep} 重點筆記`,
+    feed_title: feedTitle(e.episode_id),
+    site_title: `股癌 ${feedTitle(e.episode_id) ?? `EP${ep}`} 重點筆記`,
     summary_answer_first: sum?.summary_answer_first ?? null,
     summary: sum?.summary ?? null,
     key_points: (sum?.key_points ?? []).map((k) => ({ t: secs(k.t), text: k.text })),
@@ -201,6 +219,7 @@ for (let i = 0; i < episodes.length; i++) {
     slug: doc.slug,
     published_at: e.published,
     duration_s: doc.duration_s,
+    feed_title: doc.feed_title,
     site_title: doc.site_title,
     summary_answer_first: doc.summary_answer_first,
     has_summary: Boolean(doc.summary),

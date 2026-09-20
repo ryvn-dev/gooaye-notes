@@ -41,6 +41,7 @@ export type Episode = {
   audio_url: string | null;
   youtube_id: string | null;
   source_url: string;
+  feed_title: string | null;
   site_title: string;
   summary_answer_first: string | null;
   summary: string | null;
@@ -60,6 +61,7 @@ export type IndexEntry = {
   slug: string;
   published_at: string;
   duration_s: number;
+  feed_title: string | null;
   site_title: string;
   summary_answer_first: string | null;
   has_summary: boolean;

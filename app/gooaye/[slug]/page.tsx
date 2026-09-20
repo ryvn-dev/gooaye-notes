@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const ep = getEpisode(slug);
   const top = ep.mentions.filter((m) => !m.needs_review).slice(0, 3).map((m) => m.display_name);
   const title = top.length
-    ? `股癌 EP${ep.ep_number} 重點筆記｜提到 ${top.join('、')}`
-    : `股癌 EP${ep.ep_number} 重點筆記`;
+    ? `${ep.site_title}｜提到 ${top.join('、')}`
+    : ep.site_title;
   const description = (answerFirst(ep) ?? metaLine(ep)).slice(0, 155);
   const url = abs(`/gooaye/${slug}/`);
   return {
@@ -87,17 +87,11 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
 
-      <nav className="text-[13px] text-[#6b6b6b]">
-        <Link href="/" className="underline underline-offset-2">
-          {site.name}
-        </Link>
-      </nav>
-
-      <div className="mt-3">
+      <div>
         <StanceTagRow items={shown} max={4} />
       </div>
 
-      <h1 className="mt-4 leading-tight">股癌 EP{ep.ep_number} 重點筆記</h1>
+      <h1 className="mt-4 leading-tight">{ep.site_title}</h1>
 
       <p className="mt-3 text-[16px] leading-7 text-[#6b6b6b]">{answerFirst(ep) ?? ''}</p>
 
@@ -186,13 +180,10 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       <Disclaimer />
 
-      <div className="h-24 md:h-0" />
       {ep.audio_url ? (
-        <AudioPlayer src={ep.audio_url} title={`股癌 EP${ep.ep_number}`} />
+        <AudioPlayer src={ep.audio_url} title={ep.feed_title ?? `股癌 EP${ep.ep_number}`} />
       ) : (
-        <p className="mt-4 rounded-xl border border-slate-200 p-4 text-slate-500">
-          報價／音檔暫時抓不到。
-        </p>
+        <p className="mt-4 text-[#6b6b6b]">音檔暫時抓不到。</p>
       )}
     </>
   );

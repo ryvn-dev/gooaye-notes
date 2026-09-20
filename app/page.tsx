@@ -30,7 +30,8 @@ export default function Home() {
                 <time dateTime={e.published_at}>{e.published_at}</time>
               </div>
               <h2 className="mt-2 border-0 p-0 font-sans text-[20px] font-bold leading-snug">
-                EP{e.ep_number}｜{e.top_tickers.slice(0, 2).map((t) => t.display_name).join('、') || '本集筆記'}
+                {e.feed_title ?? `EP${e.ep_number}`}｜
+                {e.top_tickers.slice(0, 2).map((t) => t.display_name).join('、') || '本集筆記'}
               </h2>
               <p className="mt-1 line-clamp-2 text-[15px] leading-7 text-[#6b6b6b]">
                 {e.summary_answer_first ?? ''}

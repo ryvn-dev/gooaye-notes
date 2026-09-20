@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T22:09:25.462Z",
+  "generated_at": "2026-09-20T22:25:48.306Z",
   "episode_count": 3,
   "coverage": {
     "from": "2026-09-12",
@@ -12,8 +12,9 @@
       "slug": "0698",
       "published_at": "2026-09-19",
       "duration_s": 3148,
-      "site_title": "股癌 EP698 重點筆記",
-      "summary_answer_first": "這集反駁 CCL 與記憶體「降規」的恐慌：他認為高速訊號還是需要好板材，降規只是短期利空；對做板材、記憶體與 AI 硬體供應鏈的人最相關。",
+      "feed_title": "EP698 🎮",
+      "site_title": "股癌 EP698 🎮 重點筆記",
+      "summary_answer_first": "簡單說：他覺得降規只是短期利空。高速訊號還是得用好板材。",
       "has_summary": true,
       "top_tickers": [
         {
@@ -51,8 +52,9 @@
       "slug": "0697",
       "published_at": "2026-09-16",
       "duration_s": 2997,
-      "site_title": "股癌 EP697 重點筆記",
-      "summary_answer_first": "這集拆 Anthropic 那篇要求管制前沿模型的文章：他讀成監管捕獲，並認為驗證與監控反而會吃掉更多算力；對做 AI 硬體與資安的人最相關。",
+      "feed_title": "EP697 🔥",
+      "site_title": "股癌 EP697 🔥 重點筆記",
+      "summary_answer_first": "簡單說：他覺得 Anthropic 那篇是監管捕獲。就是用法規擋住後面想進來的人。真要做驗證和監控，反而更吃算力。",
       "has_summary": true,
       "top_tickers": [
         {
@@ -90,8 +92,9 @@
       "slug": "0696",
       "published_at": "2026-09-12",
       "duration_s": 3151,
-      "site_title": "股癌 EP696 重點筆記",
-      "summary_answer_first": "這集拆蘋果折疊機的定價與供應鏈、Oracle 的融資循環，以及 AI 基建卡在電力與地方政治；對追消費電子與 AI 基建供應鏈的人最相關。",
+      "feed_title": "EP696 🎖️",
+      "site_title": "股癌 EP696 🎖️ 重點筆記",
+      "summary_answer_first": "簡單說：蘋果折疊機定價比想像便宜。Oracle 靠客戶先付錢撐業績。電力和執照卡住，資料中心蓋不下去。",
       "has_summary": true,
       "top_tickers": [
         {

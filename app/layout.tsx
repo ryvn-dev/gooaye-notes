@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
-import SiteHeader from '@/components/SiteHeader';
 import BottomNav from '@/components/BottomNav';
 import { site, abs } from '@/lib/site';
 import { huninn } from '@/lib/fonts';
@@ -48,11 +47,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <SiteHeader />
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
         <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
           <p>
-            {site.name} · {site.tagline} · 非官方第三方整理，不構成投資建議 ·{' '}
+            {site.name} · 非官方第三方整理 · 地端 AI 模型與站主自我判斷，仍有可能出錯。非投資建議。{' '}
             <Link href="/ticker/" className="underline underline-offset-2">
               個股
             </Link>{' '}

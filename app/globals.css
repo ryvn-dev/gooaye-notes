@@ -10,6 +10,10 @@
   html { -webkit-text-size-adjust: 100%; }
 
   :root { --nav-h: 56px; }
+  body[data-player="1"] {
+    padding-top: 50px;
+  }
+
   body[data-nav-hidden="1"] { --nav-h: 0px; }
 
   /* 內文排版照 justfont 那一套：sans、18px、行高 2.0、字距 0.02em、段距 1.6em */
