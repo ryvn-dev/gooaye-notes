@@ -6,64 +6,66 @@
   --font-serif: "Noto Serif TC", Georgia, "Songti TC", serif;
 }
 
-:root { color-scheme: only light; }
-html { -webkit-text-size-adjust: 100%; }
+@layer base {
+  :root { color-scheme: only light; }
+  html { -webkit-text-size-adjust: 100%; }
 
-/* 內文排版照 justfont 那一套：sans、18px、行高 2.0、字距 0.02em、段距 1.6em */
-body {
-  background: #fff;
-  color: #242424;
-  font-family: var(--font-sans);
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.02em;
-}
+  /* 內文排版照 justfont 那一套：sans、18px、行高 2.0、字距 0.02em、段距 1.6em */
+  body {
+    background: #fff;
+    color: #242424;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
 
-main p,
-main li {
-  color: #333;
-}
+  main p,
+  main li {
+    color: #333;
+  }
 
-main p {
-  margin-top: 1.6em;
-}
+  main p {
+    margin-top: 1.6em;
+  }
 
-/* 標題與介面一律 sans；章節標題用明體感的 serif */
-h1, h3, h4, nav, button, table, summary, time, dt, dd, code, input, label, th, td {
-  font-family: var(--font-sans);
-}
+  /* 標題與介面一律 sans；章節標題用明體感的 serif */
+  h1, h3, h4, nav, button, table, summary, time, dt, dd, code, input, label, th, td {
+    font-family: var(--font-sans);
+  }
 
-h1 {
-  color: #242424;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-}
+  h1 {
+    color: #242424;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
 
-h2 {
-  font-family: var(--font-serif);
-  color: #242424;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #e5e7eb;
-}
+  h2 {
+    font-family: var(--font-serif);
+    color: #242424;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #e5e7eb;
+  }
 
-time, dt { color: #6b6b6b; }
+  time, dt { color: #6b6b6b; }
 
-/* 字重只用 400 / 700 */
-.font-medium, .font-semibold { font-weight: 700; }
-p, li { overflow-wrap: anywhere; line-break: strict; }
+  /* 字重只用 400 / 700 */
+  .font-medium, .font-semibold { font-weight: 700; }
+  p, li { overflow-wrap: anywhere; line-break: strict; }
 
-.divider::after {
-  content: "\2022 \2022 \2022";
-  display: block;
-  text-align: center;
-  letter-spacing: 0.6em;
-  color: #b3b3b3;
-  margin: 2rem 0;
-  font-size: 15px;
+  .divider::after {
+    content: "\2022 \2022 \2022";
+    display: block;
+    text-align: center;
+    letter-spacing: 0.6em;
+    color: #b3b3b3;
+    margin: 2rem 0;
+    font-size: 15px;
+  }
 }
