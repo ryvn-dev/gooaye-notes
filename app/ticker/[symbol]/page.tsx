@@ -119,7 +119,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
             </time>
             <span className="ml-auto flex flex-wrap gap-1">
               {stancesOf(r).map((st) => (
-                <StanceIcon key={st} stance={st} />
+                <StanceIcon key={st} stance={st} p={r.jev_prob} />
               ))}
             </span>
           </li>

@@ -1,7 +1,7 @@
 import { stancesOf, type Stance } from '@/lib/content';
 import StanceIcon from '@/components/StanceIcon';
 
-type Item = { ticker: string; display_name: string; stance: Stance; stances?: Stance[] };
+type Item = { ticker: string; display_name: string; stance: Stance; stances?: Stance[]; jev_prob?: number | null };
 
 /** 代碼＋一個小折線 icon，沒有外框、沒有文字標籤。 */
 export default function StanceTagRow({ items, max }: { items: Item[]; max?: number }) {
@@ -15,7 +15,7 @@ export default function StanceTagRow({ items, max }: { items: Item[]; max?: numb
       {rows.map((i) => (
         <li key={i.ticker} className="inline-flex items-center gap-1 text-[14px] text-[#6b6b6b]">
           <span className="font-mono">{i.ticker.replace('TW:', '')}</span>
-          <StanceIcon stance={i.s} />
+          <StanceIcon stance={i.s} p={i.jev_prob ?? null} />
         </li>
       ))}
     </ul>

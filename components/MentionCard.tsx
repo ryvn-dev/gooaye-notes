@@ -14,7 +14,7 @@ export default function MentionCard({ m }: { m: Mention }) {
           <Link href={`/ticker/${tickerSlug(m.ticker)}/`} className="font-semibold underline underline-offset-2">
             {m.display_name}
           </Link>
-          <StanceIcon stance={s} />
+          <StanceIcon stance={s} p={m.jev_prob} />
           {m.speaker && <span className="text-[13px] text-[#6b6b6b]">{m.speaker}</span>}
         </span>
         {m.quote && <p className="mt-1 text-[15px] text-[#6b6b6b]">「{m.quote.slice(0, 60)}」</p>}

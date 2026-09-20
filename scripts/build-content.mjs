@@ -71,20 +71,17 @@ const yahooOf = (t) =>
     ? `https://finance.yahoo.com/quote/${t.slice(3)}.TW`
     : `https://finance.yahoo.com/quote/${t}`;
 
-// 逐字稿：合併成約 30 秒一段，保留段首時間碼
-const loadTranscript = (id) => {
-  const j = readIf(path.join(CACHE, 'transcripts', `${id}.json`));
-  if (!j?.segments?.length) return null;
-  const out = [];
-  let cur = null;
-  for (const seg of j.segments) {
-    if (!cur || seg.start - cur.t >= 30) {
-      cur = { t: Math.floor(seg.start), text: '' };
-      out.push(cur);
-    }
-    cur.text += seg.text;
-  }
-  return out;
+// 站上只放社群來源的逐字稿；自家 whisper 稿只拿來算時間碼與摘要，不上站。
+const COMMUNITY = path.join(CACHE, 'community', 'whatmkreallysaid');
+const loadTranscript = (ep) => {
+  const f = path.join(COMMUNITY, `EP${ep}.md`);
+  if (!fs.existsSync(f)) return null;
+  const paras = fs
+    .readFileSync(f, 'utf8')
+    .split(/\n{2,}/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+  return paras.length ? paras : null;
 };
 
 const byEp = {};
@@ -105,6 +102,15 @@ for (let i = 0; i < episodes.length; i++) {
   const extT = Object.fromEntries(extRows.map((t) => [t.ticker, t]));
   const csvT = Object.fromEntries((byEp[e.episode_id] || []).map((m) => [m.ticker, m]));
 
+  const JEV_MIN = 0.66;
+  const jevStance = (x) => {
+    const st = toStances(x.jev_stance);
+    if (!st.length) return { stances: [], p: null };
+    const probs = x.jev_stance_probs || {};
+    const raw = Object.entries(probs).find(([k]) => STANCE_MAP[k] === st[0]);
+    return { stances: st, p: raw ? Number(raw[1]) : (x.jev_prob ?? null) };
+  };
+
   const build = (ticker, s, flagged) => {
     const c = csvT[ticker];
     const x = extT[ticker] || {};
@@ -114,13 +120,15 @@ for (let i = 0; i < episodes.length; i++) {
       market: marketOf(ticker),
       mention_count: c ? Number(c.mention_count) : null,
       first_ts_s: c ? Number(c.first_ts_s) : (secs(s?.t) ?? secs(x.t) ?? 0),
-      stance: toStances(s?.stance)[0] ?? 'mentioned',
-      stances: toStances(s?.stance),
+      stance: (jevStance(extT[ticker] || {}).stances[0] ?? toStances(s?.stance)[0]) ?? 'mentioned',
+      stances: jevStance(extT[ticker] || {}).stances.length
+        ? jevStance(extT[ticker] || {}).stances
+        : toStances(s?.stance),
       speaker: s?.speaker ?? null,
       quote: s?.quote ?? null,
       reason: s?.reason ?? null,
       t: secs(s?.t) ?? secs(x.t),
-      jev_prob: x.jev_prob ?? null,
+      jev_prob: jevStance(x).p ?? x.jev_prob ?? null,
       jev_question: x.jev_question ?? null,
       yahoo_url: x.yahoo_url ?? yahooOf(ticker),
       px_1d: x.px_1d ?? null,
@@ -135,8 +143,13 @@ for (let i = 0; i < episodes.length; i++) {
     };
   };
 
-  const primaryTickers = (sum?.tickers ?? []).map((s) => s.ticker);
-  const shown = (sum?.tickers ?? []).map((s) => build(s.ticker, s, false));
+  // Jev 判定「這一段根本不在講那一檔」的先拿掉
+  const aboutOk = (ticker) => {
+    const v = extT[ticker]?.jev_is_about;
+    return v === undefined || v === null || Number(v) >= JEV_MIN;
+  };
+  const primaryTickers = (sum?.tickers ?? []).filter((s) => aboutOk(s.ticker)).map((s) => s.ticker);
+  const shown = (sum?.tickers ?? []).filter((s) => aboutOk(s.ticker)).map((s) => build(s.ticker, s, false));
   const seen = new Set(primaryTickers);
 
   // 摘要沒有、機器有的 → 待人工確認；沒有摘要檔時退回白名單規則
@@ -144,7 +157,7 @@ for (let i = 0; i < episodes.length; i++) {
   for (const m of byEp[e.episode_id] || []) {
     if (seen.has(m.ticker)) continue;
     const flagged = extT[m.ticker]?.flagged;
-    if (!sum && confirmed(m.ticker)) shown.push(build(m.ticker, null, false));
+    if (!sum && confirmed(m.ticker) && aboutOk(m.ticker)) shown.push(build(m.ticker, null, false));
     else review.push(build(m.ticker, null, flagged || true));
   }
   for (const x of extRows) {
@@ -154,7 +167,7 @@ for (let i = 0; i < episodes.length; i++) {
 
   shown.sort((a, b) => (b.mention_count ?? 0) - (a.mention_count ?? 0) || a.first_ts_s - b.first_ts_s);
   const ms = [...shown, ...review];
-  const tx = loadTranscript(e.episode_id);
+  const tx = loadTranscript(ep);
 
   const doc = {
     schema_version: 1,
@@ -176,6 +189,7 @@ for (let i = 0; i < episodes.length; i++) {
     topics: [],
     mentions: ms,
     transcript: tx,
+    transcript_source: tx ? 'community' : null,
     transcript_available: Boolean(tx),
     provenance: {
       summary_model: sum?.model ?? null,

@@ -151,12 +151,11 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       {ep.transcript_available && ep.transcript && (
         <>
           <h2 className="mt-10">全文</h2>
-          <div className="mt-3 space-y-4">
-            {ep.transcript.map((seg) => (
-              <div key={seg.t} className="flex gap-2">
-                <TimecodeButton seconds={seg.t} label={mmss(seg.t)} />
-                <p className="m-0 text-[17px] leading-8">{seg.text}</p>
-              </div>
+          <div className="mt-3">
+            {ep.transcript.map((para, i) => (
+              <p key={i} className="text-[17px] leading-8">
+                {para}
+              </p>
             ))}
           </div>
         </>
