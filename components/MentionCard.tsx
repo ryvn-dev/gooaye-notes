@@ -7,7 +7,7 @@ import PerfChip from '@/components/PerfChip';
 export default function MentionCard({ m }: { m: Mention }) {
   const s = stancesOf(m)[0] ?? 'mentioned';
   const t = m.t ?? m.first_ts_s;
-  const para = m.first_paragraph;
+  const anchor = m.first_anchor;
   return (
     <tr className="border-b border-[#eee] align-top">
       <td className="py-3 pr-3">
@@ -19,8 +19,8 @@ export default function MentionCard({ m }: { m: Mention }) {
         </span>
         {m.quote && (
           <p className="mt-1 text-[14px] text-[#6b6b6b]">
-            {para !== null && para !== undefined ? (
-              <a href={`#p-${para}`} className="no-underline">
+            {anchor ? (
+              <a href={`#${anchor}`} className="no-underline">
                 「{m.quote.slice(0, 60)}」
               </a>
             ) : (

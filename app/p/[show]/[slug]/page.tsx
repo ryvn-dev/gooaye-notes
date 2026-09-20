@@ -17,10 +17,10 @@ export function generateStaticParams() {
 
 /** 重點第 i 點反白到哪一句（給重點那一列做回跳的 anchor）。 */
 const findSentence = (ep: ReturnType<typeof getEpisode>, i: number) => {
-  const paras = ep.paragraphs ?? [];
-  for (let pi = 0; pi < paras.length; pi++) {
-    const si = paras[pi].sentences.findIndex((s) => s.key_point === i);
-    if (si !== -1) return `${pi}-${si}`;
+  const blocks = ep.blocks ?? [];
+  for (let bi = 0; bi < blocks.length; bi++) {
+    const si = blocks[bi].sentences.findIndex((s) => s.key_point === i);
+    if (si !== -1) return `${bi}-${si}`;
   }
   return null;
 };
@@ -161,8 +161,8 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
       )}
 
       <h2 className="mt-10">逐字稿</h2>
-      {ep.paragraphs?.length ? (
-        <Transcript paragraphs={ep.paragraphs} mentions={shown} />
+      {ep.blocks?.length ? (
+        <Transcript blocks={ep.blocks} mentions={shown} keyPoints={ep.key_points} />
       ) : (
         <p className="mt-3 text-[15px] text-[#6b6b6b]">逐字稿待補。</p>
       )}

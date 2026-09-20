@@ -429,9 +429,8 @@
       "is_about_p": null
     }
   ],
-  "transcript": null,
-  "paragraphs": null,
-  "highlight_hits": 0,
+  "blocks": null,
+  "marked_sentences": 0,
   "key_point_hits": 0,
   "key_point_total": 0,
   "transcript_source": null,

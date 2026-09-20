@@ -16,9 +16,16 @@ export type Perf = {
   d21: number | null;
 };
 
-export type Sentence = { text: string; key_point: number | null; quote_of: string | null };
+export type Sentence = { text: string; key_point: number | null; tickers: string[] };
 
-export type Paragraph = { t: number | null; tags: string[]; tickers: string[]; sentences: Sentence[] };
+/** 結構化逐字稿的一個區塊：小標、主文段、引用段（代言段 ad=true 走淡灰樣式，不貼任何標籤字）。 */
+export type Block = {
+  kind: 'h2' | 'p' | 'quote';
+  text: string;
+  t?: number | null;
+  ad?: boolean;
+  sentences: Sentence[];
+};
 
 export type Mention = {
   ticker: string;
@@ -43,7 +50,7 @@ export type Mention = {
   px_5d: number | null;
   px_21d: number | null;
   perf: Perf | null;
-  first_paragraph?: number | null;
+  first_anchor?: string | null;
 };
 
 export type Show = { id: string; name: string; language: string; rss: string; site: string };
@@ -72,9 +79,8 @@ export type Episode = {
   topics: string[];
   mentions: Mention[];
   ep_inferred?: boolean;
-  transcript: { t: number | null; text: string }[] | null;
-  paragraphs: Paragraph[] | null;
-  highlight_hits: number;
+  blocks: Block[] | null;
+  marked_sentences: number;
   key_point_hits: number;
   key_point_total: number;
   transcript_source: string | null;

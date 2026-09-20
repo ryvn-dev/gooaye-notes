@@ -3,7 +3,11 @@
 // 用法：node scripts/build-content.mjs        （POC_EPISODES 預設 3）
 import fs from 'node:fs';
 import path from 'node:path';
-import { stringSimilarity } from 'string-similarity-js';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkDirective from 'remark-directive';
+import { toString as mdText } from 'mdast-util-to-string';
+import { checkEpisode } from './check-structured.mjs';
 
 const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-finance`;
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
@@ -100,6 +104,7 @@ for (let i = 1; i < episodes.length; i++) {
   }
 }
 
+const STATS = [];
 const nameOf = (t) => NAMES[t]?.name || t;
 const marketOf = (t) => (t.startsWith('TW:') ? 'TW' : 'US');
 const confirmed = (t) => Boolean(NAMES[t]?.confirmed);
@@ -108,21 +113,43 @@ const yahooOf = (t) =>
     ? `https://finance.yahoo.com/quote/${t.slice(3)}.TW`
     : `https://finance.yahoo.com/quote/${t}`;
 
-// 逐字稿只認對齊器的輸出（社群文字 + 對齊過的時間碼）；沒有檔就整段不出。
-const loadTranscript = (ep) => {
-  const j = readIf(path.join(SITEJSON, 'transcripts', `EP${ep}.json`));
-  const segs = j?.segments;
-  if (!segs?.length) return null;
-  // 社群稿是 markdown：把標題記號去掉，站上只出現內文。
-  return segs
-    .map((x) => ({ t: x.t ?? null, text: String(x.text ?? '').replace(/^\s*#{1,6}\s*/, '').trim() }))
-    .filter((x) => x.text.length > 0);
+// 逐字稿只認對齊器的輸出（社群文字 + 對齊過的時間碼），而且只認結構化過的那一份。
+// 結構化：社群稿本身就是 markdown（標題、引用），再把口語碎句併成 150–350 字的段落，
+// 產出 EP<n>.structured.md（scripts/structure-transcript.mjs）。內文一個字都不改，
+// build 時跑相等閘門（scripts/check-structured.mjs），不等就讓 build 失敗。
+// 解析用庫：unified + remark-parse + remark-directive（`:::ad` 代言段）。
+const loadStructured = (ep) => {
+  const f = path.join(SITEJSON, 'transcripts', `EP${ep}.structured.md`);
+  if (!fs.existsSync(f)) return null;
+  const gate = checkEpisode(ep);
+  if (!gate.ok) {
+    throw new Error(
+      `EP${ep} 結構化逐字稿與社群稿不相等（第 ${gate.at} 字起）\n  稿: ${gate.src}\n  站: ${gate.md}`,
+    );
+  }
+  const tree = unified().use(remarkParse).use(remarkDirective).parse(fs.readFileSync(f, 'utf8'));
+  const out = [];
+  const T_RE = /^\s*\[t=(\d+)\]\s*/;
+  const push = (kind, raw, ad) => {
+    const m = raw.match(T_RE);
+    const text = raw.replace(T_RE, '').trim();
+    if (!text) return;
+    out.push({ kind, t: m ? Number(m[1]) : null, ad, text });
+  };
+  const walk = (nodes, ad) => {
+    for (const n of nodes) {
+      if (n.type === 'heading' && n.depth === 2) out.push({ kind: 'h2', text: mdText(n) });
+      else if (n.type === 'containerDirective') walk(n.children, n.name === 'ad');
+      else if (n.type === 'blockquote') push('quote', n.children.map(mdText).join(''), ad);
+      else if (n.type === 'paragraph') push('p', mdText(n), ad);
+    }
+  };
+  walk(tree.children, false);
+  return out.length ? out : null;
 };
 
-
-// ── 結構化逐字稿 ───────────────────────────────────────────────────────────
-// 版型調查見 docs/transcript-format-survey.md：競品只有「空行切段 + 段落 anchor」，
-// 段首標籤列（主題 + 個股 chip）與「重點 ↔ 句子」反白是我們自己加的。
+// ── 句子層 ─────────────────────────────────────────────────────────────────
+// 提到個股的句子給虛線底線、重點句給黃底，兩種都只在 hover 才出現 tooltip。
 
 const ALIASES = (() => {
   const f = path.join(FIN, 'data', 'podcasts', 'aliases.csv');
@@ -135,40 +162,11 @@ const ALIASES = (() => {
   return map;
 })();
 
-// 主題標籤只在「該集摘要真的列了這個標籤」時才貼；對不到的段落不放標籤。
-const TAG_WORDS = {
-  半導體: ['晶片', '晶圓', '製程', '記憶體', '封裝', 'CoWoS', 'DRAM', 'HBM', '先進', '代工'],
-  AI: ['AI', '人工智慧', '算力', '模型', 'GPU', '資料中心', '推論'],
-  總經: ['聯準會', 'Fed', '利率', '通膨', '降息', '升息', '公債', '關稅'],
-  產業: ['供應鏈', '產業', '需求', '報價', '出貨', '庫存', '訂單'],
-  美股: ['美股', '那斯達克', '標普', '費半'],
-  台股: ['台股', '加權', '櫃買', '台積電'],
-  聽眾問答: ['聽眾', '有人問', '留言問', '問答', '這題'],
-  投資心法: ['部位', '停損', '加碼', '心態', '紀律', '風險', '配置', '資金'],
-  生活閒聊: ['吃', '餐廳', '跑步', '旅遊', '電影', '喝', '贊助'],
-};
-
 const SENT_END = /(?<=[。！？!?])/;
 const splitSentences = (t) => t.split(SENT_END).map((x) => x.trim()).filter(Boolean);
 
-/** 一段超過 180 字就在 120–180 字之間的句號切開（競品用空行，社群稿有些段落很長）。 */
-const splitLong = (text) => {
-  const out = [];
-  let rest = text;
-  while (rest.length > 180) {
-    const window = rest.slice(0, 180);
-    const cut = Math.max(window.lastIndexOf('。'), window.lastIndexOf('！'), window.lastIndexOf('？'));
-    const at = cut >= 120 ? cut + 1 : 180;
-    out.push(rest.slice(0, at).trim());
-    rest = rest.slice(at).trim();
-  }
-  if (rest) out.push(rest);
-  return out;
-};
-
-const buildParagraphs = (tx, sum, mentions) => {
-  if (!tx?.length) return null;
-  const tags = new Set(sum?.segment_tags ?? []);
+const buildTranscript = (blocks, sum, mentions) => {
+  if (!blocks?.length) return null;
   const names = mentions.map((m) => ({
     ticker: m.ticker,
     words: [m.ticker, m.ticker.replace('TW:', ''), m.display_name, ...(ALIASES[m.ticker] ?? [])].filter(
@@ -176,78 +174,98 @@ const buildParagraphs = (tx, sum, mentions) => {
     ),
   }));
 
-  const paras = [];
-  for (const seg of tx) {
-    for (const piece of splitLong(seg.text)) {
-      paras.push({ t: seg.t ?? null, text: piece });
-    }
+  // 先把每一段切成句子，句子在集內的座標是 `${blockIndex}:${sentenceIndex}`。
+  const sents = [];
+  const body = blocks.map((b, bi) => {
+    if (b.kind === 'h2' || b.ad) return { ...b, sentences: [] };
+    const list = splitSentences(b.text);
+    list.forEach((text, si) => sents.push({ bi, si, t: si === 0 ? b.t ?? null : null, text, chars: text.length }));
+    return { ...b, sentences: list.map((text) => ({ text, key_point: null, tickers: [] })) };
+  });
+
+  // 段落合併之後，一段可能橫跨一分多鐘，用段首時間去對重點會對不到。
+  // 以字數在兩個已知時間點之間線性內插，估每一句的時間（只用來配對，站上不顯示）。
+  let cum = 0;
+  for (const s of sents) { s.at = cum; cum += s.chars; }
+  const anchors = sents.filter((s) => s.t !== null);
+  for (const s of sents) {
+    if (s.t !== null) { s.t_est = s.t; continue; }
+    const prev = [...anchors].reverse().find((a) => a.at <= s.at);
+    const next = anchors.find((a) => a.at > s.at);
+    if (prev && next && next.at > prev.at) {
+      s.t_est = prev.t + ((next.t - prev.t) * (s.at - prev.at)) / (next.at - prev.at);
+    } else s.t_est = prev?.t ?? next?.t ?? null;
   }
 
   // 重點 → 句子。原訂用 SequenceMatcher ≥0.35，實測 EP693 最高只有 0.26（重點是改寫過的短句，
-  // 逐字稿是口語長句），照那個門檻會一句都反白不到。改用字元級 Dice + 分離度：要贏過同一個時間窗
-  // 裡的第二名 1.5 倍以上，才算「就是這一句」。門檻與命中數每次 build 都會印出來。
-  const MIN_R = 0.2;
+  // 逐字稿是口語長句），照那個門檻會一句都反白不到。改用「重點的字元 bigram 有多少比例出現在這一句」
+  // （recall，長句不會因為長而被罰），再加分離度：要贏過同一個時間窗裡的第二名 1.4 倍；
+  // 兩句幾乎同分又相鄰時兩句都反白（一個重點常常橫跨兩句）。門檻與命中數每次 build 都會印出來。
+  const MIN_R = 0.25;
+  const bigrams = (t) => {
+    const c = t.replace(/[^\u4e00-\u9fffA-Za-z0-9]/g, '');
+    const set = new Set();
+    for (let i = 0; i < c.length - 1; i++) set.add(c.slice(i, i + 2));
+    return set;
+  };
+  const recall = (kp, sent) => {
+    if (!kp.size) return 0;
+    let n = 0;
+    for (const g of kp) if (sent.has(g)) n++;
+    return n / kp.size;
+  };
   const kps = (sum?.key_points ?? []).map((k, i) => ({ i, t: secs(k.t), text: noLead(k.text) }));
-  const hit = new Map(); // `${paraIndex}:${sentenceIndex}` -> { key_point, ticker }
+  const sentBi = new Map(sents.map((s) => [s, bigrams(s.text)]));
+  let kpHits = 0;
   for (const kp of kps) {
     if (kp.t === null) continue;
-    const cands = [];
-    paras.forEach((p, pi) => {
-      if (p.t === null || Math.abs(p.t - kp.t) > 40) return;
-      splitSentences(p.text).forEach((sent, si) => {
-        if (sent.length < 8) return;
-        cands.push({ pi, si, r: stringSimilarity(sent, kp.text, 1) });
-      });
-    });
-    cands.sort((a, b) => b.r - a.r);
+    const kb = bigrams(kp.text);
+    const cands = sents
+      .filter((s) => s.t_est !== null && Math.abs(s.t_est - kp.t) <= 60 && s.text.length >= 8)
+      .map((s) => ({ s, r: recall(kb, sentBi.get(s)) }))
+      .sort((a, b) => b.r - a.r);
     const best = cands[0];
-    const second = cands[1]?.r ?? 0;
-    if (best && best.r >= MIN_R && best.r >= second * 1.5) {
-      hit.set(`${best.pi}:${best.si}`, { key_point: kp.i, ticker: null });
+    const second = cands[1];
+    if (!best || best.r < MIN_R) continue;
+    const take = [best];
+    if (second && second.r >= best.r * 0.9) {
+      const adjacent = second.s.bi === best.s.bi && Math.abs(second.s.si - best.s.si) === 1;
+      if (!adjacent) continue;
+      take.push(second);
     }
+    for (const c of take) body[c.s.bi].sentences[c.s.si].key_point = kp.i;
+    kpHits++;
   }
 
-  // 摘要 lane 的 quote 是逐字原話：直接找包含它的那一句，命中率高，順便把個股綁到段落。
+  // 個股 → 句子：句子裡出現代碼或別名就給虛線底線；摘要 lane 的逐字 quote 優先當錨點。
+  const anchor = {};
+  for (const s of sents) {
+    const hits = names.filter((n) => n.words.some((w) => s.text.includes(w))).map((n) => n.ticker);
+    if (!hits.length) continue;
+    body[s.bi].sentences[s.si].tickers = hits;
+    for (const tk of hits) if (anchor[tk] === undefined) anchor[tk] = `s-${s.bi}-${s.si}`;
+  }
   for (const m of mentions) {
     const q = (m.quote ?? '').trim();
     if (q.length < 6) continue;
-    let found = null;
-    paras.forEach((p, pi) => {
-      splitSentences(p.text).forEach((sent, si) => {
-        if (found) return;
-        if (sent.includes(q) || q.includes(sent)) found = { pi, si };
-      });
-    });
-    if (found) {
-      const key = `${found.pi}:${found.si}`;
-      hit.set(key, { key_point: hit.get(key)?.key_point ?? null, ticker: m.ticker });
-    }
+    const found = sents.find((s) => s.text.includes(q) || q.includes(s.text));
+    if (!found) continue;
+    const cell = body[found.bi].sentences[found.si];
+    if (!cell.tickers.includes(m.ticker)) cell.tickers = [...cell.tickers, m.ticker];
+    anchor[m.ticker] = `s-${found.bi}-${found.si}`;
   }
 
-  const firstPara = {};
-  for (const [key, h] of hit) if (h.ticker) firstPara[h.ticker] = Number(key.split(':')[0]);
-  const out = paras.map((p, pi) => {
-    const hits = names.filter((n) => n.words.some((w) => p.text.includes(w))).map((n) => n.ticker);
-    for (const tk of hits) if (firstPara[tk] === undefined) firstPara[tk] = pi;
-    const topic = Object.entries(TAG_WORDS)
-      .filter(([tag, words]) => tags.has(tag) && words.some((w) => p.text.includes(w)))
-      .map(([tag]) => tag)
-      .slice(0, 2);
-    return {
-      t: p.t,
-      tags: topic,
-      tickers: hits,
-      sentences: splitSentences(p.text).map((text, si) => {
-        const h = hit.get(`${pi}:${si}`);
-        return { text, key_point: h?.key_point ?? null, quote_of: h?.ticker ?? null };
-      }),
-    };
-  });
-  const kpHits = [...hit.values()].filter((h) => h.key_point !== null).length;
+  const marked = body.reduce(
+    (a, b) => a + b.sentences.filter((s) => s.key_point !== null || s.tickers.length).length,
+    0,
+  );
   return {
-    paragraphs: out,
-    first_paragraph: firstPara,
-    highlight_count: hit.size,
+    blocks: body,
+    anchor,
+    heading_count: body.filter((b) => b.kind === 'h2').length,
+    quote_count: body.filter((b) => b.kind === 'quote').length,
+    ad_count: body.filter((b) => b.ad).length,
+    marked_count: marked,
     key_point_hits: kpHits,
     key_point_count: kps.length,
   };
@@ -370,10 +388,18 @@ for (let i = 0; i < episodes.length; i++) {
   shown.sort((a, b) => (b.mention_count ?? 0) - (a.mention_count ?? 0) || a.first_ts_s - b.first_ts_s);
   for (const m of shown) m.perf = perfOf(m.ticker, e.published);
   const ms = [...shown, ...review];
-  const tx = loadTranscript(ep);
-  const structured = buildParagraphs(tx, sum, shown);
+  const tx = loadStructured(ep);
+  const structured = buildTranscript(tx, sum, shown);
   if (structured) {
-    for (const m of shown) m.first_paragraph = structured.first_paragraph[m.ticker] ?? null;
+    for (const m of shown) m.first_anchor = structured.anchor[m.ticker] ?? null;
+    STATS.push(
+      `EP${ep} h2=${structured.heading_count} 引用=${structured.quote_count} 代言段=${structured.ad_count} ` +
+        `段=${structured.blocks.filter((b) => b.kind === 'p' && !b.ad).length} ` +
+        `平均${Math.round(
+          structured.blocks.filter((b) => b.kind === 'p' && !b.ad).reduce((a, b) => a + b.text.length, 0) /
+            Math.max(1, structured.blocks.filter((b) => b.kind === 'p' && !b.ad).length),
+        )}字 標記句=${structured.marked_count} 重點命中=${structured.key_point_hits}/${structured.key_point_count}`,
+    );
   }
 
   const doc = {
@@ -398,9 +424,8 @@ for (let i = 0; i < episodes.length; i++) {
     segment_tags: sum?.segment_tags ?? [],
     topics: [],
     mentions: ms,
-    transcript: tx,
-    paragraphs: structured?.paragraphs ?? null,
-    highlight_hits: structured?.highlight_count ?? 0,
+    blocks: structured?.blocks ?? null,
+    marked_sentences: structured?.marked_count ?? 0,
     key_point_hits: structured?.key_point_hits ?? 0,
     key_point_total: structured?.key_point_count ?? 0,
     transcript_source: tx ? 'aligned' : null,
@@ -522,8 +547,9 @@ ${Object.values(tickerMap)
 `,
 );
 
+for (const line of STATS) console.log(line);
 console.log(
-  `paragraphs=${fs.readdirSync(path.join(OUT, 'episodes')).length} ` +
+  `episodeFiles=${fs.readdirSync(path.join(OUT, 'episodes')).length} ` +
   `episodes=${index.length} EP${index[index.length - 1].ep_number}..EP${index[0].ep_number} ` +
   `tickers=${Object.keys(tickerMap).length} summaries=${index.filter((e) => e.has_summary).length}`,
 );

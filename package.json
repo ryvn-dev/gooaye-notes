@@ -3,14 +3,16 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "content": "node scripts/build-content.mjs",
-    "dev": "next dev",
     "build": "next build",
+    "check:transcript": "node scripts/check-structured.mjs",
+    "content": "node scripts/build-content.mjs",
+    "data": "npm run content && npm run prices && npm run og",
+    "dev": "next dev",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "prices": "node scripts/fetch-prices.mjs",
     "og": "node scripts/build-og.mjs",
-    "data": "npm run content && npm run prices && npm run og"
+    "prices": "node scripts/fetch-prices.mjs",
+    "structure": "node scripts/structure-transcript.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",
@@ -26,10 +28,13 @@
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "mdast-util-to-string": "^4.0.0",
+    "remark-directive": "^4.0.0",
+    "remark-parse": "^11.0.0",
     "satori": "0.33.4",
     "sharp": "0.35.4",
-    "string-similarity-js": "2.1.4",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "unified": "^11.0.5"
   }
 }

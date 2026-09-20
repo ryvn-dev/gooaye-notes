@@ -8,7 +8,7 @@ type Item = {
   stances?: Stance[];
   jev_prob?: number | null;
   perf?: Perf | null;
-  first_paragraph?: number | null;
+  first_anchor?: string | null;
 };
 
 /** 代碼＋一個小折線 icon，沒有外框、沒有文字標籤；hover 出現那次提及之後的漲跌。 */
@@ -24,7 +24,7 @@ export default function StanceTagRow({ items, max }: { items: Item[]; max?: numb
             stance={stancesOf({ stance: i.stance, stances: i.stances })[0] ?? 'mentioned'}
             p={i.jev_prob ?? null}
             perf={i.perf ?? null}
-            href={i.first_paragraph !== null && i.first_paragraph !== undefined ? `#p-${i.first_paragraph}` : undefined}
+            href={i.first_anchor ? `#${i.first_anchor}` : undefined}
           />
         </li>
       ))}
