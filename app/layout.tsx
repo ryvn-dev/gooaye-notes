@@ -6,7 +6,7 @@ import { site, abs } from '@/lib/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `${site.name}｜${site.tagline}`, template: `%s｜${site.name}` },
+  title: { default: site.name, template: `%s｜${site.name}` },
   description: site.description,
   alternates: { canonical: '/' },
   openGraph: {
@@ -14,10 +14,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: 'zh_TW',
     url: abs('/'),
-    title: `${site.name}｜${site.tagline}`,
+    title: site.name,
     description: site.description,
   },
-  twitter: { card: 'summary', title: `${site.name}｜${site.tagline}`, description: site.description },
+  twitter: { card: 'summary', title: site.name, description: site.description },
+  keywords: [...site.keywords],
   robots: { index: true, follow: true },
 };
 
@@ -32,6 +33,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="zh-Hant-TW">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: site.name,
+              url: abs('/'),
+              description: site.description,
+              inLanguage: 'zh-Hant-TW',
+            }),
+          }}
+        />
         <header className="border-b border-slate-200">
           <div className="mx-auto flex max-w-[680px] items-baseline gap-3 px-4 py-4">
             <Link href="/" className="font-serif text-2xl font-bold tracking-tight">

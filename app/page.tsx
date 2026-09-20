@@ -5,15 +5,17 @@ import StanceTagRow from '@/components/StanceTagRow';
 import { site, abs } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: `股癌 重點筆記｜每集提到哪幾檔、講在第幾分鐘`,
+  title: '股癌筆記',
   description: site.description,
   alternates: { canonical: abs('/') },
+  keywords: [...site.keywords],
 };
 
 export default function Home() {
   const idx = getIndex();
 
   return (
+    <>
     <ul className="divide-y divide-[#eee]">
       {idx.episodes.map((e) => (
         <li key={e.slug}>
@@ -44,5 +46,10 @@ export default function Home() {
         </li>
       ))}
     </ul>
+    <p className="mt-8 text-[13px] leading-7 text-[#6b6b6b]">
+      股癌 Podcast 的個人筆記：每一集用 AI 做重點整理與逐字稿，列出提到的個股、看多看空與原話時間碼，
+      點一下就能跳回那一段自己聽。
+    </p>
+    </>
   );
 }

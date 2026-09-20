@@ -19,8 +19,8 @@ export default function About() {
     <>
       <h1 className="">關於本站</h1>
       <p className="mt-2">
-        {site.name}把股癌 podcast 的公開音檔跑過自動轉寫，抽出每一集提到哪幾檔個股、提到幾次、
-        講在第幾分幾秒，做成一頁可以在手機上讀、也可以點著跳播的筆記。
+        {site.name}是股癌 Podcast 的個人筆記：每一集用 AI 做重點整理與逐字稿，
+        列出提到的個股與看多看空，每一句都附原話與時間碼，在手機上點一下就跳回那一段。
       </p>
 
       <Section h="非官方">
