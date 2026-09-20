@@ -4,7 +4,6 @@ import type { FAQPage, BreadcrumbList, WithContext } from 'schema-dts';
 import { getTickers, getIndex, findTicker, tickerSlug, STANCE, STANCE_ORDER, stancesOf } from '@/lib/content';
 import TickerChart, { type Point } from '@/components/TickerChart';
 import StanceIcon from '@/components/StanceIcon';
-import Disclaimer from '@/components/Disclaimer';
 import { site, abs } from '@/lib/site';
 
 export const dynamicParams = false;
@@ -126,7 +125,6 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
         ))}
       </ul>
 
-      <Disclaimer />
     </>
   );
 }

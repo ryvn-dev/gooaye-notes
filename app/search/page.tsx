@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getIndex, getTickers, tickerSlug } from '@/lib/content';
 import SearchClient, { type SearchDoc } from '@/components/SearchClient';
-import Disclaimer from '@/components/Disclaimer';
 import { abs } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -40,7 +39,6 @@ export default function SearchPage() {
       <div className="mt-4">
         <SearchClient docs={docs} />
       </div>
-      <Disclaimer />
     </>
   );
 }

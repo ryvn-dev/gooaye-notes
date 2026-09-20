@@ -47,11 +47,26 @@ export default function AudioPlayer({ src, title }: { src: string; title: string
     else el.pause();
   };
 
-  const scrub = (e: React.MouseEvent<HTMLDivElement>) => {
+  const seekTo = (clientX: number, r: DOMRect) => {
     const el = ref.current;
     if (!el || !el.duration) return;
-    const r = e.currentTarget.getBoundingClientRect();
-    el.currentTime = ((e.clientX - r.left) / r.width) * el.duration;
+    const ratio = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
+    el.currentTime = ratio * el.duration;
+    setPos(ratio);
+  };
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    const bar = e.currentTarget;
+    const r = bar.getBoundingClientRect();
+    bar.setPointerCapture(e.pointerId);
+    seekTo(e.clientX, r);
+    const move = (ev: PointerEvent) => seekTo(ev.clientX, r);
+    const up = () => {
+      bar.removeEventListener('pointermove', move);
+      bar.removeEventListener('pointerup', up);
+    };
+    bar.addEventListener('pointermove', move);
+    bar.addEventListener('pointerup', up);
   };
 
   return (
@@ -67,8 +82,17 @@ export default function AudioPlayer({ src, title }: { src: string; title: string
         </button>
         <span className="truncate text-[14px] text-[#242424]">{title}</span>
       </div>
-      <div className="h-[2px] w-full cursor-pointer bg-[#f0f0f0]" onClick={scrub}>
-        <div className="h-full bg-[#242424]" style={{ width: `${Math.min(100, pos * 100)}%` }} />
+      <div
+        className="w-full cursor-pointer touch-none bg-[#f0f0f0] py-[3px]"
+        onPointerDown={onPointerDown}
+        role="slider"
+        aria-label="播放進度"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(pos * 100)}
+        tabIndex={0}
+      >
+        <div className="h-[2px] bg-[#242424]" style={{ width: `${Math.min(100, pos * 100)}%` }} />
       </div>
       <audio id={AUDIO_ID} ref={ref} src={src} preload="none" className="hidden" aria-label={title} />
     </div>

@@ -49,11 +49,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <main className="mx-auto max-w-[680px] px-4 py-6">{children}</main>
         <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
-          <p>
-            {site.name} · 非官方第三方整理 · 地端 AI 模型與站主自我判斷，仍有可能出錯。非投資建議。{' '}
-            <Link href="/ticker/" className="underline underline-offset-2">
-              個股
-            </Link>{' '}
+          <p>地端 AI 模型與站主自我判斷，仍有可能出錯。非投資建議。</p>
+          <p className="mt-1">
+            <a
+              href="https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63"
+              className="underline underline-offset-2"
+              rel="noopener"
+            >
+              節目來源
+            </a>{' '}
             ·{' '}
             <Link href="/about/" className="underline underline-offset-2">
               聲明與聯絡

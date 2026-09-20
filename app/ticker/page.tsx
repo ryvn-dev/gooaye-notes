@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getIndex, getTickers, tickerSlug } from '@/lib/content';
-import Disclaimer from '@/components/Disclaimer';
 import { abs } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -44,7 +43,6 @@ export default function TickerIndex() {
       </p>
       {group('美股', us)}
       {group('台股', tw)}
-      <Disclaimer />
     </>
   );
 }

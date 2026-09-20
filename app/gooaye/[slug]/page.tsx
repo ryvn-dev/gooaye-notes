@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { PodcastEpisode, BreadcrumbList, WithContext } from 'schema-dts';
 import { getIndex, getEpisode, minutes } from '@/lib/content';
@@ -7,7 +6,6 @@ import StanceTagRow from '@/components/StanceTagRow';
 import AudioPlayer from '@/components/AudioPlayer';
 import TimecodeButton from '@/components/TimecodeButton';
 import AdSlot from '@/components/AdSlot';
-import Disclaimer from '@/components/Disclaimer';
 import { site, abs } from '@/lib/site';
 
 export const dynamicParams = false;
@@ -54,10 +52,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function EpisodePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const ep = getEpisode(slug);
-  const list = getIndex().episodes;
-  const i = list.findIndex((e) => e.slug === slug);
-  const newer = i > 0 ? list[i - 1] : null;
-  const older = i >= 0 && i < list.length - 1 ? list[i + 1] : null;
   const shown = ep.mentions.filter((m) => !m.needs_review);
 
   const episodeLd: WithContext<PodcastEpisode> = {
@@ -161,24 +155,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         </>
       )}
 
-      <nav className="mt-10 flex justify-between gap-4 border-t border-[#eee] pt-4 text-[15px]">
-        {older ? (
-          <Link href={`/gooaye/${older.slug}/`} className="underline underline-offset-2">
-            ← EP{older.ep_number}
-          </Link>
-        ) : (
-          <span />
-        )}
-        {newer ? (
-          <Link href={`/gooaye/${newer.slug}/`} className="underline underline-offset-2">
-            EP{newer.ep_number} →
-          </Link>
-        ) : (
-          <span />
-        )}
-      </nav>
 
-      <Disclaimer />
 
       {ep.audio_url ? (
         <AudioPlayer src={ep.audio_url} title={ep.feed_title ?? `股癌 EP${ep.ep_number}`} />
