@@ -112,7 +112,10 @@ const loadTranscript = (ep) => {
   const j = readIf(path.join(SITEJSON, 'transcripts', `EP${ep}.json`));
   const segs = j?.segments;
   if (!segs?.length) return null;
-  return segs.map((x) => ({ t: x.t ?? null, text: x.text }));
+  // 社群稿是 markdown：把標題記號去掉，站上只出現內文。
+  return segs
+    .map((x) => ({ t: x.t ?? null, text: String(x.text ?? '').replace(/^\s*#{1,6}\s*/, '').trim() }))
+    .filter((x) => x.text.length > 0);
 };
 
 const byEp = {};

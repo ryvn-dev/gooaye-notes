@@ -59,7 +59,12 @@ export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[]
     vol.setData(bars.map((b) => ({ time: b.d as Time, value: b.v, color: b.c >= b.o ? '#f0d5d1' : '#d6e5de' })));
 
     const byDate = new Map(bars.map((b) => [b.d, b]));
-    const snap = (d: string) => (byDate.has(d) ? d : bars.find((b) => b.d >= d)?.d ?? null);
+    // 發布日可能不是交易日（或報價還沒更新到那一天）：往後找最近的交易日，沒有就用最後一根。
+    const snap = (d: string) => {
+      if (byDate.has(d)) return d;
+      if (d < bars[0].d) return null;
+      return bars.find((b) => b.d >= d)?.d ?? bars[bars.length - 1].d;
+    };
 
     // 同一天可能有多個節目／多個人講同一檔：合併成一顆 marker，tooltip 再展開（lightweight-charts
     // 不像 Highcharts flags 會自動堆疊，合併規則是我們自己的資料模型）。
@@ -79,9 +84,9 @@ export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[]
       const stance = kinds.size === 1 ? group[0].stance : 'neutral';
       markers.push(
         stance === 'bullish'
-          ? { time: d as Time, position: 'aboveBar', shape: 'arrowUp', color: COLOR.up }
+          ? { time: d as Time, position: 'aboveBar', shape: 'arrowUp', color: COLOR.up, size: 1.4 }
           : stance === 'bearish'
-            ? { time: d as Time, position: 'belowBar', shape: 'arrowDown', color: COLOR.down }
+            ? { time: d as Time, position: 'belowBar', shape: 'arrowDown', color: COLOR.down, size: 1.4 }
             : { time: d as Time, position: 'aboveBar', shape: 'circle', color: COLOR.flat },
       );
     }
