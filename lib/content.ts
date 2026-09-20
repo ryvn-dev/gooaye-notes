@@ -6,6 +6,20 @@ const read = <T,>(p: string): T => JSON.parse(fs.readFileSync(path.join(DIR, p),
 
 export type Stance = 'bullish' | 'bearish' | 'neutral' | 'mentioned';
 
+export type Perf = {
+  base_date: string;
+  base: number;
+  last_date: string;
+  last: number;
+  pct: number | null;
+  d5: number | null;
+  d21: number | null;
+};
+
+export type Sentence = { text: string; key_point: number | null; quote_of: string | null };
+
+export type Paragraph = { t: number | null; tags: string[]; tickers: string[]; sentences: Sentence[] };
+
 export type Mention = {
   ticker: string;
   display_name: string;
@@ -28,6 +42,8 @@ export type Mention = {
   px_1d: number | null;
   px_5d: number | null;
   px_21d: number | null;
+  perf: Perf | null;
+  first_paragraph?: number | null;
 };
 
 export type Show = { id: string; name: string; language: string; rss: string; site: string };
@@ -57,6 +73,10 @@ export type Episode = {
   mentions: Mention[];
   ep_inferred?: boolean;
   transcript: { t: number | null; text: string }[] | null;
+  paragraphs: Paragraph[] | null;
+  highlight_hits: number;
+  key_point_hits: number;
+  key_point_total: number;
   transcript_source: string | null;
   transcript_available: boolean;
   provenance: Record<string, string | null>;
@@ -73,7 +93,14 @@ export type IndexEntry = {
   site_title: string;
   summary_answer_first: string | null;
   has_summary: boolean;
-  top_tickers: { ticker: string; display_name: string; stance: Stance; stances: Stance[]; speaker: string | null }[];
+  top_tickers: {
+    ticker: string;
+    display_name: string;
+    stance: Stance;
+    stances: Stance[];
+    speaker: string | null;
+    perf?: Perf | null;
+  }[];
   mention_total: number;
 };
 
@@ -99,6 +126,7 @@ export type TickerRow = {
     speaker: string | null;
     jev_prob: number | null;
     quote: string | null;
+    perf?: Perf | null;
     px_1d: number | null;
     px_5d: number | null;
     px_21d: number | null;

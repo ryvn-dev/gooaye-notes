@@ -18,6 +18,7 @@ export type Mark = {
   show: string;
   /** 之後要做「每個人的成績單」時用得到；現在節目只有一位主講。 */
   speaker?: string | null;
+  perf?: { base_date: string; base: number; last_date: string; last: number; pct: number | null; d5: number | null; d21: number | null } | null;
 };
 
 const COLOR = { up: '#C0392B', down: '#2E7D5B', flat: '#9a9a9a' };
@@ -78,7 +79,16 @@ export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[]
     for (const [d, group] of byDay) {
       markerMap.set(
         d,
-        group.map((m) => [m.show, m.speaker, m.date, LABEL[m.stance]].filter(Boolean).join(' · ')),
+        group.map((m) => {
+          const head = [m.show, m.speaker, m.date, LABEL[m.stance]].filter(Boolean).join(' · ');
+          if (!m.perf) return `${head} · 報價暫時抓不到`;
+          const p = m.perf;
+          const pc = (v: number | null) => (v === null ? '—' : `${v > 0 ? '+' : ''}${v.toFixed(1)}%`);
+          const tail = [`${p.base} → ${p.last} ${pc(p.pct)}`,
+            p.d5 !== null ? `5 日 ${pc(p.d5)}` : null,
+            p.d21 !== null ? `21 日 ${pc(p.d21)}` : null].filter(Boolean).join(' · ');
+          return `${head} · ${tail}`;
+        }),
       );
       const kinds = new Set(group.map((m) => m.stance));
       const stance = kinds.size === 1 ? group[0].stance : 'neutral';
@@ -117,8 +127,8 @@ export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[]
       <div ref={box} />
       {tip && (
         <div
-          className="pointer-events-none absolute top-0 whitespace-nowrap bg-white px-2 py-1 text-[12px] text-[#242424]"
-          style={{ left: Math.max(0, Math.min(tip.x - 60, (box.current?.clientWidth ?? 320) - 150)) }}
+          className="pointer-events-none absolute top-0 whitespace-nowrap border border-[#e5e5e5] bg-white px-2 py-1 text-[12px] text-[#242424]"
+          style={{ left: Math.max(0, Math.min(tip.x - 90, (box.current?.clientWidth ?? 320) - 220)) }}
         >
           {tip.text}
         </div>

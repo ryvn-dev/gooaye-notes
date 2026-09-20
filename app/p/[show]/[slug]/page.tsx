@@ -5,6 +5,7 @@ import MentionCard from '@/components/MentionCard';
 import StanceTagRow from '@/components/StanceTagRow';
 import AudioPlayer from '@/components/AudioPlayer';
 import TimecodeButton from '@/components/TimecodeButton';
+import Transcript from '@/components/Transcript';
 import AdSlot from '@/components/AdSlot';
 import { site, abs } from '@/lib/site';
 
@@ -13,6 +14,16 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return getIndex().episodes.map((e) => ({ show: e.show, slug: e.slug }));
 }
+
+/** 重點第 i 點反白到哪一句（給重點那一列做回跳的 anchor）。 */
+const findSentence = (ep: ReturnType<typeof getEpisode>, i: number) => {
+  const paras = ep.paragraphs ?? [];
+  for (let pi = 0; pi < paras.length; pi++) {
+    const si = paras[pi].sentences.findIndex((s) => s.key_point === i);
+    if (si !== -1) return `${pi}-${si}`;
+  }
+  return null;
+};
 
 const answerFirst = (ep: ReturnType<typeof getEpisode>) => {
   if (ep.summary_answer_first) return ep.summary_answer_first;
@@ -120,12 +131,21 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
         <>
           <h2 className="mt-8">重點</h2>
           <ul className="mt-3 space-y-2">
-            {ep.key_points.map((k) => (
-              <li key={k.text} className="flex items-start gap-2">
-                {k.t !== null && <TimecodeButton seconds={k.t} />}
-                <span>{k.text}</span>
-              </li>
-            ))}
+            {ep.key_points.map((k, i) => {
+              const back = findSentence(ep, i);
+              return (
+                <li key={k.text} id={`kp-${i}`} className="flex scroll-mt-16 items-start gap-2">
+                  {k.t !== null && <TimecodeButton seconds={k.t} />}
+                  {back ? (
+                    <a href={`#s-${back}`} className="no-underline">
+                      {k.text}
+                    </a>
+                  ) : (
+                    <span>{k.text}</span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </>
       )}
@@ -140,24 +160,25 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
         </ul>
       )}
 
-      {ep.transcript_available && ep.transcript && (
-        <>
-          <h2 className="mt-10">逐字稿</h2>
-          <div className="mt-3 space-y-3">
-            {ep.transcript.map((seg, i) => (
-              <div key={i} className="flex items-start gap-2">
-                {seg.t !== null ? <TimecodeButton seconds={seg.t} /> : <span className="w-5 shrink-0" />}
-                <p className="m-0 text-[16px] leading-8">{seg.text}</p>
-              </div>
-            ))}
-          </div>
-        </>
+      <h2 className="mt-10">逐字稿</h2>
+      {ep.paragraphs?.length ? (
+        <Transcript paragraphs={ep.paragraphs} mentions={shown} />
+      ) : (
+        <p className="mt-3 text-[15px] text-[#6b6b6b]">逐字稿待補。</p>
       )}
 
       {shown.length > 0 && (
         <>
           <h2 className="mt-8">相關個股</h2>
           <table className="mt-3 w-full border-collapse text-[16px]">
+            <caption className="sr-only">這一集提到的個股、原話與報價連結</caption>
+            <thead className="sr-only">
+              <tr>
+                <th scope="col">個股與原話</th>
+                <th scope="col">跳到那一段</th>
+                <th scope="col">報價</th>
+              </tr>
+            </thead>
             <tbody>
               {shown.map((m) => (
                 <MentionCard key={m.ticker} m={m} />

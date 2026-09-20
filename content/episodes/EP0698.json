@@ -104,7 +104,8 @@
       "flag_reason": null,
       "stance_p": null,
       "stance_margin": null,
-      "is_about_p": null
+      "is_about_p": null,
+      "perf": null
     },
     {
       "ticker": "TSM",
@@ -131,7 +132,8 @@
       "flag_reason": null,
       "stance_p": null,
       "stance_margin": null,
-      "is_about_p": null
+      "is_about_p": null,
+      "perf": null
     },
     {
       "ticker": "NVDA",
@@ -158,7 +160,8 @@
       "flag_reason": null,
       "stance_p": null,
       "stance_margin": null,
-      "is_about_p": null
+      "is_about_p": null,
+      "perf": null
     },
     {
       "ticker": "CCL",
@@ -312,6 +315,10 @@
     }
   ],
   "transcript": null,
+  "paragraphs": null,
+  "highlight_hits": 0,
+  "key_point_hits": 0,
+  "key_point_total": 0,
   "transcript_source": null,
   "transcript_available": false,
   "provenance": {

@@ -55,6 +55,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
     stance: stancesOf(r)[0] ?? 'mentioned',
     show: r.show_name ?? '股癌',
     speaker: r.speaker,
+    perf: r.perf ?? null,
   }));
 
   const companyLd: WithContext<Corporation> = {

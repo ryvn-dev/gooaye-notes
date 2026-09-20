@@ -103,7 +103,16 @@
       "flag_reason": null,
       "stance_p": null,
       "stance_margin": null,
-      "is_about_p": null
+      "is_about_p": null,
+      "perf": {
+        "base_date": "2026-09-16",
+        "base": 134.34,
+        "last_date": "2026-09-18",
+        "last": 129.75,
+        "pct": -3.4,
+        "d5": null,
+        "d21": null
+      }
     },
     {
       "ticker": "TSLA",
@@ -130,7 +139,16 @@
       "flag_reason": null,
       "stance_p": null,
       "stance_margin": null,
-      "is_about_p": null
+      "is_about_p": null,
+      "perf": {
+        "base_date": "2026-09-16",
+        "base": 358.08,
+        "last_date": "2026-09-18",
+        "last": 364.27,
+        "pct": 1.7,
+        "d5": null,
+        "d21": null
+      }
     },
     {
       "ticker": "CRWD",
@@ -157,7 +175,16 @@
       "flag_reason": null,
       "stance_p": null,
       "stance_margin": null,
-      "is_about_p": null
+      "is_about_p": null,
+      "perf": {
+        "base_date": "2026-09-16",
+        "base": 241.36,
+        "last_date": "2026-09-18",
+        "last": 237.65,
+        "pct": -1.5,
+        "d5": null,
+        "d21": null
+      }
     },
     {
       "ticker": "GOOGL",
@@ -186,6 +213,10 @@
     }
   ],
   "transcript": null,
+  "paragraphs": null,
+  "highlight_hits": 0,
+  "key_point_hits": 0,
+  "key_point_total": 0,
   "transcript_source": null,
   "transcript_available": false,
   "provenance": {

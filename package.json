@@ -28,6 +28,7 @@
     "@types/react-dom": "^19.0.2",
     "satori": "0.33.4",
     "sharp": "0.35.4",
+    "string-similarity-js": "2.1.4",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.7.2"
   }

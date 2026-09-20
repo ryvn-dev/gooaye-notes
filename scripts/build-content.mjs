@@ -3,6 +3,7 @@
 // 用法：node scripts/build-content.mjs        （POC_EPISODES 預設 3）
 import fs from 'node:fs';
 import path from 'node:path';
+import { stringSimilarity } from 'string-similarity-js';
 
 const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-finance`;
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
@@ -118,6 +119,168 @@ const loadTranscript = (ep) => {
     .filter((x) => x.text.length > 0);
 };
 
+
+// ── 結構化逐字稿 ───────────────────────────────────────────────────────────
+// 版型調查見 docs/transcript-format-survey.md：競品只有「空行切段 + 段落 anchor」，
+// 段首標籤列（主題 + 個股 chip）與「重點 ↔ 句子」反白是我們自己加的。
+
+const ALIASES = (() => {
+  const f = path.join(FIN, 'data', 'podcasts', 'aliases.csv');
+  const map = {};
+  if (!fs.existsSync(f)) return map;
+  for (const r of csv(f)) {
+    if (!r.ticker || !r.alias) continue;
+    (map[r.ticker] ||= []).push(r.alias);
+  }
+  return map;
+})();
+
+// 主題標籤只在「該集摘要真的列了這個標籤」時才貼；對不到的段落不放標籤。
+const TAG_WORDS = {
+  半導體: ['晶片', '晶圓', '製程', '記憶體', '封裝', 'CoWoS', 'DRAM', 'HBM', '先進', '代工'],
+  AI: ['AI', '人工智慧', '算力', '模型', 'GPU', '資料中心', '推論'],
+  總經: ['聯準會', 'Fed', '利率', '通膨', '降息', '升息', '公債', '關稅'],
+  產業: ['供應鏈', '產業', '需求', '報價', '出貨', '庫存', '訂單'],
+  美股: ['美股', '那斯達克', '標普', '費半'],
+  台股: ['台股', '加權', '櫃買', '台積電'],
+  聽眾問答: ['聽眾', '有人問', '留言問', '問答', '這題'],
+  投資心法: ['部位', '停損', '加碼', '心態', '紀律', '風險', '配置', '資金'],
+  生活閒聊: ['吃', '餐廳', '跑步', '旅遊', '電影', '喝', '贊助'],
+};
+
+const SENT_END = /(?<=[。！？!?])/;
+const splitSentences = (t) => t.split(SENT_END).map((x) => x.trim()).filter(Boolean);
+
+/** 一段超過 180 字就在 120–180 字之間的句號切開（競品用空行，社群稿有些段落很長）。 */
+const splitLong = (text) => {
+  const out = [];
+  let rest = text;
+  while (rest.length > 180) {
+    const window = rest.slice(0, 180);
+    const cut = Math.max(window.lastIndexOf('。'), window.lastIndexOf('！'), window.lastIndexOf('？'));
+    const at = cut >= 120 ? cut + 1 : 180;
+    out.push(rest.slice(0, at).trim());
+    rest = rest.slice(at).trim();
+  }
+  if (rest) out.push(rest);
+  return out;
+};
+
+const buildParagraphs = (tx, sum, mentions) => {
+  if (!tx?.length) return null;
+  const tags = new Set(sum?.segment_tags ?? []);
+  const names = mentions.map((m) => ({
+    ticker: m.ticker,
+    words: [m.ticker, m.ticker.replace('TW:', ''), m.display_name, ...(ALIASES[m.ticker] ?? [])].filter(
+      (w) => w && String(w).length >= 2,
+    ),
+  }));
+
+  const paras = [];
+  for (const seg of tx) {
+    for (const piece of splitLong(seg.text)) {
+      paras.push({ t: seg.t ?? null, text: piece });
+    }
+  }
+
+  // 重點 → 句子。原訂用 SequenceMatcher ≥0.35，實測 EP693 最高只有 0.26（重點是改寫過的短句，
+  // 逐字稿是口語長句），照那個門檻會一句都反白不到。改用字元級 Dice + 分離度：要贏過同一個時間窗
+  // 裡的第二名 1.5 倍以上，才算「就是這一句」。門檻與命中數每次 build 都會印出來。
+  const MIN_R = 0.2;
+  const kps = (sum?.key_points ?? []).map((k, i) => ({ i, t: secs(k.t), text: noLead(k.text) }));
+  const hit = new Map(); // `${paraIndex}:${sentenceIndex}` -> { key_point, ticker }
+  for (const kp of kps) {
+    if (kp.t === null) continue;
+    const cands = [];
+    paras.forEach((p, pi) => {
+      if (p.t === null || Math.abs(p.t - kp.t) > 40) return;
+      splitSentences(p.text).forEach((sent, si) => {
+        if (sent.length < 8) return;
+        cands.push({ pi, si, r: stringSimilarity(sent, kp.text, 1) });
+      });
+    });
+    cands.sort((a, b) => b.r - a.r);
+    const best = cands[0];
+    const second = cands[1]?.r ?? 0;
+    if (best && best.r >= MIN_R && best.r >= second * 1.5) {
+      hit.set(`${best.pi}:${best.si}`, { key_point: kp.i, ticker: null });
+    }
+  }
+
+  // 摘要 lane 的 quote 是逐字原話：直接找包含它的那一句，命中率高，順便把個股綁到段落。
+  for (const m of mentions) {
+    const q = (m.quote ?? '').trim();
+    if (q.length < 6) continue;
+    let found = null;
+    paras.forEach((p, pi) => {
+      splitSentences(p.text).forEach((sent, si) => {
+        if (found) return;
+        if (sent.includes(q) || q.includes(sent)) found = { pi, si };
+      });
+    });
+    if (found) {
+      const key = `${found.pi}:${found.si}`;
+      hit.set(key, { key_point: hit.get(key)?.key_point ?? null, ticker: m.ticker });
+    }
+  }
+
+  const firstPara = {};
+  for (const [key, h] of hit) if (h.ticker) firstPara[h.ticker] = Number(key.split(':')[0]);
+  const out = paras.map((p, pi) => {
+    const hits = names.filter((n) => n.words.some((w) => p.text.includes(w))).map((n) => n.ticker);
+    for (const tk of hits) if (firstPara[tk] === undefined) firstPara[tk] = pi;
+    const topic = Object.entries(TAG_WORDS)
+      .filter(([tag, words]) => tags.has(tag) && words.some((w) => p.text.includes(w)))
+      .map(([tag]) => tag)
+      .slice(0, 2);
+    return {
+      t: p.t,
+      tags: topic,
+      tickers: hits,
+      sentences: splitSentences(p.text).map((text, si) => {
+        const h = hit.get(`${pi}:${si}`);
+        return { text, key_point: h?.key_point ?? null, quote_of: h?.ticker ?? null };
+      }),
+    };
+  });
+  const kpHits = [...hit.values()].filter((h) => h.key_point !== null).length;
+  return {
+    paragraphs: out,
+    first_paragraph: firstPara,
+    highlight_count: hit.size,
+    key_point_hits: kpHits,
+    key_point_count: kps.length,
+  };
+};
+
+// ── 提及之後的漲跌（build 時算好，前端不打 API） ───────────────────────────
+const PRICES = {};
+const priceRows = (ticker) => {
+  if (PRICES[ticker] !== undefined) return PRICES[ticker];
+  const f = path.resolve(import.meta.dirname, '..', 'content', 'prices', `${ticker.replace(/[.:]/g, '-')}.json`);
+  PRICES[ticker] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')).rows : null;
+  return PRICES[ticker];
+};
+const pctOf = (a, b) => (a && b ? Number((((b - a) / a) * 100).toFixed(1)) : null);
+const perfOf = (ticker, date) => {
+  const rows = priceRows(ticker);
+  if (!rows?.length) return null;
+  const i = rows.findIndex((r) => r.d >= date);
+  if (i === -1) return null;
+  const base = rows[i];
+  const last = rows[rows.length - 1];
+  const at = (n) => (i + n < rows.length ? rows[i + n] : null);
+  return {
+    base_date: base.d,
+    base: base.c,
+    last_date: last.d,
+    last: last.c,
+    pct: pctOf(base.c, last.c),
+    d5: at(5) ? pctOf(base.c, at(5).c) : null,
+    d21: at(21) ? pctOf(base.c, at(21).c) : null,
+  };
+};
+
 const byEp = {};
 for (const m of mentions) (byEp[m.episode_id] ||= []).push(m);
 
@@ -205,8 +368,13 @@ for (let i = 0; i < episodes.length; i++) {
   }
 
   shown.sort((a, b) => (b.mention_count ?? 0) - (a.mention_count ?? 0) || a.first_ts_s - b.first_ts_s);
+  for (const m of shown) m.perf = perfOf(m.ticker, e.published);
   const ms = [...shown, ...review];
   const tx = loadTranscript(ep);
+  const structured = buildParagraphs(tx, sum, shown);
+  if (structured) {
+    for (const m of shown) m.first_paragraph = structured.first_paragraph[m.ticker] ?? null;
+  }
 
   const doc = {
     schema_version: 2,
@@ -231,6 +399,10 @@ for (let i = 0; i < episodes.length; i++) {
     topics: [],
     mentions: ms,
     transcript: tx,
+    paragraphs: structured?.paragraphs ?? null,
+    highlight_hits: structured?.highlight_count ?? 0,
+    key_point_hits: structured?.key_point_hits ?? 0,
+    key_point_total: structured?.key_point_count ?? 0,
     transcript_source: tx ? 'aligned' : null,
     transcript_available: Boolean(tx),
     provenance: {
@@ -255,7 +427,8 @@ for (let i = 0; i < episodes.length; i++) {
     summary_answer_first: doc.summary_answer_first,
     has_summary: Boolean(doc.summary),
     top_tickers: shown.slice(0, 8).map((m) => ({
-      ticker: m.ticker, display_name: m.display_name, stance: m.stance, stances: m.stances, speaker: m.speaker,
+      ticker: m.ticker, display_name: m.display_name, stance: m.stance, stances: m.stances,
+      speaker: m.speaker, perf: m.perf ?? null,
     })),
     mention_total: shown.length,
   });
@@ -275,7 +448,7 @@ for (let i = 0; i < episodes.length; i++) {
       ep_number: ep, slug: doc.slug, published_at: e.published,
       mention_count: m.mention_count, first_ts_s: m.t ?? m.first_ts_s,
       stance: m.stance, stances: m.stances, speaker: m.speaker,
-      jev_prob: m.jev_prob, quote: m.quote,
+      jev_prob: m.jev_prob, quote: m.quote, perf: m.perf ?? null,
       px_1d: m.px_1d, px_5d: m.px_5d, px_21d: m.px_21d,
     });
   }
@@ -350,6 +523,7 @@ ${Object.values(tickerMap)
 );
 
 console.log(
+  `paragraphs=${fs.readdirSync(path.join(OUT, 'episodes')).length} ` +
   `episodes=${index.length} EP${index[index.length - 1].ep_number}..EP${index[0].ep_number} ` +
   `tickers=${Object.keys(tickerMap).length} summaries=${index.filter((e) => e.has_summary).length}`,
 );
