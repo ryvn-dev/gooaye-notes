@@ -44,12 +44,16 @@ const marketOf = (t) => (t.startsWith('TW:') ? 'TW' : 'US');
 const byEp = {};
 for (const m of mentions) (byEp[m.episode_id] ||= []).push(m);
 
+// POC：只出最新 N 集（主人 2026-09-21 05:35）。集號仍由完整清單推定，所以錨點與間隔檢查照跑。
+const LIMIT = Number(process.env.POC_EPISODES || 3);
+
 const index = [];
 const tickerMap = {};
 
 for (let i = 0; i < episodes.length; i++) {
   const e = episodes[i];
   const ep = ANCHOR.ep - (anchorIdx - i);
+  if (i < episodes.length - LIMIT) continue;
   const slug = pad(ep);
   const ms = (byEp[e.episode_id] || [])
     .map((m) => ({
@@ -141,7 +145,7 @@ fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify({
   schema_version: 1,
   generated_at: new Date().toISOString(),
   episode_count: index.length,
-  coverage: { from: episodes[0].published, to: episodes[episodes.length - 1].published },
+  coverage: { from: index[index.length - 1].published_at, to: index[0].published_at },
   episodes: index,
 }, null, 2) + '\n');
 
@@ -159,7 +163,7 @@ fs.writeFileSync(path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'), 
 > 非官方，與節目及其製作方無關。非投資建議。站上不提供買賣、目標價、勝率或報酬統計。
 
 ## 資料範圍
-- 集數：${index.length} 集，EP${index[index.length - 1].slug} 至 EP${index[0].slug}（${episodes[0].published} 至 ${episodes[episodes.length - 1].published}）
+- 集數：${index.length} 集，EP${index[index.length - 1].slug} 至 EP${index[0].slug}（${index[index.length - 1].published_at} 至 ${index[0].published_at}）
 - 個股：${Object.keys(tickerMap).length} 檔（已排除疑似誤抓的代號）
 - 提及次數與時間碼為程式從公開音檔的自動轉寫抽出 [observed]
 - 多空立場、AI 摘要、提到後 1／5／21 日價格變化：尚未產出，站上顯示「待補」，不以估計值填補

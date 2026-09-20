@@ -29,3 +29,8 @@ NEXT_PUBLIC_BASE_PATH= npm run dev   # 本機開發（不帶子路徑）
 - 站上不出現買、賣、建議、目標價、進出場價位、勝率、報酬率。
 - 每個數字帶樣本數與起算日；樣本不足就寫樣本不足。
 - 立場標籤的呈現文字是「模型對這一段話的讀法」。
+
+## POC 範圍
+
+目前 `content/` 只放最新 3 集（`POC_EPISODES=3`，主人 2026-09-21 拍）。
+要回補更多集：`POC_EPISODES=52 npm run content`。
