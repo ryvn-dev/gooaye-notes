@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <section>
-        <h1 className="text-2xl font-bold leading-snug">股癌 每集重點筆記與個股提及紀錄</h1>
+        <h1 className="leading-snug">股癌 每集重點筆記與個股提及紀錄</h1>
         <dl className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-[15px]">
           <div className="flex gap-1">
             <dt className="text-slate-500 dark:text-slate-400">收錄集數</dt>
@@ -47,7 +47,7 @@ export default function Home() {
 
       <AdSlot id="home-below-fold" />
 
-      <h2 className="mt-8 text-lg font-bold">最新集數</h2>
+      <h2 className="mt-8">最新集數</h2>
       <ul className="mt-4 divide-y divide-slate-200 dark:divide-slate-800">
         {idx.episodes.map((e) => (
           <li key={e.slug}>
@@ -77,7 +77,7 @@ export default function Home() {
         ))}
       </ul>
 
-      <h2 className="mt-10 text-lg font-bold">被提到最多集的個股</h2>
+      <h2 className="mt-10">被提到最多集的個股</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         樣本 n={idx.episode_count} 集，起算日 {idx.coverage.from}，<strong>樣本不足</strong>。
       </p>

@@ -116,7 +116,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
 
       <AdSlot id="episode-mid" />
 
-      <h2 className="mt-8 text-lg font-bold">AI 摘要</h2>
+      <h2 className="mt-8">AI 摘要</h2>
       {ep.summary ? (
         <p className="mt-2">{ep.summary}</p>
       ) : (
@@ -126,7 +126,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       )}
 
       <div className="divider" />
-      <h2 className="mt-8 text-lg font-bold">AI 重點整理</h2>
+      <h2 className="mt-8">AI 重點整理</h2>
       {ep.key_points.length > 0 ? (
         <ul className="mt-2 space-y-2">
           {ep.key_points.map((k) => (
@@ -140,7 +140,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         <p className="mt-2 text-slate-500 dark:text-slate-400">重點整理待補。</p>
       )}
 
-      <h2 className="mt-8 text-lg font-bold">重點段標籤</h2>
+      <h2 className="mt-8">重點段標籤</h2>
       {ep.segment_tags.length > 0 ? (
         <ul className="mt-2 flex flex-wrap gap-2">
           {ep.segment_tags.map((t) => (
@@ -154,7 +154,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
       )}
 
       <div className="divider" />
-      <h2 className="mt-8 text-lg font-bold">本集提到的個股</h2>
+      <h2 className="mt-8">本集提到的個股</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         [observed] 次數與時間碼由自動轉寫抽出。缺值一律顯示「待補」，不填估計值。
       </p>
@@ -191,7 +191,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ slug: 
         </details>
       )}
 
-      <h2 className="mt-8 text-lg font-bold">全文逐字稿</h2>
+      <h2 className="mt-8">全文逐字稿</h2>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">逐字稿為 AI 轉錄，可能有錯。</p>
       {ep.transcript_available && ep.transcript ? (
         <details className="mt-2 border-y border-slate-200 py-4 dark:border-slate-800">

@@ -1,50 +1,62 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: Inter, system-ui, -apple-system, "PingFang TC", "Noto Sans TC", "Hiragino Sans", "Microsoft JhengHei",
-    system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Noto Serif TC", Georgia, Charter, "Songti TC", "PingFang TC", serif;
+  --font-sans: "Noto Sans TC", Inter, system-ui, -apple-system, "PingFang TC", "Hiragino Sans",
+    "Microsoft JhengHei", "Segoe UI", sans-serif;
+  --font-serif: "Noto Serif TC", Georgia, "Songti TC", serif;
 }
 
 :root { color-scheme: light dark; }
 html { -webkit-text-size-adjust: 100%; }
 
-/* Medium 閱讀風：內文 serif、標題 sans、段距大 */
+/* 內文排版照 justfont 那一套：sans、18px、行高 2.0、字距 0.02em、段距 1.6em */
 body {
-  font-family: var(--font-serif);
-  font-size: 19px;
-  line-height: 1.6;
-  letter-spacing: 0.003em;
-}
-
-h1, h2, h3, h4, nav, button, table, summary, time, dt, dd, code, input, label, th, td {
+  background: #fff;
+  color: #242424;
   font-family: var(--font-sans);
-  letter-spacing: -0.01em;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.02em;
 }
 
-h1 { font-size: 34px; line-height: 1.2; }
-h2 { font-size: 22px; line-height: 1.3; }
+main p,
+main li {
+  color: #333;
+}
 
-main p { margin-top: 1.1em; }
+main p {
+  margin-top: 1.6em;
+}
+
+/* 標題與介面一律 sans；章節標題用明體感的 serif */
+h1, h3, h4, nav, button, table, summary, time, dt, dd, code, input, label, th, td {
+  font-family: var(--font-sans);
+}
+
+h1 {
+  color: #242424;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  color: #242424;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+time, dt { color: #6b6b6b; }
 
 /* 字重只用 400 / 700 */
 .font-medium, .font-semibold { font-weight: 700; }
 p, li { overflow-wrap: anywhere; line-break: strict; }
-
-/* Medium 亮色那套為預設；深色只在系統要求時跟上 */
-:root { color-scheme: light dark; }
-
-body {
-  background: #fff;
-  color: #242424;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-h1 { color: #242424; font-size: 32px; font-weight: 700; }
-h2 { color: #242424; font-weight: 700; }
-
-time, dt { color: #6b6b6b; }
 
 .divider::after {
   content: "\2022 \2022 \2022";
@@ -58,6 +70,8 @@ time, dt { color: #6b6b6b; }
 
 @media (prefers-color-scheme: dark) {
   body { background: #0b0b0b; color: #e6e6e6; }
+  main p, main li { color: #d4d4d4; }
   h1, h2 { color: #fff; }
+  h2 { border-bottom-color: #27272a; }
   time, dt { color: #a3a3a3; }
 }

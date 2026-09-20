@@ -18,7 +18,7 @@ export default function TickerIndex() {
 
   const group = (title: string, rows: typeof tickers) => (
     <section className="mt-8">
-      <h2 className="text-lg font-bold">{title}（{rows.length} 檔）</h2>
+      <h2 className="">{title}（{rows.length} 檔）</h2>
       <ul className="mt-3 divide-y divide-slate-100 dark:divide-slate-800/60">
         {rows.map((t) => (
           <li key={t.ticker} className="flex items-baseline gap-2 py-2.5">
@@ -37,7 +37,7 @@ export default function TickerIndex() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold">股癌提到過的個股</h1>
+      <h1 className="">股癌提到過的個股</h1>
       <p className="mt-2">
         共 {ticker_count} 檔，來自 {idx.episode_count} 集節目（{idx.coverage.from} 至 {idx.coverage.to}）。
         點進去可以看到這一檔歷次被提到的集數、次數與時間碼。

@@ -84,7 +84,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
         <Link href="/ticker/" className="underline underline-offset-2">個股</Link>
       </nav>
 
-      <h1 className="mt-2 text-2xl font-bold">
+      <h1 className="mt-2">
         {t.display_name} <span className="font-mono text-lg text-slate-500 dark:text-slate-400">{code}</span>
       </h1>
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -94,7 +94,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       </p>
 
       <section className="mt-4">
-        <h2 className="text-base font-bold">股癌最近怎麼看 {t.display_name}？</h2>
+        <h2 className="">股癌最近怎麼看 {t.display_name}？</h2>
         <p className="mt-1">{answer}</p>
       </section>
 
@@ -117,7 +117,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
 
       <AdSlot id="ticker-below-timeline" />
 
-      <h2 className="mt-8 text-lg font-bold">哪幾集看多、哪幾集看空</h2>
+      <h2 className="mt-8">哪幾集看多、哪幾集看空</h2>
       <ul className="mt-2 space-y-2">
         {STANCE_ORDER.map((st) => {
           const rows = t.timeline.filter((r) => stancesOf(r).includes(st));
@@ -135,7 +135,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
         })}
       </ul>
 
-      <h2 className="mt-8 text-lg font-bold">提及時間線</h2>
+      <h2 className="mt-8">提及時間線</h2>
       <ul className="mt-3 divide-y divide-slate-200 dark:divide-slate-800">
         {t.timeline.map((r) => (
           <li key={r.slug} className="py-4">

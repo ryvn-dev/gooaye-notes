@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Section = ({ h, children }: { h: string; children: React.ReactNode }) => (
   <section className="mt-8">
-    <h2 className="text-lg font-bold">{h}</h2>
+    <h2 className="">{h}</h2>
     <div className="mt-2 space-y-2">{children}</div>
   </section>
 );
@@ -17,7 +17,7 @@ const Section = ({ h, children }: { h: string; children: React.ReactNode }) => (
 export default function About() {
   return (
     <>
-      <h1 className="text-2xl font-bold">關於本站</h1>
+      <h1 className="">關於本站</h1>
       <p className="mt-2">
         {site.name}把股癌 podcast 的公開音檔跑過自動轉寫，抽出每一集提到哪幾檔個股、提到幾次、
         講在第幾分幾秒，做成一頁可以在手機上讀、也可以點著跳播的筆記。
