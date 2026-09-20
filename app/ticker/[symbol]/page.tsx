@@ -105,6 +105,8 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       </div>
       <p className="mt-1 text-sm text-[#6b6b6b] dark:text-[#a3a3a3]">
         n={t.episode_count} 集 · 起算 {t.first_seen} · 長條＝該集提及次數，顏色＝立場，黑點＝Jev 機率
+        {points.filter((p) => p.count === null).length > 0 &&
+          `（${points.filter((p) => p.count === null).length} 集的次數待補，圖上沒有長條）`}
       </p>
 
       <ul className="mt-6 divide-y divide-slate-200 dark:divide-slate-800">
