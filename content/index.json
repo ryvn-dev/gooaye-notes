@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T01:45:24.355Z",
+  "generated_at": "2026-09-21T02:15:09.158Z",
   "episode_count": 6,
   "coverage": {
     "from": "2026-08-26",
@@ -51,9 +51,53 @@
           ],
           "speaker": "主持人",
           "perf": null
+        },
+        {
+          "ticker": "ASML",
+          "display_name": "艾司摩爾",
+          "short_name": "艾司摩爾",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": null
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": null
+        },
+        {
+          "ticker": "BABA",
+          "display_name": "阿里巴巴",
+          "short_name": "阿里巴巴",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": null
+        },
+        {
+          "ticker": "META",
+          "display_name": "Meta",
+          "short_name": "Meta",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": null
         }
       ],
-      "mention_total": 3
+      "mention_total": 7
     },
     {
       "show": "gooaye",
@@ -123,9 +167,47 @@
             "d5": null,
             "d21": null
           }
+        },
+        {
+          "ticker": "META",
+          "display_name": "Meta",
+          "short_name": "Meta",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-09-16",
+            "base": 673.31,
+            "last_date": "2026-09-18",
+            "last": 665.75,
+            "pct": -1.1,
+            "d5": null,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-09-16",
+            "base": 342.87,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 1.9,
+            "d5": null,
+            "d21": null
+          }
         }
       ],
-      "mention_total": 3
+      "mention_total": 5
     },
     {
       "show": "gooaye",
@@ -309,9 +391,47 @@
             "d5": null,
             "d21": null
           }
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "short_name": "輝達",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 210.96,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": 5.4,
+            "d5": null,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TW:6239",
+          "display_name": "力成",
+          "short_name": "力成",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 271.5,
+            "last_date": "2026-09-21",
+            "last": 293,
+            "pct": 7.9,
+            "d5": 7.9,
+            "d21": null
+          }
         }
       ],
-      "mention_total": 9
+      "mention_total": 11
     },
     {
       "show": "gooaye",

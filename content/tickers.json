@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "ticker_count": 19,
+  "ticker_count": 23,
   "tickers": [
     {
       "ticker": "GOOGL",
@@ -8,11 +8,59 @@
       "short_name": "Alphabet",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
-      "episode_count": 4,
-      "mention_total": 19,
+      "episode_count": 6,
+      "mention_total": 21,
       "first_seen": "2026-08-26",
-      "last_seen": "2026-09-12",
+      "last_seen": "2026-09-19",
       "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": 1,
+          "first_ts_s": 230,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.08,
+          "quote": null,
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 697,
+          "slug": "0697",
+          "published_at": "2026-09-16",
+          "mention_count": 1,
+          "first_ts_s": 2357,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.06,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-16",
+            "base": 342.87,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 1.9,
+            "d5": null,
+            "d21": null
+          },
+          "px_1d": 0.013,
+          "px_5d": null,
+          "px_21d": null
+        },
         {
           "show": "gooaye",
           "show_name": "股癌",
@@ -133,8 +181,8 @@
       "short_name": "輝達",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/NVDA",
-      "episode_count": 4,
-      "mention_total": 1,
+      "episode_count": 5,
+      "mention_total": 3,
       "first_seen": "2026-08-26",
       "last_seen": "2026-09-19",
       "timeline": [
@@ -154,6 +202,34 @@
           "jev_prob": null,
           "quote": null,
           "perf": null,
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 2,
+          "first_ts_s": 783,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 210.96,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": 5.4,
+            "d5": null,
+            "d21": null
+          },
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -492,6 +568,67 @@
       ]
     },
     {
+      "ticker": "META",
+      "display_name": "Meta",
+      "short_name": "Meta",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/META",
+      "episode_count": 2,
+      "mention_total": 2,
+      "first_seen": "2026-09-16",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": 1,
+          "first_ts_s": 725,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.26,
+          "quote": null,
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 697,
+          "slug": "0697",
+          "published_at": "2026-09-16",
+          "mention_count": 1,
+          "first_ts_s": 1737,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-16",
+            "base": 673.31,
+            "last_date": "2026-09-18",
+            "last": 665.75,
+            "pct": -1.1,
+            "d5": null,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
       "ticker": "MRVL",
       "display_name": "邁威爾",
       "short_name": "邁威爾",
@@ -630,6 +767,39 @@
       ]
     },
     {
+      "ticker": "ASML",
+      "display_name": "艾司摩爾",
+      "short_name": "艾司摩爾",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/ASML",
+      "episode_count": 1,
+      "mention_total": 2,
+      "first_seen": "2026-09-19",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": 2,
+          "first_ts_s": 2238,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
       "ticker": "AVGO",
       "display_name": "博通",
       "short_name": "博通",
@@ -666,6 +836,39 @@
           },
           "px_1d": -0.0274,
           "px_5d": -0.0175,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "BABA",
+      "display_name": "阿里巴巴",
+      "short_name": "阿里巴巴",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/BABA",
+      "episode_count": 1,
+      "mention_total": 1,
+      "first_seen": "2026-09-19",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": 1,
+          "first_ts_s": 507,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.1,
+          "quote": null,
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
           "px_21d": null
         }
       ]
@@ -1072,6 +1275,47 @@
             "last": 3605,
             "pct": -14.2,
             "d5": -7,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "TW:6239",
+      "display_name": "力成",
+      "short_name": "力成",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/6239.TW",
+      "episode_count": 1,
+      "mention_total": 2,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 2,
+          "first_ts_s": 1336,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.44,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 271.5,
+            "last_date": "2026-09-21",
+            "last": 293,
+            "pct": 7.9,
+            "d5": 7.9,
             "d21": null
           },
           "px_1d": null,
