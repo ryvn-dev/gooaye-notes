@@ -952,7 +952,12 @@
         {
           "text": "在相關的訪問裡面，就是這兩個人嘛，Anthropic 的 Dario，然後跟 Salesforce 的 Marc，他們都有上 Cramer 的節目，然後聊到其實根本就沒有 SaaSpocalypse 這件事情。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "所以其實我們最後面講了一整年，當下一直試著要跟大家說，其實你不可以這樣子一概而論，就是當然有些軟體在 AI 的出現，它會被競爭掉，那是肯定的；就好像是有些硬體，它可能在 AI 的環境之下，它照樣是起不來。",
@@ -1005,7 +1010,12 @@
         {
           "text": "那這件事情給我們的一個啟示，就是我覺得 Salesforce 真的是一個蠻厲害的企業。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "雖然他的產品其實在業界的評價，我感覺大家都不是喜歡他們的，都是比較偏向是有蠻多的微詞跟抱怨，當然因為他真的掌握了大量的企業資料，跟過往在經營上的一些 know-how，所以他知道你們是怎麼樣運作，他也知道法遵是怎麼樣去搞。",
@@ -1043,7 +1053,12 @@
         {
           "text": "還是說他們會寧願有一點的自主性，即便他其實就是把資料交給另外一個公司，也就是留在 Salesforce 上面？",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "或甚至現在蠻多人在推廣，其實資料應該是要落地、要佔領這邊。",
@@ -1071,7 +1086,12 @@
         {
           "text": "說不定你可能今天想在 Anthropic 上面去建立你的東西，但是你很快又想要再換去 OpenAI，假設 OpenAI 後面有很好的表現的話；那或許你現在把東西放在 Salesforce，那 Salesforce 後面可以去串各式各樣的模型，這就是一個最優解。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1127,7 +1147,12 @@
         {
           "text": "我稍微去查了一下兩家公司的一些說法、或是對外的資料，看起來它是兩筆帳單：就如果你今天是使用 Cloudforce 的話，當然你去使用 AI，你每次的問問題、你每次的支用你都需要去付錢，可是如果說你今天有去用到 Salesforce 的 API 的話，這個就是另外一筆帳單，另外一邊要去做付錢；再來就是如果你今天是在 Salesforce 裡面去使用到 Anthropic 的 AI 的話，",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "也是一樣的道理，你除了付本來給 Salesforce 的錢，再來就是可能每次的提問，他會有一個類似 package，可以算說就像說你是什麼樣的方案，那我就可以給你用多少的額度，那如果要去多使用的話，也要再多付錢。",
@@ -1160,7 +1185,12 @@
         {
           "text": "可是這邊還要再看，說不定最後面資料的影響超出我們的想像，因為現在所有的這些大模型，他們在爬都是公開資料，可是那些閉鎖的資料、企業的資料，他們可能不確定、或是說不相信這些新的 AI frontier lab，所以他們不願意放在那邊，說不定後面價值的產出反而會落在 Salesforce 這邊。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "所以這是後面的一個看點，大概這樣。",
@@ -1226,7 +1256,12 @@
         {
           "text": "那其實已經蠻多人在前面就賭說 Marvell 的 DSP、或是光通相關的東西，在這一次的電話會議裡面會去做上修，然後現在看起來就是確定往這個方向。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "MRVL",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1305,7 +1340,12 @@
         {
           "text": "只是問題是，現在在 NVIDIA 這邊，其實晶片已經迭代到 Vera Rubin，根據他在電話會議裡面的說法是，從現在開始要很快的 ramp 上去，而且可能是他過往產品線裡面 ramp 最快的。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1346,7 +1386,12 @@
         {
           "text": "那一樣的道理，所以大家看到 Jalapeño 很好，一定也會有一些議論的產生，就是會不會 NVIDIA 在後面會持續的去 lose share，或者是會在 AI 的競爭裡面開始去居下風。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "但我覺得是沒有這樣子的一個問題，特別是像 Jensen 他也在 Cramer 的訪問裡面，算是用一個很和善的語氣、但是充滿威脅性的提到說，其實像我們的晶片，雖然你有這麼多的 XPU 在市場上跑，但是我們在 AI 的 share 都還持續的增加。",
@@ -1374,7 +1419,12 @@
         {
           "text": "而且其實 NVIDIA 有一個很暴力跟很變態的一點是，我們大概在幾個月前有跟大家講到說，我們有注意到說 NVIDIA 去採購的一些光通、或是雷射相關的元件，那個數量其實是遠超他的東西所需要的一個數量。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "當時在節目有丟一個問題出來，就是為什麼他會這樣子做？",
@@ -1402,7 +1452,12 @@
         {
           "text": "那可是問題是我們現在都知道說，在 AI 的各種元件裡面，特別是像 NVIDIA 這次的電話會議也提到什麼東西都在缺，他笑談說之前他只要去跟誰吃飯，然後那個公司很快就會漲一倍，所以他不願意直接去點名說哪個環節現在是很缺貨，但是其實每個環節都在缺貨。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "這個在我們現在看來也是，最缺貨的環節目前就是在載板這邊，我們注意到有一個非常大的缺口，特別是在接下來開始去討論說，如果記憶體它要從 12H 變 8H，甚至現在有個新的說法是說會回到 4H，這個我還是稍微打一個問號。",
@@ -1482,6 +1537,10 @@
             {
               "ticker": "TSM",
               "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
             }
           ]
         },
@@ -1506,12 +1565,22 @@
         {
           "text": "然後再來就是在這次的電話會裡面，他們也有去 revise CPU 這一塊，CPU 算是 NVIDIA 後面也會變成一個蠻關鍵的業務，現在已經開始繳出很不錯的營收，然後後面也會持續的去往上拉。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "然後再來就是在 connectivity，就是跟 Marvell 一樣，我覺得也都是給出很 bullish 的一個訊號，就是在光通方面也都是持續的看好。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "MRVL",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1524,7 +1593,12 @@
         {
           "text": "然後在 GPU 這一塊，我覺得以現在 NVIDIA 的狀況來講，它應該會很希望開源模型會表現得很好，因為開源模型他們基本上是沒有太多的那種 first party ASIC 的一個能力，所以他們就是使用這種通用的 GPU，所以這些東西只要越好、越來越多人需要去 train 或是去做推論的話，他們就會買越來越多的 GPU，所以就會獲得巨大的優勢。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "但也不是說這些 first party、或是這些 closed model 這種閉鎖模型，像是什麼 OAI 或是 Anthropic，他們對 NVIDIA 的需求就不會大，這個還是非常大的。",
@@ -1542,7 +1616,12 @@
         {
           "text": "即便說像 Anthropic 這邊有用 AWS 東西、OAI 這邊現在要用 Jalapeño 之類的，但他們可能在訓練這一塊都還是要大量的倚重 NVIDIA 的東西，如果說後來在自己的 custom XPU 方面遇到了出貨卡關的話，就是也有可能他還是要再去買更多的 NVIDIA 的晶片。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1560,12 +1639,7 @@
         {
           "text": "所以即便我們現在單純的去用一個投射來看的話，大家都知道說在接下來的幾年，其實 ASIC 他會持續的去 gain 市佔，因為沒有辦法，就大家都往這個方向去推，畢竟像他這種東西，他本來就是會被大家去吃市佔。",
           "key_point": null,
-          "marks": [
-            {
-              "ticker": "NVDA",
-              "stance": "neutral"
-            }
-          ]
+          "marks": []
         },
         {
           "text": "只是問題是吃市佔的同時，你要知道整體的市場 TAM 是持續的變大，所以他理論上還是會去抓到很多的價值。",
@@ -1575,7 +1649,12 @@
         {
           "text": "只是這個吃市佔的過程有可能的稍微的被高估一點，因為大家忘記一下，在供應鏈這邊其實是超級缺貨的，就是你的東西好、就算很厲害很強大，可是如果你沒有辦法找到人家幫你把整套東西做出來的話，那你還是競爭不贏 NVIDIA。",
           "key_point": 9,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "neutral"
+            }
+          ]
         }
       ]
     },
@@ -1588,7 +1667,12 @@
         {
           "text": "再來就是，如果你真的有辦法覺得說我付更多的錢、我去搶產能我去做，那可是如果說你對供應鏈的管理是不夠熟悉的話，你的東西稍微有所遞延——你知道就連 NVIDIA，我們都可以很常看到說什麼 Vera Rubin 因為某個東西怎麼樣，所以它可能那個數字約再往後拉、往後 ramp 的時間約要拉長之類的，何況是你根本就沒有什麼供應鏈管理經驗的——等到你把東西整個做出來，說不定人家又準備要跑去下一代了，",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "這個是非常變態跟恐怖的地方。",
@@ -1606,17 +1690,17 @@
         {
           "text": "然後再來就是，就算大家供應鏈都很順好了，可是 NVIDIA 它是一次賣很多人，它賣了這麼多錢拿來投入它的研發、然後跟後續的各種開發；可是你的東西你可能是自己用，所以它是一個效率的提升，它是省錢，但是你不一定有這麼多資源繼續的丟下去競爭。",
           "key_point": null,
-          "marks": []
-        },
-        {
-          "text": "所以如果我們今天去看 in a long run，就是如果長期來看的話，其實我覺得 GPU 還是有非常強大的一個競爭優勢，它並不會因為現在市場上大家看到所謂很多 ASIC 如雨後春筍冒出來，然後所以就代表說它不行。",
-          "key_point": null,
           "marks": [
             {
               "ticker": "NVDA",
               "stance": "bullish"
             }
           ]
+        },
+        {
+          "text": "所以如果我們今天去看 in a long run，就是如果長期來看的話，其實我覺得 GPU 還是有非常強大的一個競爭優勢，它並不會因為現在市場上大家看到所謂很多 ASIC 如雨後春筍冒出來，然後所以就代表說它不行。",
+          "key_point": null,
+          "marks": []
         },
         {
           "text": "就是說我反而期待的是，我們看到 ASIC 跟 GPU 現在都要去搶料，那可能在臺股市場就會產生很多新的機會，包含說像這些前面所提到的光通、板材、或是一些伺服器組裝所需要的東西，大家要去搶的話，那當然他就有可能會再繼續的漲下去，我覺得很恐怖。",
@@ -2893,7 +2977,7 @@
       ]
     }
   ],
-  "marked_sentences": 11,
+  "marked_sentences": 26,
   "key_point_hits": 5,
   "key_point_total": 11,
   "transcript_source": "aligned",

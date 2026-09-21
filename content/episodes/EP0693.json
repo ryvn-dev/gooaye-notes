@@ -111,7 +111,7 @@
         "d5": 8.2,
         "d21": null
       },
-      "first_anchor": "s-29-4"
+      "first_anchor": "s-28-1"
     },
     {
       "ticker": "AVGO",
@@ -150,7 +150,7 @@
         "d5": -1.7,
         "d21": null
       },
-      "first_anchor": "s-53-5"
+      "first_anchor": "s-52-2"
     },
     {
       "ticker": "GOOGL",
@@ -189,7 +189,7 @@
         "d5": -1.3,
         "d21": null
       },
-      "first_anchor": "s-30-0"
+      "first_anchor": "s-28-1"
     },
     {
       "ticker": "NVDA",
@@ -1140,7 +1140,16 @@
         {
           "text": "那最新的一個議題呢，就是在聯發科這邊是獲得了輝達、然後跟像是 Alphabet 或是一些策略夥伴的投資。",
           "key_point": 4,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "那他藉由的一個管道是他的 ECB，就是他的可轉債。",
@@ -1183,7 +1192,12 @@
         {
           "text": "那當然他一定也有可能部分成分的那種 seller financing 的味道，因為畢竟可能在 MTK 這邊，我們知道在銅鑼有一個資料中心，他們應該也是會去採購 NVIDIA 的東西。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "但是我認為兩派公司所說的說法是對的，它就是一個長遠夥伴的合作，認識這麼久。",
@@ -1220,13 +1234,22 @@
             {
               "ticker": "GOOGL",
               "stance": "mentioned"
+            },
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
             }
           ]
         },
         {
           "text": "所以它有點像是說，可能聯發科有一些目的，它搞不好是要拿去做一些什麼裝置的建置、廠房、或是說一些擴大投資，那要跟市場調錢，只是說就是被像是 NVIDIA 或是 Alphabet 這些同時是一些夥伴跟客戶的人，那就把絕大多數的份額給他拿走。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1264,17 +1287,17 @@
         {
           "text": "他要的是如果說 XPU 成功的話，在聯發科這邊的發展是 OK，那股價上漲，那他就會相當程度可以轉換出股份。",
           "key_point": null,
-          "marks": []
-        },
-        {
-          "text": "那所以整體看下來是一個我覺得蠻不錯的訊息。",
-          "key_point": null,
           "marks": [
             {
               "ticker": "TW:2454",
               "stance": "bullish"
             }
           ]
+        },
+        {
+          "text": "那所以整體看下來是一個我覺得蠻不錯的訊息。",
+          "key_point": null,
+          "marks": []
         }
       ]
     },
@@ -1297,7 +1320,12 @@
         {
           "text": "那這次聯發科可能有直接先送一根漲停，那當然像今天就是有回到平盤了，所以就是一根漲停的一個訊息機率，那也算是蠻不錯的。",
           "key_point": 6,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1315,7 +1343,16 @@
         {
           "text": "那當然其實聯發科跟 NVIDIA 已經是長期就是算是合作夥伴了，他們有在蠻多情境之下都是有一起在做事情，所以他並不是說在這之前他們是沒有什麼合作經驗。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "像之前跟大家分享 N1X，就是他那個筆電的晶片，他就是 NVIDIA GPU 加聯發科的 SoC，那外加可能在車用座艙、或是一些可能在相關業務的一些合作，這個都是持續一直有在進行。",
@@ -1352,6 +1389,10 @@
             {
               "ticker": "GOOGL",
               "stance": "neutral"
+            },
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
             }
           ]
         }
@@ -1366,7 +1407,20 @@
         {
           "text": "那當然一定還是有相當程度的合作，因為像 Google 雖然自己在推自己的 TPU，可是也是 NVIDIA 很大的一個買家，還是買了很多 GPGPU；那在聯發科這邊，在他們自己內部的一些算力的使用上，就我們瞭解後來的建置，也是會去使用 NVIDIA 的 rack。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "所以大家算是那種千絲萬縷的關係，可是它不是說那種有目的性的把三個人弄在一起。",
@@ -1388,13 +1442,22 @@
             {
               "ticker": "GOOGL",
               "stance": "bullish"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
             }
           ]
         },
         {
           "text": "所以我會把它去視為是就是兩個獨立的事情，只是它們同時發生，就是說大家都想要來 MTK 這邊去稍微的分一杯羹。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1407,12 +1470,26 @@
         {
           "text": "在輝達這邊他想要的東西是什麼？",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "我覺得就算他應該是沒有辦法在這個案子裡面然後獲得 Google 太多的一個額外認同、或是做一些採購，但是他在賭的東西應該是 MTK 在特別是 Google 給他資源去練兵之後，後面有可能在整個 XPU 的市佔裡面會持續的拉高。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "當今天 XPU 持續拉高，大家第一個想像就是受害的可能就是 GPGPU，像是 NVIDIA 或是 AMD 這類的業者。",
@@ -1445,7 +1522,12 @@
         {
           "text": "只是我覺得 NVIDIA 它要的東西是更廣，他們也意識到這件事情，然後他們也知道說沒有辦法去阻止客人不要去開發 XPU。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "雖然有一些小暗示，就是他很常還是會在一些電話會議或這些訪問裡面——那他不會明說，因為我覺得像 Jensen 他本身就是一個 AI 的、就像說教主等級的東西，所以他不可能去踩別人的商品，這個看起來是非常 low 的事情——但是他會有蠻多的，我真的認為就像是暗示的，就是告訴大家說那個產品，你那個後面這樣推可能會很辛苦，我們這東西算下來是最便宜，買越多省越多之類，然後他還是一直去釋出這樣的訊號。",
@@ -1473,7 +1555,12 @@
         {
           "text": "那沒關係嘛，因為黃仁勳有跟大家講說，現在一座 AI 工廠他要的是七種的輝達晶片，那 XPU 只是其中的一部分，那其他的環節 NVIDIA 也都是有角色可以進來扮演。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "所以我記得好像在今年的 3 月，他有一個投影片有放出來，就是在 NVLink 這邊我們都知道說，反正就是 NVL72 然後跟後面會再持續拉上去的，這個他最主軸的一個 AI 伺服器 compute rack 之外，接下來他們有 MGX ETL rack，這些東西它就算是可以去跟 XPU 做結合的東西，包含像是 Grace、或是 Vera CPU rack、",
@@ -1501,7 +1588,12 @@
         {
           "text": "所以雖然以前在資料中心的建置上面，大家的認知是反正你就是跟 NVIDIA 買，他整套東西都給你；那現在客人他們既然要去轉 XPU 的話，那沒關係，在周圍附帶的東西其實你還是可以跟我的東西去做一個深度的繫結。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "那這樣子的話呢，就算你要去走自己的 XPU，我可能也可以在裡面獲得蠻多的這個吃肉喝湯的機會，所以他圖的算盤應該是這樣子。",
@@ -1519,12 +1611,26 @@
         {
           "text": "那只是就像我們前面所講的，這個應該在 Google 可能是相對會比較難進去，因為他們算是自己有蠻完整的互聯的解方。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "但其他未來的客人也就是有機會走的模式是，雖然他們自己去設計 XPU 透過 MediaTek，但是可能裡面會去使用到 NVIDIA Fusion，去搭配 NVIDIA 的 MGX ETL rack，不管是去做儲存或是網通連結相關，這樣子輝達還是可以在裡面獲得非常多的價值。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1542,7 +1648,12 @@
         {
           "text": "那去跟 MediaTek 做這樣子的連結，我覺得它圖的就是未來的客人有機會可以就是走這一條路線，在可能 MediaTek 的一個成功案例之中，然後順便的去推廣、去帶動在周圍的一些 solution。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1560,7 +1671,12 @@
         {
           "text": "那再來呢，現在在輝達這邊，他們有一個東西叫做 NVHBM。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "那這個 NVHBM 是什麼呢？",
@@ -1612,13 +1728,22 @@
             {
               "ticker": "MU",
               "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
             }
           ]
         },
         {
           "text": "那你說如果今天就來說像聯發科協助去設計開發、然後採用了這個 NVHBM 的話，那會交給誰設計？",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "它應該就不會是給記憶體三大廠，應該就是還是交給臺積電去做。",
@@ -1666,7 +1791,16 @@
         {
           "text": "但我覺得 NVIDIA 的這次跟 MediaTek 相關的投資跟合作，我覺得也是有想要把這個東西鋪出去的一個意思。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1679,12 +1813,22 @@
         {
           "text": "所以稍微的把自己的看法去做一個總結，就是它是另外一次的綁樁行為，那它應該不能夠很簡單的去解釋成為是 seller financing，不一定這樣子，因為本身 MediaTek 它就已經有很完整的收入，它是很健全的公司。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "所以它不像有一些那種算力租賃公司，真的有點像是反正它幫 NVIDIA 去收一些庫存、當一個中轉廠，如果它沒有 NVIDIA 這些投資，可能就連生意都很難做；那可是 MediaTek 不是這樣的一個狀況，所以會單純的就把它當成是一個夥伴之間的深化合作。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "因為前面有 DGX Spark，然後筆電嘛，這個 N1X 3 奈米，然後後來現在又再多這個 NVIDIA Fusion XPU，所以它就是一個更加深入的合作。",
@@ -1740,7 +1884,12 @@
         {
           "text": "那以整個大格局來說，目前看起來 NVIDIA 已經是把市面上所有的玩家都已經納入麾下了。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "他跟像是什麼三星啊、發哥、或者是像是 Marvell 最近也有一些劇情在產生，其實幾乎每個都已經是被他攬住，都已經是加入他的行列了。",
@@ -1750,7 +1899,12 @@
         {
           "text": "那現在就很好奇說，那 Broadcom 會不會有朝一日——你不能說就是完全的去加入他，可是就是額外再開一條線，就是不是隻有自己的 fabric，可能也會去使用 NV 相關的那些 solution——這個是後面可以期待的。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "mentioned"
+            }
+          ]
         }
       ]
     },
@@ -1806,7 +1960,12 @@
         {
           "text": "所以這可能就要等到在博通的電話會議之後，我們來觀察他們針對這些事件有什麼回覆。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "雖然現在未看先猜，有時候他一定開始吊漆，然後一定會再次強調自己的競爭力之類的，但是我覺得從他的回應就可以更加全面的去了解，在過去一段時間市場發生的這一些事情，然後到底實際上在大家的互相競合會發生什麼樣的一個狀況。",
@@ -1890,12 +2049,22 @@
         {
           "text": "那我認為等到博通去做回應之後，就可以非常完整的知道說 OK 那現在大家的態度是怎麼樣。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "但目前初步看，就是跟 Marvell 啊、或者說現在跑去 MTK 要綁樁什麼的，就是每個人想要的東西感覺都是要從博通身上去搶一點東西的感覺。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "那其實大家都互相啦，就像是那 XPU，他每次想從輝達身上搶一點東西，但最終可能大家都是越吃越多、越吃越飽。",
@@ -3660,7 +3829,7 @@
       ]
     }
   ],
-  "marked_sentences": 18,
+  "marked_sentences": 41,
   "key_point_hits": 8,
   "key_point_total": 11,
   "transcript_source": "aligned",
