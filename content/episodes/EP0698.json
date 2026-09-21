@@ -82,6 +82,7 @@
     {
       "ticker": "AMD",
       "display_name": "超微",
+      "short_name": "超微",
       "market": "US",
       "mention_count": 9,
       "first_ts_s": 735,
@@ -112,6 +113,7 @@
     {
       "ticker": "TSM",
       "display_name": "台積電 ADR",
+      "short_name": "台積電",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 866,
@@ -142,6 +144,7 @@
     {
       "ticker": "NVDA",
       "display_name": "輝達",
+      "short_name": "輝達",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 943,
@@ -172,6 +175,7 @@
     {
       "ticker": "CCL",
       "display_name": "CCL",
+      "short_name": null,
       "market": "US",
       "mention_count": 3,
       "first_ts_s": 1122,
@@ -198,6 +202,7 @@
     {
       "ticker": "BABA",
       "display_name": "阿里巴巴",
+      "short_name": "阿里巴巴",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 529,
@@ -224,6 +229,7 @@
     {
       "ticker": "GOOGL",
       "display_name": "Alphabet",
+      "short_name": "Alphabet",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 244,
@@ -250,6 +256,7 @@
     {
       "ticker": "META",
       "display_name": "Meta",
+      "short_name": "Meta",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 729,
@@ -276,6 +283,7 @@
     {
       "ticker": "NIC",
       "display_name": "NIC",
+      "short_name": null,
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1392,
@@ -302,6 +310,7 @@
     {
       "ticker": "SCI",
       "display_name": "SCI",
+      "short_name": null,
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1854,

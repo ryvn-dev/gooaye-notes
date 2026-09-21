@@ -75,6 +75,7 @@
     {
       "ticker": "NVDA",
       "display_name": "輝達",
+      "short_name": "輝達",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1506,
@@ -114,6 +115,7 @@
     {
       "ticker": "GOOGL",
       "display_name": "Alphabet",
+      "short_name": "Alphabet",
       "market": "US",
       "mention_count": 3,
       "first_ts_s": 1575,
@@ -140,6 +142,7 @@
     {
       "ticker": "JD",
       "display_name": "京東",
+      "short_name": "京東",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 127,
@@ -166,6 +169,7 @@
     {
       "ticker": "NEO",
       "display_name": "NEO",
+      "short_name": null,
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 828,

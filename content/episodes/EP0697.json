@@ -81,6 +81,7 @@
     {
       "ticker": "PEP",
       "display_name": "百事",
+      "short_name": "百事",
       "market": "US",
       "mention_count": 4,
       "first_ts_s": 2822,
@@ -119,6 +120,7 @@
     {
       "ticker": "TSLA",
       "display_name": "特斯拉",
+      "short_name": "特斯拉",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1232,
@@ -156,7 +158,8 @@
     },
     {
       "ticker": "CRWD",
-      "display_name": "CRWD",
+      "display_name": "CrowdStrike",
+      "short_name": "CrowdStrike",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1735,
@@ -195,6 +198,7 @@
     {
       "ticker": "GOOGL",
       "display_name": "Alphabet",
+      "short_name": "Alphabet",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 2373,

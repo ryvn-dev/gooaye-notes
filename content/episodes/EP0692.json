@@ -76,6 +76,7 @@
     {
       "ticker": "GOOGL",
       "display_name": "Alphabet",
+      "short_name": "Alphabet",
       "market": "US",
       "mention_count": 4,
       "first_ts_s": 1101,
@@ -114,7 +115,8 @@
     },
     {
       "ticker": "CRM",
-      "display_name": "CRM",
+      "display_name": "Salesforce",
+      "short_name": "Salesforce",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 809,
@@ -145,7 +147,8 @@
     },
     {
       "ticker": "MRVL",
-      "display_name": "MRVL",
+      "display_name": "邁威爾",
+      "short_name": "邁威爾",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1129,
@@ -185,6 +188,7 @@
     {
       "ticker": "NVDA",
       "display_name": "輝達",
+      "short_name": "輝達",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1197,
@@ -224,6 +228,7 @@
     {
       "ticker": "TSM",
       "display_name": "台積電 ADR",
+      "short_name": "台積電",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1461,
@@ -263,6 +268,7 @@
     {
       "ticker": "DSP",
       "display_name": "DSP",
+      "short_name": null,
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1141,
@@ -289,6 +295,7 @@
     {
       "ticker": "VIA",
       "display_name": "VIA",
+      "short_name": null,
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1616,

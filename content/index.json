@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T01:09:43.719Z",
+  "generated_at": "2026-09-21T01:22:47.586Z",
   "episode_count": 6,
   "coverage": {
     "from": "2026-08-26",
@@ -22,6 +22,7 @@
         {
           "ticker": "AMD",
           "display_name": "超微",
+          "short_name": "超微",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -32,6 +33,7 @@
         {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
+          "short_name": "台積電",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -42,6 +44,7 @@
         {
           "ticker": "NVDA",
           "display_name": "輝達",
+          "short_name": "輝達",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -67,6 +70,7 @@
         {
           "ticker": "PEP",
           "display_name": "百事",
+          "short_name": "百事",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -85,6 +89,7 @@
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
+          "short_name": "特斯拉",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -102,7 +107,8 @@
         },
         {
           "ticker": "CRWD",
-          "display_name": "CRWD",
+          "display_name": "CrowdStrike",
+          "short_name": "CrowdStrike",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -136,6 +142,7 @@
         {
           "ticker": "AAPL",
           "display_name": "蘋果",
+          "short_name": "蘋果",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -154,6 +161,7 @@
         {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
+          "short_name": "Alphabet",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -172,6 +180,7 @@
         {
           "ticker": "TSLA",
           "display_name": "特斯拉",
+          "short_name": "特斯拉",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -190,6 +199,7 @@
         {
           "ticker": "TW:8299",
           "display_name": "群聯",
+          "short_name": "群聯",
           "stance": "neutral",
           "stances": [
             "neutral"
@@ -208,6 +218,7 @@
         {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
+          "short_name": "台積電",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -226,6 +237,7 @@
         {
           "ticker": "TW:2317",
           "display_name": "鴻海",
+          "short_name": "鴻海",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -244,6 +256,7 @@
         {
           "ticker": "QCOM",
           "display_name": "高通",
+          "short_name": "高通",
           "stance": "bearish",
           "stances": [
             "bearish"
@@ -261,7 +274,8 @@
         },
         {
           "ticker": "TW:3376",
-          "display_name": "TW:3376",
+          "display_name": "新日興",
+          "short_name": "新日興",
           "stance": "neutral",
           "stances": [
             "neutral"
@@ -295,6 +309,7 @@
         {
           "ticker": "TW:2454",
           "display_name": "聯發科",
+          "short_name": "聯發科",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -313,6 +328,7 @@
         {
           "ticker": "AVGO",
           "display_name": "博通",
+          "short_name": "博通",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -331,6 +347,7 @@
         {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
+          "short_name": "Alphabet",
           "stance": "neutral",
           "stances": [
             "neutral"
@@ -349,6 +366,7 @@
         {
           "ticker": "NVDA",
           "display_name": "輝達",
+          "short_name": "輝達",
           "stance": "neutral",
           "stances": [
             "neutral"
@@ -367,6 +385,7 @@
         {
           "ticker": "AMD",
           "display_name": "超微",
+          "short_name": "超微",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -385,6 +404,7 @@
         {
           "ticker": "MU",
           "display_name": "美光",
+          "short_name": "美光",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -403,6 +423,7 @@
         {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
+          "short_name": "台積電",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -420,7 +441,8 @@
         },
         {
           "ticker": "TW:3661",
-          "display_name": "TW:3661",
+          "display_name": "世芯",
+          "short_name": "世芯",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -454,6 +476,7 @@
         {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
+          "short_name": "Alphabet",
           "stance": "neutral",
           "stances": [
             "neutral"
@@ -471,7 +494,8 @@
         },
         {
           "ticker": "CRM",
-          "display_name": "CRM",
+          "display_name": "Salesforce",
+          "short_name": "Salesforce",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -481,7 +505,8 @@
         },
         {
           "ticker": "MRVL",
-          "display_name": "MRVL",
+          "display_name": "邁威爾",
+          "short_name": "邁威爾",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -500,6 +525,7 @@
         {
           "ticker": "NVDA",
           "display_name": "輝達",
+          "short_name": "輝達",
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -518,6 +544,7 @@
         {
           "ticker": "TSM",
           "display_name": "台積電 ADR",
+          "short_name": "台積電",
           "stance": "mentioned",
           "stances": [
             "mentioned"
@@ -551,6 +578,7 @@
         {
           "ticker": "NVDA",
           "display_name": "輝達",
+          "short_name": "輝達",
           "stance": "neutral",
           "stances": [
             "neutral"

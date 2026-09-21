@@ -82,6 +82,7 @@
     {
       "ticker": "AAPL",
       "display_name": "蘋果",
+      "short_name": "蘋果",
       "market": "US",
       "mention_count": 13,
       "first_ts_s": 532,
@@ -120,6 +121,7 @@
     {
       "ticker": "GOOGL",
       "display_name": "Alphabet",
+      "short_name": "Alphabet",
       "market": "US",
       "mention_count": 4,
       "first_ts_s": 895,
@@ -158,6 +160,7 @@
     {
       "ticker": "TSLA",
       "display_name": "特斯拉",
+      "short_name": "特斯拉",
       "market": "US",
       "mention_count": 2,
       "first_ts_s": 1317,
@@ -196,6 +199,7 @@
     {
       "ticker": "TW:8299",
       "display_name": "群聯",
+      "short_name": "群聯",
       "market": "TW",
       "mention_count": 2,
       "first_ts_s": 2225,
@@ -234,6 +238,7 @@
     {
       "ticker": "TSM",
       "display_name": "台積電 ADR",
+      "short_name": "台積電",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 784,
@@ -272,6 +277,7 @@
     {
       "ticker": "TW:2317",
       "display_name": "鴻海",
+      "short_name": "鴻海",
       "market": "TW",
       "mention_count": 1,
       "first_ts_s": 1152,
@@ -310,6 +316,7 @@
     {
       "ticker": "QCOM",
       "display_name": "高通",
+      "short_name": "高通",
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1273,
@@ -347,7 +354,8 @@
     },
     {
       "ticker": "TW:3376",
-      "display_name": "TW:3376",
+      "display_name": "新日興",
+      "short_name": "新日興",
       "market": "TW",
       "mention_count": null,
       "first_ts_s": 1193,
@@ -385,7 +393,8 @@
     },
     {
       "ticker": "ORCL",
-      "display_name": "ORCL",
+      "display_name": "甲骨文",
+      "short_name": "甲骨文",
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1453,
@@ -424,6 +433,7 @@
     {
       "ticker": "TW:6239",
       "display_name": "力成",
+      "short_name": "力成",
       "market": "TW",
       "mention_count": 2,
       "first_ts_s": 1353,
