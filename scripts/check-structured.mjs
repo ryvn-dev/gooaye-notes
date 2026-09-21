@@ -5,6 +5,7 @@
 // 比相似度（字元 bigram Dice），門檻 0.90：整理標點可以，整段改寫或漏段會掉下來。
 import fs from 'node:fs';
 import path from 'node:path';
+import * as OpenCC from 'opencc-js';
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
 const DIR = path.join(CACHE, 'site-json', 'transcripts');
 
@@ -18,6 +19,7 @@ export const spokenFromSegments = (segs) =>
 
 export const spokenFromMarkdown = (md) =>
   md
+    .replace(/<!--[\s\S]*?-->/g, '')
     .split('\n')
     .filter((l) => !/^\s*(#{1,6}\s|:::)/.test(l))
     .map((l) => l.replace(/^\s*>\s?/, '').replace(/\[t=\d+\]\s*/g, ''))
@@ -36,8 +38,12 @@ const bigrams = (t) => {
   return m;
 };
 
-/** 比相似度之前把標點拿掉：整理標點本來就是允許的，逐字內容才是要守的。 */
-const spokenOnly = (t) => String(t).replace(/[^\u4e00-\u9fffA-Za-z0-9]/g, '');
+// 我們自己的 whisper 稿出來是簡體，整理稿是繁體；比之前先轉成同一種字。
+// 用庫：opencc-js（簡→繁，維護中、純 JS、只在 build 時用）。
+const toTW = OpenCC.Converter({ from: 'cn', to: 'tw' });
+
+/** 比相似度之前把標點拿掉、字形統一：整理標點與繁簡本來就是允許的，逐字內容才是要守的。 */
+const spokenOnly = (t) => toTW(String(t)).replace(/[^\u4e00-\u9fffA-Za-z0-9]/g, '');
 
 /** 字元 bigram 的 Dice 係數：0（完全不像）到 1（一模一樣）。 */
 export const similarity = (rawA, rawB) => {

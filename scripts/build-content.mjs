@@ -254,12 +254,31 @@ const buildTranscript = (blocks, sum, rows, scanTickers = []) => {
   let marked = 0;
   let missed = 0;
   let unnamed = 0;
+  // 沒有段號的集數（摘要 lane 給的是純原話）：整集找那一句，門檻拉高避免亂對。
+  const findAnywhere = (quote) => {
+    const q = bare(quote);
+    if (q.length >= 8) {
+      const exact = sents.find((x) => bare(x.text).includes(q) || (bare(x.text).length >= 8 && q.includes(bare(x.text))));
+      if (exact) return exact;
+    }
+    const kb = bigrams(quote);
+    const best = sents
+      .filter((x) => x.text.length >= 8)
+      .map((x) => ({ s: x, r: recall(kb, sentBi.get(x)) }))
+      .sort((a, b) => b.r - a.r)[0];
+    return best && best.r >= 0.5 ? best.s : null;
+  };
+
   for (const r of rows) {
     const pi = typeof r.p === 'string' && r.p.startsWith('p-') ? Number(r.p.slice(2)) : null;
-    if (pi === null || !body[pi] || body[pi].kind === 'quote' || !r.quote) continue;
-    const found = findInBlock(pi, r.quote);
+    const locator = r.locator ?? r.quote;
+    if (!locator) continue;
+    if (pi !== null && (!body[pi] || body[pi].kind === 'quote')) continue;
+    const found = pi === null ? findAnywhere(locator) : findInBlock(pi, locator);
     if (!found) { missed++; continue; }
-    const hit = mentionsTicker(found.text, r.ticker) ? found : nearestNamed(pi, found, r.ticker);
+    const bi = found.bi;
+    if (body[bi].kind === 'quote' || body[bi].ad) { missed++; continue; }
+    const hit = mentionsTicker(found.text, r.ticker) ? found : nearestNamed(bi, found, r.ticker);
     if (!hit) { unnamed++; continue; }
     const cell = body[hit.bi].sentences[hit.si];
     if (cell.marks.some((m) => m.ticker === r.ticker)) continue;
@@ -463,8 +482,10 @@ for (let i = 0; i < episodes.length; i++) {
     ...r,
     stance: toStances(r.stance)[0] ?? 'mentioned',
     needs_review: Boolean(r.needs_review),
-    // quote_publishable: false（沒有社群稿、原話取自我們自己的稿）→ 原話不上站，只留立場。
+    // quote_publishable: false（原話取自我們自己的稿）→ 原話不上站，
+    // 但仍拿來「定位」要螢光的是哪一句；站上顯示的字一律是逐字稿本身。
     quote: r.quote_publishable === false ? null : (r.quote ?? null),
+    locator: r.quote ?? null,
   }));
   const byTicker = new Map();
   for (const r of rowsRaw) {
