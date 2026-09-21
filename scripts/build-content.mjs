@@ -107,6 +107,8 @@ for (let i = 1; i < episodes.length; i++) {
 
 const STATS = [];
 const nameOf = (t) => NAMES[t]?.name || t;
+// 站上認得名字的代號：逐字稿別名掃描掃的就是這一份。
+const ALL_TICKERS = Object.keys(NAMES).filter((t) => NAMES[t]?.confirmed);
 // chip 與 tooltip 上的簡稱：代碼旁邊一定要有名字，不然讀者看到 3661 不知道是世芯。
 const shortOf = (t) => NAMES[t]?.short || NAMES[t]?.name || null;
 const marketOf = (t) => (t.startsWith('TW:') ? 'TW' : 'US');
@@ -266,13 +268,15 @@ const buildTranscript = (blocks, sum, rows, scanTickers = []) => {
   }
 
   // 螢光筆一之二：有立場的段落之外，其他講到這些公司的句子標成「提到」（灰點）。
-  // 引用段（來信原文）不標；同一段同一檔最多一句；只掃站上有列的那些代號。
+  // 引用段（來信原文）不標；同一段同一檔最多一句。
+  // 掃的是站上認得的**所有**代號，不只這一集立場列那幾檔 ——
+  // 讀者數的「這一集講到幾檔」是他真的講出口的那些（主人 2026-09-21 09:42）。
   let aliasMarks = 0;
   for (const [bi, b] of body.entries()) {
     if (b.kind !== 'p' || b.ad || !b.sentences.length) continue;
     for (const ticker of scanTickers) {
       if (b.sentences.some((s) => s.marks.some((m) => m.ticker === ticker))) continue;
-      const si = b.sentences.findIndex((s) => mentionsTicker(s.text, ticker));
+      const si = b.sentences.findIndex((s) => mentionsTicker(s.text, ticker, { namesOnly: true }));
       if (si < 0) continue;
       b.sentences[si].marks.push({ ticker, stance: 'mentioned' });
       aliasMarks++;
@@ -510,12 +514,45 @@ for (let i = 0; i < episodes.length; i++) {
     review.push(build(x.ticker, null, x.flagged || true));
   }
 
-  shown.sort((a, b) => (b.mention_count ?? 0) - (a.mention_count ?? 0) || a.first_ts_s - b.first_ts_s);
+  // 有方向的排最前面，接著是摘要有列但沒方向的，最後才是只有逐字稿掃到的「提到」。
+  const dirRank = (m) =>
+    m.stance === 'bullish' || m.stance === 'bearish' || m.stance === 'mixed' ? 0 : m.source === 'transcript' ? 2 : 1;
+  const chipSort = (a, b) =>
+    dirRank(a) - dirRank(b) || (b.mention_count ?? 0) - (a.mention_count ?? 0) || a.first_ts_s - b.first_ts_s;
+  shown.sort(chipSort);
   for (const m of shown) m.perf = perfOf(m.ticker, e.published);
-  const ms = [...shown, ...review];
   const tx = loadStructured(ep);
-  const structured = buildTranscript(tx, sum, rowsRaw, shown.map((m) => m.ticker));
+  // 掃描名單 = 這一集立場列 ∪ 站上認得的代號（確認過名字的那些）
+  const scanList = [...new Set([...shown.map((m) => m.ticker), ...ALL_TICKERS])];
+  const structured = buildTranscript(tx, sum, rowsRaw, scanList);
   if (structured) {
+    // 逐字稿裡真的講到、但摘要那一列沒有的 → 補一筆「提到」（灰點），排在有方向的後面。
+    const marked = new Map();
+    structured.blocks.forEach((b, bi) =>
+      b.sentences.forEach((sn) =>
+        sn.marks.forEach((mk) => {
+          if (!marked.has(mk.ticker)) marked.set(mk.ticker, { count: 0, t: b.t ?? null });
+          marked.get(mk.ticker).count += 1;
+        }),
+      ),
+    );
+    for (const [ticker, info] of marked) {
+      if (shown.some((m) => m.ticker === ticker)) continue;
+      const m = build(ticker, null, false);
+      m.publish = true;
+      m.source = 'transcript';
+      m.stance = 'mentioned';
+      m.stances = ['mentioned'];
+      m.row_count = 0;
+      m.needs_review = false;
+      m.quote = null;
+      m.mention_count = info.count;
+      m.t = info.t;
+      m.first_ts_s = info.t ?? 0;
+      shown.push(m);
+    }
+    shown.sort(chipSort);
+    for (const m of shown) if (!m.perf) m.perf = perfOf(m.ticker, e.published);
     for (const m of shown) m.first_anchor = structured.anchor[m.ticker] ?? null;
     const ps = structured.blocks.filter((b) => b.kind === 'p' && !b.ad);
     const avg = Math.round(ps.reduce((a, b) => a + b.text.length, 0) / Math.max(1, ps.length));
@@ -530,6 +567,9 @@ for (let i = 0; i < episodes.length; i++) {
       throw new Error(`EP${ep} 無標題區 ${Math.round(structured.untitled_share * 100)}%（>25%）：小標不足`);
     }
   }
+
+  // 相關個股 = 立場列 ∪ 逐字稿別名掃描到的那些（順序同 chip 列）。
+  const ms = [...shown, ...review];
 
   const doc = {
     schema_version: 2,

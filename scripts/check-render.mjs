@@ -48,11 +48,19 @@ for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json')).sort()) {
   const doc = JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'));
   const page = path.join(OUT, 'p', doc.show, doc.slug, 'index.html');
   if (!fs.existsSync(page)) continue;
-  const shown = (doc.mentions ?? []).filter((m) => m.publish !== false).length;
+  const listed = (doc.mentions ?? []).filter((m) => m.publish !== false);
+  const shown = listed.length;
+  // 第三個數字：逐字稿裡真的被標到的檔（立場句 ∪ 提到句）。三個要互等。
+  const marked = new Set();
+  (doc.blocks ?? []).forEach((b) => (b.sentences ?? []).forEach((sn) => sn.marks.forEach((mk) => marked.add(mk.ticker))));
+  const union = new Set([...listed.map((m) => m.ticker), ...marked]);
   const row = chipRows(fs.readFileSync(page, 'utf8'))[0];
   if (!row && shown > 0) bad.push(`EP${doc.ep_number} 集頁沒有立場列，但上站 ${shown} 檔`);
   else if (row && (row.said !== shown || row.drawn !== shown)) {
     bad.push(`EP${doc.ep_number} 立場列 ${row.drawn} 檔 / 標示 ${row.said}，上站是 ${shown} 檔`);
+  }
+  if (union.size !== shown) {
+    bad.push(`EP${doc.ep_number} 立場列 ∪ 提到句 ${union.size} 檔，但相關個股只有 ${shown} 檔`);
   }
 }
 

@@ -25,11 +25,14 @@ for (const r of csvRows(path.join(FIN, 'data', 'podcasts', 'aliases.csv'))) {
 
 export const norm = (s) => String(s ?? '').replace(/臺/g, '台');
 
-/** 一個代號所有可用的講法（含代號本身與台股四碼）。 */
-export const wordsOf = (ticker) => {
+/**
+ * 一個代號所有可用的講法。`namesOnly` 時不含代號本身 ——
+ * 「STX storage」這種產品名會命中裸代號，掃全站代號的時候要的是名字，不是代號。
+ */
+export const wordsOf = (ticker, { namesOnly = false } = {}) => {
   const list = [
-    ticker,
-    ticker.startsWith('TW:') ? ticker.slice(3) : null,
+    namesOnly ? null : ticker,
+    namesOnly || !ticker.startsWith('TW:') ? null : ticker.slice(3),
     NAMES[ticker]?.name ?? null,
     ...(fromCsv[ticker] ?? []),
     ...(Array.isArray(EXTRA[ticker]) ? EXTRA[ticker] : []),
@@ -46,9 +49,9 @@ export const wordsOf = (ticker) => {
 const isLatin = (w) => /^[A-Za-z0-9][A-Za-z0-9 .&-]*$/.test(w);
 
 /** text 裡有沒有提到這個代號（拉丁字母要有邊界）。 */
-export const mentionsTicker = (text, ticker) => {
+export const mentionsTicker = (text, ticker, opts) => {
   const hay = norm(text);
-  return wordsOf(ticker).some((w) => {
+  return wordsOf(ticker, opts).some((w) => {
     if (!isLatin(w)) return hay.includes(w);
     const esc = w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     return new RegExp(`(^|[^A-Za-z0-9])${esc}([^A-Za-z0-9]|$)`, 'i').test(hay);
