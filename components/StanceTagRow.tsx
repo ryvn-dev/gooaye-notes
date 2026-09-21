@@ -4,6 +4,7 @@ import PerfChip from '@/components/PerfChip';
 type Item = {
   ticker: string;
   display_name: string;
+  short_name?: string | null;
   stance: Stance;
   stances?: Stance[];
   jev_prob?: number | null;
@@ -11,7 +12,7 @@ type Item = {
   first_anchor?: string | null;
 };
 
-/** 代碼＋一個小折線 icon，沒有外框、沒有文字標籤；hover 出現那次提及之後的漲跌。 */
+/** 代碼＋簡稱＋立場 icon，沒有外框；hover 出現那次提及之後的漲跌。 */
 export default function StanceTagRow({ items, max }: { items: Item[]; max?: number }) {
   const rows = max ? items.slice(0, max) : items;
   if (rows.length === 0) return null;
@@ -21,6 +22,7 @@ export default function StanceTagRow({ items, max }: { items: Item[]; max?: numb
         <li key={i.ticker}>
           <PerfChip
             ticker={i.ticker}
+            name={i.short_name ?? i.display_name}
             stance={stancesOf({ stance: i.stance, stances: i.stances })[0] ?? 'mentioned'}
             p={i.jev_prob ?? null}
             perf={i.perf ?? null}

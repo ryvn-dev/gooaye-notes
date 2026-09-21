@@ -34,7 +34,13 @@ export const wordsOf = (ticker) => {
     ...(fromCsv[ticker] ?? []),
     ...(Array.isArray(EXTRA[ticker]) ? EXTRA[ticker] : []),
   ];
-  return [...new Set(list.filter((w) => w && String(w).trim().length >= 2).map((w) => norm(w).trim()))];
+  // 純數字（台股四碼）不單獨當別名：節目說「3661」讀者也認不出是世芯，
+  // 要當螢光句的依據就得句子裡真的有名字。
+  return [...new Set(
+    list
+      .filter((w) => w && String(w).trim().length >= 2 && !/^\d+$/.test(String(w).trim()))
+      .map((w) => norm(w).trim()),
+  )];
 };
 
 const isLatin = (w) => /^[A-Za-z0-9][A-Za-z0-9 .&-]*$/.test(w);

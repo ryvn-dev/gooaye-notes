@@ -32,6 +32,7 @@ export type Block = {
 export type Mention = {
   ticker: string;
   display_name: string;
+  short_name?: string | null;
   market: 'US' | 'TW';
   mention_count: number;
   first_ts_s: number;
@@ -105,6 +106,7 @@ export type IndexEntry = {
   has_summary: boolean;
   top_tickers: {
     ticker: string;
+    short_name?: string | null;
     display_name: string;
     stance: Stance;
     stances: Stance[];
@@ -117,6 +119,7 @@ export type IndexEntry = {
 export type TickerRow = {
   ticker: string;
   display_name: string;
+  short_name?: string | null;
   market: 'US' | 'TW';
   yahoo_url: string;
   episode_count: number;

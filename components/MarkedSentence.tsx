@@ -4,7 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { createPortal } from 'react-dom';
 import type { Stance } from '@/lib/content';
 
-export type Tip = { code: string; stance: Stance; p: number | null };
+export type Tip = { code: string; name?: string | null; stance: Stance; p: number | null };
 
 const COLOR: Record<Stance, string> = {
   bullish: '#ff7a6b',
@@ -35,7 +35,7 @@ function Arrow({ stance, p }: { stance: Stance; p: number | null }) {
 
 /**
  * 螢光筆句子：淡黃底，點一下（或 hover）開 tooltip，再點一下或點別處關。
- * tooltip 錨在這一句的第一行、置中在它正上方，只有代碼與立場 icon，深灰底白字。
+ * tooltip 錨在這一句的第一行、置中在它正上方，只有代碼、簡稱與立場 icon，深灰底白字。
  */
 export default function MarkedSentence({
   id,
@@ -137,6 +137,7 @@ export default function MarkedSentence({
             {tips.map((t) => (
               <span key={t.code} className="inline-flex items-center gap-1">
                 <span className="font-mono">{t.code}</span>
+                {t.name && t.name !== t.code && <span>{t.name}</span>}
                 <Arrow stance={t.stance} p={t.p} />
               </span>
             ))}

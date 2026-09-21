@@ -5,17 +5,20 @@ const pctText = (v: number | null) => (v === null ? null : `${v > 0 ? '+' : ''}$
 const tone = (v: number | null) => (v === null ? '#6b6b6b' : v > 0 ? '#C0392B' : v < 0 ? '#2E7D5B' : '#6b6b6b');
 
 /**
- * 代碼 chip：代碼 + 立場 icon，hover／長按顯示那次提及之後的漲跌。
+ * 代碼 chip：代碼 + 簡稱 + 立場 icon，hover／長按顯示那次提及之後的漲跌。
+ * 代碼一定要配名字：台股四碼（3661）單獨出現沒有人認得出是哪一家。
  * 數字是 build 時用日線快取算好的，前端不打 API。
  */
 export default function PerfChip({
   ticker,
+  name,
   stance,
   p,
   perf,
   href,
 }: {
   ticker: string;
+  name?: string | null;
   stance: Stance;
   p?: number | null;
   perf?: Perf | null;
@@ -25,6 +28,7 @@ export default function PerfChip({
   const body = (
     <>
       <span className="font-mono">{code}</span>
+      {name && name !== code && <span>{name}</span>}
       <StanceIcon stance={stance} p={p ?? null} />
     </>
   );

@@ -107,6 +107,8 @@ for (let i = 1; i < episodes.length; i++) {
 
 const STATS = [];
 const nameOf = (t) => NAMES[t]?.name || t;
+// chip 與 tooltip 上的簡稱：代碼旁邊一定要有名字，不然讀者看到 3661 不知道是世芯。
+const shortOf = (t) => NAMES[t]?.short || NAMES[t]?.name || null;
 const marketOf = (t) => (t.startsWith('TW:') ? 'TW' : 'US');
 const confirmed = (t) => Boolean(NAMES[t]?.confirmed);
 const yahooOf = (t) =>
@@ -418,6 +420,7 @@ for (let i = 0; i < episodes.length; i++) {
     return {
       ticker,
       display_name: nameOf(ticker),
+      short_name: shortOf(ticker),
       market: marketOf(ticker),
       mention_count: c ? Number(c.mention_count) : null,
       first_ts_s: c ? Number(c.first_ts_s) : (secs(s?.t) ?? secs(x.t) ?? 0),
@@ -569,7 +572,7 @@ for (let i = 0; i < episodes.length; i++) {
     summary_answer_first: doc.summary_answer_first,
     has_summary: Boolean(doc.summary),
     top_tickers: shown.slice(0, 8).map((m) => ({
-      ticker: m.ticker, display_name: m.display_name, stance: m.stance, stances: m.stances,
+      ticker: m.ticker, display_name: m.display_name, short_name: m.short_name, stance: m.stance, stances: m.stances,
       speaker: m.speaker, perf: m.perf ?? null,
     })),
     mention_total: shown.length,
@@ -577,7 +580,7 @@ for (let i = 0; i < episodes.length; i++) {
 
   for (const m of shown) {
     (tickerMap[m.ticker] ||= {
-      ticker: m.ticker, display_name: m.display_name, market: m.market, yahoo_url: m.yahoo_url,
+      ticker: m.ticker, display_name: m.display_name, short_name: m.short_name, market: m.market, yahoo_url: m.yahoo_url,
       episode_count: 0, mention_total: 0, first_seen: e.published, last_seen: e.published, timeline: [],
     });
     const t = tickerMap[m.ticker];

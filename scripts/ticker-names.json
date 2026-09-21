@@ -125,7 +125,8 @@
   },
   "TSM": {
     "name": "台積電 ADR",
-    "confirmed": true
+    "confirmed": true,
+    "short": "台積電"
   },
   "TXN": {
     "name": "德州儀器",
@@ -189,7 +190,8 @@
   },
   "TW:3711": {
     "name": "日月光投控",
-    "confirmed": true
+    "confirmed": true,
+    "short": "日月光"
   },
   "TW:6239": {
     "name": "力成",
@@ -205,6 +207,30 @@
   },
   "TW:8299": {
     "name": "群聯",
+    "confirmed": true
+  },
+  "CRM": {
+    "name": "Salesforce",
+    "confirmed": true
+  },
+  "CRWD": {
+    "name": "CrowdStrike",
+    "confirmed": true
+  },
+  "MRVL": {
+    "name": "邁威爾",
+    "confirmed": true
+  },
+  "ORCL": {
+    "name": "甲骨文",
+    "confirmed": true
+  },
+  "TW:3376": {
+    "name": "新日興",
+    "confirmed": true
+  },
+  "TW:3661": {
+    "name": "世芯",
     "confirmed": true
   }
 }
