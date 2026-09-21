@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T01:27:53.475Z",
+  "generated_at": "2026-09-21T01:36:33.273Z",
   "episode_count": 6,
   "coverage": {
     "from": "2026-08-26",
@@ -288,6 +288,25 @@
             "last": 184,
             "pct": 1.7,
             "d5": 1.7,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "ORCL",
+          "display_name": "甲骨文",
+          "short_name": "甲骨文",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 144.79,
+            "last_date": "2026-09-18",
+            "last": 147.61,
+            "pct": 1.9,
+            "d5": null,
             "d21": null
           }
         }
