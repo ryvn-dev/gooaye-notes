@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "ticker_count": 18,
+  "ticker_count": 19,
   "tickers": [
     {
       "ticker": "NVDA",
@@ -26,7 +26,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": null,
-          "quote": "NVIDIA 的賣法是一個 set 一起出去，AIC 收到的東西是漲價的",
+          "quote": null,
           "perf": null,
           "px_1d": null,
           "px_5d": null,
@@ -39,10 +39,10 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": 1,
-          "first_ts_s": 701,
-          "stance": "bullish",
+          "first_ts_s": 695,
+          "stance": "neutral",
           "stances": [
-            "bullish"
+            "neutral"
           ],
           "speaker": "主持人",
           "jev_prob": 0.17,
@@ -67,14 +67,14 @@
           "slug": "0692",
           "published_at": "2026-08-29",
           "mention_count": null,
-          "first_ts_s": 1439,
+          "first_ts_s": 1197,
           "stance": "bullish",
           "stances": [
             "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": null,
-          "quote": "其實 NVIDIA 它都有一個非常強大的採購地位，它 secure 超級多的產能",
+          "quote": "他是比 GB300 還要強大的一個晶片",
           "perf": {
             "base_date": "2026-08-31",
             "base": 220.78,
@@ -96,13 +96,13 @@
           "published_at": "2026-08-26",
           "mention_count": null,
           "first_ts_s": 1506,
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "jev_prob": 0.46,
-          "quote": "可能像前陣子跟大家講說這個輝達的 Power 的白皮書",
+          "quote": "可能像前陣子跟大家講說這個輝達的 power 的白皮書",
           "perf": {
             "base_date": "2026-08-26",
             "base": 209.66,
@@ -114,6 +114,122 @@
           },
           "px_1d": 0.0874,
           "px_5d": 0.0704,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "display_name": "台積電 ADR",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
+      "episode_count": 4,
+      "mention_total": 2,
+      "first_seen": "2026-08-29",
+      "last_seen": "2026-09-19",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 698,
+          "slug": "0698",
+          "published_at": "2026-09-19",
+          "mention_count": null,
+          "first_ts_s": 866,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": null,
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 1,
+          "first_ts_s": 779,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.61,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 418.01,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 4,
+            "d5": null,
+            "d21": null
+          },
+          "px_1d": -0.0102,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 1,
+          "first_ts_s": 1206,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "它應該就不會是給記憶體三大廠，應該就是還是交給臺積電去做",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 415.5,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 4.6,
+            "d5": 3,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": null,
+          "first_ts_s": 1461,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "它在臺積電這邊可能是下的量直接嚇到爆掉",
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 415.32,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 4.7,
+            "d5": 5.7,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
           "px_21d": null
         }
       ]
@@ -142,7 +258,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.09,
-          "quote": "我們上集聊到 Google 在 Goldman Sachs 的會議上提到的東西",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 349.39,
@@ -163,14 +279,14 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": 9,
-          "first_ts_s": 878,
-          "stance": "mentioned",
+          "first_ts_s": 742,
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "jev_prob": 0.14,
-          "quote": "大家看到 Google 也有進來，可能會想說這個合作跟 Google 有沒有什麼關係",
+          "quote": "它的這個 TPU 的 v8 這一顆，那是在聯發科這邊去做",
           "perf": {
             "base_date": "2026-09-02",
             "base": 337.12,
@@ -191,14 +307,14 @@
           "slug": "0692",
           "published_at": "2026-08-29",
           "mention_count": 4,
-          "first_ts_s": 1101,
-          "stance": "mentioned",
+          "first_ts_s": 1129,
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "jev_prob": 0.58,
-          "quote": "可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
+          "quote": "那可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
           "perf": {
             "base_date": "2026-08-31",
             "base": 339.35,
@@ -238,7 +354,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.08,
-          "quote": "AMD 要去轉嫁他在晶圓代工被漲的 10%，把這個價格轉出去",
+          "quote": null,
           "perf": null,
           "px_1d": null,
           "px_5d": null,
@@ -251,14 +367,14 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": 1,
-          "first_ts_s": 974,
+          "first_ts_s": 954,
           "stance": "mentioned",
           "stances": [
             "mentioned"
           ],
           "speaker": "主持人",
           "jev_prob": 0.19,
-          "quote": "大家第一個想像就是受害的可能就是 GPGPU，像是 NVIDIA 或是 AMD 這類的業者",
+          "quote": "受害的可能就是 GPGPU，像是 NVIDIA 或是 AMD 這類的業者",
           "perf": {
             "base_date": "2026-09-02",
             "base": 457.06,
@@ -298,7 +414,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.47,
-          "quote": "在 Tesla 或 SpaceX 或 xAI 的馬斯克這邊，我覺得他打的算盤是另外一個",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-16",
             "base": 358.08,
@@ -326,7 +442,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.07,
-          "quote": "像 Tesla 這邊就有一個傳說，對外放出了大量的太陽能訂單",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 358.97,
@@ -337,66 +453,6 @@
             "d21": null
           },
           "px_1d": -0.0067,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ]
-    },
-    {
-      "ticker": "TSM",
-      "display_name": "台積電 ADR",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
-      "episode_count": 2,
-      "mention_total": 1,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-19",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "ep_number": 698,
-          "slug": "0698",
-          "published_at": "2026-09-19",
-          "mention_count": null,
-          "first_ts_s": 866,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": null,
-          "quote": "如果真的很缺的話，價格去做一些調整、去反映成本，其實是非常合理的操作",
-          "perf": null,
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 1,
-          "first_ts_s": 779,
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.61,
-          "quote": "利多出盡的話，NVIDIA 跟 TSM 他們利多發幾次了，那也沒有完全出盡",
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 418.01,
-            "last_date": "2026-09-18",
-            "last": 434.67,
-            "pct": 4,
-            "d5": null,
-            "d21": null
-          },
-          "px_1d": -0.0102,
           "px_5d": null,
           "px_21d": null
         }
@@ -426,7 +482,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.08,
-          "quote": "它用更強大的 UI/UX 去包裝，結果價格只有稍微貴一點點，我認為它的銷量會很不錯",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 333.08,
@@ -459,7 +515,7 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": 12,
-          "first_ts_s": 1434,
+          "first_ts_s": 1602,
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -478,6 +534,38 @@
           },
           "px_1d": -0.0274,
           "px_5d": -0.0175,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "CRM",
+      "display_name": "CRM",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/CRM",
+      "episode_count": 1,
+      "mention_total": 0,
+      "first_seen": "2026-08-29",
+      "last_seen": "2026-08-29",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": null,
+          "first_ts_s": 809,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "我們先來看一下 Anthropic 跟 Salesforce 的一個合作，他們現在正式推出了 Cloudforce",
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
           "px_21d": null
         }
       ]
@@ -506,7 +594,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": null,
-          "quote": "最新 CrowdStrike 推出的一些方案，說其實不用最尖端的東西也可以把資安做好",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-16",
             "base": 241.36,
@@ -539,14 +627,14 @@
           "slug": "0692",
           "published_at": "2026-08-29",
           "mention_count": null,
-          "first_ts_s": 1141,
+          "first_ts_s": 1129,
           "stance": "bullish",
           "stances": [
             "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": null,
-          "quote": "已經蠻多人在前面就賭說 Marvell 的 DSP、或是光通相關的東西，在這一次的電話會議裡面會去做上修",
+          "quote": "Marvell 上修了它的財務預期，那這裡麵包含的我認為最大宗一定就是 XPU",
           "perf": {
             "base_date": "2026-08-31",
             "base": 211.66,
@@ -579,14 +667,14 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": 1,
-          "first_ts_s": 1234,
+          "first_ts_s": 1206,
           "stance": "mentioned",
           "stances": [
             "mentioned"
           ],
           "speaker": "主持人",
           "jev_prob": 0.42,
-          "quote": "因為前面沒有辦法滿足 NVIDIA 的要求，所以把 base die 丟給 TSM 去做",
+          "quote": "前面可能沒有辦法滿足 NVIDIA 的一個要求，所以後來也是直接把 base die 去丟給 TSMC 去做",
           "perf": {
             "base_date": "2026-09-02",
             "base": 956.08,
@@ -626,7 +714,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": null,
-          "quote": "不用出錢的魔術：客戶預付、客戶自帶硬體，再加上供應商融資",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 144.79,
@@ -666,7 +754,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.59,
-          "quote": "百事生可樂真的超好喝，日本人把啤酒釀造的過濾技術移植到可樂",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-16",
             "base": 134.34,
@@ -706,7 +794,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.99,
-          "quote": "可以想像高通在後面扮演的角色，一定就是慢慢的被擠掉",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 180.15,
@@ -746,7 +834,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.21,
-          "quote": "它畢竟要去跟鴻海拆帳，所以股價也相對難掌握",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 248.5,
@@ -779,7 +867,7 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": 16,
-          "first_ts_s": 724,
+          "first_ts_s": 705,
           "stance": "bullish",
           "stances": [
             "bullish"
@@ -826,7 +914,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": null,
-          "quote": "它是 major share，只是毛利好像沒有，蘋果壓得蠻嚴格的",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 181,
@@ -859,14 +947,14 @@
           "slug": "0693",
           "published_at": "2026-09-02",
           "mention_count": null,
-          "first_ts_s": 798,
+          "first_ts_s": 806,
           "stance": "mentioned",
           "stances": [
             "mentioned"
           ],
           "speaker": "主持人",
           "jev_prob": 0.95,
-          "quote": "都知道世芯有拿到 Amazon 的一個投資",
+          "quote": "世芯有拿到 Amazon 的一個投資",
           "perf": {
             "base_date": "2026-09-02",
             "base": 4200,
@@ -906,7 +994,7 @@
           ],
           "speaker": "主持人",
           "jev_prob": 0.57,
-          "quote": "這個 idea 是蠻好的，重點還是要看有多少客戶會去採用",
+          "quote": null,
           "perf": {
             "base_date": "2026-09-14",
             "base": 1935,

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T23:47:59.631Z",
+  "generated_at": "2026-09-21T00:21:13.754Z",
   "episode_count": 6,
   "coverage": {
     "from": "2026-08-26",
@@ -289,7 +289,7 @@
       "duration_s": 2984,
       "feed_title": "EP693 | 🍖",
       "site_title": "EP693 | 🍖",
-      "summary_answer_first": "NVIDIA 和 Google 策略投資聯發科。市場當成利多。",
+      "summary_answer_first": "輝達史上最大 ECB 插旗聯發科。他猜跟 Google 關係不大。",
       "has_summary": true,
       "top_tickers": [
         {
@@ -331,9 +331,9 @@
         {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "perf": {
@@ -349,9 +349,9 @@
         {
           "ticker": "NVDA",
           "display_name": "輝達",
-          "stance": "bullish",
+          "stance": "neutral",
           "stances": [
-            "bullish"
+            "neutral"
           ],
           "speaker": "主持人",
           "perf": {
@@ -401,6 +401,24 @@
           }
         },
         {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 415.5,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 4.6,
+            "d5": 3,
+            "d21": null
+          }
+        },
+        {
           "ticker": "TW:3661",
           "display_name": "TW:3661",
           "stance": "mentioned",
@@ -419,7 +437,7 @@
           }
         }
       ],
-      "mention_total": 7
+      "mention_total": 8
     },
     {
       "show": "gooaye",
@@ -436,9 +454,9 @@
         {
           "ticker": "GOOGL",
           "display_name": "Alphabet",
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "perf": {
@@ -450,6 +468,16 @@
             "d5": -0.3,
             "d21": null
           }
+        },
+        {
+          "ticker": "CRM",
+          "display_name": "CRM",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": null
         },
         {
           "ticker": "MRVL",
@@ -486,9 +514,27 @@
             "d5": 2.2,
             "d21": null
           }
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 415.32,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 4.7,
+            "d5": 5.7,
+            "d21": null
+          }
         }
       ],
-      "mention_total": 3
+      "mention_total": 5
     },
     {
       "show": "gooaye",
@@ -505,9 +551,9 @@
         {
           "ticker": "NVDA",
           "display_name": "輝達",
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "perf": {

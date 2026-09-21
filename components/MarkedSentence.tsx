@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { Stance } from '@/lib/content';
 
 export type Tip = { code: string; stance: Stance; p: number | null };
@@ -50,7 +51,11 @@ export default function MarkedSentence({
   const [hover, setHover] = useState(false);
   const [pinned, setPinned] = useState(false);
   const [pos, setPos] = useState<{ left: number; top: number } | null>(null);
+  const [mounted, setMounted] = useState(false);
   const open = hover || pinned;
+
+  // tooltip 掛在 body 上：逐字稿每一節有 content-visibility，contain 會讓 fixed 改以那一節為基準。
+  useEffect(() => setMounted(true), []);
 
   const place = useCallback(() => {
     const el = ref.current;
@@ -115,24 +120,28 @@ export default function MarkedSentence({
       onBlur={() => setPinned(false)}
     >
       {text}
-      <span
-        ref={tipRef}
-        aria-hidden={!open}
-        className="fixed z-40 flex items-center gap-3 rounded-md bg-[#222] px-2.5 py-1.5 text-[13px] leading-none font-normal whitespace-nowrap text-white shadow-sm"
-        style={{
-          left: pos?.left ?? -9999,
-          top: pos?.top ?? -9999,
-          visibility: open && pos ? 'visible' : 'hidden',
-          pointerEvents: 'none',
-        }}
-      >
-        {tips.map((t) => (
-          <span key={t.code} className="inline-flex items-center gap-1">
-            <span className="font-mono">{t.code}</span>
-            <Arrow stance={t.stance} p={t.p} />
-          </span>
-        ))}
-      </span>
+      {mounted &&
+        createPortal(
+          <span
+            ref={tipRef}
+            aria-hidden={!open}
+            className="fixed z-40 flex items-center gap-3 rounded-md bg-[#222] px-2.5 py-1.5 text-[13px] leading-none font-normal whitespace-nowrap text-white shadow-sm"
+            style={{
+              left: pos?.left ?? -9999,
+              top: pos?.top ?? -9999,
+              visibility: open && pos ? 'visible' : 'hidden',
+              pointerEvents: 'none',
+            }}
+          >
+            {tips.map((t) => (
+              <span key={t.code} className="inline-flex items-center gap-1">
+                <span className="font-mono">{t.code}</span>
+                <Arrow stance={t.stance} p={t.p} />
+              </span>
+            ))}
+          </span>,
+          document.body,
+        )}
     </span>
   );
 }

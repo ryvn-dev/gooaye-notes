@@ -31,7 +31,7 @@ const answerFirst = (ep: ReturnType<typeof getEpisode>) => {
 };
 
 const metaLine = (ep: ReturnType<typeof getEpisode>) => {
-  const shown = ep.mentions.filter((m) => !m.needs_review);
+  const shown = ep.mentions.filter((m) => m.publish !== false);
   if (shown.length === 0) {
     return `股癌 EP${ep.ep_number}（${ep.published_at}，${minutes(ep.duration_s)} 分鐘）的重點筆記與播放器。`;
   }
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<{ show: str
 export default async function EpisodePage({ params }: { params: Promise<{ show: string; slug: string }> }) {
   const { show, slug } = await params;
   const ep = getEpisode(slug);
-  const shown = ep.mentions.filter((m) => !m.needs_review);
+  const shown = ep.mentions.filter((m) => m.publish !== false);
 
   const episodeLd: WithContext<PodcastEpisode> & { speakable: unknown } = {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '[data-speakable]'] },
@@ -162,7 +162,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
 
       <h2 className="mt-10">逐字稿</h2>
       {ep.blocks?.length ? (
-        <Transcript blocks={ep.blocks} mentions={shown} />
+        <Transcript blocks={ep.blocks} />
       ) : (
         <p className="mt-3 text-[15px] text-[#6b6b6b]">逐字稿待補。</p>
       )}

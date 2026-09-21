@@ -16,7 +16,9 @@ export type Perf = {
   d21: number | null;
 };
 
-export type Sentence = { text: string; key_point: number | null; tickers: string[] };
+/** 句子上的螢光標記：哪一檔、那一段他的讀法是什麼（待覆核的一律灰點）。 */
+export type SentenceMark = { ticker: string; stance: Stance };
+export type Sentence = { text: string; key_point: number | null; marks: SentenceMark[] };
 
 /** 結構化逐字稿的一個區塊：小標、主文段、引用段（代言段 ad=true 走淡灰樣式，不貼任何標籤字）。 */
 export type Block = {
@@ -39,6 +41,8 @@ export type Mention = {
   is_about_p: number | null;
   source: string;
   needs_review: boolean;
+  publish?: boolean;
+  row_count?: number;
   stances: Stance[];
   jev_prob: number | null;
   jev_question: string | null;

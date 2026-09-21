@@ -1,12 +1,12 @@
 import MarkedSentence, { type Tip } from '@/components/MarkedSentence';
 import TimecodeButton from '@/components/TimecodeButton';
-import { stancesOf, type Block, type Mention } from '@/lib/content';
+import type { Block, Mention } from '@/lib/content';
 
 /**
  * 結構化逐字稿：小標、主文段、來信引用、代言段。層級只靠排版，不貼任何說明文字。
  * 提到個股與對到重點的句子都是同一種淡黃螢光筆，點了才出現「代碼 + 立場」的小 tooltip。
  */
-function Body({ block, bi, byTicker }: { block: Block; bi: number; byTicker: Record<string, Mention> }) {
+function Body({ block, bi }: { block: Block; bi: number }) {
   return (
     <>
       {block.t !== null && block.t !== undefined && (
@@ -15,23 +15,19 @@ function Body({ block, bi, byTicker }: { block: Block; bi: number; byTicker: Rec
         </>
       )}
       {block.sentences.map((s, si) => {
-        if (s.key_point === null && s.tickers.length === 0) return <span key={si}>{s.text}</span>;
-        const tips: Tip[] = s.tickers
-          .map((t) => byTicker[t])
-          .filter(Boolean)
-          .map((m) => ({
-            code: m.ticker.replace('TW:', ''),
-            stance: stancesOf(m)[0] ?? 'mentioned',
-            p: m.jev_prob ?? null,
-          }));
+        if (s.key_point === null && s.marks.length === 0) return <span key={si}>{s.text}</span>;
+        const tips: Tip[] = s.marks.map((m) => ({
+          code: m.ticker.replace('TW:', ''),
+          stance: m.stance,
+          p: null,
+        }));
         return <MarkedSentence key={si} id={`s-${bi}-${si}`} text={s.text} tips={tips} />;
       })}
     </>
   );
 }
 
-export default function Transcript({ blocks, mentions }: { blocks: Block[]; mentions: Mention[] }) {
-  const byTicker = Object.fromEntries(mentions.map((m) => [m.ticker, m]));
+export default function Transcript({ blocks }: { blocks: Block[] }) {
   const sections: React.ReactNode[][] = [[]];
   const titles: (string | null)[] = [null];
   let ads: React.ReactNode[] = [];
@@ -57,7 +53,7 @@ export default function Transcript({ blocks, mentions }: { blocks: Block[]; ment
       titles.push(b.text);
       return;
     }
-    const inner = <Body block={b} bi={bi} byTicker={byTicker} />;
+    const inner = <Body block={b} bi={bi} />;
     if (b.ad) {
       ads.push(
         <p key={bi} className="m-0 mt-3 first:mt-0">
