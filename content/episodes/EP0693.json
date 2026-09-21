@@ -207,7 +207,7 @@
       ],
       "speaker": "主持人",
       "quote": "絕大多數的份額就是被輝達給拿走了",
-      "reason": "這筆可轉債多數份額由它認下",
+      "reason": "轉述利多：這筆可轉債多數份額由它認下",
       "t": 695,
       "jev_prob": 0.17,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
@@ -241,13 +241,13 @@
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 980,
-      "stance": "mentioned",
+      "stance": "neutral",
       "stances": [
-        "mentioned"
+        "neutral"
       ],
       "speaker": "主持人",
       "quote": "受害的可能就是 GPGPU，像是 NVIDIA 或是 AMD 這類的業者",
-      "reason": "客製晶片搶市佔時被點名",
+      "reason": "轉述利空加但書：客製晶片搶市佔，但整體餅在變大",
       "t": 954,
       "jev_prob": 0.19,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
@@ -281,13 +281,13 @@
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1234,
-      "stance": "mentioned",
+      "stance": "bearish",
       "stances": [
-        "mentioned"
+        "bearish"
       ],
       "speaker": "主持人",
       "quote": "前面可能沒有辦法滿足 NVIDIA 的一個要求，所以後來也是直接把 base die 去丟給 TSMC 去做",
-      "reason": "HBM base die 轉單的對照",
+      "reason": "轉述利空：滿足不了要求，base die 轉給別人做",
       "t": 1206,
       "jev_prob": 0.42,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
@@ -321,13 +321,13 @@
       "market": "US",
       "mention_count": 1,
       "first_ts_s": 1241,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": "它應該就不會是給記憶體三大廠，應該就是還是交給臺積電去做",
-      "reason": "推測 base die 還是走它",
+      "reason": "轉述利多：推測 base die 還是交給它做",
       "t": 1206,
       "jev_prob": null,
       "jev_question": null,
@@ -361,13 +361,13 @@
       "market": "TW",
       "mention_count": null,
       "first_ts_s": 806,
-      "stance": "mentioned",
+      "stance": "neutral",
       "stances": [
-        "mentioned"
+        "neutral"
       ],
       "speaker": "主持人",
       "quote": "世芯有拿到 Amazon 的一個投資",
-      "reason": "拿幾年前的類似案例做對照",
+      "reason": "轉述後潑冷水：拿到大廠投資，但股價連拉都沒拉",
       "t": 806,
       "jev_prob": 0.95,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
@@ -1327,7 +1327,7 @@
           "marks": [
             {
               "ticker": "TW:3661",
-              "stance": "mentioned"
+              "stance": "neutral"
             }
           ]
         },
@@ -1511,7 +1511,7 @@
           "marks": [
             {
               "ticker": "AMD",
-              "stance": "mentioned"
+              "stance": "neutral"
             }
           ]
         },
@@ -1741,7 +1741,7 @@
           "marks": [
             {
               "ticker": "MU",
-              "stance": "mentioned"
+              "stance": "bearish"
             },
             {
               "ticker": "NVDA",
@@ -1765,7 +1765,7 @@
           "marks": [
             {
               "ticker": "TSM",
-              "stance": "mentioned"
+              "stance": "bullish"
             }
           ]
         },
@@ -3850,7 +3850,7 @@
   "transcript_available": true,
   "provenance": {
     "summary_model": null,
-    "summary_generated_at": "2026-09-21T00:21:03Z",
+    "summary_generated_at": "2026-09-21T01:25:19Z",
     "transcript_sha256": "a6c8af54f1fcd895c18d40a687991846772ea5991f203aa14cd43ae6f5f6f7ec",
     "extractor_version": null,
     "jev_model": null

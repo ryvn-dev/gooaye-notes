@@ -120,13 +120,13 @@
       "market": "US",
       "mention_count": null,
       "first_ts_s": 809,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": "我們先來看一下 Anthropic 跟 Salesforce 的一個合作，他們現在正式推出了 Cloudforce",
-      "reason": "以它跟 Anthropic 的合作方案開場",
+      "reason": "轉述利多：它跟 Anthropic 推出的合作方案",
       "t": 809,
       "jev_prob": null,
       "jev_question": null,
@@ -158,7 +158,7 @@
       ],
       "speaker": "主持人",
       "quote": "Marvell 上修了它的財務預期，那這裡麵包含的我認為最大宗一定就是 XPU",
-      "reason": "財測上修，主因是客製晶片放量",
+      "reason": "明講：財測上修，主因是客製晶片放量",
       "t": 1129,
       "jev_prob": null,
       "jev_question": null,
@@ -232,13 +232,13 @@
       "market": "US",
       "mention_count": null,
       "first_ts_s": 1461,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": "它在臺積電這邊可能是下的量直接嚇到爆掉",
-      "reason": "以下單量說明產能被卡住",
+      "reason": "轉述利多：它拿到嚇到爆掉的下單量",
       "t": 1461,
       "jev_prob": null,
       "jev_question": null,
@@ -929,7 +929,7 @@
           "marks": [
             {
               "ticker": "CRM",
-              "stance": "mentioned"
+              "stance": "bullish"
             }
           ]
         },
@@ -1543,7 +1543,7 @@
           "marks": [
             {
               "ticker": "TSM",
-              "stance": "mentioned"
+              "stance": "bullish"
             },
             {
               "ticker": "NVDA",
@@ -2991,7 +2991,7 @@
   "transcript_available": true,
   "provenance": {
     "summary_model": null,
-    "summary_generated_at": "2026-09-21T00:21:03Z",
+    "summary_generated_at": "2026-09-21T01:25:19Z",
     "transcript_sha256": "f0d54eeedbd46c0cadd459def2aa3e9336ef0abb88f8e1b7d3716ea1d0e53863",
     "extractor_version": null,
     "jev_model": null

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T01:22:47.586Z",
+  "generated_at": "2026-09-21T01:27:53.475Z",
   "episode_count": 6,
   "coverage": {
     "from": "2026-08-26",
@@ -23,9 +23,9 @@
           "ticker": "AMD",
           "display_name": "超微",
           "short_name": "超微",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "perf": null
@@ -45,9 +45,9 @@
           "ticker": "NVDA",
           "display_name": "輝達",
           "short_name": "輝達",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "perf": null
@@ -181,9 +181,9 @@
           "ticker": "TSLA",
           "display_name": "特斯拉",
           "short_name": "特斯拉",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "perf": {
@@ -386,9 +386,9 @@
           "ticker": "AMD",
           "display_name": "超微",
           "short_name": "超微",
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "perf": {
@@ -405,9 +405,9 @@
           "ticker": "MU",
           "display_name": "美光",
           "short_name": "美光",
-          "stance": "mentioned",
+          "stance": "bearish",
           "stances": [
-            "mentioned"
+            "bearish"
           ],
           "speaker": "主持人",
           "perf": {
@@ -424,9 +424,9 @@
           "ticker": "TSM",
           "display_name": "台積電 ADR",
           "short_name": "台積電",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "perf": {
@@ -443,9 +443,9 @@
           "ticker": "TW:3661",
           "display_name": "世芯",
           "short_name": "世芯",
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "perf": {
@@ -496,9 +496,9 @@
           "ticker": "CRM",
           "display_name": "Salesforce",
           "short_name": "Salesforce",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "perf": null
@@ -545,9 +545,9 @@
           "ticker": "TSM",
           "display_name": "台積電 ADR",
           "short_name": "台積電",
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "perf": {

@@ -21,9 +21,9 @@
           "published_at": "2026-09-19",
           "mention_count": null,
           "first_ts_s": 943,
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": null,
@@ -186,9 +186,9 @@
           "published_at": "2026-09-02",
           "mention_count": 1,
           "first_ts_s": 1206,
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": null,
@@ -214,9 +214,9 @@
           "published_at": "2026-08-29",
           "mention_count": null,
           "first_ts_s": 1461,
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": null,
@@ -352,9 +352,9 @@
           "published_at": "2026-09-19",
           "mention_count": 9,
           "first_ts_s": 735,
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": 0.08,
@@ -372,9 +372,9 @@
           "published_at": "2026-09-02",
           "mention_count": 1,
           "first_ts_s": 954,
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "jev_prob": 0.19,
@@ -441,9 +441,9 @@
           "published_at": "2026-09-12",
           "mention_count": 2,
           "first_ts_s": 1660,
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": 0.07,
@@ -564,9 +564,9 @@
           "published_at": "2026-08-29",
           "mention_count": null,
           "first_ts_s": 809,
-          "stance": "mentioned",
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
           "jev_prob": null,
@@ -679,9 +679,9 @@
           "published_at": "2026-09-02",
           "mention_count": 1,
           "first_ts_s": 1206,
-          "stance": "mentioned",
+          "stance": "bearish",
           "stances": [
-            "mentioned"
+            "bearish"
           ],
           "speaker": "主持人",
           "jev_prob": 0.42,
@@ -966,9 +966,9 @@
           "published_at": "2026-09-02",
           "mention_count": null,
           "first_ts_s": 806,
-          "stance": "mentioned",
+          "stance": "neutral",
           "stances": [
-            "mentioned"
+            "neutral"
           ],
           "speaker": "主持人",
           "jev_prob": 0.95,

@@ -86,13 +86,13 @@
       "market": "US",
       "mention_count": 9,
       "first_ts_s": 735,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": null,
-      "reason": "以它的轉嫁新聞談成本結構",
+      "reason": "轉述利多：它把代工漲價轉嫁出去",
       "t": 735,
       "jev_prob": 0.08,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
@@ -148,13 +148,13 @@
       "market": "US",
       "mention_count": null,
       "first_ts_s": 943,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": null,
-      "reason": "說明終端價格為何跟著上去",
+      "reason": "轉述利多：整包出貨，漲價直接反映到終端",
       "t": 943,
       "jev_prob": null,
       "jev_question": null,
@@ -343,7 +343,7 @@
   "transcript_available": false,
   "provenance": {
     "summary_model": null,
-    "summary_generated_at": "2026-09-21T00:21:03Z",
+    "summary_generated_at": "2026-09-21T01:25:19Z",
     "transcript_sha256": "f60cc14adaecda80ddc88916a605d78e50d81130f1fd38200c38549980a05f2f",
     "extractor_version": null,
     "jev_model": null

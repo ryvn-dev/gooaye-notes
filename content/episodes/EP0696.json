@@ -164,13 +164,13 @@
       "market": "US",
       "mention_count": 2,
       "first_ts_s": 1317,
-      "stance": "mentioned",
+      "stance": "bullish",
       "stances": [
-        "mentioned"
+        "bullish"
       ],
       "speaker": "主持人",
       "quote": null,
-      "reason": "談表後供電時提到的傳聞",
+      "reason": "轉述利多：它大量太陽能訂單的傳聞",
       "t": 1660,
       "jev_prob": 0.07,
       "jev_question": "這段話對上面那個標的的看法偏多嗎",
@@ -466,7 +466,7 @@
   "transcript_available": false,
   "provenance": {
     "summary_model": null,
-    "summary_generated_at": "2026-09-21T00:21:03Z",
+    "summary_generated_at": "2026-09-21T01:25:19Z",
     "transcript_sha256": "16c9beef58c92c86b16a503ab98ff5d926412718a83b689d866e294d767d2e93",
     "extractor_version": null,
     "jev_model": null

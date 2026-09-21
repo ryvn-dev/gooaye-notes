@@ -231,7 +231,7 @@
   "transcript_available": false,
   "provenance": {
     "summary_model": null,
-    "summary_generated_at": "2026-09-21T00:21:03Z",
+    "summary_generated_at": "2026-09-21T01:25:19Z",
     "transcript_sha256": "fc851bdf4f05833dc89e33245852dbc34a09e33f8e25da0cbbaf715962abb841",
     "extractor_version": null,
     "jev_model": null
