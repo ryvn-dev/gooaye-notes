@@ -1,27 +1,13 @@
-// 代號 → 節目裡會出現的講法。三個來源合起來：
-// ryvn-finance 的 aliases.csv（中文別名，唯讀）、站上的中文名、aliases/extra.json（英文與口語講法）。
+// 代號 → 節目裡會出現的講法。只讀進版控的那一份 aliases/merged.json ——
+// 上游（ryvn-finance 的 aliases.csv）只有這台機器讀得到，CI 讀不到就會本機綠、CI 紅。
+// 要更新別名表跑 `npm run aliases:sync`。
 // 比對規則：臺/台 視為同一個字；拉丁字母的別名要前後有邊界才算（避免 MU 命中 MULTI）。
 import fs from 'node:fs';
 import path from 'node:path';
 
-const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-finance`;
 const HERE = import.meta.dirname;
-
-const csvRows = (file) => {
-  if (!fs.existsSync(file)) return [];
-  const [head, ...rest] = fs.readFileSync(file, 'utf8').trim().split('\n');
-  const cols = head.split(',');
-  return rest.map((line) => Object.fromEntries(line.split(',').map((v, i) => [cols[i], v])));
-};
-
 const NAMES = JSON.parse(fs.readFileSync(path.join(HERE, 'ticker-names.json'), 'utf8'));
-const EXTRA = JSON.parse(fs.readFileSync(path.resolve(HERE, '..', 'aliases', 'extra.json'), 'utf8'));
-
-const fromCsv = {};
-for (const r of csvRows(path.join(FIN, 'data', 'podcasts', 'aliases.csv'))) {
-  if (!r.ticker || !r.alias) continue;
-  (fromCsv[r.ticker] ||= []).push(r.alias);
-}
+const MERGED = JSON.parse(fs.readFileSync(path.resolve(HERE, '..', 'aliases', 'merged.json'), 'utf8'));
 
 export const norm = (s) => String(s ?? '').replace(/臺/g, '台');
 
@@ -34,8 +20,7 @@ export const wordsOf = (ticker, { namesOnly = false } = {}) => {
     namesOnly ? null : ticker,
     namesOnly || !ticker.startsWith('TW:') ? null : ticker.slice(3),
     NAMES[ticker]?.name ?? null,
-    ...(fromCsv[ticker] ?? []),
-    ...(Array.isArray(EXTRA[ticker]) ? EXTRA[ticker] : []),
+    ...(MERGED[ticker] ?? []),
   ];
   // 純數字（台股四碼）不單獨當別名：節目說「3661」讀者也認不出是世芯，
   // 要當螢光句的依據就得句子裡真的有名字。

@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "check:marks": "node scripts/check-marks.mjs",
     "check:render": "node scripts/check-render.mjs",
-    "postbuild": "node scripts/check-render.mjs"
+    "postbuild": "node scripts/check-render.mjs",
+    "aliases:sync": "node scripts/sync-aliases.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",
