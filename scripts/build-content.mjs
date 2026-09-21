@@ -8,6 +8,7 @@ import remarkParse from 'remark-parse';
 import remarkDirective from 'remark-directive';
 import { toString as mdText } from 'mdast-util-to-string';
 import { checkEpisode } from './check-structured.mjs';
+import { mentionsTicker } from './aliases.mjs';
 
 const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-finance`;
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
@@ -182,7 +183,7 @@ const splitSentences = (t) => {
   return joined.flatMap(splitByComma).map((x) => x.trim()).filter(Boolean);
 };
 
-const buildTranscript = (blocks, sum, rows) => {
+const buildTranscript = (blocks, sum, rows, scanTickers = []) => {
   if (!blocks?.length) return null;
 
   // 先把每一段切成句子，句子在集內的座標是 `${blockIndex}:${sentenceIndex}`。
@@ -239,19 +240,50 @@ const buildTranscript = (blocks, sum, rows) => {
 
   // 螢光筆一：摘要 lane 的每一筆（每檔每段一筆）就是那一段要標的那一句。
   // needs_review 的筆只顯示灰點（無方向），引用段（來信）本來就不出 tickers。
-  const anchor = {};
+  // 立場句常常不提公司名（「整體看下來是一個不錯的訊息」），標在那裡讀者對不起來：
+  // 改標到同一段裡離它最近、真的講到這檔的那一句；整段都沒提就不標。
+  const nearestNamed = (bi, from, ticker) => {
+    const cand = sents.filter((s) => s.bi === bi && mentionsTicker(s.text, ticker));
+    if (!cand.length) return null;
+    return cand.sort((a, b) => Math.abs(a.si - from.si) - Math.abs(b.si - from.si) || a.si - b.si)[0];
+  };
   let marked = 0;
   let missed = 0;
+  let unnamed = 0;
   for (const r of rows) {
     const pi = typeof r.p === 'string' && r.p.startsWith('p-') ? Number(r.p.slice(2)) : null;
     if (pi === null || !body[pi] || body[pi].kind === 'quote' || !r.quote) continue;
-    const hit = findInBlock(pi, r.quote);
-    if (!hit) { missed++; continue; }
+    const found = findInBlock(pi, r.quote);
+    if (!found) { missed++; continue; }
+    const hit = mentionsTicker(found.text, r.ticker) ? found : nearestNamed(pi, found, r.ticker);
+    if (!hit) { unnamed++; continue; }
     const cell = body[hit.bi].sentences[hit.si];
     if (cell.marks.some((m) => m.ticker === r.ticker)) continue;
     cell.marks.push({ ticker: r.ticker, stance: r.needs_review ? 'neutral' : r.stance });
     marked++;
-    if (anchor[r.ticker] === undefined) anchor[r.ticker] = `s-${hit.bi}-${hit.si}`;
+  }
+
+  // 螢光筆一之二：有立場的段落之外，其他講到這些公司的句子標成「提到」（灰點）。
+  // 引用段（來信原文）不標；同一段同一檔最多一句；只掃站上有列的那些代號。
+  let aliasMarks = 0;
+  for (const [bi, b] of body.entries()) {
+    if (b.kind !== 'p' || b.ad || !b.sentences.length) continue;
+    for (const ticker of scanTickers) {
+      if (b.sentences.some((s) => s.marks.some((m) => m.ticker === ticker))) continue;
+      const si = b.sentences.findIndex((s) => mentionsTicker(s.text, ticker));
+      if (si < 0) continue;
+      b.sentences[si].marks.push({ ticker, stance: 'mentioned' });
+      aliasMarks++;
+      void bi;
+    }
+  }
+
+  // 「相關個股」跳到全集第一個標到這一檔的句子。
+  const anchor = {};
+  for (const [bi, b] of body.entries()) {
+    b.sentences.forEach((s, si) => {
+      for (const m of s.marks) if (anchor[m.ticker] === undefined) anchor[m.ticker] = `s-${bi}-${si}`;
+    });
   }
 
   // 螢光筆二：重點 → 句子。有 p 就只在那一段裡找；沒有 p（舊格式）才退回時間窗 + 分離度。
@@ -311,6 +343,8 @@ const buildTranscript = (blocks, sum, rows) => {
     marked_count: markedTotal,
     ticker_marks: marked,
     ticker_missed: missed,
+    ticker_unnamed: unnamed,
+    alias_marks: aliasMarks,
     key_point_hits: kpHits,
     key_point_count: kps.length,
     untitled_share: total ? untitled / total : 0,
@@ -468,14 +502,15 @@ for (let i = 0; i < episodes.length; i++) {
   for (const m of shown) m.perf = perfOf(m.ticker, e.published);
   const ms = [...shown, ...review];
   const tx = loadStructured(ep);
-  const structured = buildTranscript(tx, sum, rowsRaw);
+  const structured = buildTranscript(tx, sum, rowsRaw, shown.map((m) => m.ticker));
   if (structured) {
     for (const m of shown) m.first_anchor = structured.anchor[m.ticker] ?? null;
     const ps = structured.blocks.filter((b) => b.kind === 'p' && !b.ad);
     const avg = Math.round(ps.reduce((a, b) => a + b.text.length, 0) / Math.max(1, ps.length));
     STATS.push(
       `EP${ep} 小標=${structured.heading_count} 段=${ps.length}（平均${avg}字） 引用=${structured.quote_count} ` +
-        `代言段=${structured.ad_count} 螢光句=${structured.marked_count}（個股 ${structured.ticker_marks}、對不到 ${structured.ticker_missed}） ` +
+        `代言段=${structured.ad_count} 螢光句=${structured.marked_count}（立場 ${structured.ticker_marks}、提到 ${structured.alias_marks}、` +
+        `對不到 ${structured.ticker_missed}、整段沒提名 ${structured.ticker_unnamed}） ` +
         `重點命中=${structured.key_point_hits}/${structured.key_point_count} ` +
         `無標題區=${Math.round(structured.untitled_share * 100)}%`,
     );

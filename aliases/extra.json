@@ -1,0 +1,22 @@
+{
+  "_note": "ryvn-finance 的 aliases.csv 只有中文別名，節目裡多半直接講英文名。這裡補口語會出現的講法；比對時 臺/台 視為同一個字，拉丁字母的別名要前後有邊界才算。",
+  "NVDA": ["NVIDIA", "Nvidia", "輝達", "黃仁勳"],
+  "TSM": ["台積電", "台積", "TSMC"],
+  "MRVL": ["Marvell", "邁威爾"],
+  "GOOGL": ["Alphabet", "Google", "谷歌"],
+  "AVGO": ["Broadcom", "博通"],
+  "AMD": ["AMD", "超微"],
+  "MU": ["Micron", "美光"],
+  "CRM": ["Salesforce", "Cloudforce"],
+  "CRWD": ["CrowdStrike"],
+  "ORCL": ["Oracle", "甲骨文"],
+  "QCOM": ["Qualcomm", "高通"],
+  "AAPL": ["Apple", "蘋果", "iPhone"],
+  "TSLA": ["Tesla", "特斯拉"],
+  "PEP": ["PepsiCo", "百事"],
+  "TW:2454": ["聯發科", "MTK", "MediaTek"],
+  "TW:3661": ["世芯", "Alchip"],
+  "TW:8299": ["群聯", "Phison"],
+  "TW:2317": ["鴻海", "Foxconn"],
+  "TW:3376": ["新日興"]
+}

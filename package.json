@@ -3,16 +3,17 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "build": "next build",
+    "build": "node scripts/check-marks.mjs && next build",
     "check:transcript": "node scripts/check-structured.mjs",
     "content": "node scripts/build-content.mjs",
-    "data": "npm run content && npm run prices && npm run og",
+    "data": "npm run content && npm run check:marks && npm run prices && npm run og",
     "dev": "next dev",
     "lint": "next lint",
     "og": "node scripts/build-og.mjs",
     "prices": "node scripts/fetch-prices.mjs",
     "structure": "node scripts/structure-transcript.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:marks": "node scripts/check-marks.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",
