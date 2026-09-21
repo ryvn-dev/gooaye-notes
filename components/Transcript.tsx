@@ -6,7 +6,7 @@ import type { Block, Mention } from '@/lib/content';
  * 結構化逐字稿：小標、主文段、來信引用、代言段。層級只靠排版，不貼任何說明文字。
  * 提到個股與對到重點的句子都是同一種淡黃螢光筆，點了才出現「代碼 + 立場」的小 tooltip。
  */
-function Body({ block, bi }: { block: Block; bi: number }) {
+function Body({ block, bi, names }: { block: Block; bi: number; names: Record<string, string> }) {
   return (
     <>
       {block.t !== null && block.t !== undefined && (
@@ -14,10 +14,13 @@ function Body({ block, bi }: { block: Block; bi: number }) {
           <TimecodeButton seconds={block.t} big />{' '}
         </>
       )}
+      {/* 代言段不切句（不標螢光、不對重點），但字要照樣出來。 */}
+      {block.sentences.length === 0 && block.text}
       {block.sentences.map((s, si) => {
         if (s.key_point === null && s.marks.length === 0) return <span key={si}>{s.text}</span>;
         const tips: Tip[] = s.marks.map((m) => ({
           code: m.ticker.replace('TW:', ''),
+          name: names[m.ticker] ?? null,
           stance: m.stance,
           p: null,
         }));
@@ -27,7 +30,7 @@ function Body({ block, bi }: { block: Block; bi: number }) {
   );
 }
 
-export default function Transcript({ blocks }: { blocks: Block[] }) {
+export default function Transcript({ blocks, names = {} }: { blocks: Block[]; names?: Record<string, string> }) {
   const sections: React.ReactNode[][] = [[]];
   const titles: (string | null)[] = [null];
   let ads: React.ReactNode[] = [];
@@ -53,7 +56,7 @@ export default function Transcript({ blocks }: { blocks: Block[] }) {
       titles.push(b.text);
       return;
     }
-    const inner = <Body block={b} bi={bi} />;
+    const inner = <Body block={b} bi={bi} names={names} />;
     if (b.ad) {
       ads.push(
         <p key={bi} className="m-0 mt-3 first:mt-0">

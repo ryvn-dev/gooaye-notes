@@ -13,7 +13,9 @@
     "prices": "node scripts/fetch-prices.mjs",
     "structure": "node scripts/structure-transcript.mjs",
     "typecheck": "tsc --noEmit",
-    "check:marks": "node scripts/check-marks.mjs"
+    "check:marks": "node scripts/check-marks.mjs",
+    "check:render": "node scripts/check-render.mjs",
+    "postbuild": "node scripts/check-render.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",
