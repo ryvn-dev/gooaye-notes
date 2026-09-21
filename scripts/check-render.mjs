@@ -20,6 +20,11 @@ const cjkRun = (s) =>
 const bad = [];
 let checked = 0;
 
+// 立場列（chip 列）實際畫出來幾個 chip，必須等於「提及 N 檔」那個數字。
+// 之前首頁截前三檔、index 又只放前八檔，於是數字跟眼睛看到的對不上。
+const chipRows = (html) => [...html.matchAll(/data-chiprow="(\d+)"([\s\S]*?)<\/ul>/g)]
+  .map((m) => ({ said: Number(m[1]), drawn: (m[2].match(/data-chip="/g) ?? []).length }));
+
 for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json')).sort()) {
   const doc = JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'));
   const page = path.join(OUT, 'p', doc.show, doc.slug, 'index.html');
@@ -38,9 +43,39 @@ for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json')).sort()) {
   });
 }
 
+// 集頁：立場列的 chip 數 === 上站的個股數
+for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json')).sort()) {
+  const doc = JSON.parse(fs.readFileSync(path.join(DIR, f), 'utf8'));
+  const page = path.join(OUT, 'p', doc.show, doc.slug, 'index.html');
+  if (!fs.existsSync(page)) continue;
+  const shown = (doc.mentions ?? []).filter((m) => m.publish !== false).length;
+  const row = chipRows(fs.readFileSync(page, 'utf8'))[0];
+  if (!row && shown > 0) bad.push(`EP${doc.ep_number} 集頁沒有立場列，但上站 ${shown} 檔`);
+  else if (row && (row.said !== shown || row.drawn !== shown)) {
+    bad.push(`EP${doc.ep_number} 立場列 ${row.drawn} 檔 / 標示 ${row.said}，上站是 ${shown} 檔`);
+  }
+}
+
+// 首頁：每一張卡的 chip 數 === 那一集的「提及 N 檔」
+{
+  const home = path.join(OUT, 'index.html');
+  const idx = path.join(ROOT, 'content', 'index.json');
+  if (fs.existsSync(home) && fs.existsSync(idx)) {
+    const eps = JSON.parse(fs.readFileSync(idx, 'utf8')).episodes ?? [];
+    const rows = chipRows(fs.readFileSync(home, 'utf8'));
+    eps.forEach((e, i) => {
+      const r = rows[i];
+      if (!r) return;
+      if (r.drawn !== e.mention_total || r.said !== e.mention_total) {
+        bad.push(`首頁 EP${e.ep_number} 立場列 ${r.drawn} 檔，但寫「提及 ${e.mention_total} 檔」`);
+      }
+    });
+  }
+}
+
 if (bad.length) {
   console.error(`check:render 紅 —— ${bad.length} 段沒上頁面：`);
   for (const line of bad.slice(0, 40)) console.error(`  ${line}`);
   process.exit(1);
 }
-console.log(`check:render 綠 —— ${checked} 段／句全部出現在輸出的 HTML 裡。`);
+console.log(`check:render 綠 —— ${checked} 段／句全部出現在輸出的 HTML 裡，立場列的 chip 數也對得上。`);

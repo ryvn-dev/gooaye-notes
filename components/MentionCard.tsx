@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { tickerSlug, stancesOf, type Mention } from '@/lib/content';
+import { tickerSlug, chipStance, type Mention } from '@/lib/content';
 import TimecodeButton from '@/components/TimecodeButton';
 import PerfChip from '@/components/PerfChip';
 
 /** 無框細線表格的一列：代碼＋簡稱 · 跳到逐字稿那一段 · 提及後漲跌 · 報價連結。 */
 export default function MentionCard({ m }: { m: Mention }) {
-  const s = stancesOf(m)[0] ?? 'mentioned';
+  const s = chipStance(m);
   const t = m.t ?? m.first_ts_s;
   const anchor = m.first_anchor;
   return (
@@ -17,6 +17,7 @@ export default function MentionCard({ m }: { m: Mention }) {
               ticker={m.ticker}
               name={m.short_name ?? m.display_name}
               stance={s}
+              stances={m.stances}
               p={m.jev_prob}
               perf={m.perf}
             />

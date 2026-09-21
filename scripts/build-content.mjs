@@ -467,7 +467,13 @@ for (let i = 0; i < episodes.length; i++) {
     if (!byTicker.has(r.ticker)) byTicker.set(r.ticker, []);
     byTicker.get(r.ticker).push(r);
   }
+  // 同一集他對同一檔講過兩個方向 → mixed（雙向箭頭），不投票；
+  // 多數決只用在「單一方向 ＋ 無立場」那種情況（審查者 2026-09-21 09:32 拍）。
   const majority = (rows) => {
+    const dirs = new Set(
+      rows.filter((r) => !r.needs_review).map((r) => r.stance).filter((s) => s === 'bullish' || s === 'bearish'),
+    );
+    if (dirs.size === 2) return 'mixed';
     const tally = {};
     for (const r of rows) {
       const st = r.needs_review ? 'neutral' : r.stance;
@@ -481,7 +487,10 @@ for (let i = 0; i < episodes.length; i++) {
     const lead = rows.find((r) => !r.needs_review && r.quote) ?? rows.find((r) => r.quote) ?? rows[0];
     const m = build(ticker, lead, false);
     m.stance = majority(rows);
-    m.stances = [m.stance];
+    m.stances =
+      m.stance === 'mixed'
+        ? ['bullish', 'bearish']
+        : [m.stance];
     m.row_count = rows.length;
     m.needs_review = rows.every((r) => r.needs_review);
     return m;
@@ -571,7 +580,8 @@ for (let i = 0; i < episodes.length; i++) {
     site_title: doc.site_title,
     summary_answer_first: doc.summary_answer_first,
     has_summary: Boolean(doc.summary),
-    top_tickers: shown.slice(0, 8).map((m) => ({
+    // 全部放進來，不截斷：首頁 chip 列是水平捲動的，截斷會讓旁邊的「提及 N 檔」對不上。
+    top_tickers: shown.map((m) => ({
       ticker: m.ticker, display_name: m.display_name, short_name: m.short_name, stance: m.stance, stances: m.stances,
       speaker: m.speaker, perf: m.perf ?? null,
     })),

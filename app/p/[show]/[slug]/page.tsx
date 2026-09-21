@@ -106,7 +106,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
       <HashFlash />
 
       <div>
-        <StanceTagRow items={shown} max={4} />
+        <StanceTagRow items={shown} />
       </div>
 
       <h1 className="mt-4 leading-tight">{ep.site_title}</h1>
@@ -169,9 +169,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
           blocks={ep.blocks}
           names={Object.fromEntries(ep.mentions.map((m) => [m.ticker, m.short_name ?? m.display_name]))}
         />
-      ) : (
-        <p className="mt-3 text-[15px] text-[#6b6b6b]">逐字稿待補。</p>
-      )}
+      ) : null}
 
       {shown.length > 0 && (
         <>

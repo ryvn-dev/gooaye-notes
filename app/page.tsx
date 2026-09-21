@@ -40,7 +40,7 @@ export default function Home() {
               </p>
             </Link>
             <div className="mt-2">
-              <StanceTagRow items={e.top_tickers} max={3} />
+              <StanceTagRow items={e.top_tickers} />
             </div>
           </article>
         </li>

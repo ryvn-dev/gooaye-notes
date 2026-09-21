@@ -4,7 +4,8 @@ import path from 'node:path';
 const DIR = path.join(process.cwd(), 'content');
 const read = <T,>(p: string): T => JSON.parse(fs.readFileSync(path.join(DIR, p), 'utf8')) as T;
 
-export type Stance = 'bullish' | 'bearish' | 'neutral' | 'mentioned';
+// mixed＝同一集裡他對同一檔講過看多也講過看空，chip 畫雙向箭頭，不用多數決蓋掉。
+export type Stance = 'bullish' | 'bearish' | 'neutral' | 'mentioned' | 'mixed';
 
 export type Perf = {
   base_date: string;
@@ -178,9 +179,13 @@ export const minutes = (s: number) => Math.round(s / 60);
 export const stancesOf = (m: { stance: Stance; stances?: Stance[] }): Stance[] =>
   m.stances && m.stances.length > 0 ? m.stances : [m.stance];
 
+/** chip 上那一個 icon：mixed 不能被 stances[0] 蓋成單一方向。 */
+export const chipStance = (m: { stance?: Stance | null; stances?: Stance[] }): Stance =>
+  m.stance ?? (m.stances && m.stances[0]) ?? 'mentioned';
+
 export const speakerLabel = (s: string | null) => s ?? '主持人';
 
-export const STANCE_ORDER: Stance[] = ['bullish', 'bearish', 'neutral', 'mentioned'];
+export const STANCE_ORDER: Stance[] = ['bullish', 'bearish', 'mixed', 'neutral', 'mentioned'];
 
 export const pct = (v: number | null) => (v === null ? '—' : `${v > 0 ? '+' : ''}${v.toFixed(1)}%`);
 
@@ -189,4 +194,5 @@ export const STANCE: Record<Stance, { label: string; cls: string }> = {
   bearish: { label: '看空', cls: 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300' },
   neutral: { label: '保留', cls: 'bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300' },
   mentioned: { label: '提到但無立場', cls: 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300' },
+  mixed: { label: '看多也看空', cls: 'bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300' },
 };

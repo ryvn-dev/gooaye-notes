@@ -13,6 +13,7 @@ export default function PerfChip({
   ticker,
   name,
   stance,
+  stances,
   p,
   perf,
   href,
@@ -20,6 +21,7 @@ export default function PerfChip({
   ticker: string;
   name?: string | null;
   stance: Stance;
+  stances?: Stance[];
   p?: number | null;
   perf?: Perf | null;
   href?: string;
@@ -33,7 +35,7 @@ export default function PerfChip({
     </>
   );
   return (
-    <span className="group relative inline-flex items-center gap-1 text-[14px] text-[#6b6b6b]">
+    <span data-chip={code} className="group relative inline-flex items-center gap-1 text-[14px] text-[#6b6b6b]">
       {href ? (
         <a href={href} className="inline-flex items-center gap-1 no-underline">
           {body}
@@ -41,7 +43,17 @@ export default function PerfChip({
       ) : (
         body
       )}
-      <span className="pointer-events-none absolute left-0 top-full z-30 hidden w-max max-w-[260px] whitespace-nowrap border border-[#e5e5e5] bg-white px-2 py-1 text-[12px] leading-5 text-[#242424] group-hover:block group-focus-within:block">
+      <span className="pointer-events-none absolute left-0 top-full z-30 hidden w-max max-w-[260px] flex-col whitespace-nowrap border border-[#e5e5e5] bg-white px-2 py-1 text-[12px] leading-5 text-[#242424] group-hover:flex group-focus-within:flex">
+        {stance === 'mixed' && stances && stances.length > 1 && (
+          <span className="mb-0.5 flex items-center gap-2">
+            {stances.map((st) => (
+              <span key={st} className="inline-flex items-center gap-1">
+                <StanceIcon stance={st} />
+                <span>{st === 'bullish' ? '看多' : st === 'bearish' ? '看空' : '沒有方向'}</span>
+              </span>
+            ))}
+          </span>
+        )}
         {perf ? (
           <>
             <span>

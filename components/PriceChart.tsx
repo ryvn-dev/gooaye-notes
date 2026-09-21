@@ -14,7 +14,7 @@ import {
 export type Bar = { d: string; o: number; h: number; l: number; c: number; v: number };
 export type Mark = {
   date: string;
-  stance: 'bullish' | 'bearish' | 'neutral' | 'mentioned';
+  stance: 'bullish' | 'bearish' | 'neutral' | 'mentioned' | 'mixed';
   show: string;
   /** 之後要做「每個人的成績單」時用得到；現在節目只有一位主講。 */
   speaker?: string | null;
@@ -22,7 +22,7 @@ export type Mark = {
 };
 
 const COLOR = { up: '#C0392B', down: '#2E7D5B', flat: '#9a9a9a' };
-const LABEL = { bullish: '看多', bearish: '看空', neutral: '保留', mentioned: '提到' } as const;
+const LABEL = { bullish: '看多', bearish: '看空', neutral: '保留', mentioned: '提到', mixed: '看多也看空' } as const;
 
 /** 日線 K ＋ 成交量，最近 12 個月；每一次被提到在圖上一個標記。用庫：lightweight-charts。 */
 export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[] }) {

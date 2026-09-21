@@ -112,3 +112,14 @@
   animation: flash-land 1s ease-out;
   border-radius: 2px;
 }
+
+/* 水平捲動的立場列：捲軸藏起來，右緣用淡出提示還有東西（components/StanceTagRow.tsx）。 */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+

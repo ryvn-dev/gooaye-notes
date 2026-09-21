@@ -16,13 +16,28 @@ const COLOR: Record<Stance, string> = {
   bearish: '#5fc99a',
   neutral: '#b3b3b3',
   mentioned: '#b3b3b3',
+  mixed: '#b3b3b3',
 };
 
-const LABEL: Record<Stance, string> = { bullish: '看多', bearish: '看空', neutral: '保留', mentioned: '提到' };
+const LABEL: Record<Stance, string> = {
+  bullish: '看多',
+  bearish: '看空',
+  neutral: '保留',
+  mentioned: '提到',
+  mixed: '看多也看空',
+};
 
 function Arrow({ stance, p }: { stance: Stance; p: number | null }) {
   const c = COLOR[stance];
   const opacity = p === null ? 1 : Math.min(1, Math.max(0.5, p));
+  if (stance === 'mixed') {
+    return (
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" role="img" aria-label={LABEL.mixed} style={{ opacity }}>
+        <path d="M1.5 8 L4.5 5 L6.5 7" stroke="#ff7a6b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5.5 5.5 L7.5 7.5 L10.5 4.5" stroke="#5fc99a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+  }
   if (stance === 'mentioned' || stance === 'neutral') {
     return (
       <svg width="12" height="12" viewBox="0 0 12 12" role="img" aria-label={LABEL[stance]} style={{ opacity }}>
@@ -108,10 +123,29 @@ export default function MarkedSentence({
         </span>
       );
     }
+    // 用 span 不用 a：整句在內文裡的連結會被判成「只靠顏色區分」，
+    // 而這裡的區分本來就是整句的底色，不是文字顏色。
+    const back = () => {
+      window.location.hash = `kp-${kp}`;
+    };
     return (
-      <a id={id} href={`#kp-${kp}`} className={`scroll-mt-20 ${BLUE} text-inherit no-underline`}>
+      <span
+        id={id}
+        role="button"
+        tabIndex={0}
+        data-kp={kp}
+        aria-label={`回到重點第 ${kp + 1} 點`}
+        className={`scroll-mt-20 cursor-pointer ${BLUE}`}
+        onClick={back}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            back();
+          }
+        }}
+      >
         {text}
-      </a>
+      </span>
     );
   }
 
