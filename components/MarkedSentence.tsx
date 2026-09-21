@@ -107,6 +107,7 @@ export default function MarkedSentence({
       tabIndex={0}
       role="button"
       aria-expanded={open}
+      data-tickers={tips.map((t) => t.code).join(',')}
       className="scroll-mt-20 cursor-pointer bg-[#fff3b0]"
       onClick={() => setPinned((v) => !v)}
       onKeyDown={(e) => {
