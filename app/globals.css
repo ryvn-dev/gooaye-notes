@@ -97,3 +97,18 @@
     font-size: 15px;
   }
 }
+
+/* 跳過去落地的那一行閃一次外框，1 秒淡出（components/HashFlash.tsx）。 */
+@keyframes flash-land {
+  from {
+    box-shadow: 0 0 0 2px #93c5fd;
+  }
+  to {
+    box-shadow: 0 0 0 2px rgb(147 197 253 / 0);
+  }
+}
+
+.flash-land {
+  animation: flash-land 1s ease-out;
+  border-radius: 2px;
+}

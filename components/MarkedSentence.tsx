@@ -6,6 +6,11 @@ import type { Stance } from '@/lib/content';
 
 export type Tip = { code: string; name?: string | null; stance: Stance; p: number | null };
 
+// 兩種螢光筆：個股句淡黃、重點句淡藍；兩者都是的那一句黃底加一條藍色下緣線。
+const YELLOW = 'bg-[#fff3b0]';
+const BLUE = 'bg-[#dbeafe]';
+const BOTH = 'bg-[#fff3b0] border-b-2 border-[#93c5fd]';
+
 const COLOR: Record<Stance, string> = {
   bullish: '#ff7a6b',
   bearish: '#5fc99a',
@@ -34,17 +39,20 @@ function Arrow({ stance, p }: { stance: Stance; p: number | null }) {
 }
 
 /**
- * 螢光筆句子：淡黃底，點一下（或 hover）開 tooltip，再點一下或點別處關。
- * tooltip 錨在這一句的第一行、置中在它正上方，只有代碼、簡稱與立場 icon，深灰底白字。
+ * 螢光筆句子。點一下（或 hover）開 tooltip，再點一下或點別處關；
+ * tooltip 錨在這一句的第一行、置中在它正上方，一檔一列「代碼 簡稱 箭頭」，深灰底白字。
+ * 只有重點沒有個股的句子不開 tooltip —— 點下去直接跳回上面那一點，省一步。
  */
 export default function MarkedSentence({
   id,
   text,
   tips,
+  kp = null,
 }: {
   id: string;
   text: string;
   tips: Tip[];
+  kp?: number | null;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const tipRef = useRef<HTMLSpanElement>(null);
@@ -93,10 +101,17 @@ export default function MarkedSentence({
   }, [open, place]);
 
   if (!tips.length) {
+    if (kp === null) {
+      return (
+        <span id={id} className={`scroll-mt-20 ${YELLOW}`}>
+          {text}
+        </span>
+      );
+    }
     return (
-      <span id={id} className="scroll-mt-20 bg-[#fff3b0]">
+      <a id={id} href={`#kp-${kp}`} className={`scroll-mt-20 ${BLUE} text-inherit no-underline`}>
         {text}
-      </span>
+      </a>
     );
   }
 
@@ -108,7 +123,7 @@ export default function MarkedSentence({
       role="button"
       aria-expanded={open}
       data-tickers={tips.map((t) => t.code).join(',')}
-      className="scroll-mt-20 cursor-pointer bg-[#fff3b0]"
+      className={`scroll-mt-20 cursor-pointer ${kp === null ? YELLOW : BOTH}`}
       onClick={() => setPinned((v) => !v)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -126,12 +141,12 @@ export default function MarkedSentence({
           <span
             ref={tipRef}
             aria-hidden={!open}
-            className="fixed z-40 flex items-center gap-3 rounded-md bg-[#222] px-2.5 py-1.5 text-[13px] leading-none font-normal whitespace-nowrap text-white shadow-sm"
+            className="fixed z-40 flex flex-col items-start gap-1 rounded-md bg-[#222] px-2.5 py-1.5 text-[13px] leading-[1.6] font-normal whitespace-nowrap text-white shadow-sm"
             style={{
               left: pos?.left ?? -9999,
               top: pos?.top ?? -9999,
               visibility: open && pos ? 'visible' : 'hidden',
-              pointerEvents: 'none',
+              pointerEvents: pinned ? 'auto' : 'none',
             }}
           >
             {tips.map((t) => (
@@ -141,6 +156,15 @@ export default function MarkedSentence({
                 <Arrow stance={t.stance} p={t.p} />
               </span>
             ))}
+            {kp !== null && (
+              <a
+                href={`#kp-${kp}`}
+                className="text-[#cfcfcf] no-underline"
+                onClick={() => setPinned(false)}
+              >
+                ↑ 回到重點
+              </a>
+            )}
           </span>,
           document.body,
         )}

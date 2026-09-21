@@ -4,7 +4,7 @@ import type { Block, Mention } from '@/lib/content';
 
 /**
  * 結構化逐字稿：小標、主文段、來信引用、代言段。層級只靠排版，不貼任何說明文字。
- * 提到個股與對到重點的句子都是同一種淡黃螢光筆，點了才出現「代碼 + 立場」的小 tooltip。
+ * 提到個股的句子是淡黃螢光筆、對到重點的句子是淡藍；兩者都是的那一句黃底加藍色下緣線。
  */
 function Body({ block, bi, names }: { block: Block; bi: number; names: Record<string, string> }) {
   return (
@@ -24,7 +24,7 @@ function Body({ block, bi, names }: { block: Block; bi: number; names: Record<st
           stance: m.stance,
           p: null,
         }));
-        return <MarkedSentence key={si} id={`s-${bi}-${si}`} text={s.text} tips={tips} />;
+        return <MarkedSentence key={si} id={`s-${bi}-${si}`} text={s.text} tips={tips} kp={s.key_point} />;
       })}
     </>
   );

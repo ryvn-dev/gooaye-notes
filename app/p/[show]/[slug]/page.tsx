@@ -6,6 +6,7 @@ import StanceTagRow from '@/components/StanceTagRow';
 import AudioPlayer from '@/components/AudioPlayer';
 import TimecodeButton from '@/components/TimecodeButton';
 import Transcript from '@/components/Transcript';
+import HashFlash from '@/components/HashFlash';
 import AdSlot from '@/components/AdSlot';
 import { site, abs } from '@/lib/site';
 
@@ -101,6 +102,8 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(episodeLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
+
+      <HashFlash />
 
       <div>
         <StanceTagRow items={shown} max={4} />
