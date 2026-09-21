@@ -106,9 +106,9 @@
       "perf": {
         "base_date": "2026-09-02",
         "base": 4275,
-        "last_date": "2026-09-20",
-        "last": 4600,
-        "pct": 7.6,
+        "last_date": "2026-09-21",
+        "last": 4920,
+        "pct": 15.1,
         "d5": 8.2,
         "d21": null
       },
@@ -153,6 +153,86 @@
         "d21": null
       },
       "first_anchor": "s-52-2"
+    },
+    {
+      "ticker": "MU",
+      "display_name": "美光",
+      "short_name": "美光",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 1234,
+      "stance": "bearish",
+      "stances": [
+        "bearish"
+      ],
+      "speaker": "主持人",
+      "quote": "前面可能沒有辦法滿足 NVIDIA 的一個要求，所以後來也是直接把 base die 去丟給 TSMC 去做",
+      "reason": "轉述利空：滿足不了要求，base die 轉給別人做",
+      "t": 1206,
+      "jev_prob": 0.42,
+      "jev_question": "這段話對上面那個標的的看法偏多嗎",
+      "yahoo_url": "https://finance.yahoo.com/quote/MU",
+      "px_1d": 0.0022,
+      "px_5d": 0.0223,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-02",
+        "base": 956.08,
+        "last_date": "2026-09-18",
+        "last": 1015.8,
+        "pct": 6.2,
+        "d5": 2.2,
+        "d21": null
+      },
+      "first_anchor": "s-47-2"
+    },
+    {
+      "ticker": "TSM",
+      "display_name": "台積電 ADR",
+      "short_name": "台積電",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 1241,
+      "stance": "bullish",
+      "stances": [
+        "bullish"
+      ],
+      "speaker": "主持人",
+      "quote": "它應該就不會是給記憶體三大廠，應該就是還是交給臺積電去做",
+      "reason": "轉述利多：推測 base die 還是交給它做",
+      "t": 1206,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-02",
+        "base": 415.5,
+        "last_date": "2026-09-18",
+        "last": 434.67,
+        "pct": 4.6,
+        "d5": 3,
+        "d21": null
+      },
+      "first_anchor": "s-47-4"
     },
     {
       "ticker": "GOOGL",
@@ -275,86 +355,6 @@
       "first_anchor": "s-38-2"
     },
     {
-      "ticker": "MU",
-      "display_name": "美光",
-      "short_name": "美光",
-      "market": "US",
-      "mention_count": 1,
-      "first_ts_s": 1234,
-      "stance": "bearish",
-      "stances": [
-        "bearish"
-      ],
-      "speaker": "主持人",
-      "quote": "前面可能沒有辦法滿足 NVIDIA 的一個要求，所以後來也是直接把 base die 去丟給 TSMC 去做",
-      "reason": "轉述利空：滿足不了要求，base die 轉給別人做",
-      "t": 1206,
-      "jev_prob": 0.42,
-      "jev_question": "這段話對上面那個標的的看法偏多嗎",
-      "yahoo_url": "https://finance.yahoo.com/quote/MU",
-      "px_1d": 0.0022,
-      "px_5d": 0.0223,
-      "px_21d": null,
-      "source": "summary",
-      "publish": true,
-      "needs_review": false,
-      "flag_reason": null,
-      "stance_p": null,
-      "stance_margin": null,
-      "is_about_p": null,
-      "row_count": 1,
-      "perf": {
-        "base_date": "2026-09-02",
-        "base": 956.08,
-        "last_date": "2026-09-18",
-        "last": 1015.8,
-        "pct": 6.2,
-        "d5": 2.2,
-        "d21": null
-      },
-      "first_anchor": "s-47-2"
-    },
-    {
-      "ticker": "TSM",
-      "display_name": "台積電 ADR",
-      "short_name": "台積電",
-      "market": "US",
-      "mention_count": 1,
-      "first_ts_s": 1241,
-      "stance": "bullish",
-      "stances": [
-        "bullish"
-      ],
-      "speaker": "主持人",
-      "quote": "它應該就不會是給記憶體三大廠，應該就是還是交給臺積電去做",
-      "reason": "轉述利多：推測 base die 還是交給它做",
-      "t": 1206,
-      "jev_prob": null,
-      "jev_question": null,
-      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
-      "px_1d": null,
-      "px_5d": null,
-      "px_21d": null,
-      "source": "summary",
-      "publish": true,
-      "needs_review": false,
-      "flag_reason": null,
-      "stance_p": null,
-      "stance_margin": null,
-      "is_about_p": null,
-      "row_count": 1,
-      "perf": {
-        "base_date": "2026-09-02",
-        "base": 415.5,
-        "last_date": "2026-09-18",
-        "last": 434.67,
-        "pct": 4.6,
-        "d5": 3,
-        "d21": null
-      },
-      "first_anchor": "s-47-4"
-    },
-    {
       "ticker": "TW:3661",
       "display_name": "世芯",
       "short_name": "世芯",
@@ -386,13 +386,53 @@
       "perf": {
         "base_date": "2026-09-02",
         "base": 4200,
-        "last_date": "2026-09-20",
-        "last": 3540,
-        "pct": -15.7,
+        "last_date": "2026-09-21",
+        "last": 3605,
+        "pct": -14.2,
         "d5": -7,
         "d21": null
       },
       "first_anchor": "s-32-0"
+    },
+    {
+      "ticker": "MRVL",
+      "display_name": "邁威爾",
+      "short_name": "邁威爾",
+      "market": "US",
+      "mention_count": 2,
+      "first_ts_s": 1602,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": null,
+      "quote": null,
+      "reason": null,
+      "t": 1602,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/MRVL",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "transcript",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 0,
+      "perf": {
+        "base_date": "2026-09-02",
+        "base": 206.48,
+        "last_date": "2026-09-18",
+        "last": 244.25,
+        "pct": 18.3,
+        "d5": 9.9,
+        "d21": null
+      },
+      "first_anchor": "s-52-1"
     },
     {
       "ticker": "RTX",
@@ -1908,7 +1948,12 @@
         {
           "text": "他跟像是什麼三星啊、發哥、或者是像是 Marvell 最近也有一些劇情在產生，其實幾乎每個都已經是被他攬住，都已經是加入他的行列了。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "MRVL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "那現在就很好奇說，那 Broadcom 會不會有朝一日——你不能說就是完全的去加入他，可是就是額外再開一條線，就是不是隻有自己的 fabric，可能也會去使用 NV 相關的那些 solution——這個是後面可以期待的。",
@@ -2076,6 +2121,10 @@
           "marks": [
             {
               "ticker": "TW:2454",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "MRVL",
               "stance": "mentioned"
             }
           ]
@@ -3843,7 +3892,7 @@
       ]
     }
   ],
-  "marked_sentences": 41,
+  "marked_sentences": 42,
   "key_point_hits": 8,
   "key_point_total": 11,
   "transcript_source": "aligned",

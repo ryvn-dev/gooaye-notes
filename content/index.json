@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T01:36:33.273Z",
+  "generated_at": "2026-09-21T01:45:24.355Z",
   "episode_count": 6,
   "coverage": {
     "from": "2026-08-26",
@@ -68,6 +68,25 @@
       "has_summary": true,
       "top_tickers": [
         {
+          "ticker": "CRWD",
+          "display_name": "CrowdStrike",
+          "short_name": "CrowdStrike",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-16",
+            "base": 241.36,
+            "last_date": "2026-09-18",
+            "last": 237.65,
+            "pct": -1.5,
+            "d5": null,
+            "d21": null
+          }
+        },
+        {
           "ticker": "PEP",
           "display_name": "百事",
           "short_name": "百事",
@@ -101,25 +120,6 @@
             "last_date": "2026-09-18",
             "last": 364.27,
             "pct": 1.7,
-            "d5": null,
-            "d21": null
-          }
-        },
-        {
-          "ticker": "CRWD",
-          "display_name": "CrowdStrike",
-          "short_name": "CrowdStrike",
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "perf": {
-            "base_date": "2026-09-16",
-            "base": 241.36,
-            "last_date": "2026-09-18",
-            "last": 237.65,
-            "pct": -1.5,
             "d5": null,
             "d21": null
           }
@@ -159,25 +159,6 @@
           }
         },
         {
-          "ticker": "GOOGL",
-          "display_name": "Alphabet",
-          "short_name": "Alphabet",
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": "主持人",
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 349.39,
-            "last_date": "2026-09-18",
-            "last": 349.54,
-            "pct": 0,
-            "d5": null,
-            "d21": null
-          }
-        },
-        {
           "ticker": "TSLA",
           "display_name": "特斯拉",
           "short_name": "特斯拉",
@@ -197,6 +178,44 @@
           }
         },
         {
+          "ticker": "QCOM",
+          "display_name": "高通",
+          "short_name": "高通",
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 180.15,
+            "last_date": "2026-09-18",
+            "last": 177.72,
+            "pct": -1.3,
+            "d5": null,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 349.39,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 0,
+            "d5": null,
+            "d21": null
+          }
+        },
+        {
           "ticker": "TW:8299",
           "display_name": "群聯",
           "short_name": "群聯",
@@ -208,9 +227,9 @@
           "perf": {
             "base_date": "2026-09-14",
             "base": 1935,
-            "last_date": "2026-09-20",
-            "last": 2050,
-            "pct": 5.9,
+            "last_date": "2026-09-21",
+            "last": 2165,
+            "pct": 11.9,
             "d5": 5.9,
             "d21": null
           }
@@ -246,29 +265,10 @@
           "perf": {
             "base_date": "2026-09-14",
             "base": 248.5,
-            "last_date": "2026-09-20",
-            "last": 250.5,
-            "pct": 0.8,
+            "last_date": "2026-09-21",
+            "last": 249.5,
+            "pct": 0.4,
             "d5": 0.8,
-            "d21": null
-          }
-        },
-        {
-          "ticker": "QCOM",
-          "display_name": "高通",
-          "short_name": "高通",
-          "stance": "bearish",
-          "stances": [
-            "bearish"
-          ],
-          "speaker": "主持人",
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 180.15,
-            "last_date": "2026-09-18",
-            "last": 177.72,
-            "pct": -1.3,
-            "d5": null,
             "d21": null
           }
         },
@@ -284,9 +284,9 @@
           "perf": {
             "base_date": "2026-09-14",
             "base": 181,
-            "last_date": "2026-09-20",
-            "last": 184,
-            "pct": 1.7,
+            "last_date": "2026-09-21",
+            "last": 179.5,
+            "pct": -0.8,
             "d5": 1.7,
             "d21": null
           }
@@ -337,9 +337,9 @@
           "perf": {
             "base_date": "2026-09-02",
             "base": 4275,
-            "last_date": "2026-09-20",
-            "last": 4600,
-            "pct": 7.6,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 15.1,
             "d5": 8.2,
             "d21": null
           }
@@ -360,6 +360,44 @@
             "last": 357.61,
             "pct": -2.6,
             "d5": -1.7,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "MU",
+          "display_name": "美光",
+          "short_name": "美光",
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 956.08,
+            "last_date": "2026-09-18",
+            "last": 1015.8,
+            "pct": 6.2,
+            "d5": 2.2,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "short_name": "台積電",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 415.5,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 4.6,
+            "d5": 3,
             "d21": null
           }
         },
@@ -421,44 +459,6 @@
           }
         },
         {
-          "ticker": "MU",
-          "display_name": "美光",
-          "short_name": "美光",
-          "stance": "bearish",
-          "stances": [
-            "bearish"
-          ],
-          "speaker": "主持人",
-          "perf": {
-            "base_date": "2026-09-02",
-            "base": 956.08,
-            "last_date": "2026-09-18",
-            "last": 1015.8,
-            "pct": 6.2,
-            "d5": 2.2,
-            "d21": null
-          }
-        },
-        {
-          "ticker": "TSM",
-          "display_name": "台積電 ADR",
-          "short_name": "台積電",
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "perf": {
-            "base_date": "2026-09-02",
-            "base": 415.5,
-            "last_date": "2026-09-18",
-            "last": 434.67,
-            "pct": 4.6,
-            "d5": 3,
-            "d21": null
-          }
-        },
-        {
           "ticker": "TW:3661",
           "display_name": "世芯",
           "short_name": "世芯",
@@ -470,15 +470,34 @@
           "perf": {
             "base_date": "2026-09-02",
             "base": 4200,
-            "last_date": "2026-09-20",
-            "last": 3540,
-            "pct": -15.7,
+            "last_date": "2026-09-21",
+            "last": 3605,
+            "pct": -14.2,
             "d5": -7,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "MRVL",
+          "display_name": "邁威爾",
+          "short_name": "邁威爾",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 206.48,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 18.3,
+            "d5": 9.9,
             "d21": null
           }
         }
       ],
-      "mention_total": 8
+      "mention_total": 9
     },
     {
       "show": "gooaye",
@@ -493,25 +512,6 @@
       "has_summary": true,
       "top_tickers": [
         {
-          "ticker": "GOOGL",
-          "display_name": "Alphabet",
-          "short_name": "Alphabet",
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "perf": {
-            "base_date": "2026-08-31",
-            "base": 339.35,
-            "last_date": "2026-09-18",
-            "last": 349.54,
-            "pct": 3,
-            "d5": -0.3,
-            "d21": null
-          }
-        },
-        {
           "ticker": "CRM",
           "display_name": "Salesforce",
           "short_name": "Salesforce",
@@ -520,7 +520,15 @@
             "bullish"
           ],
           "speaker": "主持人",
-          "perf": null
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 257.54,
+            "last_date": "2026-09-18",
+            "last": 237.92,
+            "pct": -7.6,
+            "d5": -3.3,
+            "d21": null
+          }
         },
         {
           "ticker": "MRVL",
@@ -578,9 +586,47 @@
             "d5": 5.7,
             "d21": null
           }
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 339.35,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 3,
+            "d5": -0.3,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "short_name": "蘋果",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 316.85,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 6.1,
+            "d5": -0.2,
+            "d21": null
+          }
         }
       ],
-      "mention_total": 5
+      "mention_total": 6
     },
     {
       "show": "gooaye",
@@ -612,9 +658,28 @@
             "d5": 7,
             "d21": null
           }
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-08-26",
+            "base": 342,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 2.2,
+            "d5": -1.4,
+            "d21": null
+          }
         }
       ],
-      "mention_total": 1
+      "mention_total": 2
     }
   ]
 }

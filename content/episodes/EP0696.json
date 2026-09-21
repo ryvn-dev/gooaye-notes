@@ -119,45 +119,6 @@
       }
     },
     {
-      "ticker": "GOOGL",
-      "display_name": "Alphabet",
-      "short_name": "Alphabet",
-      "market": "US",
-      "mention_count": 4,
-      "first_ts_s": 895,
-      "stance": "mentioned",
-      "stances": [
-        "mentioned"
-      ],
-      "speaker": "主持人",
-      "quote": null,
-      "reason": "回顧上集的會議內容",
-      "t": 1739,
-      "jev_prob": 0.09,
-      "jev_question": "這段話對上面那個標的的看法偏多嗎",
-      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
-      "px_1d": -0.0126,
-      "px_5d": null,
-      "px_21d": null,
-      "source": "summary",
-      "publish": true,
-      "needs_review": false,
-      "flag_reason": null,
-      "stance_p": null,
-      "stance_margin": null,
-      "is_about_p": null,
-      "row_count": 1,
-      "perf": {
-        "base_date": "2026-09-14",
-        "base": 349.39,
-        "last_date": "2026-09-18",
-        "last": 349.54,
-        "pct": 0,
-        "d5": null,
-        "d21": null
-      }
-    },
-    {
       "ticker": "TSLA",
       "display_name": "特斯拉",
       "short_name": "特斯拉",
@@ -197,6 +158,84 @@
       }
     },
     {
+      "ticker": "QCOM",
+      "display_name": "高通",
+      "short_name": "高通",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 1273,
+      "stance": "bearish",
+      "stances": [
+        "bearish"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "蘋果自研基頻走到 C2，外供空間縮小",
+      "t": 1270,
+      "jev_prob": 0.99,
+      "jev_question": "這段話對上面那個標的的看法偏多嗎",
+      "yahoo_url": "https://finance.yahoo.com/quote/QCOM",
+      "px_1d": 0.0425,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-14",
+        "base": 180.15,
+        "last_date": "2026-09-18",
+        "last": 177.72,
+        "pct": -1.3,
+        "d5": null,
+        "d21": null
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
+      "short_name": "Alphabet",
+      "market": "US",
+      "mention_count": 4,
+      "first_ts_s": 895,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "回顧上集的會議內容",
+      "t": 1739,
+      "jev_prob": 0.09,
+      "jev_question": "這段話對上面那個標的的看法偏多嗎",
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
+      "px_1d": -0.0126,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-14",
+        "base": 349.39,
+        "last_date": "2026-09-18",
+        "last": 349.54,
+        "pct": 0,
+        "d5": null,
+        "d21": null
+      }
+    },
+    {
       "ticker": "TW:8299",
       "display_name": "群聯",
       "short_name": "群聯",
@@ -228,9 +267,9 @@
       "perf": {
         "base_date": "2026-09-14",
         "base": 1935,
-        "last_date": "2026-09-20",
-        "last": 2050,
-        "pct": 5.9,
+        "last_date": "2026-09-21",
+        "last": 2165,
+        "pct": 11.9,
         "d5": 5.9,
         "d21": null
       }
@@ -306,49 +345,10 @@
       "perf": {
         "base_date": "2026-09-14",
         "base": 248.5,
-        "last_date": "2026-09-20",
-        "last": 250.5,
-        "pct": 0.8,
+        "last_date": "2026-09-21",
+        "last": 249.5,
+        "pct": 0.4,
         "d5": 0.8,
-        "d21": null
-      }
-    },
-    {
-      "ticker": "QCOM",
-      "display_name": "高通",
-      "short_name": "高通",
-      "market": "US",
-      "mention_count": 1,
-      "first_ts_s": 1273,
-      "stance": "bearish",
-      "stances": [
-        "bearish"
-      ],
-      "speaker": "主持人",
-      "quote": null,
-      "reason": "蘋果自研基頻走到 C2，外供空間縮小",
-      "t": 1270,
-      "jev_prob": 0.99,
-      "jev_question": "這段話對上面那個標的的看法偏多嗎",
-      "yahoo_url": "https://finance.yahoo.com/quote/QCOM",
-      "px_1d": 0.0425,
-      "px_5d": null,
-      "px_21d": null,
-      "source": "summary",
-      "publish": true,
-      "needs_review": false,
-      "flag_reason": null,
-      "stance_p": null,
-      "stance_margin": null,
-      "is_about_p": null,
-      "row_count": 1,
-      "perf": {
-        "base_date": "2026-09-14",
-        "base": 180.15,
-        "last_date": "2026-09-18",
-        "last": 177.72,
-        "pct": -1.3,
-        "d5": null,
         "d21": null
       }
     },
@@ -384,9 +384,9 @@
       "perf": {
         "base_date": "2026-09-14",
         "base": 181,
-        "last_date": "2026-09-20",
-        "last": 184,
-        "pct": 1.7,
+        "last_date": "2026-09-21",
+        "last": 179.5,
+        "pct": -0.8,
         "d5": 1.7,
         "d21": null
       }

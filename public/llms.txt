@@ -28,29 +28,29 @@
 
 ## 被提到最多集的個股
 - 輝達（NVDA）：4 集
+- Alphabet（GOOGL）：4 集
 - 台積電 ADR（TSM）：4 集
-- Alphabet（GOOGL）：3 集
+- 邁威爾（MRVL）：2 集
+- 蘋果（AAPL）：2 集
 - 超微（AMD）：2 集
 - 特斯拉（TSLA）：2 集
 - Salesforce（CRM）：1 集
-- 邁威爾（MRVL）：1 集
 - 聯發科（TW:2454）：1 集
 - 博通（AVGO）：1 集
 - 美光（MU）：1 集
 - 世芯（TW:3661）：1 集
-- 蘋果（AAPL）：1 集
+- 高通（QCOM）：1 集
 - 群聯（TW:8299）：1 集
 - 鴻海（TW:2317）：1 集
-- 高通（QCOM）：1 集
 
 ## 全部個股與頁面
-- 蘋果（AAPL，US）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/AAPL/
+- 蘋果（AAPL，US）：2 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/AAPL/
 - 超微（AMD，US）：2 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/AMD/
 - 博通（AVGO，US）：1 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/AVGO/
 - Salesforce（CRM，US）：1 集，最近 2026-08-29，https://ryvn-dev.github.io/gooaye-notes/ticker/CRM/
 - CrowdStrike（CRWD，US）：1 集，最近 2026-09-16，https://ryvn-dev.github.io/gooaye-notes/ticker/CRWD/
-- Alphabet（GOOGL，US）：3 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/GOOGL/
-- 邁威爾（MRVL，US）：1 集，最近 2026-08-29，https://ryvn-dev.github.io/gooaye-notes/ticker/MRVL/
+- Alphabet（GOOGL，US）：4 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/GOOGL/
+- 邁威爾（MRVL，US）：2 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/MRVL/
 - 美光（MU，US）：1 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/MU/
 - 輝達（NVDA，US）：4 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/NVDA/
 - 甲骨文（ORCL，US）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/ORCL/

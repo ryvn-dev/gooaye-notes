@@ -74,46 +74,6 @@
   "topics": [],
   "mentions": [
     {
-      "ticker": "GOOGL",
-      "display_name": "Alphabet",
-      "short_name": "Alphabet",
-      "market": "US",
-      "mention_count": 4,
-      "first_ts_s": 1101,
-      "stance": "neutral",
-      "stances": [
-        "neutral"
-      ],
-      "speaker": "主持人",
-      "quote": "那可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
-      "reason": "以它為客製晶片的客戶舉例",
-      "t": 1129,
-      "jev_prob": 0.58,
-      "jev_question": "這段話對上面那個標的的看法偏多嗎",
-      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
-      "px_1d": -0.0128,
-      "px_5d": -0.0023,
-      "px_21d": null,
-      "source": "summary",
-      "publish": true,
-      "needs_review": false,
-      "flag_reason": null,
-      "stance_p": null,
-      "stance_margin": null,
-      "is_about_p": null,
-      "row_count": 2,
-      "perf": {
-        "base_date": "2026-08-31",
-        "base": 339.35,
-        "last_date": "2026-09-18",
-        "last": 349.54,
-        "pct": 3,
-        "d5": -0.3,
-        "d21": null
-      },
-      "first_anchor": "s-37-1"
-    },
-    {
       "ticker": "CRM",
       "display_name": "Salesforce",
       "short_name": "Salesforce",
@@ -142,7 +102,15 @@
       "stance_margin": null,
       "is_about_p": null,
       "row_count": 1,
-      "perf": null,
+      "perf": {
+        "base_date": "2026-08-31",
+        "base": 257.54,
+        "last_date": "2026-09-18",
+        "last": 237.92,
+        "pct": -7.6,
+        "d5": -3.3,
+        "d21": null
+      },
       "first_anchor": "s-27-3"
     },
     {
@@ -264,6 +232,86 @@
         "d21": null
       },
       "first_anchor": "s-49-0"
+    },
+    {
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
+      "short_name": "Alphabet",
+      "market": "US",
+      "mention_count": 4,
+      "first_ts_s": 1101,
+      "stance": "neutral",
+      "stances": [
+        "neutral"
+      ],
+      "speaker": "主持人",
+      "quote": "那可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
+      "reason": "以它為客製晶片的客戶舉例",
+      "t": 1129,
+      "jev_prob": 0.58,
+      "jev_question": "這段話對上面那個標的的看法偏多嗎",
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
+      "px_1d": -0.0128,
+      "px_5d": -0.0023,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 2,
+      "perf": {
+        "base_date": "2026-08-31",
+        "base": 339.35,
+        "last_date": "2026-09-18",
+        "last": 349.54,
+        "pct": 3,
+        "d5": -0.3,
+        "d21": null
+      },
+      "first_anchor": "s-37-1"
+    },
+    {
+      "ticker": "AAPL",
+      "display_name": "蘋果",
+      "short_name": "蘋果",
+      "market": "US",
+      "mention_count": 2,
+      "first_ts_s": 602,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": null,
+      "quote": null,
+      "reason": null,
+      "t": 602,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "transcript",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 0,
+      "perf": {
+        "base_date": "2026-08-31",
+        "base": 316.85,
+        "last_date": "2026-09-18",
+        "last": 336.13,
+        "pct": 6.1,
+        "d5": -0.2,
+        "d21": null
+      },
+      "first_anchor": "s-18-1"
     },
     {
       "ticker": "DSP",
@@ -730,7 +778,12 @@
         {
           "text": "他說 iPhone 裡面就有一個 Journal 可以下載，我還真的不知道這個東西。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "AAPL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "那我就立刻的到 App Store 找到 Journal 這個 App，那它真的算是很簡單，可是我覺得很直覺加方便，就是你可以去寫你每天的日記，然後附上附圖，或說直接拍一張照片 tag 在裡面。",
@@ -2226,7 +2279,12 @@
         {
           "text": "只是以前是 Apple Podcast 的話，因為它顯示的時間是不一定的，所以人家就要提前去猜說是前兩天還是前三天的什麼時間，有時候你某個時間留言，它就剛好會在我要錄節目的時候跳出來，所以那時候才有一個說法叫留言密碼。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "AAPL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "現在已經沒有留言密碼，現在就是反正 Spotify 留言，應該是各位一留我就可以直接看到，所以就就就變成是還還蠻簡單的，只是你可能完全抓錯時間。",
@@ -2984,7 +3042,7 @@
       ]
     }
   ],
-  "marked_sentences": 26,
+  "marked_sentences": 28,
   "key_point_hits": 5,
   "key_point_total": 11,
   "transcript_source": "aligned",

@@ -79,6 +79,45 @@
   "topics": [],
   "mentions": [
     {
+      "ticker": "CRWD",
+      "display_name": "CrowdStrike",
+      "short_name": "CrowdStrike",
+      "market": "US",
+      "mention_count": null,
+      "first_ts_s": 1735,
+      "stance": "bullish",
+      "stances": [
+        "bullish"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "資安需求沒被 AI 取代，他先前就反對那個說法",
+      "t": 1735,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/CRWD",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-16",
+        "base": 241.36,
+        "last_date": "2026-09-18",
+        "last": 237.65,
+        "pct": -1.5,
+        "d5": null,
+        "d21": null
+      }
+    },
+    {
       "ticker": "PEP",
       "display_name": "百事",
       "short_name": "百事",
@@ -152,45 +191,6 @@
         "last_date": "2026-09-18",
         "last": 364.27,
         "pct": 1.7,
-        "d5": null,
-        "d21": null
-      }
-    },
-    {
-      "ticker": "CRWD",
-      "display_name": "CrowdStrike",
-      "short_name": "CrowdStrike",
-      "market": "US",
-      "mention_count": null,
-      "first_ts_s": 1735,
-      "stance": "bullish",
-      "stances": [
-        "bullish"
-      ],
-      "speaker": "主持人",
-      "quote": null,
-      "reason": "資安需求沒被 AI 取代，他先前就反對那個說法",
-      "t": 1735,
-      "jev_prob": null,
-      "jev_question": null,
-      "yahoo_url": "https://finance.yahoo.com/quote/CRWD",
-      "px_1d": null,
-      "px_5d": null,
-      "px_21d": null,
-      "source": "summary",
-      "publish": true,
-      "needs_review": false,
-      "flag_reason": null,
-      "stance_p": null,
-      "stance_margin": null,
-      "is_about_p": null,
-      "row_count": 1,
-      "perf": {
-        "base_date": "2026-09-16",
-        "base": 241.36,
-        "last_date": "2026-09-18",
-        "last": 237.65,
-        "pct": -1.5,
         "d5": null,
         "d21": null
       }

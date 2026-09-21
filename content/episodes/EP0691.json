@@ -117,6 +117,46 @@
       "display_name": "Alphabet",
       "short_name": "Alphabet",
       "market": "US",
+      "mention_count": 2,
+      "first_ts_s": 1562,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": null,
+      "quote": null,
+      "reason": null,
+      "t": 1562,
+      "jev_prob": 0.63,
+      "jev_question": "這段話對上面那個標的的看法偏多嗎",
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
+      "px_1d": -0.0039,
+      "px_5d": -0.0143,
+      "px_21d": null,
+      "source": "transcript",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 0,
+      "perf": {
+        "base_date": "2026-08-26",
+        "base": 342,
+        "last_date": "2026-09-18",
+        "last": 349.54,
+        "pct": 2.2,
+        "d5": -1.4,
+        "d21": null
+      },
+      "first_anchor": "s-53-0"
+    },
+    {
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
+      "short_name": "Alphabet",
+      "market": "US",
       "mention_count": 3,
       "first_ts_s": 1575,
       "stance": "mentioned",
@@ -1476,7 +1516,12 @@
         {
           "text": "所以差不多這樣的一個感受，就是在盤中自己找到一些東西之後，那今天這個東西我想要快速的去理解它，我可能就會先請 AI 告訴我這個產業的 overview 是長什麼樣子，然後接著可能會去請 AI 去挖我的 Google Drive。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "我特別開一個 Google Drive，然後把一些報告跟一些 memo 丟到裡面請它去撈，就像說今天是跟 power、跟某個光通、某個插拔元件有關的東西，請你去幫我找關於這個東西的討論。",
@@ -1662,7 +1707,12 @@
         {
           "text": "所以如果我今天可以開一個 spec 出來，就是怎麼樣讓我的工作效率再變得更高、然後怎麼樣我可以去有感的感受到我的生活變得更輕鬆的話，特別是我現在剛好在日本，其實我就覺得像是一些選單要翻譯，我現在還是會開啟手機，然後可能用 Google Translate，它有那種影片即時翻譯，就是你只要攝影機對著它就會去翻譯，然後又或是你拍張照它就會幫你翻譯，可是這個都還是會延遲、都還是會有時間。",
           "key_point": null,
-          "marks": []
+          "marks": [
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            }
+          ]
         },
         {
           "text": "如果說我再來一句，它真的可以像 Siri——它曾經給大家一個夢境，就是說它那個螢幕它是有一個感知功能的，它可以直接看著這個螢幕上的東西，立刻就跟你做互動——類似像大家講說 AirPods 要出一個有攝影機的，其實我是非常期待，就是低延遲的 AI 可以加入到我們的生活裡面，不然說剛剛前面講的一些工作應用，其實我覺得效益都會再拉到更高。",
@@ -3021,7 +3071,7 @@
       ]
     }
   ],
-  "marked_sentences": 8,
+  "marked_sentences": 10,
   "key_point_hits": 7,
   "key_point_total": 11,
   "transcript_source": "aligned",

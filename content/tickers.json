@@ -3,6 +3,131 @@
   "ticker_count": 19,
   "tickers": [
     {
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
+      "short_name": "Alphabet",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
+      "episode_count": 4,
+      "mention_total": 19,
+      "first_seen": "2026-08-26",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 4,
+          "first_ts_s": 1739,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.09,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 349.39,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 0,
+            "d5": null,
+            "d21": null
+          },
+          "px_1d": -0.0126,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 9,
+          "first_ts_s": 742,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.14,
+          "quote": "它的這個 TPU 的 v8 這一顆，那是在聯發科這邊去做",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 337.12,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 3.7,
+            "d5": -1.3,
+            "d21": null
+          },
+          "px_1d": 0.0159,
+          "px_5d": -0.0128,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": 4,
+          "first_ts_s": 1129,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.58,
+          "quote": "那可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 339.35,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 3,
+            "d5": -0.3,
+            "d21": null
+          },
+          "px_1d": -0.0128,
+          "px_5d": -0.0023,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 691,
+          "slug": "0691",
+          "published_at": "2026-08-26",
+          "mention_count": 2,
+          "first_ts_s": 1562,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.63,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-08-26",
+            "base": 342,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 2.2,
+            "d5": -1.4,
+            "d21": null
+          },
+          "px_1d": -0.0039,
+          "px_5d": -0.0143,
+          "px_21d": null
+        }
+      ]
+    },
+    {
       "ticker": "NVDA",
       "display_name": "輝達",
       "short_name": "輝達",
@@ -237,13 +362,13 @@
       ]
     },
     {
-      "ticker": "GOOGL",
-      "display_name": "Alphabet",
-      "short_name": "Alphabet",
+      "ticker": "AAPL",
+      "display_name": "蘋果",
+      "short_name": "蘋果",
       "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
-      "episode_count": 3,
-      "mention_total": 17,
+      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
+      "episode_count": 2,
+      "mention_total": 15,
       "first_seen": "2026-08-29",
       "last_seen": "2026-09-12",
       "timeline": [
@@ -253,54 +378,26 @@
           "ep_number": 696,
           "slug": "0696",
           "published_at": "2026-09-12",
-          "mention_count": 4,
-          "first_ts_s": 1739,
-          "stance": "mentioned",
+          "mention_count": 13,
+          "first_ts_s": 1064,
+          "stance": "bullish",
           "stances": [
-            "mentioned"
+            "bullish"
           ],
           "speaker": "主持人",
-          "jev_prob": 0.09,
+          "jev_prob": 0.08,
           "quote": null,
           "perf": {
             "base_date": "2026-09-14",
-            "base": 349.39,
+            "base": 333.08,
             "last_date": "2026-09-18",
-            "last": 349.54,
-            "pct": 0,
+            "last": 336.13,
+            "pct": 0.9,
             "d5": null,
             "d21": null
           },
-          "px_1d": -0.0126,
+          "px_1d": -0.0052,
           "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "ep_number": 693,
-          "slug": "0693",
-          "published_at": "2026-09-02",
-          "mention_count": 9,
-          "first_ts_s": 742,
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.14,
-          "quote": "它的這個 TPU 的 v8 這一顆，那是在聯發科這邊去做",
-          "perf": {
-            "base_date": "2026-09-02",
-            "base": 337.12,
-            "last_date": "2026-09-18",
-            "last": 349.54,
-            "pct": 3.7,
-            "d5": -1.3,
-            "d21": null
-          },
-          "px_1d": 0.0159,
-          "px_5d": -0.0128,
           "px_21d": null
         },
         {
@@ -309,26 +406,26 @@
           "ep_number": 692,
           "slug": "0692",
           "published_at": "2026-08-29",
-          "mention_count": 4,
-          "first_ts_s": 1129,
-          "stance": "neutral",
+          "mention_count": 2,
+          "first_ts_s": 602,
+          "stance": "mentioned",
           "stances": [
-            "neutral"
+            "mentioned"
           ],
-          "speaker": "主持人",
-          "jev_prob": 0.58,
-          "quote": "那可能他從 Google 這邊拿到的一些案子，前面可能是 design win",
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
           "perf": {
             "base_date": "2026-08-31",
-            "base": 339.35,
+            "base": 316.85,
             "last_date": "2026-09-18",
-            "last": 349.54,
-            "pct": 3,
-            "d5": -0.3,
+            "last": 336.13,
+            "pct": 6.1,
+            "d5": -0.2,
             "d21": null
           },
-          "px_1d": -0.0128,
-          "px_5d": -0.0023,
+          "px_1d": null,
+          "px_5d": null,
           "px_21d": null
         }
       ]
@@ -390,6 +487,75 @@
           },
           "px_1d": -0.002,
           "px_5d": 0.1018,
+          "px_21d": null
+        }
+      ]
+    },
+    {
+      "ticker": "MRVL",
+      "display_name": "邁威爾",
+      "short_name": "邁威爾",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/MRVL",
+      "episode_count": 2,
+      "mention_total": 2,
+      "first_seen": "2026-08-29",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 2,
+          "first_ts_s": 1602,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 206.48,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 18.3,
+            "d5": 9.9,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": null,
+          "first_ts_s": 1129,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "Marvell 上修了它的財務預期，那這裡麵包含的我認為最大宗一定就是 XPU",
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 211.66,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 15.4,
+            "d5": 6.5,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
           "px_21d": null
         }
       ]
@@ -464,47 +630,6 @@
       ]
     },
     {
-      "ticker": "AAPL",
-      "display_name": "蘋果",
-      "short_name": "蘋果",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
-      "episode_count": 1,
-      "mention_total": 13,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-12",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 13,
-          "first_ts_s": 1064,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.08,
-          "quote": null,
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 333.08,
-            "last_date": "2026-09-18",
-            "last": 336.13,
-            "pct": 0.9,
-            "d5": null,
-            "d21": null
-          },
-          "px_1d": -0.0052,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ]
-    },
-    {
       "ticker": "AVGO",
       "display_name": "博通",
       "short_name": "博通",
@@ -571,7 +696,15 @@
           "speaker": "主持人",
           "jev_prob": null,
           "quote": "我們先來看一下 Anthropic 跟 Salesforce 的一個合作，他們現在正式推出了 Cloudforce",
-          "perf": null,
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 257.54,
+            "last_date": "2026-09-18",
+            "last": 237.92,
+            "pct": -7.6,
+            "d5": -3.3,
+            "d21": null
+          },
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
@@ -611,47 +744,6 @@
             "last": 237.65,
             "pct": -1.5,
             "d5": null,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ]
-    },
-    {
-      "ticker": "MRVL",
-      "display_name": "邁威爾",
-      "short_name": "邁威爾",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/MRVL",
-      "episode_count": 1,
-      "mention_total": 0,
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "ep_number": 692,
-          "slug": "0692",
-          "published_at": "2026-08-29",
-          "mention_count": null,
-          "first_ts_s": 1129,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": null,
-          "quote": "Marvell 上修了它的財務預期，那這裡麵包含的我認為最大宗一定就是 XPU",
-          "perf": {
-            "base_date": "2026-08-31",
-            "base": 211.66,
-            "last_date": "2026-09-18",
-            "last": 244.25,
-            "pct": 15.4,
-            "d5": 6.5,
             "d21": null
           },
           "px_1d": null,
@@ -853,9 +945,9 @@
           "perf": {
             "base_date": "2026-09-14",
             "base": 248.5,
-            "last_date": "2026-09-20",
-            "last": 250.5,
-            "pct": 0.8,
+            "last_date": "2026-09-21",
+            "last": 249.5,
+            "pct": 0.4,
             "d5": 0.8,
             "d21": null
           },
@@ -894,9 +986,9 @@
           "perf": {
             "base_date": "2026-09-02",
             "base": 4275,
-            "last_date": "2026-09-20",
-            "last": 4600,
-            "pct": 7.6,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 15.1,
             "d5": 8.2,
             "d21": null
           },
@@ -935,9 +1027,9 @@
           "perf": {
             "base_date": "2026-09-14",
             "base": 181,
-            "last_date": "2026-09-20",
-            "last": 184,
-            "pct": 1.7,
+            "last_date": "2026-09-21",
+            "last": 179.5,
+            "pct": -0.8,
             "d5": 1.7,
             "d21": null
           },
@@ -976,9 +1068,9 @@
           "perf": {
             "base_date": "2026-09-02",
             "base": 4200,
-            "last_date": "2026-09-20",
-            "last": 3540,
-            "pct": -15.7,
+            "last_date": "2026-09-21",
+            "last": 3605,
+            "pct": -14.2,
             "d5": -7,
             "d21": null
           },
@@ -1017,9 +1109,9 @@
           "perf": {
             "base_date": "2026-09-14",
             "base": 1935,
-            "last_date": "2026-09-20",
-            "last": 2050,
-            "pct": 5.9,
+            "last_date": "2026-09-21",
+            "last": 2165,
+            "pct": 11.9,
             "d5": 5.9,
             "d21": null
           },
