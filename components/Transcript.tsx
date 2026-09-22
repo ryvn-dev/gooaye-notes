@@ -32,7 +32,8 @@ function Body({ block, bi, names }: { block: Block; bi: number; names: Record<st
 
 export default function Transcript({ blocks, names = {} }: { blocks: Block[]; names?: Record<string, string> }) {
   const sections: React.ReactNode[][] = [[]];
-  const titles: (string | null)[] = [null];
+  // 每一段都掛一個 b-<段序> 的錨點：搜尋結果命中哪一段，就跳到哪一段（沒有 id 就跳不進去）。
+  const titles: { text: string; bi: number }[] = [{ text: '', bi: -1 }];
   let ads: React.ReactNode[] = [];
 
   const cur = () => sections[sections.length - 1];
@@ -53,7 +54,7 @@ export default function Transcript({ blocks, names = {} }: { blocks: Block[]; na
     if (b.kind === 'h2') {
       flushAds();
       sections.push([]);
-      titles.push(b.text);
+      titles.push({ text: b.text, bi });
       return;
     }
     const inner = <Body block={b} bi={bi} names={names} />;
@@ -77,7 +78,7 @@ export default function Transcript({ blocks, names = {} }: { blocks: Block[]; na
       cur()[cur().length - 1] = (
         <blockquote key={`q-${bi}`} className="my-[1.6em] border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
           {kids}
-          <span key={bi} className={interjection ? 'mt-2 block text-[#242424]' : 'mt-2 block'}>
+          <span key={bi} id={`b-${bi}`} className={`scroll-mt-20 ${interjection ? 'mt-2 block text-[#242424]' : 'mt-2 block'}`}>
             {inner}
           </span>
         </blockquote>
@@ -88,11 +89,11 @@ export default function Transcript({ blocks, names = {} }: { blocks: Block[]; na
     const tight = prev?.kind === 'quote' && b.kind === 'p';
     cur().push(
       b.kind === 'quote' ? (
-        <blockquote key={bi} className="my-[1.6em] border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
+        <blockquote key={bi} id={`b-${bi}`} className="my-[1.6em] scroll-mt-20 border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
           <span className="block">{inner}</span>
         </blockquote>
       ) : (
-        <p key={bi} className={tight ? 'mt-[0.6em] mb-0' : 'mt-[1.2em] mb-0'}>
+        <p key={bi} id={`b-${bi}`} className={`scroll-mt-20 ${tight ? 'mt-[0.6em] mb-0' : 'mt-[1.2em] mb-0'}`}>
           {inner}
         </p>
       ),
@@ -103,10 +104,15 @@ export default function Transcript({ blocks, names = {} }: { blocks: Block[]; na
   return (
     <div className="mt-3">
       {sections.map((nodes, i) =>
-        nodes.length === 0 && titles[i] === null ? null : (
+        nodes.length === 0 && titles[i].bi < 0 ? null : (
           <section key={i} className="tx-section">
-            {titles[i] && (
-              <h3 className="mt-[2.2em] mb-2 scroll-mt-20 text-[20px] leading-[1.5] font-bold">{titles[i]}</h3>
+            {titles[i].text && (
+              <h3
+                id={`b-${titles[i].bi}`}
+                className="mt-[2.2em] mb-2 scroll-mt-20 text-[20px] leading-[1.5] font-bold"
+              >
+                {titles[i].text}
+              </h3>
             )}
             {nodes}
           </section>
