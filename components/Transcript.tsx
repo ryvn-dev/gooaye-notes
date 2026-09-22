@@ -73,10 +73,15 @@ export default function Transcript({ blocks, names = {} }: { blocks: Block[]; na
     const interjection = b.kind === 'p' && b.text.length <= 40 && prev?.kind === 'quote' && next?.kind === 'quote';
     const continues = b.kind === 'quote' && prev?.kind === 'p' && prev.text.length <= 40 && blocks[bi - 2]?.kind === 'quote';
     if (interjection || continues) {
-      const box = cur()[cur().length - 1] as React.ReactElement<{ children?: React.ReactNode }>;
+      const box = cur()[cur().length - 1] as React.ReactElement<{ children?: React.ReactNode; id?: string }>;
       const kids = Array.isArray(box.props.children) ? box.props.children : [box.props.children];
       cur()[cur().length - 1] = (
-        <blockquote key={`q-${bi}`} className="my-[1.6em] border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]">
+        // 包成同一個引用塊時要把原本那一塊的錨點帶過來，否則第一段的 b-<段序> 會消失。
+        <blockquote
+          key={`q-${bi}`}
+          id={box.props.id}
+          className="my-[1.6em] scroll-mt-20 border-l-2 border-[#e0e0e0] pl-4 text-[#6b6b6b]"
+        >
           {kids}
           <span key={bi} id={`b-${bi}`} className={`scroll-mt-20 ${interjection ? 'mt-2 block text-[#242424]' : 'mt-2 block'}`}>
             {inner}
