@@ -11,7 +11,12 @@
   "duration_s": 3151,
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/8001cf1a-4104-4db2-b349-447f2866da76/rssFileVip.mp3?timestamp=1789326332440",
   "youtube_id": null,
-  "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
+  "source_is_episode": true,
+  "show_site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "host": "謝孟恭",
+  "published_at_rss": "Sat, 12 Sep 2026 06:41:49 GMT",
+  "transcript_display": "full",
   "feed_title": "EP696 | 🎖️",
   "site_title": "EP696 | 🎖️",
   "summary_answer_first": "蘋果折疊機定價比想像便宜。Oracle 靠客戶先付錢撐業績。電力和執照卡住，資料中心蓋不下去。",
@@ -2780,6 +2785,9 @@
       ]
     }
   ],
+  "transcript_mode": "full",
+  "evidence": null,
+  "notes_ratio": null,
   "marked_sentences": 28,
   "key_point_hits": 6,
   "key_point_total": 12,

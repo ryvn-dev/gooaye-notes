@@ -1,0 +1,42 @@
+{
+  "ep": 684,
+  "show": "gooaye",
+  "mode": "community",
+  "schema": "summary-v2.1",
+  "generated_at": "2026-09-22T18:17:10Z",
+  "backend": "cli",
+  "model": "claude-opus-5",
+  "prompt_files": {
+    "summary": "scripts/episode_ingest/prompts/summary-v2.1.md"
+  },
+  "calls": [
+    {
+      "stage": "summary",
+      "prompt_sha256": "36ce843821b7aaf58447a72763d8375b8063db8bcb8e4d0a1dd05fe9910ca032",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 2,
+        "output": 10150,
+        "cache_read": 5166,
+        "cache_write": 34482
+      },
+      "cost_usd": 0.601163
+    }
+  ],
+  "totals": {
+    "input": 2,
+    "output": 10150,
+    "cache_read": 5166,
+    "cache_write": 34482,
+    "cost_usd": 0.6012
+  },
+  "blocks": 102,
+  "sim": null,
+  "rows_in": 4,
+  "rows_kept": 3,
+  "needs_review": 1,
+  "rejected": [
+    "SNDK p-24：entity_gate：SNDK 是全大寫 token，別名表沒有這一檔"
+  ],
+  "notes_ratio": null
+}

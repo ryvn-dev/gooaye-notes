@@ -11,7 +11,12 @@
   "duration_s": 3148,
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/fd5c07ef-4122-424e-8567-baad5d2b8b7d/rssFileVip.mp3?timestamp=1789841096640",
   "youtube_id": null,
-  "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/fd5c07ef-4122-424e-8567-baad5d2b8b7d",
+  "source_is_episode": true,
+  "show_site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "host": "謝孟恭",
+  "published_at_rss": "Sat, 19 Sep 2026 01:59:59 GMT",
+  "transcript_display": "full",
   "feed_title": "EP698 | 🎮",
   "site_title": "EP698 | 🎮",
   "summary_answer_first": "他覺得降規只是短期利空。高速訊號還是得用好板材。",
@@ -2707,6 +2712,9 @@
       ]
     }
   ],
+  "transcript_mode": "full",
+  "evidence": null,
+  "notes_ratio": null,
   "marked_sentences": 20,
   "key_point_hits": 8,
   "key_point_total": 12,

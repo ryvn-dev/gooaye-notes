@@ -4,8 +4,8 @@
 > 非官方，與節目及其製作方無關。非投資建議。站上不提供買賣、目標價、勝率或報酬統計。
 
 ## 資料範圍
-- 集數：6 集，EP691 至 EP698（2026-08-26 至 2026-09-19）
-- 個股：23 檔
+- 集數：11 集，EP681 至 EP698（2026-07-22 至 2026-09-19）
+- 個股：25 檔
 - 內容整理自節目的公開音檔
 - 立場是模型對那一段話的讀法，不是節目的意思
 - 缺的欄位顯示「—」，不以估計值填補
@@ -24,46 +24,48 @@
 - 個股頁：https://ryvn-dev.github.io/gooaye-notes/ticker/<代號>/
 
 ## 收錄的節目
-- 股癌（gooaye，zh-TW）：https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63
+- 股癌（gooaye，zh-TW），主持人 謝孟恭：https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63
 
 ## 被提到最多集的個股
-- Alphabet（GOOGL）：6 集
-- 輝達（NVDA）：5 集
-- 台積電 ADR（TSM）：4 集
-- 邁威爾（MRVL）：2 集
-- 蘋果（AAPL）：2 集
-- 超微（AMD）：2 集
-- 特斯拉（TSLA）：2 集
-- Meta（META）：2 集
-- Salesforce（CRM）：1 集
-- 聯發科（TW:2454）：1 集
-- 博通（AVGO）：1 集
-- 美光（MU）：1 集
-- 世芯（TW:3661）：1 集
-- 高通（QCOM）：1 集
-- 群聯（TW:8299）：1 集
+- Alphabet（GOOGL）：10 集
+- 輝達（NVDA）：8 集
+- 台積電 ADR（TSM）：8 集
+- 超微（AMD）：6 集
+- Meta（META）：5 集
+- 邁威爾（MRVL）：4 集
+- 蘋果（AAPL）：4 集
+- 美光（MU）：4 集
+- 博通（AVGO）：3 集
+- 甲骨文（ORCL）：3 集
+- 微軟（MSFT）：3 集
+- 特斯拉（TSLA）：3 集
+- 聯發科（TW:2454）：3 集
+- 艾司摩爾（ASML）：2 集
+- 鴻海（TW:2317）：2 集
 
 ## 全部個股與頁面
-- 蘋果（AAPL，US）：2 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/AAPL/
-- 超微（AMD，US）：2 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/AMD/
-- 艾司摩爾（ASML，US）：1 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/ASML/
-- 博通（AVGO，US）：1 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/AVGO/
+- 蘋果（AAPL，US）：4 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/AAPL/
+- 超微（AMD，US）：6 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/AMD/
+- 艾司摩爾（ASML，US）：2 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/ASML/
+- 博通（AVGO，US）：3 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/AVGO/
 - 阿里巴巴（BABA，US）：1 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/BABA/
 - Salesforce（CRM，US）：1 集，最近 2026-08-29，https://ryvn-dev.github.io/gooaye-notes/ticker/CRM/
 - CrowdStrike（CRWD，US）：1 集，最近 2026-09-16，https://ryvn-dev.github.io/gooaye-notes/ticker/CRWD/
-- Alphabet（GOOGL，US）：6 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/GOOGL/
-- Meta（META，US）：2 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/META/
-- 邁威爾（MRVL，US）：2 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/MRVL/
-- 美光（MU，US）：1 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/MU/
-- 輝達（NVDA，US）：5 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/NVDA/
-- 甲骨文（ORCL，US）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/ORCL/
+- Alphabet（GOOGL，US）：10 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/GOOGL/
+- Meta（META，US）：5 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/META/
+- 邁威爾（MRVL，US）：4 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/MRVL/
+- 微軟（MSFT，US）：3 集，最近 2026-08-05，https://ryvn-dev.github.io/gooaye-notes/ticker/MSFT/
+- 美光（MU，US）：4 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/MU/
+- 輝達（NVDA，US）：8 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/NVDA/
+- 甲骨文（ORCL，US）：3 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/ORCL/
 - 百事（PEP，US）：1 集，最近 2026-09-16，https://ryvn-dev.github.io/gooaye-notes/ticker/PEP/
 - 高通（QCOM，US）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/QCOM/
-- 特斯拉（TSLA，US）：2 集，最近 2026-09-16，https://ryvn-dev.github.io/gooaye-notes/ticker/TSLA/
-- 台積電 ADR（TSM，US）：4 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/TSM/
-- 鴻海（TW:2317，TW）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-2317/
-- 聯發科（TW:2454，TW）：1 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-2454/
+- 特斯拉（TSLA，US）：3 集，最近 2026-09-16，https://ryvn-dev.github.io/gooaye-notes/ticker/TSLA/
+- 台積電 ADR（TSM，US）：8 集，最近 2026-09-19，https://ryvn-dev.github.io/gooaye-notes/ticker/TSM/
+- 鴻海（TW:2317，TW）：2 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-2317/
+- 聯發科（TW:2454，TW）：3 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-2454/
 - 新日興（TW:3376，TW）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-3376/
 - 世芯（TW:3661，TW）：1 集，最近 2026-09-02，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-3661/
 - 力成（TW:6239，TW）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-6239/
 - 群聯（TW:8299，TW）：1 集，最近 2026-09-12，https://ryvn-dev.github.io/gooaye-notes/ticker/TW-8299/
+- 德州儀器（TXN，US）：1 集，最近 2026-07-25，https://ryvn-dev.github.io/gooaye-notes/ticker/TXN/

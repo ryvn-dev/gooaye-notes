@@ -11,7 +11,12 @@
   "duration_s": 2999,
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/dcff9355-4c66-4b25-8afc-bf70ffd57d0a/rssFileVip.mp3?timestamp=1788029676432",
   "youtube_id": null,
-  "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/dcff9355-4c66-4b25-8afc-bf70ffd57d0a",
+  "source_is_episode": true,
+  "show_site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "host": "謝孟恭",
+  "published_at_rss": "Sat, 29 Aug 2026 08:30:14 GMT",
+  "transcript_display": "full",
   "feed_title": "EP692 | 🍺",
   "site_title": "EP692 | 🍺",
   "summary_answer_first": "軟體不會被整鍋端。供應鏈卡好位的公司才是贏家。",
@@ -3042,6 +3047,9 @@
       ]
     }
   ],
+  "transcript_mode": "full",
+  "evidence": null,
+  "notes_ratio": null,
   "marked_sentences": 28,
   "key_point_hits": 5,
   "key_point_total": 11,

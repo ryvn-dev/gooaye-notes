@@ -11,7 +11,12 @@
   "duration_s": 2984,
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/8523446e-c80a-4aac-a9cd-34adad88e4c2/rssFileVip.mp3?timestamp=1788375131040",
   "youtube_id": null,
-  "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
+  "source_is_episode": true,
+  "show_site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "host": "謝孟恭",
+  "published_at_rss": "Wed, 02 Sep 2026 07:30:19 GMT",
+  "transcript_display": "full",
   "feed_title": "EP693 | 🍖",
   "site_title": "EP693 | 🍖",
   "summary_answer_first": "輝達史上最大 ECB 插旗聯發科。他猜跟 Google 關係不大。",
@@ -3892,6 +3897,9 @@
       ]
     }
   ],
+  "transcript_mode": "full",
+  "evidence": null,
+  "notes_ratio": null,
   "marked_sentences": 42,
   "key_point_hits": 8,
   "key_point_total": 11,

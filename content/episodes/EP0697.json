@@ -11,7 +11,12 @@
   "duration_s": 2997,
   "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/eb3399a6-5fd2-4191-a7ae-b7ab77ec2358/rssFileVip.mp3?timestamp=1789584979542",
   "youtube_id": null,
-  "source_url": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/eb3399a6-5fd2-4191-a7ae-b7ab77ec2358",
+  "source_is_episode": true,
+  "show_site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "host": "謝孟恭",
+  "published_at_rss": "Wed, 16 Sep 2026 05:53:21 GMT",
+  "transcript_display": "full",
   "feed_title": "EP697 | 🔥",
   "site_title": "EP697 | 🔥",
   "summary_answer_first": "他覺得 Anthropic 那篇是監管捕獲。就是用法規擋住後面想進來的人。真要做驗證和監控，反而更吃算力。",
@@ -2193,6 +2198,9 @@
       ]
     }
   ],
+  "transcript_mode": "full",
+  "evidence": null,
+  "notes_ratio": null,
   "marked_sentences": 11,
   "key_point_hits": 4,
   "key_point_total": 12,
