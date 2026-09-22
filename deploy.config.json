@@ -1,0 +1,11 @@
+{
+  "_": "部署目標的唯一一份事實。lib/deploy.ts、next.config.ts 與 scripts/build-content.mjs 都讀這一份，不要再抄第二次。",
+  "pages": {
+    "basePath": "/gooaye-notes",
+    "url": "https://ryvn-dev.github.io/gooaye-notes"
+  },
+  "vercel": {
+    "basePath": "",
+    "url": null
+  }
+}

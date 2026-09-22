@@ -695,7 +695,9 @@ fs.writeFileSync(
 
 fs.writeFileSync(path.join(OUT, 'shows.json'), JSON.stringify({ schema_version: 1, shows: SHOWS }, null, 2) + '\n');
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL || 'https://ryvn-dev.github.io/gooaye-notes';
+// 站網址的預設值只有一份：deploy.config.json（lib/deploy.ts 讀同一份）。
+const DEPLOY = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '..', 'deploy.config.json'), 'utf8'));
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || DEPLOY.pages.url;
 const top = Object.values(tickerMap).sort((a, b) => b.episode_count - a.episode_count).slice(0, 15);
 fs.writeFileSync(
   path.resolve(import.meta.dirname, '..', 'public', 'llms.txt'),

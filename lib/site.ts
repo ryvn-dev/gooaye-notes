@@ -1,3 +1,5 @@
+import { siteUrl } from './deploy';
+
 export const site = {
   name: '股癌筆記',
   tagline: '非官方個人筆記',
@@ -15,10 +17,10 @@ export const site = {
     '時間碼',
     '個人筆記',
   ],
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ryvn-dev.github.io/gooaye-notes',
+  url: siteUrl,
   locale: 'zh-TW',
   contact: 'austenpsy@gmail.com',
 } as const;
 
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/gooaye-notes';
+export { basePath, target } from './deploy';
 export const abs = (p: string) => `${site.url}${p.startsWith('/') ? p : `/${p}`}`;
