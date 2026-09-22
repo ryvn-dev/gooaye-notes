@@ -81,9 +81,57 @@ for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json')).sort()) {
   }
 }
 
+// 頁面上的 OG 圖必須真的存在。2026-09-23 量到 5 檔個股頁的 `og:image` 指向
+// `public/og/` 裡沒有的檔（`npm run content` 跑了、`npm run og` 沒跑），
+// 而 404 的 OG 圖只有貼出連結的人看得到 —— 站內任何一個閘門都抓不到（計畫 §B3.5）。
+{
+  const pages = [];
+  const walk = (dir) => {
+    for (const f of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, f.name);
+      if (f.isDirectory()) walk(full);
+      else if (f.name === 'index.html') pages.push(full);
+    }
+  };
+  if (fs.existsSync(OUT)) walk(OUT);
+  const seen = new Set();
+  for (const page of pages) {
+    const html = fs.readFileSync(page, 'utf8');
+    for (const m of html.matchAll(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/g)) {
+      const url = m[1];
+      if (seen.has(url)) continue;
+      seen.add(url);
+      const rel = url.replace(/^https?:\/\/[^/]+/, '');
+      const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+      const file = path.join(OUT, rel.startsWith(base) && base ? rel.slice(base.length) : rel);
+      if (!fs.existsSync(file)) {
+        bad.push(`OG 圖不存在：${url}（${path.relative(ROOT, page)}）—— 跑 npm run og`);
+      }
+    }
+  }
+}
+
+// 搜尋頁的索引是**整包塞進 HTML** 的：6 集時 486 KB，集數一多會先撐死手機。
+// 換成 pagefind 之前（`RF-1127`），超過 1.5 MB 就**紅**，不要再加集數。
+const SEARCH_CAP = 1.5 * 1024 * 1024;
+const searchPage = path.join(OUT, 'search', 'index.html');
+let searchBytes = null;
+if (fs.existsSync(searchPage)) {
+  searchBytes = fs.statSync(searchPage).size;
+  if (searchBytes > SEARCH_CAP) {
+    bad.push(
+      `/search/ 是 ${(searchBytes / 1024 / 1024).toFixed(2)} MB（上限 1.5 MB）——` +
+        ' 先把搜尋換成 pagefind（RF-1127），不要再加集數',
+    );
+  }
+}
+
 if (bad.length) {
   console.error(`check:render 紅 —— ${bad.length} 段沒上頁面：`);
   for (const line of bad.slice(0, 40)) console.error(`  ${line}`);
   process.exit(1);
 }
-console.log(`check:render 綠 —— ${checked} 段／句全部出現在輸出的 HTML 裡，立場列的 chip 數也對得上。`);
+console.log(
+  `check:render 綠 —— ${checked} 段／句全部出現在輸出的 HTML 裡，立場列的 chip 數也對得上。` +
+    (searchBytes === null ? '' : ` /search/ ${(searchBytes / 1024).toFixed(0)} KB（上限 1536 KB）。`),
+);

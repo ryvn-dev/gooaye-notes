@@ -3,43 +3,31 @@
 // 用法：node scripts/build-content.mjs        （POC_EPISODES 預設 3）
 import fs from 'node:fs';
 import path from 'node:path';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkDirective from 'remark-directive';
-import { toString as mdText } from 'mdast-util-to-string';
 import { checkEpisode } from './check-structured.mjs';
 import { mentionsTicker } from './aliases.mjs';
+import { SHOWS, displayModeOf, showById } from './episode_ingest/sources.mjs';
+import { parseStructured } from './episode_ingest/blocks.mjs';
+import { splitSentences } from './sentences.mjs';
 
 const FIN = process.env.FIN_REPO || `${process.env.HOME}/code/gh-ryvn-dev/ryvn-finance`;
-const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
-const SITEJSON = path.join(CACHE, 'site-json');
 const OUT = path.resolve(import.meta.dirname, '..', 'content');
 
-// 節目登記表。之後加別的 podcast 就在這裡多一列，網址結構 /p/<show>/<集號> 不用改。
-const SHOWS = [
-  {
-    id: 'gooaye',
-    name: '股癌',
-    language: 'zh-TW',
-    rss: 'https://feeds.soundon.fm/podcasts/954689a5-3096-43a4-a80b-7810b219cef3.xml',
-    site: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
-  },
-];
-const SHOW = SHOWS[0];
-// 站上只放「摘要 lane 審過」的集數：summaries/index.json 就是那張清單。
-const SUM_INDEX = (() => {
-  try {
-    const j = JSON.parse(fs.readFileSync(path.join(process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`, 'site-json', 'summaries', 'index.json'), 'utf8'));
-    return new Set((j.episodes ?? []).map((e) => Number(String(e.ep).replace(/\D/g, ''))));
-  } catch {
-    return null;
-  }
-})();
+// 節目登記表只有一份：`scripts/episode_ingest/sources.mjs`。
+// 這裡曾經有第二份一模一樣的常數（計畫 §B6.1），改一邊就會不一致。
+//
+// **這一支對每個 `ingested: true` 的節目各跑一輪**，`content/tickers.json` 是
+// **跨節目**以代號為鍵的一份（同一檔 × 多個節目 × 什麼時候改口 —— 那是這個站的定位）。
+// 今天只有股癌是 `ingested`，所以輸出跟單節目時代一模一樣。
+// `SHOW_ID` 只是把範圍縮到一個節目，給除錯用。
+const ONLY = process.env.SHOW_ID ? showById(process.env.SHOW_ID) : null;
+if (process.env.SHOW_ID && !ONLY) throw new Error(`沒有這個節目：${process.env.SHOW_ID}`);
+const IN_SITE = (ONLY ? [ONLY] : SHOWS).filter((s2) => s2.ingested);
+if (!IN_SITE.length) throw new Error('沒有任何 ingested 的節目');
 const LIMIT = Number(process.env.POC_EPISODES || 0) || null;
 
-// 最後一集的集號錨點：2026-09-19 = EP698。EP696/697/698 已與外部來源對過。
-const ANCHOR = { date: '2026-09-19', ep: 698 };
-const VERIFIED_EPS = [696, 697, 698];
+// 以下這幾個綁在「現在在跑哪一個節目」上，由 `loadShow()` 換掉。
+let SHOW; let DISPLAY; let CACHE; let SITEJSON; let SUM_INDEX;
+let episodes; let mentions; let audioById; let TITLES; let LINKS; let feedNums; let byEp;
 
 const csv = (p) => {
   const [h, ...rows] = fs.readFileSync(p, 'utf8').trim().split('\n');
@@ -73,14 +61,8 @@ const toStances = (v) => {
   return [...new Set(out)];
 };
 
-const episodes = csv(path.join(FIN, 'data/podcasts/gooaye/episodes.csv'));
-const mentions = csv(path.join(FIN, 'data/podcasts/gooaye/mentions.csv'));
-const feed = JSON.parse(fs.readFileSync(path.join(CACHE, 'feed.json'), 'utf8'));
-const audioById = Object.fromEntries(feed.map((f) => [f.episode_id, f.audio_url]));
 const NAMES = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, 'ticker-names.json'), 'utf8'));
 
-// 節目官方 feed 的原標題（本機快取，不進 repo）：{ episode_id: { title, pubDate, itunes_episode } }
-const TITLES = readIf(path.join(CACHE, 'titles.json')) ?? {};
 const feedTitle = (id) => {
   const raw = TITLES[id]?.title;
   if (!raw) return null;
@@ -92,18 +74,50 @@ const feedEpNo = (id) => {
   return Number.isFinite(n) && n > 0 ? n : null;
 };
 
-episodes.sort((a, b) => a.published.localeCompare(b.published));
+// 順序一律由 RSS 的日期決定；集號一律由 feed 的 `itunes:episode` 決定。
+// 這裡以前是「錨點 EP698 往前每集減一，而且相鄰兩集間隔必須是 3 或 4 天，否則 throw」——
+// 節目休一次、或 feed 補一集舊的，整條 build 就紅（計畫 §A2.7、§B2）。
+// 現在：feed 沒寫集號的那幾集才由日期序往鄰居推；間隔不規則**只警告**。
+const WARNINGS = [];
+const deriveEp = (i) => {
+  for (let j = i - 1; j >= 0; j--) if (feedNums[j] !== null) return feedNums[j] + (i - j);
+  for (let j = i + 1; j < episodes.length; j++) if (feedNums[j] !== null) return feedNums[j] - (j - i);
+  return null;
+};
 
-// 集號推定：以錨點往前每集減一。節目為週三 / 週六各一集，間隔只會是 3 或 4 天；
-// 出現別的間隔就代表中間有漏集，集號不可信 —— 直接中止，不要猜。
-const anchorIdx = episodes.findIndex((e) => e.published === ANCHOR.date);
-if (anchorIdx === -1) throw new Error('錨點集不在 episodes.csv 裡，集號無法推定');
-for (let i = 1; i < episodes.length; i++) {
-  const gap = (Date.parse(episodes[i].published) - Date.parse(episodes[i - 1].published)) / 86400000;
-  if (gap !== 3 && gap !== 4) {
-    throw new Error(`間隔 ${gap} 天（${episodes[i - 1].published} → ${episodes[i].published}），集號不可信`);
+/** 換到某一個節目：它的快取、它的集數帳、它的 feed。 */
+const loadShow = (show) => {
+  SHOW = show;
+  DISPLAY = displayModeOf(show);
+  CACHE = show.cache;
+  SITEJSON = path.join(CACHE, 'site-json');
+  // 站上只放「摘要 lane 審過」的集數：summaries/index.json 就是那張清單。
+  SUM_INDEX = (() => {
+    const j = readIf(path.join(SITEJSON, 'summaries', 'index.json'));
+    return j ? new Set((j.episodes ?? []).map((e) => Number(String(e.ep).replace(/\D/g, '')))) : null;
+  })();
+  episodes = csv(path.join(show.stats, 'episodes.csv'));
+  mentions = fs.existsSync(path.join(show.stats, 'mentions.csv')) ? csv(path.join(show.stats, 'mentions.csv')) : [];
+  const feed = JSON.parse(fs.readFileSync(path.join(CACHE, 'feed.json'), 'utf8'));
+  audioById = Object.fromEntries(feed.map((f) => [f.episode_id, f.audio_url]));
+  TITLES = readIf(path.join(CACHE, 'titles.json')) ?? {};
+  LINKS = readIf(path.join(CACHE, 'links.json')) ?? {};
+  byEp = {};
+  for (const m of mentions) (byEp[m.episode_id] ||= []).push(m);
+
+  // 順序一律由 RSS 的日期決定；集號一律由 feed 的 `itunes:episode` 決定。
+  episodes.sort((a, b) => a.published.localeCompare(b.published));
+  feedNums = episodes.map((e) => feedEpNo(e.episode_id));
+  if (feedNums.every((n) => n === null)) {
+    throw new Error(`${show.id}：feed 一集都沒有 itunes:episode —— 先跑 npm run podcast:fetch`);
   }
-}
+  for (let i = 1; i < episodes.length; i++) {
+    const gap = (Date.parse(episodes[i].published) - Date.parse(episodes[i - 1].published)) / 86400000;
+    if (gap !== 3 && gap !== 4) {
+      WARNINGS.push(`${show.id} 間隔 ${gap} 天（${episodes[i - 1].published} → ${episodes[i].published}）：節目休停或 feed 補舊集都會這樣，集號以 feed 為準`);
+    }
+  }
+};
 
 const STATS = [];
 const nameOf = (t) => NAMES[t]?.name || t;
@@ -132,60 +146,14 @@ const loadStructured = (ep) => {
       `EP${ep} 結構化逐字稿與社群稿不相等（第 ${gate.at} 字起）\n  稿: ${gate.src}\n  站: ${gate.md}`,
     );
   }
-  const tree = unified().use(remarkParse).use(remarkDirective).parse(fs.readFileSync(f, 'utf8'));
-  const out = [];
-  const T_RE = /^\s*\[t=(\d+)\]\s*/;
-  const push = (kind, raw, ad) => {
-    const m = raw.match(T_RE);
-    const text = raw.replace(T_RE, '').trim();
-    if (!text) return;
-    out.push({ kind, t: m ? Number(m[1]) : null, ad, text });
-  };
-  const walk = (nodes, ad) => {
-    for (const n of nodes) {
-      if (n.type === 'heading' && n.depth === 2) out.push({ kind: 'h2', text: mdText(n) });
-      else if (n.type === 'containerDirective') walk(n.children, n.name === 'ad');
-      else if (n.type === 'blockquote') push('quote', n.children.map(mdText).join(''), ad);
-      else if (n.type === 'paragraph') push('p', mdText(n), ad);
-    }
-  };
-  walk(tree.children, false);
+  // 段序＝立場錨點 p-<n>，口徑與摘要腳本共用 `episode_ingest/blocks.mjs`。
+  const out = parseStructured(fs.readFileSync(f, 'utf8'));
   return out.length ? out : null;
 };
 
 // ── 句子層 ─────────────────────────────────────────────────────────────────
 // 螢光筆的來源是摘要 schema v2：每檔每段一筆 { p, stance, quote }，quote 逐字比對出那一句。
 // 重點句同樣是黃底；tap／hover 出現 tooltip（代碼 + 立場 icon）。
-
-const SENT_END = /(?<=[。！？!?])/;
-const TURN_END = /(但是|可是|不過|然而|而且|所以|然後|因為)[，。！？,.!?]*$/;
-const MAX_SENT = 200;
-const AIM_SENT = 120;
-
-const splitByComma = (t) => {
-  const out = [];
-  let rest = t;
-  while (rest.length > MAX_SENT) {
-    const window = rest.slice(0, MAX_SENT);
-    let cut = -1;
-    for (const mark of ['，', '；', '、', ',']) cut = Math.max(cut, window.lastIndexOf(mark));
-    const at = cut >= AIM_SENT ? cut + 1 : MAX_SENT;
-    out.push(rest.slice(0, at));
-    rest = rest.slice(at);
-  }
-  if (rest) out.push(rest);
-  return out;
-};
-
-const splitSentences = (t) => {
-  const raw = t.split(SENT_END).map((x) => x.trim()).filter(Boolean);
-  const joined = [];
-  for (const piece of raw) {
-    if (joined.length && TURN_END.test(joined[joined.length - 1])) joined[joined.length - 1] += piece;
-    else joined.push(piece);
-  }
-  return joined.flatMap(splitByComma).map((x) => x.trim()).filter(Boolean);
-};
 
 const buildTranscript = (blocks, sum, rows, scanTickers = []) => {
   if (!blocks?.length) return null;
@@ -405,20 +373,16 @@ const perfOf = (ticker, date) => {
   };
 };
 
-const byEp = {};
-for (const m of mentions) (byEp[m.episode_id] ||= []).push(m);
-
 const index = [];
 const tickerMap = {};
 
+for (const show of IN_SITE) {
+loadShow(show);
 for (let i = 0; i < episodes.length; i++) {
   const e = episodes[i];
-  const derivedEp = ANCHOR.ep - (anchorIdx - i);
-  const fromFeed = feedEpNo(e.episode_id);
-  if (fromFeed !== null && fromFeed !== derivedEp) {
-    throw new Error(`集號對不上：feed 說 EP${fromFeed}，錨點推定 EP${derivedEp}（${e.published}）`);
-  }
-  const ep = fromFeed ?? derivedEp;
+  const fromFeed = feedNums[i];
+  const ep = fromFeed ?? deriveEp(i);
+  if (ep === null) throw new Error(`EP 集號推不出來：${e.episode_id}（${e.published}）`);
   if (SUM_INDEX ? !SUM_INDEX.has(ep) : LIMIT && i < episodes.length - LIMIT) continue;
 
   // 上游兩條 lane：摘要 lane 是主列（LLM 讀法 + 原話），機器抽取 lane 補數字
@@ -589,6 +553,68 @@ for (let i = 0; i < episodes.length; i++) {
     }
   }
 
+  // 站上放全文還是只放引用（`transcript_display`，2026-09-23 01:37 拍）。
+  // excerpt：只留被標到的那幾段（立場句／重點句）與它們上面那個小標，全文不上站。
+  const excerpt = (st) => {
+    if (!st) return st;
+    const keep = new Set();
+    st.blocks.forEach((b, bi) => {
+      if (b.kind === 'h2' || b.ad) return;
+      if ((b.sentences ?? []).some((sn) => sn.key_point !== null || sn.marks.length)) {
+        keep.add(bi);
+        for (let j = bi - 1; j >= 0; j--) if (st.blocks[j].kind === 'h2') { keep.add(j); break; }
+      }
+    });
+    const idx = [...keep].sort((a, b) => a - b);
+    const blocks = idx.map((bi) => st.blocks[bi]);
+    // 段序變了，錨點要重算，不然「相關個股」會跳到不存在的句子。
+    const anchor2 = {};
+    blocks.forEach((b, bi) =>
+      (b.sentences ?? []).forEach((sn, si) => {
+        for (const m of sn.marks) if (anchor2[m.ticker] === undefined) anchor2[m.ticker] = `s-${bi}-${si}`;
+      }),
+    );
+    return { ...st, blocks, anchor: anchor2, excerpt_blocks: blocks.length, full_blocks: st.blocks.length };
+  };
+  // 聽打筆記模式（主人 2026-09-23 01:56 拍）：站上只放**我們自己的話**與
+  // 每一條立場旁邊那句 ≤40 字的逐字原話。**全文一個字都不寫進 `content/`**，
+  // 原稿只留在本機快取。筆記由 `summarise.mjs` 產（`summaries/EP<n>.json` 的 `notes`）。
+  const notesView = (st) => {
+    const rows = sum?.notes ?? [];
+    if (!rows.length) {
+      throw new Error(`EP${ep} 是 notes 模式但摘要裡沒有 notes —— 先跑 summarise.mjs`);
+    }
+    const idx = new Map((st?.blocks ?? []).map((b, i) => [i, b]));
+    const blocks = rows.map((n) => {
+      const bi = typeof n.p === 'string' ? Number(n.p.replace(/\D/g, '')) : null;
+      const src = bi === null ? null : idx.get(bi);
+      const text = String(n.text ?? '').trim();
+      // 標記只留在**真的提到那一檔**的筆記上（`check:marks` 守的是同一件事）。
+      const marks = rowsRaw
+        .filter((r) => r.p === n.p && mentionsTicker(text, r.ticker))
+        .map((r) => ({ ticker: r.ticker, stance: r.needs_review ? 'neutral' : r.stance }));
+      return {
+        kind: 'p', note: true, t: n.t ? secs(n.t) : (src?.t ?? null), ad: false, text,
+        sentences: [{ text, key_point: null, marks }],
+      };
+    });
+    const anchor2 = {};
+    blocks.forEach((b, bi) =>
+      b.sentences.forEach((sn, si) => {
+        for (const m of sn.marks) if (anchor2[m.ticker] === undefined) anchor2[m.ticker] = `s-${bi}-${si}`;
+      }),
+    );
+    return { ...st, blocks, anchor: anchor2, notes_blocks: blocks.length, full_blocks: st?.blocks?.length ?? 0 };
+  };
+
+  const shownTx =
+    DISPLAY === 'excerpt' ? excerpt(structured) : DISPLAY === 'notes' ? notesView(structured) : structured;
+  if (structured && DISPLAY !== 'full') {
+    const n = DISPLAY === 'excerpt' ? shownTx.excerpt_blocks : shownTx.notes_blocks;
+    STATS.push(`EP${ep} ${DISPLAY} 模式：${n}/${shownTx.full_blocks} 段上站（全文不上站）`);
+    for (const m of shown) m.first_anchor = shownTx.anchor[m.ticker] ?? null;
+  }
+
   // 相關個股 = 立場列 ∪ 逐字稿別名掃描到的那些（順序同 chip 列）。
   const ms = [...shown, ...review];
 
@@ -598,14 +624,22 @@ for (let i = 0; i < episodes.length; i++) {
     show_name: SHOW.name,
     episode_id: e.episode_id,
     ep_number: ep,
-    ep_number_source: fromFeed !== null ? 'feed' : VERIFIED_EPS.includes(ep) ? 'verified' : 'derived',
-    ep_inferred: fromFeed === null && !VERIFIED_EPS.includes(ep),
+    ep_number_source: fromFeed !== null ? 'feed' : 'derived',
+    ep_inferred: fromFeed === null,
     slug: pad(ep),
     published_at: e.published,
     duration_s: Number(e.duration_s),
     audio_url: audioById[e.episode_id] || null,
     youtube_id: null,
-    source_url: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
+    // 來源與作者（2026-09-23 01:39 拍）。`source_url` 是那一集的 RSS `<link>`，
+    // feed 沒給才退到節目頁；`host` 是 `<dc:creator>`，沒有才用登記表那一欄。
+    source_url: LINKS[e.episode_id]?.link ?? SHOW.site,
+    source_is_episode: Boolean(LINKS[e.episode_id]?.link),
+    show_site: SHOW.site,
+    host: LINKS[e.episode_id]?.creator ?? SHOW.host ?? null,
+    // RSS 的 pubDate 逐字（含時刻與時區）。`published_at` 仍是日，站上排序吃的是它。
+    published_at_rss: LINKS[e.episode_id]?.pub_date ?? TITLES[e.episode_id]?.pubDate ?? null,
+    transcript_display: DISPLAY,
     feed_title: feedTitle(e.episode_id),
     site_title: feedTitle(e.episode_id) ?? `EP${ep}`,
     summary_answer_first: noLead(sum?.summary_answer_first ?? null),
@@ -614,12 +648,19 @@ for (let i = 0; i < episodes.length; i++) {
     segment_tags: sum?.segment_tags ?? [],
     topics: [],
     mentions: ms,
-    blocks: structured?.blocks ?? null,
+    blocks: shownTx?.blocks ?? null,
+    transcript_mode: DISPLAY,
+    // 立場證據：只有 notes 模式會用到（全文模式那句話本來就在頁面上）。
+    evidence: DISPLAY === 'notes'
+      ? rowsRaw.filter((r) => r.quote).map((r) => ({ p: r.p, ticker: r.ticker, stance: r.stance, quote: r.quote }))
+      : null,
+    notes_ratio: DISPLAY === 'notes' ? (sum?.notes_ratio ?? null) : null,
     marked_sentences: structured?.marked_count ?? 0,
     key_point_hits: structured?.key_point_hits ?? 0,
     key_point_total: structured?.key_point_count ?? 0,
     transcript_source: tx ? 'aligned' : null,
-    transcript_available: Boolean(tx),
+    // 站上有沒有「逐字稿」：只有 full 模式才有。excerpt／notes 都不是逐字稿。
+    transcript_available: Boolean(tx) && DISPLAY === 'full',
     provenance: {
       summary_model: null,
       summary_generated_at: sum?.generated_at ?? null,
@@ -639,6 +680,9 @@ for (let i = 0; i < episodes.length; i++) {
     duration_s: doc.duration_s,
     feed_title: doc.feed_title,
     site_title: doc.site_title,
+    host: doc.host,
+    source_url: doc.source_url,
+    published_at_rss: doc.published_at_rss,
     summary_answer_first: doc.summary_answer_first,
     has_summary: Boolean(doc.summary),
     // 全部放進來，不截斷：首頁 chip 列是水平捲動的，截斷會讓旁邊的「提及 N 檔」對不上。
@@ -660,7 +704,7 @@ for (let i = 0; i < episodes.length; i++) {
     t.first_seen = t.first_seen < e.published ? t.first_seen : e.published;
     t.last_seen = t.last_seen > e.published ? t.last_seen : e.published;
     t.timeline.push({
-      show: SHOW.id, show_name: SHOW.name,
+      show: SHOW.id, show_name: SHOW.name, host: doc.host, source_url: doc.source_url,
       ep_number: ep, slug: doc.slug, published_at: e.published,
       mention_count: m.mention_count, first_ts_s: m.t ?? m.first_ts_s,
       stance: m.stance, stances: m.stances, speaker: m.speaker,
@@ -669,9 +713,14 @@ for (let i = 0; i < episodes.length; i++) {
     });
   }
 }
+}
 
-index.reverse();
-for (const t of Object.values(tickerMap)) t.timeline.reverse();
+// 跨節目一起排：新的在最上面。`tickers.json` 的 timeline 同一條規則。
+index.sort((a, b) => b.published_at.localeCompare(a.published_at) || b.ep_number - a.ep_number);
+for (const t of Object.values(tickerMap)) {
+  t.timeline.sort((a, b) => b.published_at.localeCompare(a.published_at) || b.ep_number - a.ep_number);
+  t.shows = [...new Set(t.timeline.map((x) => x.show))];
+}
 
 fs.writeFileSync(
   path.join(OUT, 'index.json'),
@@ -680,6 +729,7 @@ fs.writeFileSync(
     generated_at: new Date().toISOString(),
     episode_count: index.length,
     coverage: { from: index[index.length - 1].published_at, to: index[0].published_at },
+    shows: IN_SITE.map((s2) => ({ id: s2.id, name: s2.name, host: s2.host ?? null })),
     episodes: index,
   }, null, 2) + '\n',
 );
@@ -693,7 +743,22 @@ fs.writeFileSync(
   }, null, 2) + '\n',
 );
 
-fs.writeFileSync(path.join(OUT, 'shows.json'), JSON.stringify({ schema_version: 1, shows: SHOWS }, null, 2) + '\n');
+// 登記表的站端視圖。`ingested: false` 的節目留在檔裡但標出來 ——
+// 站上還沒有它的集數，頁面不該把它當成收錄中的節目。
+fs.writeFileSync(
+  path.join(OUT, 'shows.json'),
+  JSON.stringify(
+    {
+      schema_version: 2,
+      shows: SHOWS.map((s2) => ({
+        id: s2.id, name: s2.name, host: s2.host ?? null, language: s2.language,
+        rss: s2.rss, site: s2.site, transcript_display: displayModeOf(s2), ingested: Boolean(s2.ingested),
+      })),
+    },
+    null,
+    2,
+  ) + '\n',
+);
 
 // 站網址的預設值只有一份：deploy.config.json（lib/deploy.ts 讀同一份）。
 const DEPLOY = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '..', 'deploy.config.json'), 'utf8'));
@@ -727,7 +792,7 @@ fs.writeFileSync(
 - 個股頁：${SITE}/ticker/<代號>/
 
 ## 收錄的節目
-${SHOWS.map((s2) => `- ${s2.name}（${s2.id}，${s2.language}）：${s2.site}`).join('\n')}
+${SHOWS.filter((s2) => s2.ingested).map((s2) => `- ${s2.name}（${s2.id}，${s2.language}），主持人 ${s2.host ?? '—'}：${s2.site}`).join('\n')}
 
 ## 被提到最多集的個股
 ${top.map((t) => `- ${t.display_name}（${t.ticker}）：${t.episode_count} 集`).join('\n')}
@@ -740,6 +805,7 @@ ${Object.values(tickerMap)
 `,
 );
 
+for (const line of WARNINGS) console.warn(`⚠️  ${line}`);
 for (const line of STATS) console.log(line);
 console.log(
   `episodeFiles=${fs.readdirSync(path.join(OUT, 'episodes')).length} ` +

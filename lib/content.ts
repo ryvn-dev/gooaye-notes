@@ -59,6 +59,9 @@ export type Mention = {
   first_anchor?: string | null;
 };
 
+/** 站上放多少逐字稿。授權欄，不是排版欄。 */
+export type TranscriptDisplay = 'full' | 'excerpt' | 'notes';
+
 export type Show = {
   id: string;
   name: string;
@@ -67,8 +70,13 @@ export type Show = {
   language: string;
   rss: string;
   site: string;
-  /** full＝全文上站；excerpt＝只放摘要與被標到的段落（尚未取得主持人同意的節目）。 */
-  transcript_display: 'full' | 'excerpt';
+  /**
+   * full＝全文上站（股癌，2026-09-23 01:59 拍，永久）；
+   * excerpt＝只放摘要與被標到的那幾段短引用；
+   * notes＝聽打筆記，逐字稿一個字都不進 `content/` 與 `out/`。
+   * 沒寫的節目一律當 notes（`scripts/episode_ingest/sources.mjs` 的 `displayModeOf`）。
+   */
+  transcript_display: TranscriptDisplay;
   /** 站上已經有這個節目的集數了沒。 */
   ingested: boolean;
 };
@@ -95,7 +103,7 @@ export type Episode = {
   host: string | null;
   /** RSS `pubDate` 逐字（含時刻與時區）；排序仍用 `published_at`。 */
   published_at_rss: string | null;
-  transcript_display: 'full' | 'excerpt';
+  transcript_display: TranscriptDisplay;
   feed_title: string | null;
   site_title: string;
   summary_answer_first: string | null;
@@ -106,7 +114,11 @@ export type Episode = {
   mentions: Mention[];
   ep_inferred?: boolean;
   blocks: Block[] | null;
-  transcript_mode: 'full' | 'excerpt';
+  transcript_mode: TranscriptDisplay;
+  /** notes 模式的立場證據（≤40 字逐字原話）。full／excerpt 是 null —— 那句話本來就在頁面上。 */
+  evidence: { p: string | null; ticker: string; stance: Stance; quote: string }[] | null;
+  /** notes 模式：筆記字數 ÷ 逐字稿字數（上限 0.35）。其它模式是 null。 */
+  notes_ratio: number | null;
   marked_sentences: number;
   key_point_hits: number;
   key_point_total: number;
@@ -151,9 +163,14 @@ export type TickerRow = {
   mention_total: number;
   first_seen: string;
   last_seen: string;
+  /** 這一檔被哪幾個節目講過（`show.id`，依站上的節目順序）。 */
+  shows: string[];
   timeline: {
     show: string;
     show_name: string;
+    /** 那一集的原作者與原始連結 —— 個股頁的每一列都要指得回去。 */
+    host: string | null;
+    source_url: string;
     ep_number: number;
     slug: string;
     published_at: string;
