@@ -19,6 +19,9 @@ export const site = {
   ],
   url: siteUrl,
   locale: 'zh-TW',
+  // 2026-09-23 01:39 拍：先不放廣告。版位元件留著（之後要接回來不必重畫版面），
+  // 但這一格是 false 就一個位元組的第三方程式碼都不載。
+  ads: false,
   contact: 'austenpsy@gmail.com',
 } as const;
 
