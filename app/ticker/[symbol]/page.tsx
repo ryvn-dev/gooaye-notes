@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { FAQPage, BreadcrumbList, Corporation, WithContext } from 'schema-dts';
-import { getTickers, getIndex, getPrices, findTicker, tickerSlug, STANCE, stancesOf } from '@/lib/content';
+import { getTickers, getIndex, getPrices, findTicker, getTranscriptFacts, tickerSlug, STANCE, stancesOf } from '@/lib/content';
 import PriceChart, { type Mark } from '@/components/PriceChart';
+import PerfChip from '@/components/PerfChip';
 import StanceIcon from '@/components/StanceIcon';
 import { site, abs } from '@/lib/site';
 
@@ -50,9 +51,13 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
   const code = t.ticker.replace('TW:', '');
   const answer = faqAnswer(t);
   const prices = getPrices(t.ticker);
+  const facts = getTranscriptFacts();
+  const titleOf = new Map(idx.episodes.map((e) => [e.slug, e.site_title]));
+  // 同一集看多也看空的那幾集，之前被 stancesOf(r)[0] 砍成單一方向，圖上只剩一個箭頭，
+  // 首頁 chip 卻是雙向 icon —— 兩邊對不起來。整串 stances 交給圖，讓它自己畫兩個箭頭。
   const marks: Mark[] = t.timeline.map((r) => ({
     date: r.published_at,
-    stance: stancesOf(r)[0] ?? 'mentioned',
+    stances: stancesOf(r),
     show: r.show_name ?? '股癌',
     speaker: r.speaker,
     perf: r.perf ?? null,
@@ -120,21 +125,42 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
       )}
 
       <ul className="mt-6 divide-y divide-[#eee]">
-        {t.timeline.map((r) => (
-          <li key={r.slug} className="flex flex-wrap items-center gap-x-3 py-2.5 text-[15px]">
-            <Link href={`/p/${r.show ?? 'gooaye'}/${r.slug}/`} className="underline underline-offset-2">
-              EP{r.ep_number}
-            </Link>
-            <time dateTime={r.published_at} className="text-[14px] text-[#6b6b6b]">
-              {r.published_at}
-            </time>
-            <span className="ml-auto flex flex-wrap gap-1">
-              {stancesOf(r).map((st) => (
-                <StanceIcon key={st} stance={st} p={r.jev_prob} />
-              ))}
-            </span>
-          </li>
-        ))}
+        {t.timeline.map((r) => {
+          const key = `${r.slug}|${t.ticker}`;
+          const n = facts.perEpisode[key] ?? 0;
+          const anchor = facts.anchor[key];
+          const href = `/p/${r.show ?? 'gooaye'}/${r.slug}/`;
+          return (
+            <li key={r.slug} className="py-3">
+              <div className="flex items-baseline gap-3">
+                {/* 集名一律用 RSS 原標，不另外編一個名字。 */}
+                <Link href={href} className="font-bold text-[#242424] no-underline">
+                  {titleOf.get(r.slug) ?? `EP${r.ep_number}`}
+                </Link>
+                <span className="ml-auto flex shrink-0 items-center gap-2">
+                  <span className="flex items-center gap-1">
+                    {stancesOf(r).map((st) => (
+                      <StanceIcon key={st} stance={st} p={r.jev_prob} />
+                    ))}
+                  </span>
+                  {/* 提到之後的漲跌；抓不到就是「—」，不用 0 頂替。 */}
+                  <PerfChip ticker={t.ticker} stance={stancesOf(r)[0] ?? 'mentioned'} perf={r.perf} head="perf" />
+                </span>
+              </div>
+              <div className="mt-0.5 text-[13px] text-[#6b6b6b]">
+                <time dateTime={r.published_at}>{r.published_at}</time> · {r.show_name ?? '股癌'}
+                {n > 0 ? ` · ${n} 句` : ''}
+              </div>
+              {r.quote && (
+                <p className="mt-1 truncate font-serif text-[14px] text-[#6b6b6b]">
+                  <a href={anchor ? `${href}#${anchor}` : href} className="no-underline">
+                    「{r.quote}」
+                  </a>
+                </p>
+              )}
+            </li>
+          );
+        })}
       </ul>
 
       <p className="mt-6 text-[13px] text-[#6b6b6b]">

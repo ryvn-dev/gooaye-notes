@@ -12,9 +12,12 @@ import {
 } from 'lightweight-charts';
 
 export type Bar = { d: string; o: number; h: number; l: number; c: number; v: number };
+type Stance = 'bullish' | 'bearish' | 'neutral' | 'mentioned' | 'mixed';
+
 export type Mark = {
   date: string;
-  stance: 'bullish' | 'bearish' | 'neutral' | 'mentioned' | 'mixed';
+  /** 同一集可能兩個方向都講過；只留一個會把 mixed 吃掉。 */
+  stances: Stance[];
   show: string;
   /** 之後要做「每個人的成績單」時用得到；現在節目只有一位主講。 */
   speaker?: string | null;
@@ -80,7 +83,8 @@ export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[]
       markerMap.set(
         d,
         group.map((m) => {
-          const head = [m.show, m.speaker, m.date, LABEL[m.stance]].filter(Boolean).join(' · ');
+          const label = (m.stances.length ? m.stances : (['mentioned'] as Stance[])).map((s) => LABEL[s]).join('、');
+          const head = [m.show, m.speaker, m.date, label].filter(Boolean).join(' · ');
           if (!m.perf) return `${head} · 報價暫時抓不到`;
           const p = m.perf;
           const pc = (v: number | null) => (v === null ? '—' : `${v > 0 ? '+' : ''}${v.toFixed(1)}%`);
@@ -90,16 +94,17 @@ export default function PriceChart({ bars, marks }: { bars: Bar[]; marks: Mark[]
           return `${head} · ${tail}`;
         }),
       );
-      const kinds = new Set(group.map((m) => m.stance));
-      const stance = kinds.size === 1 ? group[0].stance : 'neutral';
-      markers.push(
-        stance === 'bullish'
-          ? { time: d as Time, position: 'aboveBar', shape: 'arrowUp', color: COLOR.up, size: 1.4 }
-          : stance === 'bearish'
-            ? { time: d as Time, position: 'belowBar', shape: 'arrowDown', color: COLOR.down, size: 1.4 }
-            : { time: d as Time, position: 'aboveBar', shape: 'circle', color: COLOR.flat },
-      );
+      // 兩個方向都講過（同一集 mixed，或同一天兩個節目講反）：上下各畫一個箭頭，
+      // 不要用多數決或 neutral 蓋掉 —— 首頁 chip 是雙向 icon，圖上也要看得出來是雙向。
+      const kinds = new Set(group.flatMap((m) => (m.stances.length ? m.stances : (['mentioned'] as Stance[]))));
+      const up = kinds.has('bullish') || kinds.has('mixed');
+      const down = kinds.has('bearish') || kinds.has('mixed');
+      if (up) markers.push({ time: d as Time, position: 'aboveBar', shape: 'arrowUp', color: COLOR.up, size: 1.4 });
+      if (down) markers.push({ time: d as Time, position: 'belowBar', shape: 'arrowDown', color: COLOR.down, size: 1.4 });
+      if (!up && !down) markers.push({ time: d as Time, position: 'aboveBar', shape: 'circle', color: COLOR.flat });
     }
+    // marks 是新到舊，markers 要由舊到新（lightweight-charts 要求遞增）。
+    markers.sort((a, b) => String(a.time).localeCompare(String(b.time)));
     createSeriesMarkers(candles, markers);
     chart.timeScale().fitContent();
 
