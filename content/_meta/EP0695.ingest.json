@@ -1,0 +1,87 @@
+{
+  "ep": 695,
+  "show": "gooaye",
+  "mode": "own-whisper",
+  "schema": "summary-v2.1",
+  "generated_at": "2026-09-22T18:37:01Z",
+  "backend": "cache",
+  "model": "claude-opus-5",
+  "prompt_files": {
+    "summary": "scripts/episode_ingest/prompts/summary-v2.1.md",
+    "clean": "scripts/episode_ingest/prompts/clean-own-whisper-v1.md"
+  },
+  "calls": [
+    {
+      "stage": "clean-1/3",
+      "prompt_sha256": "8cbc931a247cba6b1b0122713a6a70e979674c31dd9e621c5e72fd53f11957df",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 2,
+        "output": 27780,
+        "cache_read": 5166,
+        "cache_write": 26037
+      },
+      "cost_usd": 0.957463
+    },
+    {
+      "stage": "clean-2/3",
+      "prompt_sha256": "fcd259e075ab07e2f489d76bbebf45632b55c6108376d5fb6d2ab1fd97defeb9",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 2,
+        "output": 43360,
+        "cache_read": 5166,
+        "cache_write": 28407
+      },
+      "cost_usd": 1.3706630000000002
+    },
+    {
+      "stage": "clean-3/3",
+      "prompt_sha256": "9e8d2bd73b78dcf7c13a713028bf1c50dea8bb3339c63cbf58e76e79c5bc6b66",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 2,
+        "output": 1333,
+        "cache_read": 5166,
+        "cache_write": 11531
+      },
+      "cost_usd": 0.151228
+    },
+    {
+      "stage": "summary",
+      "prompt_sha256": "bb2c9b164b2a5eab22bbd13c9e4908bd144c429f64de0b80b20f4c70ad3a02e4",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 2,
+        "output": 25813,
+        "cache_read": 5166,
+        "cache_write": 35081
+      },
+      "cost_usd": 0.9987279999999998
+    },
+    {
+      "stage": "summary-cached",
+      "cost_usd": 0
+    }
+  ],
+  "totals": {
+    "input": 8,
+    "output": 98286,
+    "cache_read": 20664,
+    "cache_write": 101056,
+    "cost_usd": 3.4781
+  },
+  "cost_from_earlier_run": true,
+  "blocks": 115,
+  "sim": 0.9704683778777454,
+  "rows_in": 25,
+  "rows_kept": 21,
+  "needs_review": 4,
+  "rejected": [
+    "GOOGL p-26：那一段沒有提到這一檔",
+    "GOOGL p-27：那一段沒有提到這一檔",
+    "MSFT p-49：那一段沒有提到這一檔",
+    "INTC p-84：那一段沒有提到這一檔"
+  ],
+  "notes_ratio": null
+}

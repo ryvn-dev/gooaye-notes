@@ -1,0 +1,3624 @@
+{
+  "schema_version": 2,
+  "show": "gooaye",
+  "show_name": "股癌",
+  "episode_id": "gooaye-2026-09-05-977815e1",
+  "ep_number": 694,
+  "ep_number_source": "feed",
+  "ep_inferred": false,
+  "slug": "0694",
+  "published_at": "2026-09-05",
+  "duration_s": 3039,
+  "audio_url": "https://rss.soundon.fm/rssf/954689a5-3096-43a4-a80b-7810b219cef3/feedurl/bfdf7f30-6031-4eef-a689-16129f261d10/rssFileVip.mp3?timestamp=1788631582241",
+  "youtube_id": null,
+  "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/bfdf7f30-6031-4eef-a689-16129f261d10",
+  "source_is_episode": true,
+  "show_site": "https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63",
+  "host": "謝孟恭",
+  "published_at_rss": "Sat, 05 Sep 2026 07:30:33 GMT",
+  "transcript_display": "full",
+  "feed_title": "EP694 | 🥖",
+  "site_title": "EP694 | 🥖",
+  "summary_answer_first": "他說 Broadcom 財報好，股價沒漲只是還沒輪到。他說盤在中場休息，要縮槓桿、耐心蹲著。",
+  "summary": "他昨天去一場全英文的科技論壇分享。他說他們的創投在初級市場做價值投資。他說這跟次級市場的動能操作剛好相反。他說內容爆量之後，好的內容反而更貴。他說現在是講信用的時代，砸了回不來。他說真正的國際化是臺灣資本走出去。他說他們想證明投資臺灣團隊能有收益。他說九月的盤很震盪，動能很難做。他說 Broadcom 財報與長期指引都很好。他說需求千真萬確，不是互相灌水。他說聯發科首度被點名，是一個利多。他說股價不漲只是還沒漲，要有耐心。他說 Cybercab 的馬達不用稀土。他說注意力是資產，要少對外發散。",
+  "key_points": [
+    {
+      "t": 72,
+      "text": "他昨天去一場全英文的科技論壇分享。"
+    },
+    {
+      "t": 218,
+      "text": "他說次級市場做動能，初級市場做價值投資。"
+    },
+    {
+      "t": 489,
+      "text": "他說內容爆量之後，好的內容反而更貴。"
+    },
+    {
+      "t": 575,
+      "text": "他說臺灣資本到各地設廠才是真國際化。"
+    },
+    {
+      "t": 698,
+      "text": "他說他們幫團隊搞定募資與合約人脈。"
+    },
+    {
+      "t": 938,
+      "text": "他說九月的盤很震盪，追動能容易賠錢。"
+    },
+    {
+      "t": 1000,
+      "text": "他說 Broadcom 財報開得非常好。"
+    },
+    {
+      "t": 1111,
+      "text": "他說微軟明年 CAPEX 會開很高。"
+    },
+    {
+      "t": 1244,
+      "text": "他說聯發科首度被 Broadcom 點名成對手。"
+    },
+    {
+      "t": 1439,
+      "text": "他說股價不漲不代表基本面不會開上去。"
+    },
+    {
+      "t": 1573,
+      "text": "他說 Cybercab 的馬達不用稀土。"
+    },
+    {
+      "t": 1771,
+      "text": "他說 FDE 這種通才會是新的需求來源。"
+    }
+  ],
+  "segment_tags": [
+    "創投",
+    "內容產業",
+    "AI",
+    "半導體",
+    "ASIC",
+    "美股",
+    "台股",
+    "軟體"
+  ],
+  "topics": [],
+  "mentions": [
+    {
+      "ticker": "MSFT",
+      "display_name": "微軟",
+      "short_name": "微軟",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 1112,
+      "stance": "bullish",
+      "stances": [
+        "bullish"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "他轉述 CAPEX 開很高，沒有反駁。",
+      "t": 1111,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/MSFT",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": null,
+      "first_anchor": "s-48-0"
+    },
+    {
+      "ticker": "GOOGL",
+      "display_name": "Alphabet",
+      "short_name": "Alphabet",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 1067,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "只是當成晶片流向的背景被點到。",
+      "t": 1060,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 338.36,
+        "last_date": "2026-09-18",
+        "last": 349.54,
+        "pct": 3.3,
+        "d5": 2,
+        "d21": null
+      },
+      "first_anchor": "s-46-0"
+    },
+    {
+      "ticker": "AAPL",
+      "display_name": "蘋果",
+      "short_name": "蘋果",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 1289,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "只是被列舉成殺手比喻的對象。",
+      "t": 1283,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 316.22,
+        "last_date": "2026-09-18",
+        "last": 336.13,
+        "pct": 6.3,
+        "d5": 4.8,
+        "d21": null
+      },
+      "first_anchor": "s-56-1"
+    },
+    {
+      "ticker": "TW:2454",
+      "display_name": "聯發科",
+      "short_name": "聯發科",
+      "market": "TW",
+      "mention_count": 1,
+      "first_ts_s": 1298,
+      "stance": "neutral",
+      "stances": [
+        "neutral"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "這段只交代被點名的事實，方向在後面才講。",
+      "t": 1211,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/2454.TW",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 4,
+      "perf": {
+        "base_date": "2026-09-07",
+        "base": 4760,
+        "last_date": "2026-09-21",
+        "last": 4920,
+        "pct": 3.4,
+        "d5": -4.2,
+        "d21": null
+      },
+      "first_anchor": "s-53-2"
+    },
+    {
+      "ticker": "AVGO",
+      "display_name": "博通",
+      "short_name": "博通",
+      "market": "US",
+      "mention_count": null,
+      "first_ts_s": 1000,
+      "stance": "neutral",
+      "stances": [
+        "neutral"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "他說財報開得非常好，整段沒有潑冷水。",
+      "t": 1000,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/AVGO",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 8,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 368.56,
+        "last_date": "2026-09-18",
+        "last": 357.61,
+        "pct": -3,
+        "d5": -7.9,
+        "d21": null
+      },
+      "first_anchor": "s-44-0"
+    },
+    {
+      "ticker": "NVDA",
+      "display_name": "輝達",
+      "short_name": "輝達",
+      "market": "US",
+      "mention_count": null,
+      "first_ts_s": 1031,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "只是被列舉成出手協助的一方。",
+      "t": 1031,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/NVDA",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 5,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 225.73,
+        "last_date": "2026-09-18",
+        "last": 222.27,
+        "pct": -1.5,
+        "d5": -6,
+        "d21": null
+      },
+      "first_anchor": "s-45-1"
+    },
+    {
+      "ticker": "TSM",
+      "display_name": "台積電 ADR",
+      "short_name": "台積電",
+      "market": "US",
+      "mention_count": null,
+      "first_ts_s": 1156,
+      "stance": "neutral",
+      "stances": [
+        "neutral"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "他說公司很好，但這幾個月沒有給收益。",
+      "t": 1156,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/TSM",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 439,
+        "last_date": "2026-09-18",
+        "last": 434.67,
+        "pct": -1,
+        "d5": -5.8,
+        "d21": null
+      },
+      "first_anchor": "s-50-2"
+    },
+    {
+      "ticker": "TSLA",
+      "display_name": "特斯拉",
+      "short_name": "特斯拉",
+      "market": "US",
+      "mention_count": null,
+      "first_ts_s": 1283,
+      "stance": "neutral",
+      "stances": [
+        "neutral"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "只是拿它當最強者的比喻。",
+      "t": 1283,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/TSLA",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 2,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 368.16,
+        "last_date": "2026-09-18",
+        "last": 364.27,
+        "pct": -1.1,
+        "d5": -3.1,
+        "d21": null
+      },
+      "first_anchor": "s-56-0"
+    },
+    {
+      "ticker": "CRM",
+      "display_name": "Salesforce",
+      "short_name": "Salesforce",
+      "market": "US",
+      "mention_count": null,
+      "first_ts_s": 1607,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": "主持人",
+      "quote": null,
+      "reason": "只是回頭提之前聊過的合作案。",
+      "t": 1607,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/CRM",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "summary",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 1,
+      "perf": {
+        "base_date": "2026-09-08",
+        "base": 249.12,
+        "last_date": "2026-09-18",
+        "last": 237.92,
+        "pct": -4.5,
+        "d5": 2.6,
+        "d21": null
+      },
+      "first_anchor": "s-70-1"
+    },
+    {
+      "ticker": "JNJ",
+      "display_name": "嬌生",
+      "short_name": "嬌生",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 624,
+      "stance": "mentioned",
+      "stances": [
+        "mentioned"
+      ],
+      "speaker": null,
+      "quote": null,
+      "reason": null,
+      "t": 624,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/JNJ",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "transcript",
+      "publish": true,
+      "needs_review": false,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null,
+      "row_count": 0,
+      "perf": null,
+      "first_anchor": "s-27-3"
+    },
+    {
+      "ticker": "JNJ",
+      "display_name": "嬌生",
+      "short_name": "嬌生",
+      "market": "US",
+      "mention_count": 1,
+      "first_ts_s": 649,
+      "stance": "mentioned",
+      "stances": [],
+      "speaker": null,
+      "quote": null,
+      "reason": null,
+      "t": null,
+      "jev_prob": null,
+      "jev_question": null,
+      "yahoo_url": "https://finance.yahoo.com/quote/JNJ",
+      "px_1d": null,
+      "px_5d": null,
+      "px_21d": null,
+      "source": "extractor",
+      "publish": false,
+      "needs_review": true,
+      "flag_reason": null,
+      "stance_p": null,
+      "stance_margin": null,
+      "is_about_p": null
+    }
+  ],
+  "blocks": [
+    {
+      "kind": "p",
+      "t": 0,
+      "ad": false,
+      "text": "歡迎收聽股癌，我是謝孟恭。",
+      "sentences": [
+        {
+          "text": "歡迎收聽股癌，我是謝孟恭。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2,
+      "ad": true,
+      "text": "本期節目由善存葉黃素贊助。每天跟盤、研究財報、追蹤市場訊息，你的投資組合在升級，但保養有跟上嗎？投資要做功課，保養當然也不能只靠感覺。今天跟大家分享理財神器善存葉黃素。善存採用美國專利 FloraGLO 遊離型葉黃素，好吸收高 17%，而且一天只要一顆，就能夠輕鬆補充 20 毫克葉黃素，效率做好有生保養。重點是善存葉黃素成分精研究，不止三週看見不同，更有超過百篇科學研究發表。",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 32,
+      "ad": true,
+      "text": "如果你是忙碌上班族、常常出差，或是不喜歡吞膠囊的人，也可以選擇善存新推出的葉黃素精華凍。四合一水量配方含葉黃素、玉米黃素、蝦紅素與花青素，幫助儘量有神、滋潤補給。Q 彈果凍口感，酸甜好吃，攜帶方便，不管上班、旅行還是全家一起補充都很適合。",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 52,
+      "ad": true,
+      "text": "投資市場講究長期佈局，保養也一樣。趁這次 Momo 現實又會，把葉黃素一次補好補滿。現在下單善存葉黃素膠囊或是精華凍二入組組，也就是加碼送你二盒挺立鈣 28 錠，買二送二，簡直不要太划算。投資股票也不用了投資自己的健康。詳細資訊和商品連結都放在資訊上，有興趣的朋友可以點進去看看。",
+      "sentences": []
+    },
+    {
+      "kind": "h2",
+      "text": "全英文論壇與初級市場的價值投資",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 72,
+      "ad": false,
+      "text": "那昨天參加了一場蠻有趣的活動，是 Startup Spheres 舉辦的，關於 AI 科技跟娛樂相關的一個論壇。那這個 Panel Talk，它是全英文的一個模式，所以我一開始是有點緊張啦。因為我雖然算是會講英文，可是我並沒有在這種公開場合去講英文，甚至是要跟幾個講者要互動、要分享這些想法，這樣的經驗是沒有的。所以其實一直在想說，會不會有可能跑去雷人家，但是後面看起來是還好。",
+      "sentences": [
+        {
+          "text": "那昨天參加了一場蠻有趣的活動，是 Startup Spheres 舉辦的，關於 AI 科技跟娛樂相關的一個論壇。",
+          "key_point": 0,
+          "marks": []
+        },
+        {
+          "text": "那這個 Panel Talk，它是全英文的一個模式，所以我一開始是有點緊張啦。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為我雖然算是會講英文，可是我並沒有在這種公開場合去講英文，甚至是要跟幾個講者要互動、要分享這些想法，這樣的經驗是沒有的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以其實一直在想說，會不會有可能跑去雷人家，但是後面看起來是還好。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 98,
+      "ad": false,
+      "text": "非常感謝 Charles 的邀請，非常感謝相關團隊，有看到我們蕭南資本，讓我們去跟同臺的像是 Kevin Lin，他是 Lifelike 的 Founder，然後他以前是 Twitch 的創辦人，然後再來另外一位是 Sony Ventures 的 Katsan。所以就是跟這些大咖們一起去討論關於在 AI 科技或者娛樂相關的內容，對我來講是收穫非常的大。",
+      "sentences": [
+        {
+          "text": "非常感謝 Charles 的邀請，非常感謝相關團隊，有看到我們蕭南資本，讓我們去跟同臺的像是 Kevin Lin，他是 Lifelike 的 Founder，然後他以前是 Twitch 的創辦人，然後再來另外一位是 Sony Ventures 的 Katsan。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以就是跟這些大咖們一起去討論關於在 AI 科技或者娛樂相關的內容，對我來講是收穫非常的大。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 119,
+      "ad": false,
+      "text": "那這個活動，我覺得本身也算是持續的幫我們肖南資本去獲得更多的一些關注。那其實我們目前是沒有任何對外募資，或者說我們需要跟市場找錢的一個動機是零，因為我們自己本身其實就算還有蠻有錢的，我們的股東大家都是很願意在持續的投入。那目前我們的 Portfolio 的表現也都還蠻不錯，一個未公開的遊戲獲得巨大的成功在海外，那另外一個已公開的遊戲 Rubonite，那獲得了 3000 個，然後現在都是壓倒性好評，在各地的市場都有很好的一個 feedback。所以我覺得就是我們目前的前途看起來在蠻光明的，那大家也都是非常相信我們是在做一件對的事情。",
+      "sentences": [
+        {
+          "text": "那這個活動，我覺得本身也算是持續的幫我們肖南資本去獲得更多的一些關注。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那其實我們目前是沒有任何對外募資，或者說我們需要跟市場找錢的一個動機是零，因為我們自己本身其實就算還有蠻有錢的，我們的股東大家都是很願意在持續的投入。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那目前我們的 Portfolio 的表現也都還蠻不錯，一個未公開的遊戲獲得巨大的成功在海外，那另外一個已公開的遊戲 Rubonite，那獲得了 3000 個，然後現在都是壓倒性好評，在各地的市場都有很好的一個 feedback。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我覺得就是我們目前的前途看起來在蠻光明的，那大家也都是非常相信我們是在做一件對的事情。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 162,
+      "ad": false,
+      "text": "所以其實到這個論壇上，我知道就是大家會聚焦要聊的東西，是 AI 會怎麼樣去改變這個社會。那現在對 AI 的投資，其實絕大多數人的直覺認知，就是你要盡可能把錢丟進去 AI，特別是像我們自己在次級市場跟股票市場的。你知道在過去一陣子，只要你的東西跟 AI 沒有關係，基本上你就很難漲，除非像最近的金融股非常的雄猛，這個我們就不會參與到，因為其實跟我們的領域有蠻大的一個差距。但絕大多數呢，就來說你是做什麼零元件的、科技業的，如果你沒有沾到 AI 的話，那你過去的 performance 就不好。",
+      "sentences": [
+        {
+          "text": "所以其實到這個論壇上，我知道就是大家會聚焦要聊的東西，是 AI 會怎麼樣去改變這個社會。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那現在對 AI 的投資，其實絕大多數人的直覺認知，就是你要盡可能把錢丟進去 AI，特別是像我們自己在次級市場跟股票市場的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你知道在過去一陣子，只要你的東西跟 AI 沒有關係，基本上你就很難漲，除非像最近的金融股非常的雄猛，這個我們就不會參與到，因為其實跟我們的領域有蠻大的一個差距。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但絕大多數呢，就來說你是做什麼零元件的、科技業的，如果你沒有沾到 AI 的話，那你過去的 performance 就不好。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 194,
+      "ad": false,
+      "text": "所以其實在次級市場裡面，我們已經是花了大量的時間去做，我們甚至把它稱為是 momentum trading，就是一個動能的交易。我們知道說 AI 相關的東西，甚至有些東西我們不求甚解，我們不一定要知道它在幹嘛，我們只要知道說，OK，它就是正在這一波浪潮上面，那它可能會有 AI 的 exposure，那你就可以去買它了。因為你知道未來的東西你很難去具體化，等到你已經完全可以具體化跟想像的時候，其實那股價蠻多時候就漲完了。",
+      "sentences": [
+        {
+          "text": "所以其實在次級市場裡面，我們已經是花了大量的時間去做，我們甚至把它稱為是 momentum trading，就是一個動能的交易。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們知道說 AI 相關的東西，甚至有些東西我們不求甚解，我們不一定要知道它在幹嘛，我們只要知道說，OK，它就是正在這一波浪潮上面，那它可能會有 AI 的 exposure，那你就可以去買它了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為你知道未來的東西你很難去具體化，等到你已經完全可以具體化跟想像的時候，其實那股價蠻多時候就漲完了。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 218,
+      "ad": false,
+      "text": "那所以因為我們在次級市場已經做了很多這種偏向動能交易或者一些想像的東西，那當我們進入初級市場的時候，因為我們假設要想像、要動能，我們本來的工作都可以做，所以我們到初級市場，我們反而是反過來，我們去做價值投資。我們去真正的瞭解團隊，我們去非常深入的去知道他們的 pipeline 大概長什麼樣子，以及他們想要做的東西是什麼，更多人與人之間的接觸。我們進去，就是我們在長頭的，我們在深蹲，我們希望跟著公司一起 compound、一起複利上去，這個是我們的目標。所以我們會非常的有耐心，我們是一個 evergreen fund，做的事情其實跟本來在次級市場做的東西算是相反，所以它是一個非常有趣的體驗。",
+      "sentences": [
+        {
+          "text": "那所以因為我們在次級市場已經做了很多這種偏向動能交易或者一些想像的東西，那當我們進入初級市場的時候，因為我們假設要想像、要動能，我們本來的工作都可以做，所以我們到初級市場，我們反而是反過來，我們去做價值投資。",
+          "key_point": 1,
+          "marks": []
+        },
+        {
+          "text": "我們去真正的瞭解團隊，我們去非常深入的去知道他們的 pipeline 大概長什麼樣子，以及他們想要做的東西是什麼，更多人與人之間的接觸。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們進去，就是我們在長頭的，我們在深蹲，我們希望跟著公司一起 compound、一起複利上去，這個是我們的目標。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我們會非常的有耐心，我們是一個 evergreen fund，做的事情其實跟本來在次級市場做的東西算是相反，所以它是一個非常有趣的體驗。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "內容通膨與好內容反而更值錢",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 261,
+      "ad": false,
+      "text": "那在這種論壇上面，當然大家就會花蠻多的心力去聚焦在 AI 是怎麼樣去創作更多的內容。甚至有一個說法是說，因為我們現在有 AI tooling，那大量的 AI platform 之後呢，其實像是 user generated 的 media，或是說一些創作者，他們現在有這種非常強大的工具，他們可以讓整個內容產業通膨，就是 content inflation。那它會產生問題什麼？就是 abundant，大量的內容；cheap，便宜，因為怎麼講，大家都可以產出。所以會給人家一種感覺，就是那內容是不是在後面會不值錢。",
+      "sentences": [
+        {
+          "text": "那在這種論壇上面，當然大家就會花蠻多的心力去聚焦在 AI 是怎麼樣去創作更多的內容。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "甚至有一個說法是說，因為我們現在有 AI tooling，那大量的 AI platform 之後呢，其實像是 user generated 的 media，或是說一些創作者，他們現在有這種非常強大的工具，他們可以讓整個內容產業通膨，就是 content inflation。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那它會產生問題什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是 abundant，大量的內容；cheap，便宜，因為怎麼講，大家都可以產出。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以會給人家一種感覺，就是那內容是不是在後面會不值錢。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 296,
+      "ad": false,
+      "text": "我相信在 AI 剛出來的時候，就是可能 2023、2024，真的有蠻多人有這樣子的想法。但現在我們已經走到 2026，我相信你各位的想法應該是跟我差不多，就是你直接就看得出來說，一個內容它到底有沒有靈魂。然後就算你有用 AI 去輔助創作，這個我是覺得還好，雖然網路上下已經有很多那種反 AI 分子，他只要發現說某個遊戲工作室，或是某一個什麼畫漫畫、畫圖的，或是一些手遊的裡面的一些插畫，你用了 AI，他們就去抵制你，他們就很討厭。",
+      "sentences": [
+        {
+          "text": "我相信在 AI 剛出來的時候，就是可能 2023、2024，真的有蠻多人有這樣子的想法。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但現在我們已經走到 2026，我相信你各位的想法應該是跟我差不多，就是你直接就看得出來說，一個內容它到底有沒有靈魂。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後就算你有用 AI 去輔助創作，這個我是覺得還好，雖然網路上下已經有很多那種反 AI 分子，他只要發現說某個遊戲工作室，或是某一個什麼畫漫畫、畫圖的，或是一些手遊的裡面的一些插畫，你用了 AI，他們就去抵制你，他們就很討厭。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 323,
+      "ad": false,
+      "text": "但我是比較像中性的，我會覺得說你去使用 AI 作為工具可以，可是如果我發現說，你整個遊戲就只是因為，你知道像他這個類別是很紅，你就用 AI 去硬靠一個東西出來，這種東西你馬上就聞得出來，而且你會非常的倒彈，你會很討厭，你會覺得說他媽有夠惡，然後這個團隊以後你就再也不會看他了。所以我覺得我們現在其實進入一個非常講究信任的時代，信用超級重要。雖然信用在以前就很重要，但在這種內容爆發的時代裡面，信用變得特別的重要，非常的重要。",
+      "sentences": [
+        {
+          "text": "但我是比較像中性的，我會覺得說你去使用 AI 作為工具可以，可是如果我發現說，你整個遊戲就只是因為，你知道像他這個類別是很紅，你就用 AI 去硬靠一個東西出來，這種東西你馬上就聞得出來，而且你會非常的倒彈，你會很討厭，你會覺得說他媽有夠惡，然後這個團隊以後你就再也不會看他了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我覺得我們現在其實進入一個非常講究信任的時代，信用超級重要。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "雖然信用在以前就很重要，但在這種內容爆發的時代裡面，信用變得特別的重要，非常的重要。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 355,
+      "ad": false,
+      "text": "而且以前的信用是，可能回掉之後我們都知道很難重建，但對，有辦法慢慢的把它堆回來。可是在這個時代，因為你選擇太多了，所以你信用回掉，你大概一輩子就回掉了。所以是一個非常需要去珍惜你羽毛的時代，千萬不要想要賺快錢，然後把你的名聲砸掉，因為以後大家都找得到，所有東西都會留下記錄。",
+      "sentences": [
+        {
+          "text": "而且以前的信用是，可能回掉之後我們都知道很難重建，但對，有辦法慢慢的把它堆回來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "可是在這個時代，因為你選擇太多了，所以你信用回掉，你大概一輩子就回掉了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以是一個非常需要去珍惜你羽毛的時代，千萬不要想要賺快錢，然後把你的名聲砸掉，因為以後大家都找得到，所有東西都會留下記錄。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 373,
+      "ad": false,
+      "text": "所以在我們的認知是，雖然沒錯，我們知道說 content inflation，還有大量的 content 在外面，有很多的遊戲圖片或什麼，因為 AI 的一個波波發展導致大量的灌出來，但它並沒有讓我們產生選擇的障礙。不知道大家感受，我並沒有產生選擇的障礙。就像說我還是知道說我要看電影，我要看哪幾個導演的東西；我要玩遊戲，我要玩哪幾個製作人，或是說哪幾個 studio 的東西。因為他們推出來的東西就是很認真的在做，他們很認真的在裡面打磨，這個是我要的東西。",
+      "sentences": [
+        {
+          "text": "所以在我們的認知是，雖然沒錯，我們知道說 content inflation，還有大量的 content 在外面，有很多的遊戲圖片或什麼，因為 AI 的一個波波發展導致大量的灌出來，但它並沒有讓我們產生選擇的障礙。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "不知道大家感受，我並沒有產生選擇的障礙。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就像說我還是知道說我要看電影，我要看哪幾個導演的東西；我要玩遊戲，我要玩哪幾個製作人，或是說哪幾個 studio 的東西。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為他們推出來的東西就是很認真的在做，他們很認真的在裡面打磨，這個是我要的東西。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 403,
+      "ad": false,
+      "text": "所以我相信，就即便大家現在的 public consensus 就是認為 content 會變得不值錢，我們覺得說這可能是一個錯判。就類似那時候說這個 SaaSpocalypse 會殺掉所有的軟體，那隔了一兩年之後才證明說根本沒有這樣子的事情。就是一定有東西會被淘汰掉，那就像我們的老生常談，就是硬體也有東西被淘汰掉嘛，就你不要都想要這個一竿子打翻一船人。如果你用這樣的方式去分析的話，其實會掉入蠻多陷阱的。",
+      "sentences": [
+        {
+          "text": "所以我相信，就即便大家現在的 public consensus 就是認為 content 會變得不值錢，我們覺得說這可能是一個錯判。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就類似那時候說這個 SaaSpocalypse 會殺掉所有的軟體，那隔了一兩年之後才證明說根本沒有這樣子的事情。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是一定有東西會被淘汰掉，那就像我們的老生常談，就是硬體也有東西被淘汰掉嘛，就你不要都想要這個一竿子打翻一船人。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "如果你用這樣的方式去分析的話，其實會掉入蠻多陷阱的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 430,
+      "ad": false,
+      "text": "那一樣的道理就是，當然這些大量的內容產出，他勢必會對一些創作者造成一個排擠的效應，可是他反而會讓那些很認真去創作的人，在這樣的一個時代，你會像是一個非常閃耀的燈塔一樣，大家都會發現你的存在。所以像我們肖蘭資本裡面的一些 portfolio，一個未公開的遊戲團隊在海外獲得巨大的成功，甚至有很多的粉絲會自願的幫他去做一些相關的周邊有趣的東西，這個蠻酷的。",
+      "sentences": [
+        {
+          "text": "那一樣的道理就是，當然這些大量的內容產出，他勢必會對一些創作者造成一個排擠的效應，可是他反而會讓那些很認真去創作的人，在這樣的一個時代，你會像是一個非常閃耀的燈塔一樣，大家都會發現你的存在。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以像我們肖蘭資本裡面的一些 portfolio，一個未公開的遊戲團隊在海外獲得巨大的成功，甚至有很多的粉絲會自願的幫他去做一些相關的周邊有趣的東西，這個蠻酷的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 462,
+      "ad": false,
+      "text": "公開的案例，像是我們 Rubinite，他獲得了 3000 壓倒性好評，就是他後面的評價數量是很快的就衝上去，然後在全球市場都獲得一個巨大的成功。其實我是相信說，他隨時都有機會再 spike 一次，就是只要哪一個海外的實況組發現這個這麼經典、這麼讚的遊戲，那有可能他跑去播了之後，又會有很多新的風潮跑出來，所以他會變成是一個長尾的 IP，我覺得在後面其實會有蠻多這種發揮的空間。",
+      "sentences": [
+        {
+          "text": "公開的案例，像是我們 Rubinite，他獲得了 3000 壓倒性好評，就是他後面的評價數量是很快的就衝上去，然後在全球市場都獲得一個巨大的成功。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "其實我是相信說，他隨時都有機會再 spike 一次，就是只要哪一個海外的實況組發現這個這麼經典、這麼讚的遊戲，那有可能他跑去播了之後，又會有很多新的風潮跑出來，所以他會變成是一個長尾的 IP，我覺得在後面其實會有蠻多這種發揮的空間。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 489,
+      "ad": false,
+      "text": "所以我們不認為說，因為有大量的 AI 工具就會導致內容通膨、導致內容不值錢。對，它會有大量的內容，可是內容不會變得不值錢，反而是好的內容會變得更加值錢，因為大家真的是受夠了那些粗製濫造的東西。這個可能是我們在市場上的一些看法。",
+      "sentences": [
+        {
+          "text": "所以我們不認為說，因為有大量的 AI 工具就會導致內容通膨、導致內容不值錢。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "對，它會有大量的內容，可是內容不會變得不值錢，反而是好的內容會變得更加值錢，因為大家真的是受夠了那些粗製濫造的東西。",
+          "key_point": 2,
+          "marks": []
+        },
+        {
+          "text": "這個可能是我們在市場上的一些看法。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "真正的國際化是資本走出去",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 509,
+      "ad": false,
+      "text": "那我分享的另外一個觀點呢，是就是在過去，我們都知道說臺灣是一個島國嘛，所以其實有蠻多人都在倡議說要國際化、要 more international 或什麼的。那其實像這樣的東西，這個小時候我們一定也都受影響過，你要好好地把一些語言學好，這我也是非常的認同。那再來就是說，你要多看一點什麼海外的報導，有一段時間就跟大家講說，你一定要每天看 CNN，你要每天做什麼。",
+      "sentences": [
+        {
+          "text": "那我分享的另外一個觀點呢，是就是在過去，我們都知道說臺灣是一個島國嘛，所以其實有蠻多人都在倡議說要國際化、要 more international 或什麼的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那其實像這樣的東西，這個小時候我們一定也都受影響過，你要好好地把一些語言學好，這我也是非常的認同。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那再來就是說，你要多看一點什麼海外的報導，有一段時間就跟大家講說，你一定要每天看 CNN，你要每天做什麼。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 531,
+      "ad": false,
+      "text": "那之後來大家就發現說，你知道一些那種海外的主流媒體，其實你知道每個人都還是有一些意識形態，但是有些人的意識形態是強盜，就是他認為只有他的想法是對的，那你有任何其他的想法，他就會幫你蓋一個印章，他就會幫你去貼上一些標籤。那他其實已經變成是某程度上的病毒了，所以你是把境外的病毒引進來。所以並不是說什麼跟國際接軌就一定是比較好的，你要看你是跟什麼東西接軌。",
+      "sentences": [
+        {
+          "text": "那之後來大家就發現說，你知道一些那種海外的主流媒體，其實你知道每個人都還是有一些意識形態，但是有些人的意識形態是強盜，就是他認為只有他的想法是對的，那你有任何其他的想法，他就會幫你蓋一個印章，他就會幫你去貼上一些標籤。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那他其實已經變成是某程度上的病毒了，所以你是把境外的病毒引進來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以並不是說什麼跟國際接軌就一定是比較好的，你要看你是跟什麼東西接軌。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 555,
+      "ad": false,
+      "text": "那再來呢，其實國際化後來講到最後，它會變成是一種空談，就是說我很國際化，我直接就要看海外的東西，so on。那你到底做了什麼事情？對吧，你就只是一個談資，對不對？就跟很多人把 AI 當成是談資是一樣的道理，你沒有辦法把它用到你的工作，你沒有真的進入到資本的運作，其實很多時候你就只是講講，你就只是聊聊。",
+      "sentences": [
+        {
+          "text": "那再來呢，其實國際化後來講到最後，它會變成是一種空談，就是說我很國際化，我直接就要看海外的東西，so on。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那你到底做了什麼事情？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "對吧，你就只是一個談資，對不對？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就跟很多人把 AI 當成是談資是一樣的道理，你沒有辦法把它用到你的工作，你沒有真的進入到資本的運作，其實很多時候你就只是講講，你就只是聊聊。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 575,
+      "ad": false,
+      "text": "那在我現在看來，真正的國際化，像最近的幾年就是國際化，就是臺灣的一些資本工廠，它跑到各地去設廠，它跑到各地去投資，這個就是一個很屌的國際化的一個時間。那臺灣的資本市場在全球的排名，我記得前陣子是跑到第四第五名去。你可以想像嗎？臺灣這麼小的一個地方，我們的上市櫃 Market Cap 加起來竟然是全世界的第四第五名，這他媽殺小。",
+      "sentences": [
+        {
+          "text": "那在我現在看來，真正的國際化，像最近的幾年就是國際化，就是臺灣的一些資本工廠，它跑到各地去設廠，它跑到各地去投資，這個就是一個很屌的國際化的一個時間。",
+          "key_point": 3,
+          "marks": []
+        },
+        {
+          "text": "那臺灣的資本市場在全球的排名，我記得前陣子是跑到第四第五名去。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你可以想像嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "臺灣這麼小的一個地方，我們的上市櫃 Market Cap 加起來竟然是全世界的第四第五名，這他媽殺小。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 599,
+      "ad": false,
+      "text": "所以大家一直在討論說，要怎麼樣讓海外的 investor senpai notice me，要讓這個 senpai 看到我們。沒有呢，現在其實是我們要不要去看別人，是這樣，是別人要進來問說我們要不要去投資他們。所以像我在昨天一個蠻特別的體驗是，有好幾位海外的 founder 然後在會後跑來跟我遞名片，然後希望我可以看一下他們的團隊，對嗎？這個就是我們想要看到的一個東西。",
+      "sentences": [
+        {
+          "text": "所以大家一直在討論說，要怎麼樣讓海外的 investor senpai notice me，要讓這個 senpai 看到我們。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "沒有呢，現在其實是我們要不要去看別人，是這樣，是別人要進來問說我們要不要去投資他們。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以像我在昨天一個蠻特別的體驗是，有好幾位海外的 founder 然後在會後跑來跟我遞名片，然後希望我可以看一下他們的團隊，對嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個就是我們想要看到的一個東西。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 624,
+      "ad": false,
+      "text": "我認為說，其實臺灣是一個資本豐沛的地方，那當然我們的環境還是相對的保守，我覺得那在一個轉換期。就類似說，可能有時候我們看到一些歐美的生活形態或怎麼樣的，你想說為什麼臺灣不能夠像我們那樣？沒有，那就是說你有錢一陣子之後，你可能就會長得像那樣子，然後接著你會慢慢的往下走。反正就是一個不好的環境會產生非常堅韌的人，那堅韌的人就會產生很多的錢、產生好的環境，那好的環境就會再產生可能就是嬌生慣養的一群人，然後我們就開始產生一些奇怪的想法，然後這也就會進入不好，所以它是一個迴圈。",
+      "sentences": [
+        {
+          "text": "我認為說，其實臺灣是一個資本豐沛的地方，那當然我們的環境還是相對的保守，我覺得那在一個轉換期。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就類似說，可能有時候我們看到一些歐美的生活形態或怎麼樣的，你想說為什麼臺灣不能夠像我們那樣？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "沒有，那就是說你有錢一陣子之後，你可能就會長得像那樣子，然後接著你會慢慢的往下走。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "反正就是一個不好的環境會產生非常堅韌的人，那堅韌的人就會產生很多的錢、產生好的環境，那好的環境就會再產生可能就是嬌生慣養的一群人，然後我們就開始產生一些奇怪的想法，然後這也就會進入不好，所以它是一個迴圈。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "JNJ",
+              "stance": "mentioned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 656,
+      "ad": false,
+      "text": "那我覺得現在我們就是在一個非常強大的風口浪尖，大家在往上爬。那所以我們不用過度去聚焦說，怎麼樣讓海外的人然後看到我們有什麼，因為這也很虛，這到底在講什麼？而是你怎麼樣讓臺灣的人願意去投資，我覺得這樣就好了。",
+      "sentences": [
+        {
+          "text": "那我覺得現在我們就是在一個非常強大的風口浪尖，大家在往上爬。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那所以我們不用過度去聚焦說，怎麼樣讓海外的人然後看到我們有什麼，因為這也很虛，這到底在講什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "而是你怎麼樣讓臺灣的人願意去投資，我覺得這樣就好了。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "幫臺灣內容團隊做出投資案例",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 671,
+      "ad": false,
+      "text": "所以像我們孝岸資本在做一件事情，就是我們想要去證明給資本市場看，就是你是可以去投資一些臺灣的新創團隊、內容團隊，並且能獲得收益的。這個 IP Catalog，它是值錢的，它是一個 long term asset，它並不是說就只是一個夢想、好玩，丟進去可能一下子就會不見，或是有一堆詐騙的人在裡面。沒錯，它確實是需要一些整頓，但是我們有非常多厲害的團隊。",
+      "sentences": [
+        {
+          "text": "所以像我們孝岸資本在做一件事情，就是我們想要去證明給資本市場看，就是你是可以去投資一些臺灣的新創團隊、內容團隊，並且能獲得收益的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個 IP Catalog，它是值錢的，它是一個 long term asset，它並不是說就只是一個夢想、好玩，丟進去可能一下子就會不見，或是有一堆詐騙的人在裡面。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "沒錯，它確實是需要一些整頓，但是我們有非常多厲害的團隊。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 698,
+      "ad": false,
+      "text": "你知道我們前面的那些大前輩們，好像是 Sigono，然後像是 Red Candles，好像是赤燭，非常的強大，然後帶著後面的團隊就是一波一波的出來，我覺得就是那種母雞帶小雞的感覺。然後我們能夠做什麼？因為我們不會做遊戲，我們不會開發遊戲，但是我們會什麼？我們會搞那個 Infrastructure Layer，我們會幫你去把最難的募資給弄好。合約不會簽是不是？然後這個代理商不知道怎麼找？我們都會有一些人脈可以幫忙大家把這些事情做好。所以你們做你最會的東西，我們去做你不會的東西，我們結合在一起，天下無敵。",
+      "sentences": [
+        {
+          "text": "你知道我們前面的那些大前輩們，好像是 Sigono，然後像是 Red Candles，好像是赤燭，非常的強大，然後帶著後面的團隊就是一波一波的出來，我覺得就是那種母雞帶小雞的感覺。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後我們能夠做什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為我們不會做遊戲，我們不會開發遊戲，但是我們會什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們會搞那個 Infrastructure Layer，我們會幫你去把最難的募資給弄好。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "合約不會簽是不是？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後這個代理商不知道怎麼找？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們都會有一些人脈可以幫忙大家把這些事情做好。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以你們做你最會的東西，我們去做你不會的東西，我們結合在一起，天下無敵。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 728,
+      "ad": false,
+      "text": "我就覺得這個是很有機會的，如果說有人願意下來像我們這樣子去證明給大家看。因為你在這之前你沒有案例，沒有案例大家不會相信，就可能講到一些產業，大家講說那個是詐騙，因為就是沒有案例。所以我們在做的事情，就是我們希望可以去創造一些案例。我們認為不一定一定要從可能國外搬遷進來，我們就是在國內，像我們自己，像我自己都還願意再繼續爭執下去，因為我就是看到希望。",
+      "sentences": [
+        {
+          "text": "我就覺得這個是很有機會的，如果說有人願意下來像我們這樣子去證明給大家看。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為你在這之前你沒有案例，沒有案例大家不會相信，就可能講到一些產業，大家講說那個是詐騙，因為就是沒有案例。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我們在做的事情，就是我們希望可以去創造一些案例。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們認為不一定一定要從可能國外搬遷進來，我們就是在國內，像我們自己，像我自己都還願意再繼續爭執下去，因為我就是看到希望。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 753,
+      "ad": false,
+      "text": "我覺得你知道，就跟人在生活中、生命中一樣，你必須要看到有蠟燭在盡頭等你。如果說前面都是黑的話，大家都不敢走；如果你看到蠟燭在那邊等你，即便看到蠟燭的人是很少數人，但是我一直在往前走，你看到我在往前走，你可能想說我可能可以尬廣跟上，大家都會想要跟著上來。這個是我們想要去證明的，我們想要去把它做好的。",
+      "sentences": [
+        {
+          "text": "我覺得你知道，就跟人在生活中、生命中一樣，你必須要看到有蠟燭在盡頭等你。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "如果說前面都是黑的話，大家都不敢走；如果你看到蠟燭在那邊等你，即便看到蠟燭的人是很少數人，但是我一直在往前走，你看到我在往前走，你可能想說我可能可以尬廣跟上，大家都會想要跟著上來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個是我們想要去證明的，我們想要去把它做好的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 775,
+      "ad": false,
+      "text": "所以臺灣是一個非常大的消費者。在過去在遊戲界，其實像是在手遊裡面好像是全世界第七名，那你知道用人均來看是非常高的，因為我們人口這麼少。然後再來就是，如果你要看整個遊戲產業的一個規模的話，我們應該也有個三到五 B 以上的一個規模。所以其實臺灣是非常強大的消費者，累積了一群會玩遊戲、會去看動漫、會喜歡這種什麼二次元有的沒有的人，非常會消費，也很有錢。",
+      "sentences": [
+        {
+          "text": "所以臺灣是一個非常大的消費者。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "在過去在遊戲界，其實像是在手遊裡面好像是全世界第七名，那你知道用人均來看是非常高的，因為我們人口這麼少。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後再來就是，如果你要看整個遊戲產業的一個規模的話，我們應該也有個三到五 B 以上的一個規模。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以其實臺灣是非常強大的消費者，累積了一群會玩遊戲、會去看動漫、會喜歡這種什麼二次元有的沒有的人，非常會消費，也很有錢。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 806,
+      "ad": false,
+      "text": "那我們想要證明的是，我們也可以當一個非常好的創作者。當然其實在十幾年前就有了，我們小時候都玩一些什麼仙劍或什麼的，只是現在是一個新的風潮。我覺得很多的 indie game、很多 single A、AA studios 會在這一波會冒出來。為什麼？因為他們可以去槓桿這些新的 AI。",
+      "sentences": [
+        {
+          "text": "那我們想要證明的是，我們也可以當一個非常好的創作者。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "當然其實在十幾年前就有了，我們小時候都玩一些什麼仙劍或什麼的，只是現在是一個新的風潮。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我覺得很多的 indie game、很多 single A、AA studios 會在這一波會冒出來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "為什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為他們可以去槓桿這些新的 AI。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "新創遊戲團隊的半導體式分工",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 822,
+      "ad": false,
+      "text": "有點像是說，我們平常聊的半導體，我們知道說 IC Design House、Fabless，他們有 Fab，他們就去做設計，然後他會有一些 EDA tool，有一些拼圖可以給他去做使用，接著他找到 Foundry 去幫他生產晶片，然後再找到 OSAT，然後組裝廠把東西做出來。那其實一樣的一個模式，其實現在在這些新創遊戲，我覺得我們也是有看到，他們就是這些 design house，然後他使用的這些 fab 就是 AI 相關的工具，他的 EDA tool 就是那些開發的引擎，這些東西都是可以用租的。",
+      "sentences": [
+        {
+          "text": "有點像是說，我們平常聊的半導體，我們知道說 IC Design House、Fabless，他們有 Fab，他們就去做設計，然後他會有一些 EDA tool，有一些拼圖可以給他去做使用，接著他找到 Foundry 去幫他生產晶片，然後再找到 OSAT，然後組裝廠把東西做出來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那其實一樣的一個模式，其實現在在這些新創遊戲，我覺得我們也是有看到，他們就是這些 design house，然後他使用的這些 fab 就是 AI 相關的工具，他的 EDA tool 就是那些開發的引擎，這些東西都是可以用租的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 851,
+      "ad": false,
+      "text": "然後再來 distribution layer，我們直接交給 Steam 去做，30% 沒問題，還是很快樂的給你，你幫我打到全世界去。而且像我們自己的遊戲都上過 Steam 的排行榜，然後跟在 Steam 的首頁有出現，所以這個對我們來講是一個非常強大的曝光。所以現在的創作者，他們其實在一個很幸運的時代，就是你不要被表象給矇蔽了，好像說 AI 工具讓大家都可以創作。沒有，你如果真的有靈魂的東西，現在是一個極好的時代。",
+      "sentences": [
+        {
+          "text": "然後再來 distribution layer，我們直接交給 Steam 去做，30% 沒問題，還是很快樂的給你，你幫我打到全世界去。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "而且像我們自己的遊戲都上過 Steam 的排行榜，然後跟在 Steam 的首頁有出現，所以這個對我們來講是一個非常強大的曝光。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以現在的創作者，他們其實在一個很幸運的時代，就是你不要被表象給矇蔽了，好像說 AI 工具讓大家都可以創作。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "沒有，你如果真的有靈魂的東西，現在是一個極好的時代。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 877,
+      "ad": false,
+      "text": "你可以用小成本，然後所有東西都租的。你知道以前你可能開發一個遊戲，你要自己架伺服器，要找多少人，工程師一堆；那現在你可能去用便宜的方式，你去租用這些工具、新的科技，你就可以把你的東西推到全世界去。那其實它就會把一個產業，從本來的就是怎麼講，類似說是 Hit Driven，就是我丟一個東西，如果說沒有中的話，那我可能就直接就倒了、就 bye 了這樣。",
+      "sentences": [
+        {
+          "text": "你可以用小成本，然後所有東西都租的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你知道以前你可能開發一個遊戲，你要自己架伺服器，要找多少人，工程師一堆；那現在你可能去用便宜的方式，你去租用這些工具、新的科技，你就可以把你的東西推到全世界去。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那其實它就會把一個產業，從本來的就是怎麼講，類似說是 Hit Driven，就是我丟一個東西，如果說沒有中的話，那我可能就直接就倒了、就 bye 了這樣。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 902,
+      "ad": false,
+      "text": "可是在我們資本加入的運作之下，是我們可以點點成心、星星之火燎原，我就是每個東西丟一點、丟一點、丟一點，這樣那最終呢，我們一定會有辦法就打進去遊戲的那些名人堂裡面，然後成為 Steam 上面歷久不衰的 IP，那後面產生的那個長尾就是非常的恐怖。所以它一定是一個可以做的模式，那只是我們必須要證明給大家看，那也希望在未來的幾年可以去證明這件事情，他可能算是我近年最重要的目標。這邊稍微跟大家分享這次去 Startup Spheres 的一些感受，也非常感謝有這樣的機會，可以跟這麼多厲害的人同臺。大概這樣子。",
+      "sentences": [
+        {
+          "text": "可是在我們資本加入的運作之下，是我們可以點點成心、星星之火燎原，我就是每個東西丟一點、丟一點、丟一點，這樣那最終呢，我們一定會有辦法就打進去遊戲的那些名人堂裡面，然後成為 Steam 上面歷久不衰的 IP，那後面產生的那個長尾就是非常的恐怖。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以它一定是一個可以做的模式，那只是我們必須要證明給大家看，那也希望在未來的幾年可以去證明這件事情，他可能算是我近年最重要的目標。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這邊稍微跟大家分享這次去 Startup Spheres 的一些感受，也非常感謝有這樣的機會，可以跟這麼多厲害的人同臺。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "大概這樣子。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "震盪盤的節奏與博通財報解讀",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 938,
+      "ad": false,
+      "text": "9 月至今雖然才 5 天，但就是一個非常震盪的盤，也蠻難搞的。如果你今天想要做動能的話，你應該，我覺得可能短短在幾個禮拜內應該就輸掉蠻多錢的，因為形態上去你就必須要追，交易就是這樣子做，掉下來你又要再把它減碼再砍掉。反而是那些可能傻傻抱著，你會注意到你在過去的一段時間，其實你的淨值應該甚至會是慢慢的往上墊。",
+      "sentences": [
+        {
+          "text": "9 月至今雖然才 5 天，但就是一個非常震盪的盤，也蠻難搞的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "如果你今天想要做動能的話，你應該，我覺得可能短短在幾個禮拜內應該就輸掉蠻多錢的，因為形態上去你就必須要追，交易就是這樣子做，掉下來你又要再把它減碼再砍掉。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "反而是那些可能傻傻抱著，你會注意到你在過去的一段時間，其實你的淨值應該甚至會是慢慢的往上墊。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 963,
+      "ad": false,
+      "text": "就是說這個盤子可以做的，只是你如果用 4 到 7 月的那段時間的做法去做的話，就會持續的沒有錢，這也是我們在過去一陣子去跟大家提醒的。那當然其實我們不知道什麼時候會轉回動能，等到盤真的就轉回動能的時候，那些持續做的他一定會收穫到最多。然後等到其他人發現說，現在又回去可能 4 到 7 月那樣的盤的時候，那他們又會再一次的又追在相對的高點。這就是為什麼很多人前仆後繼都會持續的去做某一些策略。你不能夠在盤不好的時候就拒絕去做，你可以把部位縮小，你可以有一些風控，可是你理論上還是要持續的去做，所以會稍微的辛苦一點。",
+      "sentences": [
+        {
+          "text": "就是說這個盤子可以做的，只是你如果用 4 到 7 月的那段時間的做法去做的話，就會持續的沒有錢，這也是我們在過去一陣子去跟大家提醒的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那當然其實我們不知道什麼時候會轉回動能，等到盤真的就轉回動能的時候，那些持續做的他一定會收穫到最多。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後等到其他人發現說，現在又回去可能 4 到 7 月那樣的盤的時候，那他們又會再一次的又追在相對的高點。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這就是為什麼很多人前仆後繼都會持續的去做某一些策略。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你不能夠在盤不好的時候就拒絕去做，你可以把部位縮小，你可以有一些風控，可是你理論上還是要持續的去做，所以會稍微的辛苦一點。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1000,
+      "ad": false,
+      "text": "那最近的一些財報數字，像是 Broadcom，它其實是開得非常好，然後它裡面聊到蠻多有趣的內容。它每次都會有一些經典的語錄，像之前是講說 ankle biters，就你們這些小朋友在後面那邊咬我的腳踝。那這次是在講說 Outer Mongolia 的學生，這兩個學生一個是 Anthropic，一個是 OpenAI，他們要去唸書，你各位要幫幫他。他六個客戶裡面，他說不是每個我可能都會要幫他去想辦法搞錢，只有兩個要這樣，這兩個就是因為畢竟他們還沒有上市。",
+      "sentences": [
+        {
+          "text": "那最近的一些財報數字，像是 Broadcom，它其實是開得非常好，然後它裡面聊到蠻多有趣的內容。",
+          "key_point": 6,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "bullish"
+            }
+          ]
+        },
+        {
+          "text": "它每次都會有一些經典的語錄，像之前是講說 ankle biters，就你們這些小朋友在後面那邊咬我的腳踝。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那這次是在講說 Outer Mongolia 的學生，這兩個學生一個是 Anthropic，一個是 OpenAI，他們要去唸書，你各位要幫幫他。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "他六個客戶裡面，他說不是每個我可能都會要幫他去想辦法搞錢，只有兩個要這樣，這兩個就是因為畢竟他們還沒有上市。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1031,
+      "ad": false,
+      "text": "當然 Anthropic 後來上市之後，這個環境一定會稍微變好，可是 OAI 的話，因為財務數字是沒有這麼公開的，所以他們去融資的話，這個其實我們在像 Bank of America 的一個私訪 NVIDIA 的 memo 裡面，我們有看到類似的東西。就是說這兩家公司因為信用的問題，然後在市場裡面算是一個 new player，所以他們其實拿到的融資的 deal 都沒有這麼好，於是就會有像是 Broadcom 或是像是 NVIDIA 就會下來協助這件事情，讓他們至少可以先把裝置做出來。",
+      "sentences": [
+        {
+          "text": "當然 Anthropic 後來上市之後，這個環境一定會稍微變好，可是 OAI 的話，因為財務數字是沒有這麼公開的，所以他們去融資的話，這個其實我們在像 Bank of America 的一個私訪 NVIDIA 的 memo 裡面，我們有看到類似的東西。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是說這兩家公司因為信用的問題，然後在市場裡面算是一個 new player，所以他們其實拿到的融資的 deal 都沒有這麼好，於是就會有像是 Broadcom 或是像是 NVIDIA 就會下來協助這件事情，讓他們至少可以先把裝置做出來。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1060,
+      "ad": false,
+      "text": "我覺得站在 Broadcom 的角度的話，他現在非常有動機要很大力的去扶 Anthropic，因為 Ironwood 一堆是 shift 到阿娜，然後之後的 V8i 跟後續的 Google 的晶片可能蠻多也是往那個地方丟。所以去把在外蒙古的學生好好地養好，然後送進大學、送進研究所，然後最後面成功的衣錦還鄉，這個可能是 Broadcom 在後面會持續努力的一個方向。",
+      "sentences": [
+        {
+          "text": "我覺得站在 Broadcom 的角度的話，他現在非常有動機要很大力的去扶 Anthropic，因為 Ironwood 一堆是 shift 到阿娜，然後之後的 V8i 跟後續的 Google 的晶片可能蠻多也是往那個地方丟。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "bullish"
+            },
+            {
+              "ticker": "GOOGL",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "所以去把在外蒙古的學生好好地養好，然後送進大學、送進研究所，然後最後面成功的衣錦還鄉，這個可能是 Broadcom 在後面會持續努力的一個方向。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1084,
+      "ad": false,
+      "text": "所以我們看下來，不管是大家很擔心的什麼 seller financing，或是說是不是螺旋圈圈，大家都在互相投資，是不是說需求是假的，我們在每次的財報其實看下來都覺得，需求是千真萬確的強大，這個沒有什麼太大的問題。當然其實最主要的核心貢獻還是放在 Frontier Lab，就 Frontier Lab 之下可能去交出最多貢獻的，所以他們必須要持續的往前衝，但是整體看下來其實都還算是蠻健康的。",
+      "sentences": [
+        {
+          "text": "所以我們看下來，不管是大家很擔心的什麼 seller financing，或是說是不是螺旋圈圈，大家都在互相投資，是不是說需求是假的，我們在每次的財報其實看下來都覺得，需求是千真萬確的強大，這個沒有什麼太大的問題。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "當然其實最主要的核心貢獻還是放在 Frontier Lab，就 Frontier Lab 之下可能去交出最多貢獻的，所以他們必須要持續的往前衝，但是整體看下來其實都還算是蠻健康的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1111,
+      "ad": false,
+      "text": "而且最近其實 rumor 有聽到說，微軟明年的 CAPEX 會開很高，就是沒有要停下來的意思，大家都持續衝，因為這個東西就是真的會賺錢。那 Broadcom 也算是第一次給出的那種偏中長期的一些指引，那些數字其實看到下好多頓話了，反正就一堆都是加 100% 以上，那表現得非常好。",
+      "sentences": [
+        {
+          "text": "而且最近其實 rumor 有聽到說，微軟明年的 CAPEX 會開很高，就是沒有要停下來的意思，大家都持續衝，因為這個東西就是真的會賺錢。",
+          "key_point": 7,
+          "marks": [
+            {
+              "ticker": "MSFT",
+              "stance": "bullish"
+            }
+          ]
+        },
+        {
+          "text": "那 Broadcom 也算是第一次給出的那種偏中長期的一些指引，那些數字其實看到下好多頓話了，反正就一堆都是加 100% 以上，那表現得非常好。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "bullish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1129,
+      "ad": false,
+      "text": "那當然可能開了這些數字之後，一定有蠻多人覺得很納悶說為什麼不會漲。這個我覺得就是現在相對難處理的一段，因為你知道其實在過去，AI 不是沒有漲，AI 漲很多，好像已經是 AI 的第三年要往第四年去了。我們講了說，在資本市場給大家看到然後開始爆紅的這段時間起算，對一些研究人來講，這可能是第十年之類，但對我們在資本圈看的話，差不多是三到四年左右。所以其實有一堆東西都已經是翻倍再翻倍，已經是漲很多了。",
+      "sentences": [
+        {
+          "text": "那當然可能開了這些數字之後，一定有蠻多人覺得很納悶說為什麼不會漲。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個我覺得就是現在相對難處理的一段，因為你知道其實在過去，AI 不是沒有漲，AI 漲很多，好像已經是 AI 的第三年要往第四年去了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們講了說，在資本市場給大家看到然後開始爆紅的這段時間起算，對一些研究人來講，這可能是第十年之類，但對我們在資本圈看的話，差不多是三到四年左右。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以其實有一堆東西都已經是翻倍再翻倍，已經是漲很多了。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1156,
+      "ad": false,
+      "text": "所以我們並不會覺得說，每份財報都理論上一定要讓大家大噴，這也是為什麼其實我們還是會去選擇一些動能交易的主因。因為我都知道你很好，可是你不會漲的話，對我們這種做交易的人來講說，我又不是每個東西都想要來 buy and hold 然後去長頭。就有些東西我可能一抱，就是一整年都沒有收益，你說臺積電很好，臺積電就是已經在過去幾個月可能就是沒有給你收益。當然我們儘量不要去看太短，那只是以交易的角度，就是你會去找一些就是他有進攻機會的東西。",
+      "sentences": [
+        {
+          "text": "所以我們並不會覺得說，每份財報都理論上一定要讓大家大噴，這也是為什麼其實我們還是會去選擇一些動能交易的主因。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為我都知道你很好，可是你不會漲的話，對我們這種做交易的人來講說，我又不是每個東西都想要來 buy and hold 然後去長頭。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就有些東西我可能一抱，就是一整年都沒有收益，你說臺積電很好，臺積電就是已經在過去幾個月可能就是沒有給你收益。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "TSM",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "當然我們儘量不要去看太短，那只是以交易的角度，就是你會去找一些就是他有進攻機會的東西。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1188,
+      "ad": false,
+      "text": "最近是有發現說，一些進攻機會的東西其實都是比較沒有那麼香的，就是它其實已經算是市場的相對後線的一些題材，但因為它相對沒有被拉過，所以大家趕快去拉這些東西，拉到補漲這樣。那只是我們相信說，就可能大家都拉到相當程度之後呢，你最終還是會迴歸到那些在 fundamental 是持續開很好的，所以這些比較大咖的玩家，我自己本身是不太擔心的。",
+      "sentences": [
+        {
+          "text": "最近是有發現說，一些進攻機會的東西其實都是比較沒有那麼香的，就是它其實已經算是市場的相對後線的一些題材，但因為它相對沒有被拉過，所以大家趕快去拉這些東西，拉到補漲這樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那只是我們相信說，就可能大家都拉到相當程度之後呢，你最終還是會迴歸到那些在 fundamental 是持續開很好的，所以這些比較大咖的玩家，我自己本身是不太擔心的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "博通首度點名聯發科的意義",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 1211,
+      "ad": false,
+      "text": "那上次有跟大家聊到說，我會想要再持續的去觀察可能 Broadcom 是怎麼樣去評論，抱歉說，因為我們在上期有聊到 NVIDIA 跟 MediaTek 的一個投資，這些事情對他來講一定都會有一定程度的影響，看他們怎樣去評論這件事情。那這次蠻有趣的是，過去其實 Broadcom 的 Hock，他在數個電話會議裡面，他算是蠻輕視他的對手，就包含說叫我們是 ankle biters，然後會提說你知道有些人在 talk shit，就是明明沒有什麼多少東西，競爭也打不贏我們，然後卻一直在外面講說他們拿到什麼訂單。但這是他第一次把 MediaTek 拿出來講。",
+      "sentences": [
+        {
+          "text": "那上次有跟大家聊到說，我會想要再持續的去觀察可能 Broadcom 是怎麼樣去評論，抱歉說，因為我們在上期有聊到 NVIDIA 跟 MediaTek 的一個投資，這些事情對他來講一定都會有一定程度的影響，看他們怎樣去評論這件事情。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "那這次蠻有趣的是，過去其實 Broadcom 的 Hock，他在數個電話會議裡面，他算是蠻輕視他的對手，就包含說叫我們是 ankle biters，然後會提說你知道有些人在 talk shit，就是明明沒有什麼多少東西，競爭也打不贏我們，然後卻一直在外面講說他們拿到什麼訂單。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "但這是他第一次把 MediaTek 拿出來講。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "mentioned"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1244,
+      "ad": false,
+      "text": "所以這其實在我的想法是，如果我今天是按照差不多一兩季前的市場的話，這個 MediaTek 應該要再給他一根。為什麼？因為就是你直接被一個晶片的王者、ASIC 晶片的強者去證明說你是對手。他以前都不想提你們的，然後以前都講說你們在 talk shit、你們沒有訂單，像他直接講說你就是有東西，但是我的東西還是比你好。",
+      "sentences": [
+        {
+          "text": "所以這其實在我的想法是，如果我今天是按照差不多一兩季前的市場的話，這個 MediaTek 應該要再給他一根。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "為什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為就是你直接被一個晶片的王者、ASIC 晶片的強者去證明說你是對手。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "他以前都不想提你們的，然後以前都講說你們在 talk shit、你們沒有訂單，像他直接講說你就是有東西，但是我的東西還是比你好。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1264,
+      "ad": false,
+      "text": "像這樣子就是代表 MediaTek，我覺得某個程度上的升華了，就是你進入到另外一個圈子。雖然其實我們一直都知道它是很強大的公司，可是至少現在市場中的一個王者就認知到你的存在，然後還要 talk shit about you。因為如果我真的覺得你不是什麼東西的話，我會像以前那樣子，我根本連提都懶得提你，但我會拿出來提，代表你是對手。",
+      "sentences": [
+        {
+          "text": "像這樣子就是代表 MediaTek，我覺得某個程度上的升華了，就是你進入到另外一個圈子。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "雖然其實我們一直都知道它是很強大的公司，可是至少現在市場中的一個王者就認知到你的存在，然後還要 talk shit about you。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為如果我真的覺得你不是什麼東西的話，我會像以前那樣子，我根本連提都懶得提你，但我會拿出來提，代表你是對手。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1283,
+      "ad": false,
+      "text": "那這就類似說，我們在過去幾年看到像那些什麼 Tesla 殺手，為什麼都要講說 Tesla 殺手？為什麼都要講是蘋果殺手跟 NVIDIA 殺手？因為它是最強的嘛，最強的才需要被殺嘛，你要搶它的市場嘛。所以當我需要把你拿出來提的時候，其實對你來說是利多啦。所以我的想法是，它等於是幫聯發科開了一個法說會的感覺，證明說它的東西可以。",
+      "sentences": [
+        {
+          "text": "那這就類似說，我們在過去幾年看到像那些什麼 Tesla 殺手，為什麼都要講說 Tesla 殺手？",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "TSLA",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "為什麼都要講是蘋果殺手跟 NVIDIA 殺手？",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AAPL",
+              "stance": "mentioned"
+            },
+            {
+              "ticker": "NVDA",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "因為它是最強的嘛，最強的才需要被殺嘛，你要搶它的市場嘛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以當我需要把你拿出來提的時候，其實對你來說是利多啦。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我的想法是，它等於是幫聯發科開了一個法說會的感覺，證明說它的東西可以。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "TW:2454",
+              "stance": "bullish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1303,
+      "ad": false,
+      "text": "就即便他嘴巴上講說他的東西可能會比較慢，這個跟我們考察到的其實也是類似的，就是確實那個晶片出來的速度會跟大家想像的有一些落差。但無論如何，其實你知道公司，他們在預期管理上面是非常的厲害，就是他們蠻多時候不會把話說滿，就像說我看到 20B 的訂單，我就告訴你 15B 而已，簡單就說我是低報，然後高 beat，我就是要讓市場有驚喜。",
+      "sentences": [
+        {
+          "text": "就即便他嘴巴上講說他的東西可能會比較慢，這個跟我們考察到的其實也是類似的，就是確實那個晶片出來的速度會跟大家想像的有一些落差。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但無論如何，其實你知道公司，他們在預期管理上面是非常的厲害，就是他們蠻多時候不會把話說滿，就像說我看到 20B 的訂單，我就告訴你 15B 而已，簡單就說我是低報，然後高 beat，我就是要讓市場有驚喜。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1325,
+      "ad": false,
+      "text": "所以呢，因為說雖然有些 delay 是真的會發生，有可能會對財務衝擊，沒錯，但也因為這些公司他們蠻多會去做這種預期管理，所以他可能本來就低報了，甚至最後面還是會超出你的預期。就即便說真的發生 delay，但還是超出你的預期，因為他本來的數字就低報。這個就是稍微給大家的一些小小暗示，就在市場裡面其實蠻多時候會看到這樣的一個情形。",
+      "sentences": [
+        {
+          "text": "所以呢，因為說雖然有些 delay 是真的會發生，有可能會對財務衝擊，沒錯，但也因為這些公司他們蠻多會去做這種預期管理，所以他可能本來就低報了，甚至最後面還是會超出你的預期。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就即便說真的發生 delay，但還是超出你的預期，因為他本來的數字就低報。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個就是稍微給大家的一些小小暗示，就在市場裡面其實蠻多時候會看到這樣的一個情形。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1345,
+      "ad": false,
+      "text": "所以在我們看來，Broadcom 的各種數字，然後或者是他的 fabric，因為現在蠻多人關注的是光通跟互聯相關的內容，其實指引跟整個方向都是給的非常好。那為什麼股價不漲？我們覺得我們不用太花時間去討論這樣的一個議題，然後就有點類似像 NVIDIA 前陣子不漲，可是時間到了，他可能就還是會動一下。所以對，就是我相信進入 AI 的一個⋯⋯",
+      "sentences": [
+        {
+          "text": "所以在我們看來，Broadcom 的各種數字，然後或者是他的 fabric，因為現在蠻多人關注的是光通跟互聯相關的內容，其實指引跟整個方向都是給的非常好。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "那為什麼股價不漲？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們覺得我們不用太花時間去討論這樣的一個議題，然後就有點類似像 NVIDIA 前陣子不漲，可是時間到了，他可能就還是會動一下。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "所以對，就是我相信進入 AI 的一個⋯⋯",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "AI 資本迴圈與中場休息的盤",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 1370,
+      "ad": false,
+      "text": "我們不能夠說是，以產業的角度來講是什麼階段，因為這個還太難判斷，甚至大家都覺得說是在可能很早期。可是以資本來說，它畢竟就是一個迴圈。某個程度上，我覺得現在可能就是進入一個那種，怎麼說，就是AI可能是一個像網路非常長的趨勢，可是它一定也有一個像前面非常用力的去佈置光纖，然後最後面那個.com泡沫。大家知道，就是那時候是你任何一個.com的網站可能都可以募到錢，然後它會掉下來。然後最後面呢，長期趨勢網路是好的，可是資本市場就這樣上上下下。",
+      "sentences": [
+        {
+          "text": "我們不能夠說是，以產業的角度來講是什麼階段，因為這個還太難判斷，甚至大家都覺得說是在可能很早期。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "可是以資本來說，它畢竟就是一個迴圈。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "某個程度上，我覺得現在可能就是進入一個那種，怎麼說，就是AI可能是一個像網路非常長的趨勢，可是它一定也有一個像前面非常用力的去佈置光纖，然後最後面那個.com泡沫。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "大家知道，就是那時候是你任何一個.com的網站可能都可以募到錢，然後它會掉下來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後最後面呢，長期趨勢網路是好的，可是資本市場就這樣上上下下。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1404,
+      "ad": false,
+      "text": "那我覺得我們家可能就是在中間的一個休息段，然後後面搞不好還有一段大的，還有一段大的。那可是就是一定會有一天，就是它就是會砸下來這樣子。那只是呢，要怎麼樣在這裡面持續的去找到獲利的機會，那個難度可能就會稍微的提升。但是如果放就是，你只要一直去跟著那些獲利實際在改善的東西，其實就沒有什麼太大的問題。你事後回頭看就會發現說，你都還是賺錢的，只是你在短期內要去抓到什麼東西會噴出去，那個難度我覺得變得越來越高。除非說可能下半年的某個時間點又再次回到動能的盤面，不然可能相對的有挑戰。",
+      "sentences": [
+        {
+          "text": "那我覺得我們家可能就是在中間的一個休息段，然後後面搞不好還有一段大的，還有一段大的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那可是就是一定會有一天，就是它就是會砸下來這樣子。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那只是呢，要怎麼樣在這裡面持續的去找到獲利的機會，那個難度可能就會稍微的提升。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是如果放就是，你只要一直去跟著那些獲利實際在改善的東西，其實就沒有什麼太大的問題。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你事後回頭看就會發現說，你都還是賺錢的，只是你在短期內要去抓到什麼東西會噴出去，那個難度我覺得變得越來越高。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "除非說可能下半年的某個時間點又再次回到動能的盤面，不然可能相對的有挑戰。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1439,
+      "ad": false,
+      "text": "所以花太多心力去解釋，因為我現在看到很多報導，因為看到Broadcom的股價沒有漲，就去解釋說為什麼它不好，因為什麼樣客戶過於依賴，或者說什麼誰搶市場。那個東西如果你看多，它其實會影響到你的一些判斷，就是你可能心中就會幫它畫上一個叉。可是其實不是，它就只是不會漲而已，還沒漲而已，但不代表它的基本面數字是不會開上去，特別是公司已經算是洩題，就直接給你看它的guidance。",
+      "sentences": [
+        {
+          "text": "所以花太多心力去解釋，因為我現在看到很多報導，因為看到Broadcom的股價沒有漲，就去解釋說為什麼它不好，因為什麼樣客戶過於依賴，或者說什麼誰搶市場。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "那個東西如果你看多，它其實會影響到你的一些判斷，就是你可能心中就會幫它畫上一個叉。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "可是其實不是，它就只是不會漲而已，還沒漲而已，但不代表它的基本面數字是不會開上去，特別是公司已經算是洩題，就直接給你看它的guidance。",
+          "key_point": 9,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1464,
+      "ad": false,
+      "text": "所以在我的角度就是，你要有更多耐心。就是你現階段要去做這些big names，最大的一個挑戰是你就是要有耐心，你就是要願意蹲，但是反正成績會出來。理論上我們知道股價它終究就是跟著EPS的趨勢在跑，就是這樣。除非那種非常短期的話，當然它會因為一些訊息、一些催化或什麼會有變化。所以其實就是聚焦在比較長遠的目標，可能這樣子在這陣子的一些股票市場裡面，會比較順利一點。",
+      "sentences": [
+        {
+          "text": "所以在我的角度就是，你要有更多耐心。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是你現階段要去做這些big names，最大的一個挑戰是你就是要有耐心，你就是要願意蹲，但是反正成績會出來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "理論上我們知道股價它終究就是跟著EPS的趨勢在跑，就是這樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "除非那種非常短期的話，當然它會因為一些訊息、一些催化或什麼會有變化。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以其實就是聚焦在比較長遠的目標，可能這樣子在這陣子的一些股票市場裡面，會比較順利一點。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1492,
+      "ad": false,
+      "text": "就是我自己也知道說動能難做，因為有找到一些機會，然後上去擼車，就擼一擼發現說，啊媽，隔天大家都不玩了，就丟下來，那時候就只好被迫撿。所以有點像說，就現在在動能的這個部位呢，就是你做越多就有可能會賠越多，那真的有辦法噴出去的，可能是比較少數的幾個案例，這樣子。那我還是相信說這個局面應該會改善，因為其實你去注意說，像家全他是越墊越高，他是越墊越高，就是大家講說我們第二隻腳沒有，他就後來就直接就上去了。那現在就再次的回到那種，就是快到前高的位置。所以理論上，如果有人帶頭衝出去的話，就是大家就是會重新的回到那種多頭行情的感覺。",
+      "sentences": [
+        {
+          "text": "就是我自己也知道說動能難做，因為有找到一些機會，然後上去擼車，就擼一擼發現說，啊媽，隔天大家都不玩了，就丟下來，那時候就只好被迫撿。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以有點像說，就現在在動能的這個部位呢，就是你做越多就有可能會賠越多，那真的有辦法噴出去的，可能是比較少數的幾個案例，這樣子。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那我還是相信說這個局面應該會改善，因為其實你去注意說，像家全他是越墊越高，他是越墊越高，就是大家講說我們第二隻腳沒有，他就後來就直接就上去了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那現在就再次的回到那種，就是快到前高的位置。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以理論上，如果有人帶頭衝出去的話，就是大家就是會重新的回到那種多頭行情的感覺。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1527,
+      "ad": false,
+      "text": "其實我覺得，我在兩個禮拜前就覺得說差不多了，就是他應該要表態，他要決定說到底知道往上還往下，就是至今要決定的，但就是一直在拖，所以就拖到會有點尷尬。那我的做法是，反正就是把槓桿再縮，就縮到小一點，然後就在那邊等待，等到真的很明確的時候再來做。因為你本來想要去搶快車，就是很容易會被修理到，它會變得是比較難處理。",
+      "sentences": [
+        {
+          "text": "其實我覺得，我在兩個禮拜前就覺得說差不多了，就是他應該要表態，他要決定說到底知道往上還往下，就是至今要決定的，但就是一直在拖，所以就拖到會有點尷尬。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那我的做法是，反正就是把槓桿再縮，就縮到小一點，然後就在那邊等待，等到真的很明確的時候再來做。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為你本來想要去搶快車，就是很容易會被修理到，它會變得是比較難處理。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1552,
+      "ad": false,
+      "text": "但整體來說盤不差，但你會注意到，像我自己身邊的朋友的意見就很兩極。就有些人你就感覺他是心灰意冷，可以想說，你到底要心灰意冷三小？指數位置在這麼高，然後一堆東西都走出去，他們會心灰意冷，就只是單純因為用過往的一個pattern去做，你就是會賠錢。因為你就是沒有辦法在這陣子這樣做，我當然未來不排除，所以他可能卡住的點是在這一邊。",
+      "sentences": [
+        {
+          "text": "但整體來說盤不差，但你會注意到，像我自己身邊的朋友的意見就很兩極。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就有些人你就感覺他是心灰意冷，可以想說，你到底要心灰意冷三小？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "指數位置在這麼高，然後一堆東西都走出去，他們會心灰意冷，就只是單純因為用過往的一個pattern去做，你就是會賠錢。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為你就是沒有辦法在這陣子這樣做，我當然未來不排除，所以他可能卡住的點是在這一邊。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "無稀土馬達與軟體平台的毛利戰",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 1573,
+      "ad": false,
+      "text": "那再來其實市場上也有一些機會在醞釀中。像最近Tesla他們講說，他們Cybercab裡面用到那個馬達是完全沒有用稀土，其實這個我就覺得有可能會在供應鏈或是相關的一些議題上面去產生機會。就是說如果AI的東西真的拘於橫盤的話，其實大家會開始往外圍的東西去找。那這一塊其實蠻屌的，就它不用稀土，然後還是可以跑出非常好的一個效能的話，真的證明說他們真的是工程天才，非常的強大。當然Cybercab呢，也有一些相關的supply chain可以看，只是在現階段，因為你要找到Growth Rate這麼強大的東西還是在AI，所以我直接把它當一個次題材，就稍微再關注一下。",
+      "sentences": [
+        {
+          "text": "那再來其實市場上也有一些機會在醞釀中。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "像最近Tesla他們講說，他們Cybercab裡面用到那個馬達是完全沒有用稀土，其實這個我就覺得有可能會在供應鏈或是相關的一些議題上面去產生機會。",
+          "key_point": 10,
+          "marks": [
+            {
+              "ticker": "TSLA",
+              "stance": "bullish"
+            }
+          ]
+        },
+        {
+          "text": "就是說如果AI的東西真的拘於橫盤的話，其實大家會開始往外圍的東西去找。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那這一塊其實蠻屌的，就它不用稀土，然後還是可以跑出非常好的一個效能的話，真的證明說他們真的是工程天才，非常的強大。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "當然Cybercab呢，也有一些相關的supply chain可以看，只是在現階段，因為你要找到Growth Rate這麼強大的東西還是在AI，所以我直接把它當一個次題材，就稍微再關注一下。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1607,
+      "ad": false,
+      "text": "那就亦或是類似，我有去關注一些軟體，只是軟體它現在算我的portfolio裡面不是特別大宗的東西，大家會稍微看一下。像前陣子就聊到說Salesforce跟Frappy的一個合作，那最近Snowflake，大家看到他們的成績跟數字又再次的往上調，非常的強大。那直接去總結它，就是它最厲害的一環就是在做AI的協作，它讓客戶可以相信把資料可以放在他們這邊是沒有什麼太大問題的。所以其實跟Salesforce那邊，我們得到一些情報是類似的，就是像資料治理，怎麼樣去做分門別類，哪些東西上雲，哪些東西維持在地端，這個非常重要的。",
+      "sentences": [
+        {
+          "text": "那就亦或是類似，我有去關注一些軟體，只是軟體它現在算我的portfolio裡面不是特別大宗的東西，大家會稍微看一下。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "像前陣子就聊到說Salesforce跟Frappy的一個合作，那最近Snowflake，大家看到他們的成績跟數字又再次的往上調，非常的強大。",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "CRM",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "那直接去總結它，就是它最厲害的一環就是在做AI的協作，它讓客戶可以相信把資料可以放在他們這邊是沒有什麼太大問題的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以其實跟Salesforce那邊，我們得到一些情報是類似的，就是像資料治理，怎麼樣去做分門別類，哪些東西上雲，哪些東西維持在地端，這個非常重要的。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1641,
+      "ad": false,
+      "text": "那在裡面呢，我也獲得一些重要的情報。像是他們有提到說，他們的客戶如果是使用預設的模式，所以預設模式就是讓Snowflake這邊去決定說，你問的問題或是你提的需求，我用哪一個模型去處理。所以類似說，這個router是放在公司這邊，讓公司決定要去支用哪一個模型，這邊它就可以產生很不錯的毛利。簡單來講就是說，可能客戶預設就是我一個request要付出10塊錢，實際上我只花了5塊錢，這5塊錢就是我賺到的。但其他的，如果你指定說哪一個模型的話，它比較類似是，我覺得另外一個模型是13塊，那我其實是Sony 15塊之類的，那那個價格的毛利就會比較窄一點，比較薄一點。",
+      "sentences": [
+        {
+          "text": "那在裡面呢，我也獲得一些重要的情報。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "像是他們有提到說，他們的客戶如果是使用預設的模式，所以預設模式就是讓Snowflake這邊去決定說，你問的問題或是你提的需求，我用哪一個模型去處理。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以類似說，這個router是放在公司這邊，讓公司決定要去支用哪一個模型，這邊它就可以產生很不錯的毛利。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "簡單來講就是說，可能客戶預設就是我一個request要付出10塊錢，實際上我只花了5塊錢，這5塊錢就是我賺到的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但其他的，如果你指定說哪一個模型的話，它比較類似是，我覺得另外一個模型是13塊，那我其實是Sony 15塊之類的，那那個價格的毛利就會比較窄一點，比較薄一點。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1681,
+      "ad": false,
+      "text": "所以這也解釋了，就是我之前在使用Perplexity Computer的時候，我也好奇，我去使用各式各樣的模型，那實際上它的獲利的結構長成什麼樣子，然後在Snowflake這邊算是獲得了一個印證。所以只要客戶越來越相信這個平台，然後他也意識到說，如果說由我自己去選擇模型，像我現在一個痛點是，我知道有些問題我拿去問我的AI模型，他會幫我去做太大程度的深蹲，它一個問題很簡單的東西，我一回頭發現說，你給我跑了五分鐘了，五分鐘都是錢。",
+      "sentences": [
+        {
+          "text": "所以這也解釋了，就是我之前在使用Perplexity Computer的時候，我也好奇，我去使用各式各樣的模型，那實際上它的獲利的結構長成什麼樣子，然後在Snowflake這邊算是獲得了一個印證。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以只要客戶越來越相信這個平台，然後他也意識到說，如果說由我自己去選擇模型，像我現在一個痛點是，我知道有些問題我拿去問我的AI模型，他會幫我去做太大程度的深蹲，它一個問題很簡單的東西，我一回頭發現說，你給我跑了五分鐘了，五分鐘都是錢。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1709,
+      "ad": false,
+      "text": "所以如果我知道，我可以透過一個可信任的平台，不管是B2B的business可能是Snowflake，或者說B2C的話，是我今天使用Perplexity Computer，假如我可以很完全的相信說，它的router會幫我去分佈到最好的模型的話，對我來講，我也覺得我花出沒有這麼多錢；對它來講，它也可以在我身上賺到更多的錢，它有更大的一個溢價的權利，它可能跟模型商這邊的利潤分配又會調得更好。所以這個就是可能會進入後面，不管是在軟體或是在模型商之間的一個利潤爭奪的重點。",
+      "sentences": [
+        {
+          "text": "所以如果我知道，我可以透過一個可信任的平台，不管是B2B的business可能是Snowflake，或者說B2C的話，是我今天使用Perplexity Computer，假如我可以很完全的相信說，它的router會幫我去分佈到最好的模型的話，對我來講，我也覺得我花出沒有這麼多錢；對它來講，它也可以在我身上賺到更多的錢，它有更大的一個溢價的權利，它可能跟模型商這邊的利潤分配又會調得更好。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以這個就是可能會進入後面，不管是在軟體或是在模型商之間的一個利潤爭奪的重點。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1741,
+      "ad": false,
+      "text": "那在Snowflake這邊，我們也注意到，他就是跟進的像是Palantir或是其他軟體相關的公司，他們在做的事情就是Forward Deployment Engineer，大量的去鋪這樣的一個職業。那這些人呢，其實就是PM加工程師的一個合體，可以這樣想，就是他要進去真的瞭解大家的流程，因為每家公司的流程不一樣，每家公司在意的點不一樣，他要去理解你要幹嘛。然後接著呢，甚至他也有一點sales的成分，然後接著去pitch給這家公司，我可以怎麼樣去把你報。",
+      "sentences": [
+        {
+          "text": "那在Snowflake這邊，我們也注意到，他就是跟進的像是Palantir或是其他軟體相關的公司，他們在做的事情就是Forward Deployment Engineer，大量的去鋪這樣的一個職業。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那這些人呢，其實就是PM加工程師的一個合體，可以這樣想，就是他要進去真的瞭解大家的流程，因為每家公司的流程不一樣，每家公司在意的點不一樣，他要去理解你要幹嘛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後接著呢，甚至他也有一點sales的成分，然後接著去pitch給這家公司，我可以怎麼樣去把你報。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1771,
+      "ad": false,
+      "text": "所以FDE呢，可能在這波趨勢裡面，在過去已經是很常被大家提到，可是我覺得後面就是一定會在持續的放大。就是像這種比較通才類型的人，他可能變成是新形態的一個工作很主要的，怎麼講，就增長的需求來源。以前我們可能知道說，每個人都是分門別類，你是做會計，你是做業務，你是做coding，但可能在AI的幫助之下，每個人在每個類別裡面都可以做到60分。所以誰可以把這些東西整合的很好，可能就類似說我們剛剛講，有些AI的interface，他可以把router這塊處理的很好，我就會相信他。",
+      "sentences": [
+        {
+          "text": "所以FDE呢，可能在這波趨勢裡面，在過去已經是很常被大家提到，可是我覺得後面就是一定會在持續的放大。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是像這種比較通才類型的人，他可能變成是新形態的一個工作很主要的，怎麼講，就增長的需求來源。",
+          "key_point": 11,
+          "marks": []
+        },
+        {
+          "text": "以前我們可能知道說，每個人都是分門別類，你是做會計，你是做業務，你是做coding，但可能在AI的幫助之下，每個人在每個類別裡面都可以做到60分。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以誰可以把這些東西整合的很好，可能就類似說我們剛剛講，有些AI的interface，他可以把router這塊處理的很好，我就會相信他。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1806,
+      "ad": false,
+      "text": "所以其實那個道理是一致的，就是我去相信這些router，跟我去相信這些FDE是一樣的道理。如果說有一個很強大的FDE，他可以把我的需求全部都包好整理好，然後去給我一個方案，然後真的去解決問題的話，他就會獲得巨大的成功。所以很有趣的是，跟我們開頭的東西好像某個程度上呼應的。大家都相信說在AI時代，產出暴力或什麼的，那個是大家要去聚焦的機會，反而是內容的本身的品質好像大家沒有這麼在意。但是它是反過來的，就是內容的品質，就是因為東西爆量了，abundant了，所以大家會在意說，那你到底做出來的東西是好是壞。",
+      "sentences": [
+        {
+          "text": "所以其實那個道理是一致的，就是我去相信這些router，跟我去相信這些FDE是一樣的道理。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "如果說有一個很強大的FDE，他可以把我的需求全部都包好整理好，然後去給我一個方案，然後真的去解決問題的話，他就會獲得巨大的成功。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以很有趣的是，跟我們開頭的東西好像某個程度上呼應的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "大家都相信說在AI時代，產出暴力或什麼的，那個是大家要去聚焦的機會，反而是內容的本身的品質好像大家沒有這麼在意。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是它是反過來的，就是內容的品質，就是因為東西爆量了，abundant了，所以大家會在意說，那你到底做出來的東西是好是壞。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1840,
+      "ad": false,
+      "text": "所以誰可能找了比較多的FDE，誰的訓練流程比較好，這種比較質化、比較人文的東西，說不定會變成後面的一個重點，我覺得也是這些軟體業者要去競爭的一個核心。所以這方面可能也是一個算是中型的趨勢，是可以稍微的看一下，最近在市場上就是有發現這樣的一些機會，然後持續的去關注。但我覺得最好的情形還是，因為盤就已經在新高附近，就是趕快突破新高，然後記得大家射出去，這個就會變得很好處理。但如果沒有的話，我們真的就要開始去往外面去找一些second tier或是third tier的東西，然後看各位填補我們交易的空虛。大概這樣，稍微跟大家分享一下自己一下對市場的一些看法。",
+      "sentences": [
+        {
+          "text": "所以誰可能找了比較多的FDE，誰的訓練流程比較好，這種比較質化、比較人文的東西，說不定會變成後面的一個重點，我覺得也是這些軟體業者要去競爭的一個核心。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以這方面可能也是一個算是中型的趨勢，是可以稍微的看一下，最近在市場上就是有發現這樣的一些機會，然後持續的去關注。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但我覺得最好的情形還是，因為盤就已經在新高附近，就是趕快突破新高，然後記得大家射出去，這個就會變得很好處理。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但如果沒有的話，我們真的就要開始去往外面去找一些second tier或是third tier的東西，然後看各位填補我們交易的空虛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "大概這樣，稍微跟大家分享一下自己一下對市場的一些看法。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "荒野露比上家機與展場觀察",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 1877,
+      "ad": false,
+      "text": "那接下來進入Q的部分。地位終結宣：「孟恭、書嘎，您好，2020年聽到現在的老聽眾來報到，那感謝孟恭提供這麼好的節目，也從2020年聽您的建議投大盤至今，那爽翻了。」2020到現在真的是爽到翻掉。那他說只有一個想問的：「歡迎露比有沒有要上PS5的計劃？愛您。」昨天剛好跟八哥，就是Cupdog的Founder有見面有聊天，然後我幹了好幾個歡迎露比的，那叫什麼，兇生超開心，真的覺得超級可愛。那他就跟我分享到說，他們在明年我會上PlayStation，也會上Switch，所以如果你是家機的使用者，可以玩到荒野露比了。",
+      "sentences": [
+        {
+          "text": "那接下來進入Q的部分。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "地位終結宣：「孟恭、書嘎，您好，2020年聽到現在的老聽眾來報到，那感謝孟恭提供這麼好的節目，也從2020年聽您的建議投大盤至今，那爽翻了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」2020到現在真的是爽到翻掉。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那他說只有一個想問的：「歡迎露比有沒有要上PS5的計劃？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "愛您。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」昨天剛好跟八哥，就是Cupdog的Founder有見面有聊天，然後我幹了好幾個歡迎露比的，那叫什麼，兇生超開心，真的覺得超級可愛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那他就跟我分享到說，他們在明年我會上PlayStation，也會上Switch，所以如果你是家機的使用者，可以玩到荒野露比了。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1914,
+      "ad": false,
+      "text": "下面一位，Dumplings：「所以安安，你覺得我的大頭貼好看嗎？會想幫秋狗買頂鋼盔去保家衛國嗎？」他大頭貼是狗帶著鋼盔。你這樣你看，我真的也好像買個鋼盔給秋狗帶。下面一位，Kong Lin W：「MKHGa您好，今年SemiCon少了皮衣男變得好冷清。92號是我在美國Avago，就是Broadcom搬磚的哥哥的生日，可以請你用Hock在電話會議上嗆台廠小打小鬧的語音包，做到生日快樂嗎？」Hock最近太難學了，那我們做到生日快樂，那希望他在美國要注意健康，保重身體，持續下單給魏老闆。謝謝MK。",
+      "sentences": [
+        {
+          "text": "下面一位，Dumplings：「所以安安，你覺得我的大頭貼好看嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "會想幫秋狗買頂鋼盔去保家衛國嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」他大頭貼是狗帶著鋼盔。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你這樣你看，我真的也好像買個鋼盔給秋狗帶。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "下面一位，Kong Lin W：「MKHGa您好，今年SemiCon少了皮衣男變得好冷清。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "92號是我在美國Avago，就是Broadcom搬磚的哥哥的生日，可以請你用Hock在電話會議上嗆台廠小打小鬧的語音包，做到生日快樂嗎？",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "AVGO",
+              "stance": "mentioned"
+            }
+          ]
+        },
+        {
+          "text": "」Hock最近太難學了，那我們做到生日快樂，那希望他在美國要注意健康，保重身體，持續下單給魏老闆。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "謝謝MK。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1949,
+      "ad": false,
+      "text": "對，他們應該就是會持續下單給魏老闆，沒錯。但是在後段有一些規劃，他們在Singapore那邊現在是有自己的載板跟一些封裝的東西，會來到那邊去，但是在前端的部分，我覺得持續下單給魏老闆是一個最主要的核心，沒錯。然後再講說，SemiCon少了皮衣男之後變得好冷清，也沒有冷清，不是超多人跑去嗎？但是我稍微的看了一下Memo，我想Memo是正經的Memo，不是那個Showgirl Memo，那個超多人在喘，就是每年都有，我覺得很屌，就是一個展覽各自表述，大家都去看自己想看的東西。",
+      "sentences": [
+        {
+          "text": "對，他們應該就是會持續下單給魏老闆，沒錯。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是在後段有一些規劃，他們在Singapore那邊現在是有自己的載板跟一些封裝的東西，會來到那邊去，但是在前端的部分，我覺得持續下單給魏老闆是一個最主要的核心，沒錯。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後再講說，SemiCon少了皮衣男之後變得好冷清，也沒有冷清，不是超多人跑去嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是我稍微的看了一下Memo，我想Memo是正經的Memo，不是那個Showgirl Memo，那個超多人在喘，就是每年都有，我覺得很屌，就是一個展覽各自表述，大家都去看自己想看的東西。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 1981,
+      "ad": false,
+      "text": "那稍微的看了一下之後，我覺得這次的東西跟上一回的電腦展類似。我不是有提到說，竟然讓我最震驚的是NVIDIA可能在消費這邊的東西嗎？就是以前看都是看AI嘛。那只是我覺得，就是在過去的幾年，AI真的某個程度上給你一種那種鈍化的味道了，就是我知道你有這種有趣你來看，我就看過了，所以你也沒有真的給我看到太多新的東西；或是你給我看到新的東西，可是新的東西出來是2029、2030，那就會變得是我沒有辦法立即轉化到我的工作裡面，會有這樣的一個感受。",
+      "sentences": [
+        {
+          "text": "那稍微的看了一下之後，我覺得這次的東西跟上一回的電腦展類似。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我不是有提到說，竟然讓我最震驚的是NVIDIA可能在消費這邊的東西嗎？",
+          "key_point": null,
+          "marks": [
+            {
+              "ticker": "NVDA",
+              "stance": "neutral"
+            }
+          ]
+        },
+        {
+          "text": "就是以前看都是看AI嘛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那只是我覺得，就是在過去的幾年，AI真的某個程度上給你一種那種鈍化的味道了，就是我知道你有這種有趣你來看，我就看過了，所以你也沒有真的給我看到太多新的東西；或是你給我看到新的東西，可是新的東西出來是2029、2030，那就會變得是我沒有辦法立即轉化到我的工作裡面，會有這樣的一個感受。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2012,
+      "ad": false,
+      "text": "所以這次蠻多去看SemiCon的朋友出來講的各種，我們就不去點名哪些題材，但看起來就是說都是on track。那有些東西呢，甚至會比想像中的再慢一點，可是我們並沒有看到太多新的東西。但當然有蠻多朋友都反映說，SoIC或是各種有的沒的東西直接整合包在一起，就是大的趨勢，可是這個誰不知道？大家都知道說後面就是往這個方向去走，所以他只是再次的去重申而已。",
+      "sentences": [
+        {
+          "text": "所以這次蠻多去看SemiCon的朋友出來講的各種，我們就不去點名哪些題材，但看起來就是說都是on track。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那有些東西呢，甚至會比想像中的再慢一點，可是我們並沒有看到太多新的東西。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但當然有蠻多朋友都反映說，SoIC或是各種有的沒的東西直接整合包在一起，就是大的趨勢，可是這個誰不知道？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "大家都知道說後面就是往這個方向去走，所以他只是再次的去重申而已。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2037,
+      "ad": false,
+      "text": "所以確實會稍微的覺得好像看了，你也沒有真的就是像以前一看就靈光乍現，回去馬上下單，連看那種人家裝置後面的顏色是用哪一個，交換機是用誰，看到什麼新的，那時候去某IC站在那邊看他們的機房，你們是用這個東西，然後回去馬上下單，就是這種感覺已經是在可能這一兩年就比較沒有了。所以你不要去很短視近利，就跟我們節目的那個中末段講的一樣，就是如果你現在就是持續的去看著成績，然後好好的跟著，那都沒有什麼太大問題。但是你要過去的那種激情，我覺得可能也是因為進入那種小小的中場休息吧，所以會感覺好像沒有辦法給你看到一些刺激的東西，確實大家都有這樣的一個感受。",
+      "sentences": [
+        {
+          "text": "所以確實會稍微的覺得好像看了，你也沒有真的就是像以前一看就靈光乍現，回去馬上下單，連看那種人家裝置後面的顏色是用哪一個，交換機是用誰，看到什麼新的，那時候去某IC站在那邊看他們的機房，你們是用這個東西，然後回去馬上下單，就是這種感覺已經是在可能這一兩年就比較沒有了。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以你不要去很短視近利，就跟我們節目的那個中末段講的一樣，就是如果你現在就是持續的去看著成績，然後好好的跟著，那都沒有什麼太大問題。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是你要過去的那種激情，我覺得可能也是因為進入那種小小的中場休息吧，所以會感覺好像沒有辦法給你看到一些刺激的東西，確實大家都有這樣的一個感受。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "開課仔亂象與救不了的人",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 2079,
+      "ad": false,
+      "text": "那下面一位，Deku Mongongchika：「本身交易做久了，對外越來越少跟別人談到交易，看到一堆怪小會很反感是正常的嗎？社群一堆七月底跌破四萬喊空的開課宅，售課價格都在比貴，每個都在講波浪理論，像四萬七又出來大小聲說自己都看對。台灣法規容忍度真高，應該把這些人都抓起來關才對，褻瀆神聖的交易。」對啦，我以前也是屬於那種會去開幹說一些什麼開課宅，或是一些那種詐騙宅，早期的節目會，後來我就比較不會了啦。",
+      "sentences": [
+        {
+          "text": "那下面一位，Deku Mongongchika：「本身交易做久了，對外越來越少跟別人談到交易，看到一堆怪小會很反感是正常的嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "社群一堆七月底跌破四萬喊空的開課宅，售課價格都在比貴，每個都在講波浪理論，像四萬七又出來大小聲說自己都看對。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "台灣法規容忍度真高，應該把這些人都抓起來關才對，褻瀆神聖的交易。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」對啦，我以前也是屬於那種會去開幹說一些什麼開課宅，或是一些那種詐騙宅，早期的節目會，後來我就比較不會了啦。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2113,
+      "ad": false,
+      "text": "因為老實講，不是每個人都是詐騙，然後我們自己身邊有一些朋友，他們確實也是就是有一些這種收費的東西。那收費的東西，其實你不能夠說它是錯，只能說因為台灣市場以前發展的這個完整跟結構性還沒有很好，所以有很多是那種帶進出的老師，這種就有問題。就算你跟我講說你是合法的，就是有拿到牌的投顧，你說我會推薦我身邊的一些不懂交易市場人，你去跟投顧嗎？大家心中也心裡有數嗎？對吧。",
+      "sentences": [
+        {
+          "text": "因為老實講，不是每個人都是詐騙，然後我們自己身邊有一些朋友，他們確實也是就是有一些這種收費的東西。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那收費的東西，其實你不能夠說它是錯，只能說因為台灣市場以前發展的這個完整跟結構性還沒有很好，所以有很多是那種帶進出的老師，這種就有問題。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就算你跟我講說你是合法的，就是有拿到牌的投顧，你說我會推薦我身邊的一些不懂交易市場人，你去跟投顧嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "大家心中也心裡有數嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "對吧。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2140,
+      "ad": false,
+      "text": "所以他也不是說什麼有牌沒牌的問題，是說我覺得這個也要某個程度上進入一種專業分工。就是交易的東西，其實我認為不用花太多心力去討論，因為每個人都有自己的技法跟做法。但是如果你今天是出來跟大家分享一些產業的know how，你有一些產業的edge，像那個SemiAnalysis，你看他那個營收超級恐怖，我覺得他們賺這些錢就是非常非常合理的，我就去分享這些東西，讓他們出來開這種課是OK。但是如果是出來跟他們說我都會做，我超級交易，這個就很奇怪，因為理論上你這麼會做、這麼會交易，你怎麼會想賺這種小錢？",
+      "sentences": [
+        {
+          "text": "所以他也不是說什麼有牌沒牌的問題，是說我覺得這個也要某個程度上進入一種專業分工。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是交易的東西，其實我認為不用花太多心力去討論，因為每個人都有自己的技法跟做法。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是如果你今天是出來跟大家分享一些產業的know how，你有一些產業的edge，像那個SemiAnalysis，你看他那個營收超級恐怖，我覺得他們賺這些錢就是非常非常合理的，我就去分享這些東西，讓他們出來開這種課是OK。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是如果是出來跟他們說我都會做，我超級交易，這個就很奇怪，因為理論上你這麼會做、這麼會交易，你怎麼會想賺這種小錢？",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2172,
+      "ad": false,
+      "text": "就像我跟大家講的是，你在那種flash上面或是各個地方看到什麼我要教你什麼，然後你真的相信的，你就是趕快去紅幹。因為很奇怪，你怎麼覺得我會想要賺這種東西？甚至連節目的業配，有時候我心中都在想說，不知道，就是要在網路上要收到一些人的批評，然後你知道他一整年的收入，而且我們講的是說都還沒有扣稅、有什麼有的沒有的，他都比不上一天的震盪。所以你真的有辦法在市場搞錢的人，你怎麼可能會想要去賺那些小錢？",
+      "sentences": [
+        {
+          "text": "就像我跟大家講的是，你在那種flash上面或是各個地方看到什麼我要教你什麼，然後你真的相信的，你就是趕快去紅幹。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為很奇怪，你怎麼覺得我會想要賺這種東西？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "甚至連節目的業配，有時候我心中都在想說，不知道，就是要在網路上要收到一些人的批評，然後你知道他一整年的收入，而且我們講的是說都還沒有扣稅、有什麼有的沒有的，他都比不上一天的震盪。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以你真的有辦法在市場搞錢的人，你怎麼可能會想要去賺那些小錢？",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2198,
+      "ad": false,
+      "text": "當然如果說你今天是另外的，就是你是學術性的、研究性的，我覺得那個是沒有什麼太大的問題，但真的有蠻多人在褻瀆交易，確實是像這樣。只是我已經是過了就是想要去指教大家的那個時間點，年輕的時候回家就覺得說，反正每個人都對著其他的遭遇，雖然聽起來很消極，但我現在感受真的是這樣。就是有些人為什麼會這麼慘，以前人家講的可憐之人必有可恨之處，你慢慢會懂這件事情。",
+      "sentences": [
+        {
+          "text": "當然如果說你今天是另外的，就是你是學術性的、研究性的，我覺得那個是沒有什麼太大的問題，但真的有蠻多人在褻瀆交易，確實是像這樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "只是我已經是過了就是想要去指教大家的那個時間點，年輕的時候回家就覺得說，反正每個人都對著其他的遭遇，雖然聽起來很消極，但我現在感受真的是這樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是有些人為什麼會這麼慘，以前人家講的可憐之人必有可恨之處，你慢慢會懂這件事情。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2223,
+      "ad": false,
+      "text": "那你學會了什麼？你學會就是我就沉默就好，因為反正我也救不了你，我真的去救你，我也會很累，因為觀念差太多。你會信那些東西的人，基本上就是很難救，就救不起來，就算你今天介紹一個非常厲害的教育者給他，你信不信也會教到崩潰？真的是，我們的感受是這樣子。因為我們也試著去扶一些人，或是身邊的人試著去扶一些人，最後面大家的意見都是一樣：會就是會，不會就是不會。",
+      "sentences": [
+        {
+          "text": "那你學會了什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你學會就是我就沉默就好，因為反正我也救不了你，我真的去救你，我也會很累，因為觀念差太多。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你會信那些東西的人，基本上就是很難救，就救不起來，就算你今天介紹一個非常厲害的教育者給他，你信不信也會教到崩潰？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "真的是，我們的感受是這樣子。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為我們也試著去扶一些人，或是身邊的人試著去扶一些人，最後面大家的意見都是一樣：會就是會，不會就是不會。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2246,
+      "ad": false,
+      "text": "下面一位：「請問為什麼鬼的形象大多是白色的為主，而不是黑色？因為黑鬼要工作。他講的不是我講的。沒有什麼想說的，祝孟恭哥全家大小一生平安快樂。那對了，蛋堡新專輯上線可以買了，裡面還有附贈一款蛋堡自製的RPG音樂小遊戲，推薦給孟恭哥。」非常感謝你的推薦。沒有啊，鬼也蠻多是黑色的。像我帶我老婆去冰島的一個飯店，就是他可以泡湯的那個飯店，他算是蠻高階蠻好的，可是不知道什麼，我老婆說在那邊卡到陰看到鬼。他就是在晚上睡覺的時候，然後看到天花板有很多黑色的細線掉下來，然後到回到台灣都一直看到那個黑色細線，晚上就一直會把我叫醒，他又看到鬼或什麼的，所以是有黑色的鬼沒錯。",
+      "sentences": [
+        {
+          "text": "下面一位：「請問為什麼鬼的形象大多是白色的為主，而不是黑色？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為黑鬼要工作。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "他講的不是我講的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "沒有什麼想說的，祝孟恭哥全家大小一生平安快樂。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那對了，蛋堡新專輯上線可以買了，裡面還有附贈一款蛋堡自製的RPG音樂小遊戲，推薦給孟恭哥。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」非常感謝你的推薦。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "沒有啊，鬼也蠻多是黑色的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "像我帶我老婆去冰島的一個飯店，就是他可以泡湯的那個飯店，他算是蠻高階蠻好的，可是不知道什麼，我老婆說在那邊卡到陰看到鬼。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "他就是在晚上睡覺的時候，然後看到天花板有很多黑色的細線掉下來，然後到回到台灣都一直看到那個黑色細線，晚上就一直會把我叫醒，他又看到鬼或什麼的，所以是有黑色的鬼沒錯。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2289,
+      "ad": false,
+      "text": "下面一位，跳跳奶頭，他又回來了：「大家好，我是會跳的奶頭，簡稱跳跳奶頭，大家今天過得好嗎？小奶頭孟恭。」蝦谷是常常出現劇烈震盪，不是，為什麼要叫小奶頭孟恭？「我有個問題想要認真請教你，最近跟朋友去幫女生搬傢俱，我問說就這些要幫忙嗎，女生說有勞二位。我明明洗乾淨了，為什麼還有味道？」世界真的很大。",
+      "sentences": [
+        {
+          "text": "下面一位，跳跳奶頭，他又回來了：「大家好，我是會跳的奶頭，簡稱跳跳奶頭，大家今天過得好嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "小奶頭孟恭。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」蝦谷是常常出現劇烈震盪，不是，為什麼要叫小奶頭孟恭？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "「我有個問題想要認真請教你，最近跟朋友去幫女生搬傢俱，我問說就這些要幫忙嗎，女生說有勞二位。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我明明洗乾淨了，為什麼還有味道？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」世界真的很大。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "對世界失去興趣與注意力的收束",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 2318,
+      "ad": false,
+      "text": "下面一位，黑人給我閉嘴歐巴馬：「孟恭好，目前已經步入職場算蠻長一段時間了，很幸運的在工作跟投資上都有穩定順利的發展，在經濟有餘力的下體驗了各種美食，關好我是吃貨。那也很慶幸在過去幾年跟老婆以及一群好友去完成人生的各種bucket list。但最近突然對這個世界失去了興趣，想去的地方都去過了，吃到好吃了可能就不再這麼高興，遇到好事或是壞事也不容易有情緒起伏。想請問孟恭遇到這種狀況嗎？雖然您說無聊是幸福的事，但我此刻好像並不是特別的幸福，是我太不知足了嗎？感謝主委，祝主委一家平安順心，績效噴高高。」",
+      "sentences": [
+        {
+          "text": "下面一位，黑人給我閉嘴歐巴馬：「孟恭好，目前已經步入職場算蠻長一段時間了，很幸運的在工作跟投資上都有穩定順利的發展，在經濟有餘力的下體驗了各種美食，關好我是吃貨。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那也很慶幸在過去幾年跟老婆以及一群好友去完成人生的各種bucket list。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但最近突然對這個世界失去了興趣，想去的地方都去過了，吃到好吃了可能就不再這麼高興，遇到好事或是壞事也不容易有情緒起伏。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "想請問孟恭遇到這種狀況嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "雖然您說無聊是幸福的事，但我此刻好像並不是特別的幸福，是我太不知足了嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "感謝主委，祝主委一家平安順心，績效噴高高。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2354,
+      "ad": false,
+      "text": "這位兄弟就是我的陣頭。我不是很常跟大家分享說，我超羨慕那一種可能每個週末他都知道說我去打個球，不管什麼籃球、高爾夫什麼，他就覺得說這個就是我一直在做的事情，我做了十幾年很開心。我也是沒有這樣的東西，所以我也是屬於說持續去探索的那種心態。那因為我沒有一個我真的固定很喜歡的事情，所以最後面每個東西都會有一點像是這種玩膩的感覺。",
+      "sentences": [
+        {
+          "text": "這位兄弟就是我的陣頭。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我不是很常跟大家分享說，我超羨慕那一種可能每個週末他都知道說我去打個球，不管什麼籃球、高爾夫什麼，他就覺得說這個就是我一直在做的事情，我做了十幾年很開心。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我也是沒有這樣的東西，所以我也是屬於說持續去探索的那種心態。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那因為我沒有一個我真的固定很喜歡的事情，所以最後面每個東西都會有一點像是這種玩膩的感覺。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2377,
+      "ad": false,
+      "text": "但我的解法，而且也不是說我為了解這件事情去解，而是我意外的發現，就是因為孩子，就整天會把你出新的東西，他有一些新的反應，或是隨著不同的年齡增長開始遇到一些新的事情，他反而是我覺得在過去的數年最充實的事情。像我昨天就有一件事情超級感動，反正總之我去玩Startup Sphere的活動，然後回來之後，就是兒子在路上就開始打電話說，爸爸你怎麼還沒有回家，就開始在那邊吹，就跟以前一樣。",
+      "sentences": [
+        {
+          "text": "但我的解法，而且也不是說我為了解這件事情去解，而是我意外的發現，就是因為孩子，就整天會把你出新的東西，他有一些新的反應，或是隨著不同的年齡增長開始遇到一些新的事情，他反而是我覺得在過去的數年最充實的事情。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "像我昨天就有一件事情超級感動，反正總之我去玩Startup Sphere的活動，然後回來之後，就是兒子在路上就開始打電話說，爸爸你怎麼還沒有回家，就開始在那邊吹，就跟以前一樣。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2404,
+      "ad": false,
+      "text": "後來因為我妹剛好在隔壁跟她講話，就說不然我們下去接爸爸，因為剛好我的東西送到了，我們下去拿，然後順便接爸爸。然後我期待就是我妹會帶我的大兒子下來，結果我一下來就發現說我全家都下來了，我老婆也下來，然後我小兒子也下來，然後大兒子直接衝上來給我抱抱，小兒子就抱抱，他就只會講抱就一個字，他也要抱。然後其實他們兩個就為了爭奪我的注意力就開始吵架，一個在哭，一個就開始大叫不准什麼的。這個是我可能，我不知道，就二三十年來最幸福的一刻，突然覺得說太幸福了吧，這種事情真的可以發生在我身上。",
+      "sentences": [
+        {
+          "text": "後來因為我妹剛好在隔壁跟她講話，就說不然我們下去接爸爸，因為剛好我的東西送到了，我們下去拿，然後順便接爸爸。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後我期待就是我妹會帶我的大兒子下來，結果我一下來就發現說我全家都下來了，我老婆也下來，然後我小兒子也下來，然後大兒子直接衝上來給我抱抱，小兒子就抱抱，他就只會講抱就一個字，他也要抱。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "然後其實他們兩個就為了爭奪我的注意力就開始吵架，一個在哭，一個就開始大叫不准什麼的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個是我可能，我不知道，就二三十年來最幸福的一刻，突然覺得說太幸福了吧，這種事情真的可以發生在我身上。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2440,
+      "ad": false,
+      "text": "所以，對，我覺得每個人都會找到這樣的一個時刻。我並不是鼓勵你說趕快去交配生小孩，我意思是說，在你最不期待的地方、你沒有想到的地方，因為這個在沒有孩子的生活的我是不知道會這樣子的，那有些事情就發生了，類似這樣。但你有可能會找到某種興趣，或是你去了一個超級喜歡的國家，或是某一個餐廳，然後突然間覺得這個就是我一生在找的東西，是有機會遇到。",
+      "sentences": [
+        {
+          "text": "所以，對，我覺得每個人都會找到這樣的一個時刻。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我並不是鼓勵你說趕快去交配生小孩，我意思是說，在你最不期待的地方、你沒有想到的地方，因為這個在沒有孩子的生活的我是不知道會這樣子的，那有些事情就發生了，類似這樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但你有可能會找到某種興趣，或是你去了一個超級喜歡的國家，或是某一個餐廳，然後突然間覺得這個就是我一生在找的東西，是有機會遇到。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2465,
+      "ad": false,
+      "text": "所以我們要做的事情，就是我儘量的去減少自己能量的發散，我儘量的去把自己的注意力視為是一個很重要的事情。所以一些對話不想回來就不要回了，一些信不想回來就不要回了，你也不要去擔心說什麼別人覺得你難相處什麼的，我覺得這個有效。你先把自己的能量儘量的聚在一起，因為你只要每次對外開口，你只要每次去回應人家，或者人家把一些東西丟到你身上，那個都是一個能量的消耗。你先把能量都控起來，然後接著呢，就想說慢慢的比氣長，你總是會找到一個好的東西。這個是我後來在做的一個方向，給你參考。",
+      "sentences": [
+        {
+          "text": "所以我們要做的事情，就是我儘量的去減少自己能量的發散，我儘量的去把自己的注意力視為是一個很重要的事情。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以一些對話不想回來就不要回了，一些信不想回來就不要回了，你也不要去擔心說什麼別人覺得你難相處什麼的，我覺得這個有效。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你先把自己的能量儘量的聚在一起，因為你只要每次對外開口，你只要每次去回應人家，或者人家把一些東西丟到你身上，那個都是一個能量的消耗。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你先把能量都控起來，然後接著呢，就想說慢慢的比氣長，你總是會找到一個好的東西。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個是我後來在做的一個方向，給你參考。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2499,
+      "ad": false,
+      "text": "那下面一位，R：「孟恭主委安安，我是小寧，三個月又兩天的氣氛仔，感謝您一直來分享生活日常、股市資訊，也很喜歡聽您分享各種心態轉變的想法。祝福闔家健康平安順心。生日快到，希望您可以跟我說那四個字，烏湯咖啡。也請觀音大保佑我未來轉職成功，若願望成真，將分級捐出一個月的薪水給流浪動物相關機構。那也願三重木木媽媽備孕一切安好，早日迎來好訊息。」我們希望木木媽媽備孕順利，也希望你可以順利的轉職成功，生日快樂。",
+      "sentences": [
+        {
+          "text": "那下面一位，R：「孟恭主委安安，我是小寧，三個月又兩天的氣氛仔，感謝您一直來分享生活日常、股市資訊，也很喜歡聽您分享各種心態轉變的想法。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "祝福闔家健康平安順心。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "生日快到，希望您可以跟我說那四個字，烏湯咖啡。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "也請觀音大保佑我未來轉職成功，若願望成真，將分級捐出一個月的薪水給流浪動物相關機構。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那也願三重木木媽媽備孕一切安好，早日迎來好訊息。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」我們希望木木媽媽備孕順利，也希望你可以順利的轉職成功，生日快樂。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "家境優渥的人與紅酒的構造改革",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 2533,
+      "ad": false,
+      "text": "下面一位，全職投資人MK：「上週感謝念我留言，忘了祝您全家一切平安順行。」非常感謝大家的各種正念持續的灌到我身體裡。下面一位，Iris1980：「MK您好，想請問您覺得從事侍酒師這份工作有什麼建議嗎？我的朋友20歲，在私人的法餐當後廚實習一年，最近老闆給了他機會向客人介紹紅酒，他開始思考自己是否要轉換身份。他的性格開朗，喜歡在一線跟客人接觸溝通，於是想往侍酒師的這一行前進，擔心語言不夠好，所以先去澳洲的酒廠打工開始。但因為他本身家庭經濟條件很好，那我們在想他可以直接上法國參除學院會更有效率。那目前老闆是讓他留下並簽兩年的合約做培訓，想問MK可以給建議嗎？」",
+      "sentences": [
+        {
+          "text": "下面一位，全職投資人MK：「上週感謝念我留言，忘了祝您全家一切平安順行。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」非常感謝大家的各種正念持續的灌到我身體裡。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "下面一位，Iris1980：「MK您好，想請問您覺得從事侍酒師這份工作有什麼建議嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我的朋友20歲，在私人的法餐當後廚實習一年，最近老闆給了他機會向客人介紹紅酒，他開始思考自己是否要轉換身份。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "他的性格開朗，喜歡在一線跟客人接觸溝通，於是想往侍酒師的這一行前進，擔心語言不夠好，所以先去澳洲的酒廠打工開始。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但因為他本身家庭經濟條件很好，那我們在想他可以直接上法國參除學院會更有效率。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那目前老闆是讓他留下並簽兩年的合約做培訓，想問MK可以給建議嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2584,
+      "ad": false,
+      "text": "我是覺得你各位不用去擔心那些家境很好的人要怎麼樣規劃他的未來，因為他們有這個非常低的試錯成本，所以他們可以慢慢的去試，這就是有些人他先天的一種優勢。所以你不用想太多，他的直覺是怎麼樣，他就往那個方向去就好。所以我覺得他一定會有辦法長得很好，因為家庭給他一個很強大的後盾跟安全網，可是同時他自己都知道自己要幹嘛，他有他想要去試的方向。也不要去想說做哪件事情比較有CP值，或是條件比較好，就是你想說這樣更有效率，沒有，有效率是我們這些窮鬼要去想的事情。怎麼樣的快速的吃飯，怎麼樣快速的去跟人家競爭，怎麼樣快速的去產出一個產品可以很快的收益，是我們這些窮鬼的任務。真正的已經是有餘裕的人，他們是可以慢慢來的，而且他們可能會做得比我們好。",
+      "sentences": [
+        {
+          "text": "我是覺得你各位不用去擔心那些家境很好的人要怎麼樣規劃他的未來，因為他們有這個非常低的試錯成本，所以他們可以慢慢的去試，這就是有些人他先天的一種優勢。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以你不用想太多，他的直覺是怎麼樣，他就往那個方向去就好。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我覺得他一定會有辦法長得很好，因為家庭給他一個很強大的後盾跟安全網，可是同時他自己都知道自己要幹嘛，他有他想要去試的方向。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "也不要去想說做哪件事情比較有CP值，或是條件比較好，就是你想說這樣更有效率，沒有，有效率是我們這些窮鬼要去想的事情。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "怎麼樣的快速的吃飯，怎麼樣快速的去跟人家競爭，怎麼樣快速的去產出一個產品可以很快的收益，是我們這些窮鬼的任務。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "真正的已經是有餘裕的人，他們是可以慢慢來的，而且他們可能會做得比我們好。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2634,
+      "ad": false,
+      "text": "為什麼？因為你後來會發現，像我剛才前面回答那位聽眾所講的，注意力真的是一個超級重要的資產，但很多人正在把它無情的往外放。其實我覺得說你的注意力，你要去看一些什麼乾片、影音什麼都還好，主要是你一直去跟人家互動，這真的會把你的注意力燒掉，他真的會把它燒掉。除非你是那種E人，就是你去跟人家互動然後是會加分的，不然你其實是儘可能的要把這個能量守回來。所以這些人呢，因為他平常沒有什麼東西需要擔心，所以他有很多的時間可以去思考，這些思考都會產生很多有趣的想法。",
+      "sentences": [
+        {
+          "text": "為什麼？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為你後來會發現，像我剛才前面回答那位聽眾所講的，注意力真的是一個超級重要的資產，但很多人正在把它無情的往外放。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "其實我覺得說你的注意力，你要去看一些什麼乾片、影音什麼都還好，主要是你一直去跟人家互動，這真的會把你的注意力燒掉，他真的會把它燒掉。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "除非你是那種E人，就是你去跟人家互動然後是會加分的，不然你其實是儘可能的要把這個能量守回來。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以這些人呢，因為他平常沒有什麼東西需要擔心，所以他有很多的時間可以去思考，這些思考都會產生很多有趣的想法。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2664,
+      "ad": false,
+      "text": "這也是我近年才有的感受，因為在早些幾年，我也沒有時間去思考，我整天都在衝。所以我才會發生說，那時候講可能有些人也會覺得很怪，我老婆說我們就去西班牙哪個地方，我們就去做簡單的工作，然後這樣去生活就好，然後我就是哭著跟他講說，他媽的我再也不要再窮回去，因為我們經歷過，所以我不想要那樣。但是我現在如果老婆再一次跟我提這個，我想說可以，走啊，一起去掃條，我最喜歡掃條，以前當兵在營站的時候幫忙盤點掃條碼，可能還蠻快樂的。就是你的想法就會去改變。",
+      "sentences": [
+        {
+          "text": "這也是我近年才有的感受，因為在早些幾年，我也沒有時間去思考，我整天都在衝。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以我才會發生說，那時候講可能有些人也會覺得很怪，我老婆說我們就去西班牙哪個地方，我們就去做簡單的工作，然後這樣去生活就好，然後我就是哭著跟他講說，他媽的我再也不要再窮回去，因為我們經歷過，所以我不想要那樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是我現在如果老婆再一次跟我提這個，我想說可以，走啊，一起去掃條，我最喜歡掃條，以前當兵在營站的時候幫忙盤點掃條碼，可能還蠻快樂的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是你的想法就會去改變。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2695,
+      "ad": false,
+      "text": "所以他們會有更開闊的世界，然後他們會更有辦法去嘗試一些大家不敢嘗試的東西，即便看起來你想說CP值太低了吧，你怎麼會先去做一個什麼基層的工作，但就是因為他去做這些基層的工作，然後搭配他的資源跟實力，他搞不好會蹦出一些新的職位，你懂我意思嗎？所以你不用為了要擔心。我覺得他選的方向蠻有趣的，雖然可能在未來的趨勢上目前還不一定，因為紅酒呢，它其實是一個正在進入一個我覺得構造改革啦。",
+      "sentences": [
+        {
+          "text": "所以他們會有更開闊的世界，然後他們會更有辦法去嘗試一些大家不敢嘗試的東西，即便看起來你想說CP值太低了吧，你怎麼會先去做一個什麼基層的工作，但就是因為他去做這些基層的工作，然後搭配他的資源跟實力，他搞不好會蹦出一些新的職位，你懂我意思嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以你不用為了要擔心。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我覺得他選的方向蠻有趣的，雖然可能在未來的趨勢上目前還不一定，因為紅酒呢，它其實是一個正在進入一個我覺得構造改革啦。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2722,
+      "ad": false,
+      "text": "就是過往的那些Big Names或什麼的，是對於我們這一些真的有病的才會想要去搞嘛。其實蠻多年輕人，他叫什麼啊，自然酒啊，他們去玩新的東西了，他對那些Big Names，他想說你們把它炒得這麼高，有些要什麼配額，要怎麼樣的，你們死老人、有錢的，你去玩那個，你家的事，我家都去找一些新銳酒莊。所以他也在慢慢的轉變。那你可能就是如果說可以搭上這個轉變一些思維，然後你去做出一些新一代的人他們會喜歡的東西，其實我覺得這是一個很好的轉折點。所以你知道，一些老人就是會掛掉，老的思維、老的不好的東西就是要新陳代謝，如果他們都不代謝掉的話，怎麼會有新的東西出來？所以他可能，我覺得介入的時間點算不錯，因為有一種那種構造改革的味道開始出來。",
+      "sentences": [
+        {
+          "text": "就是過往的那些Big Names或什麼的，是對於我們這一些真的有病的才會想要去搞嘛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "其實蠻多年輕人，他叫什麼啊，自然酒啊，他們去玩新的東西了，他對那些Big Names，他想說你們把它炒得這麼高，有些要什麼配額，要怎麼樣的，你們死老人、有錢的，你去玩那個，你家的事，我家都去找一些新銳酒莊。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以他也在慢慢的轉變。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那你可能就是如果說可以搭上這個轉變一些思維，然後你去做出一些新一代的人他們會喜歡的東西，其實我覺得這是一個很好的轉折點。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以你知道，一些老人就是會掛掉，老的思維、老的不好的東西就是要新陳代謝，如果他們都不代謝掉的話，怎麼會有新的東西出來？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以他可能，我覺得介入的時間點算不錯，因為有一種那種構造改革的味道開始出來。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2762,
+      "ad": false,
+      "text": "那下面一位，好想離職：「孟恭您好，想請教，28歲，古06年，那科技業年薪將近百萬，工作時間穩定，但開盤時間工作干擾多，盯盤的工具也有限。那過去投資僅持平大盤，今年出本金400萬，那至今靠投資達1600萬，也挺過了7月的行情。若資產達2000萬並維持三到四個月就轉全職投資，個股為主，月交易量逾1億，會太魯莽嗎？愛您。」所以意思是說",
+      "sentences": [
+        {
+          "text": "那下面一位，好想離職：「孟恭您好，想請教，28歲，古06年，那科技業年薪將近百萬，工作時間穩定，但開盤時間工作干擾多，盯盤的工具也有限。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那過去投資僅持平大盤，今年出本金400萬，那至今靠投資達1600萬，也挺過了7月的行情。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "若資產達2000萬並維持三到四個月就轉全職投資，個股為主，月交易量逾1億，會太魯莽嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "愛您。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "」所以意思是說",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2790,
+      "ad": false,
+      "text": "之前都是大概平大盤，然後在今年突然間大爆發，400變1600。其實今年蠻多人都大爆發，然後重點是7月我們有辦法守住。所以7月我覺得，如果你前面有大爆發，就是賺超過200%以上的，然後你周到大概在3 50%以內，我覺得都還蠻不錯的。就是以這個，因為它是一個特殊的行情，特殊的行情，特殊做，特殊的回擋的額度，都算是可以被接受的。那這樣子有沒有辦法去轉全職，我覺得都可以試看看，只要說你的開銷是OK，其實都可以試看看，你知道嗎？",
+      "sentences": [
+        {
+          "text": "之前都是大概平大盤，然後在今年突然間大爆發，400變1600。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "其實今年蠻多人都大爆發，然後重點是7月我們有辦法守住。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以7月我覺得，如果你前面有大爆發，就是賺超過200%以上的，然後你周到大概在3 50%以內，我覺得都還蠻不錯的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是以這個，因為它是一個特殊的行情，特殊的行情，特殊做，特殊的回擋的額度，都算是可以被接受的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那這樣子有沒有辦法去轉全職，我覺得都可以試看看，只要說你的開銷是OK，其實都可以試看看，你知道嗎？",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2820,
+      "ad": false,
+      "text": "因為我就只跟大家強調一個觀念，財富自由的關鍵是，你的物慾被控制的怎麼樣。如果說物慾就沒有很大的話，那當然是立刻就可以去做嘗試；物慾很大的話，你賺多少錢可能都不夠用，那可以試試看看。但是還是要強調一件事情，就是全職交易，它就是一門工作。你並不是說什麼逃避了一個工作，到一個很爽的地方，沒有，那個是一堆人莫名其妙想像，所以你才會被詐騙。它其實就是另外一門工作，而且可能會花更多錢、更多時間，但你可能花得很高興，你知道說，所有的主控權在你身上。",
+      "sentences": [
+        {
+          "text": "因為我就只跟大家強調一個觀念，財富自由的關鍵是，你的物慾被控制的怎麼樣。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "如果說物慾就沒有很大的話，那當然是立刻就可以去做嘗試；物慾很大的話，你賺多少錢可能都不夠用，那可以試試看看。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但是還是要強調一件事情，就是全職交易，它就是一門工作。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "你並不是說什麼逃避了一個工作，到一個很爽的地方，沒有，那個是一堆人莫名其妙想像，所以你才會被詐騙。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "它其實就是另外一門工作，而且可能會花更多錢、更多時間，但你可能花得很高興，你知道說，所有的主控權在你身上。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2850,
+      "ad": false,
+      "text": "它最有價值的其實是這一段，但這一段不是每個人都可以appreciate。有些人就還是會喜歡說，他有別人跟他講說要做什麼事情。但如果你是對自我時間的這個需求是很高的，你可以去試看看，我覺得試一下沒有什麼大不了的。反正就是自己要去設定某種stop loss的地方，賠到哪些地方就乖乖的回去上班，不要說整個都賠到沒有。因為其實在過往看到蠻多，我們自己身邊是比較還好，但是可能兩三層朋友線以外的，好像賠到要回去上班的，這個是不太好。就是說你不要說賠光了才會上班，賠到某個位置，你就要知道說，OK，我要守住我的戰果，接著我就乖乖的上班，然後穩穩的做好配置。這個可能是，只要有這樣的一個底線在，我覺得沒有什麼太大問題，都可以試看看。",
+      "sentences": [
+        {
+          "text": "它最有價值的其實是這一段，但這一段不是每個人都可以appreciate。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "有些人就還是會喜歡說，他有別人跟他講說要做什麼事情。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "但如果你是對自我時間的這個需求是很高的，你可以去試看看，我覺得試一下沒有什麼大不了的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "反正就是自己要去設定某種stop loss的地方，賠到哪些地方就乖乖的回去上班，不要說整個都賠到沒有。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為其實在過往看到蠻多，我們自己身邊是比較還好，但是可能兩三層朋友線以外的，好像賠到要回去上班的，這個是不太好。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "就是說你不要說賠光了才會上班，賠到某個位置，你就要知道說，OK，我要守住我的戰果，接著我就乖乖的上班，然後穩穩的做好配置。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "這個可能是，只要有這樣的一個底線在，我覺得沒有什麼太大問題，都可以試看看。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "聽眾生日祝福與蘭卡威的猴子",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 2893,
+      "ad": false,
+      "text": "那下面一位。孟恭大大您好，我和先生一起收聽節目四年，感謝一路的陪伴，那分享生活跟育兒都很有趣，產業分析吳薩薩。本身指揮定期定額0050，和先生從學長學生長跑13年進入婚姻，那現在還有一個超高電量的三歲小男孩蜜幹。希望借您的金口祝福，絕對期號生日的先生，AKA蜜乾的帥氣爸爸，38歲生日快樂，也祝孟恭全家、聽眾平安快樂，資產翻倍。那我們祝爸爸生日快樂，希望你們兩個可以繼續百年好合，平安順利。",
+      "sentences": [
+        {
+          "text": "那下面一位。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "孟恭大大您好，我和先生一起收聽節目四年，感謝一路的陪伴，那分享生活跟育兒都很有趣，產業分析吳薩薩。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "本身指揮定期定額0050，和先生從學長學生長跑13年進入婚姻，那現在還有一個超高電量的三歲小男孩蜜幹。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "希望借您的金口祝福，絕對期號生日的先生，AKA蜜乾的帥氣爸爸，38歲生日快樂，也祝孟恭全家、聽眾平安快樂，資產翻倍。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那我們祝爸爸生日快樂，希望你們兩個可以繼續百年好合，平安順利。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2925,
+      "ad": false,
+      "text": "下面有位XY來自馬來西亞的親家，MK Chika。我們是來自馬來西亞的聽眾，男友自己的超級粉絲，連睡覺打扮都可以把節目的內容一次背熟的那一種，這個超能力無法解釋，想必是真愛。因為我講了八萬次，用廁所記得沖水，他都忘記。Anyway，再次講麻煩MK，祝我男友生日快樂，願他能夠得到所有他值得的。一直都是那個of的遠距離，但他一直都往美好的未來生活前進，我也一直感恩相遇，那這段關係充滿了希望、勇氣，跟對未來生活的熱愛。",
+      "sentences": [
+        {
+          "text": "下面有位XY來自馬來西亞的親家，MK Chika。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "我們是來自馬來西亞的聽眾，男友自己的超級粉絲，連睡覺打扮都可以把節目的內容一次背熟的那一種，這個超能力無法解釋，想必是真愛。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "因為我講了八萬次，用廁所記得沖水，他都忘記。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "Anyway，再次講麻煩MK，祝我男友生日快樂，願他能夠得到所有他值得的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "一直都是那個of的遠距離，但他一直都往美好的未來生活前進，我也一直感恩相遇，那這段關係充滿了希望、勇氣，跟對未來生活的熱愛。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 2958,
+      "ad": false,
+      "text": "不管是有福或是更有福，在這生我們都只會越來越愛，也祝MK一家一直生活安康平安福。不然他前面講到都很像那種三立的，什麼愛與什麼的故事之類的一些臺詞，你是三立臺來的是嗎？好，那我們祝你們一切順利。馬來西亞的蘭卡威，可能是我去過最喜歡的地方之一，那邊有個度假的村叫打泰，超讚，真的直接跑到那種原始森林裡面，他媽一堆猴子，然後早餐很好吃。",
+      "sentences": [
+        {
+          "text": "不管是有福或是更有福，在這生我們都只會越來越愛，也祝MK一家一直生活安康平安福。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "不然他前面講到都很像那種三立的，什麼愛與什麼的故事之類的一些臺詞，你是三立臺來的是嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "好，那我們祝你們一切順利。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "馬來西亞的蘭卡威，可能是我去過最喜歡的地方之一，那邊有個度假的村叫打泰，超讚，真的直接跑到那種原始森林裡面，他媽一堆猴子，然後早餐很好吃。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "東京街頭那個刺耳的高頻聲",
+      "sentences": []
+    },
+    {
+      "kind": "p",
+      "t": 2983,
+      "ad": false,
+      "text": "那下面一位，待夜中的小菜雞。孟恭主家你好，上週是我25歲第一次出國，然後地震、下大雨、班機延誤都遇到，小菜雞我算衰嗎？不會，就是一次遇到各種好玩的事情，你要這樣想。那以及我在東京的車站大樓外，都會聽到很高頻的聲音，耳朵蠻不舒服，請問你聽到這個高頻聲嗎？祝你一家平安快樂。",
+      "sentences": [
+        {
+          "text": "那下面一位，待夜中的小菜雞。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "孟恭主家你好，上週是我25歲第一次出國，然後地震、下大雨、班機延誤都遇到，小菜雞我算衰嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "不會，就是一次遇到各種好玩的事情，你要這樣想。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "那以及我在東京的車站大樓外，都會聽到很高頻的聲音，耳朵蠻不舒服，請問你聽到這個高頻聲嗎？",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "祝你一家平安快樂。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "t": 3004,
+      "ad": false,
+      "text": "原來不是只有我。東京不只是車站附近，因為我本身在中間，我是沒有在搭地鐵，坐計程車比較多，可是就是比較繁忙的一些地方，會突然間像是你看電影，他們是不是那種爆炸之後，然後後面聲音要開始回覆，他開始聽得到的時候，我在一堆地方都會聽到那個聲音，然後我就要直接逃離現場。超多地方都有那個聲音，我也不知道發生什麼事，我還以為說是可能睡眠沒有睡好之類的。所以看來可能東京真的有些地方，有一些高頻的聲音，蠻有趣的，下次再去調檢視，我應該9月底約跑去東京。好，那這段影片拜拜。",
+      "sentences": [
+        {
+          "text": "原來不是只有我。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "東京不只是車站附近，因為我本身在中間，我是沒有在搭地鐵，坐計程車比較多，可是就是比較繁忙的一些地方，會突然間像是你看電影，他們是不是那種爆炸之後，然後後面聲音要開始回覆，他開始聽得到的時候，我在一堆地方都會聽到那個聲音，然後我就要直接逃離現場。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "超多地方都有那個聲音，我也不知道發生什麼事，我還以為說是可能睡眠沒有睡好之類的。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "所以看來可能東京真的有些地方，有一些高頻的聲音，蠻有趣的，下次再去調檢視，我應該9月底約跑去東京。",
+          "key_point": null,
+          "marks": []
+        },
+        {
+          "text": "好，那這段影片拜拜。",
+          "key_point": null,
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "transcript_mode": "full",
+  "evidence": null,
+  "notes_ratio": null,
+  "marked_sentences": 28,
+  "key_point_hits": 9,
+  "key_point_total": 12,
+  "transcript_source": "aligned",
+  "transcript_available": true,
+  "provenance": {
+    "summary_model": null,
+    "summary_generated_at": "2026-09-22T18:37:01Z",
+    "transcript_sha256": "a2e8b0d44a46847031b8a05cc78ddff963b30f1faba870a70b639e0d529304a2",
+    "extractor_version": null,
+    "jev_model": null
+  }
+}

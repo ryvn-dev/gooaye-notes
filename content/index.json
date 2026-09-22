@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T18:21:52.908Z",
-  "episode_count": 16,
+  "generated_at": "2026-09-22T18:37:06.566Z",
+  "episode_count": 18,
   "coverage": {
     "from": "2026-07-22",
     "to": "2026-09-19"
@@ -448,6 +448,352 @@
         }
       ],
       "mention_total": 11
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 695,
+      "slug": "0695",
+      "published_at": "2026-09-09",
+      "duration_s": 2994,
+      "feed_title": "EP695 | 🍊",
+      "site_title": "EP695 | 🍊",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/184c0e0e-4e66-4273-a4ab-111451d2993d",
+      "published_at_rss": "Wed, 09 Sep 2026 07:19:53 GMT",
+      "summary_answer_first": "他說 Google 回本快到誇張，算巨型利多。他說盤面仍震盪，先聚焦產業不預言崩盤。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-09",
+            "base": 330.65,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 5.7,
+            "d5": 3.7,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "AVGO",
+          "display_name": "博通",
+          "short_name": "博通",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-09",
+            "base": 364.38,
+            "last_date": "2026-09-18",
+            "last": 357.61,
+            "pct": -1.9,
+            "d5": -6.8,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TSLA",
+          "display_name": "特斯拉",
+          "short_name": "特斯拉",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-09",
+            "base": 367.81,
+            "last_date": "2026-09-18",
+            "last": 364.27,
+            "pct": -1,
+            "d5": -2.6,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "BRK.B",
+          "display_name": "波克夏 B",
+          "short_name": "波克夏 B",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": null
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "short_name": "輝達",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-09",
+            "base": 223.67,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": -0.6,
+            "d5": -4.4,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "ORCL",
+          "display_name": "甲骨文",
+          "short_name": "甲骨文",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-09",
+            "base": 161.63,
+            "last_date": "2026-09-18",
+            "last": 147.61,
+            "pct": -8.7,
+            "d5": -11.4,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "short_name": "台積電",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-09",
+            "base": 435.36,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": -0.2,
+            "d5": -4.1,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "LITE",
+          "display_name": "Lumentum",
+          "short_name": "Lumentum",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": null
+        }
+      ],
+      "mention_total": 8
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 694,
+      "slug": "0694",
+      "published_at": "2026-09-05",
+      "duration_s": 3039,
+      "feed_title": "EP694 | 🥖",
+      "site_title": "EP694 | 🥖",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/bfdf7f30-6031-4eef-a689-16129f261d10",
+      "published_at_rss": "Sat, 05 Sep 2026 07:30:33 GMT",
+      "summary_answer_first": "他說 Broadcom 財報好，股價沒漲只是還沒輪到。他說盤在中場休息，要縮槓桿、耐心蹲著。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "MSFT",
+          "display_name": "微軟",
+          "short_name": "微軟",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": null
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 338.36,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 3.3,
+            "d5": 2,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "short_name": "蘋果",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 316.22,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 6.3,
+            "d5": 4.8,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TW:2454",
+          "display_name": "聯發科",
+          "short_name": "聯發科",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-07",
+            "base": 4760,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 3.4,
+            "d5": -4.2,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "AVGO",
+          "display_name": "博通",
+          "short_name": "博通",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 368.56,
+            "last_date": "2026-09-18",
+            "last": 357.61,
+            "pct": -3,
+            "d5": -7.9,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "short_name": "輝達",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 225.73,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": -1.5,
+            "d5": -6,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "short_name": "台積電",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 439,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": -1,
+            "d5": -5.8,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TSLA",
+          "display_name": "特斯拉",
+          "short_name": "特斯拉",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 368.16,
+            "last_date": "2026-09-18",
+            "last": 364.27,
+            "pct": -1.1,
+            "d5": -3.1,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "CRM",
+          "display_name": "Salesforce",
+          "short_name": "Salesforce",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-09-08",
+            "base": 249.12,
+            "last_date": "2026-09-18",
+            "last": 237.92,
+            "pct": -4.5,
+            "d5": 2.6,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "JNJ",
+          "display_name": "嬌生",
+          "short_name": "嬌生",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": null
+        }
+      ],
+      "mention_total": 10
     },
     {
       "show": "gooaye",
