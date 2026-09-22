@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* 節目來源讀 shows.json，不寫死某一個節目的網址（加第二個節目時這裡不用改）。 */}
             節目來源：
             {getShows()
-              .shows.filter((s) => s.ingested)
+              .shows.filter((s) => s.ingested !== false)
               .map((s, i) => (
                 <span key={s.id}>
                   {i > 0 && '、'}

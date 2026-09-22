@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { PodcastEpisode, BreadcrumbList, WithContext } from 'schema-dts';
-import { getIndex, getEpisode, minutes } from '@/lib/content';
+import { getIndex, getEpisode, getShows, minutes } from '@/lib/content';
 import MentionCard from '@/components/MentionCard';
 import StanceTagRow from '@/components/StanceTagRow';
 import AudioPlayer from '@/components/AudioPlayer';
@@ -71,6 +71,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
   const { show, slug } = await params;
   const ep = getEpisode(slug);
   const shown = ep.mentions.filter((m) => m.publish !== false);
+  const showRow = getShows().shows.find((s) => s.id === ep.show);
 
   const episodeLd: WithContext<PodcastEpisode> & { speakable: unknown } = {
     speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '[data-speakable]'] },
@@ -123,12 +124,13 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
           作者與回到原集的路要在標題底下就看得到，不是只藏在頁尾。 */}
       <p className="mt-1 text-[13px] text-[#6b6b6b]">
         來源：
-        <a href={ep.show_site} className="underline underline-offset-2" rel="noopener">
+        <a href={showRow?.site ?? ep.show_site ?? ep.source_url} className="underline underline-offset-2" rel="noopener">
           {ep.show_name}
         </a>
-        {ep.host && ` · ${ep.host}`}
+        {(ep.host ?? showRow?.host) && ` · ${ep.host ?? showRow?.host}`}
         {' · '}
         <a href={ep.source_url} className="underline underline-offset-2" rel="noopener">
+          {/* feed 給了這一集自己的連結才叫「原集連結」，沒給就老實說是節目頁。 */}
           {ep.source_is_episode ? '原集連結' : '節目頁'}
         </a>
       </p>
