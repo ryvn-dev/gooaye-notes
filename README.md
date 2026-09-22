@@ -7,10 +7,12 @@
 
 ```bash
 npm ci
-npm run content   # 由 ryvn-finance 的公開統計檔重建 content/*.json
+npm run content   # 由本機快取（repo 外）重建 content/*.json
 npm run build     # 產出 out/
 NEXT_PUBLIC_BASE_PATH= npm run dev   # 本機開發（不帶子路徑）
 ```
+
+**一集從 RSS 到上站怎麼跑、哪幾關還是人在做、一集多少錢 → `docs/pipeline.md`。**
 
 ## 內容契約
 
@@ -22,7 +24,9 @@ NEXT_PUBLIC_BASE_PATH= npm run dev   # 本機開發（不帶子路徑）
 立場（`stances`）、`jev_prob`、`quote`、`px_1d/5d/21d`、`summary`、`key_points`、
 `segment_tags` 等待上游 lane 的真資料產出後直接覆蓋。
 
-全文逐字稿**不進這個 repo**（版權邊界）。`transcript_available` 目前一律 `false`。
+逐字稿放多少由節目的 `transcript_display` 決定（`full`｜`excerpt`｜`notes`，
+登記在 `scripts/episode_ingest/sources.mjs`）。股癌是 `full`，所以它的逐字稿在
+`content/episodes/*.json` 裡；沒有寫這一欄的節目一律當 `notes`，全文不進 repo。
 
 ## 規矩
 
@@ -30,10 +34,11 @@ NEXT_PUBLIC_BASE_PATH= npm run dev   # 本機開發（不帶子路徑）
 - 每個數字帶樣本數與起算日；樣本不足就寫樣本不足。
 - 立場標籤的呈現文字是「模型對這一段話的讀法」。
 
-## POC 範圍
+## 站上放哪幾集
 
-目前 `content/` 只放最新 3 集（`POC_EPISODES=3`，主人 2026-09-21 拍）。
-要回補更多集：`POC_EPISODES=52 npm run content`。
+`~/.ryvn-finance/podcasts/<show>/site-json/summaries/index.json` 那張清單決定 ——
+**摘要與立場審過的集才上站**，不是「最新 N 集」。要多一集就先跑
+`npm run summarise -- --episode <n>`（見 `docs/pipeline.md`）。
 
 ## 字體
 
