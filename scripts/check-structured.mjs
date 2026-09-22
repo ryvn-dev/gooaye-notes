@@ -5,6 +5,7 @@
 // 比相似度（字元 bigram Dice），門檻 0.90：整理標點可以，整段改寫或漏段會掉下來。
 import fs from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import * as OpenCC from 'opencc-js';
 const CACHE = process.env.GOOAYE_CACHE || `${process.env.HOME}/.ryvn-finance/podcasts/gooaye`;
 const DIR = path.join(CACHE, 'site-json', 'transcripts');
@@ -108,8 +109,20 @@ export function checkEpisode(ep) {
   return { ep, ok: false, at: i, src: a.slice(Math.max(0, i - 40), i + 40), md: b.slice(Math.max(0, i - 40), i + 40) };
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const eps = process.argv.slice(2);
+// `file://${argv[1]}` 比不出來 —— npm script 傳進來的是**相對路徑**
+// （`node scripts/check-structured.mjs`），於是這一關從來沒跑過，卻一直印綠燈。
+// 2026-09-23 量到：`npm run check:transcript` 是個空操作。
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  // 沒給集號就檢查**站上真的有的那幾集**（`content/episodes/`）——
+  // 這一關要守的就是「上站的逐字稿跟原稿一樣」，範圍不該由打字的人決定。
+  const site = path.resolve(import.meta.dirname, '..', 'content', 'episodes');
+  const eps = process.argv.length > 2
+    ? process.argv.slice(2)
+    : (fs.existsSync(site) ? fs.readdirSync(site) : [])
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => String(Number(f.replace(/^EP0*/, '').replace('.json', ''))))
+        .sort();
+  if (!eps.length) { console.error('check:transcript 紅 —— 一集都沒有檢查到'); process.exit(1); }
   let bad = 0;
   for (const ep of eps) {
     const r = checkEpisode(ep);
@@ -117,5 +130,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     else if (r.ok) console.log(`EP${r.ep} 原文相等 ✓ ${r.chars} 字`);
     else { bad++; console.error(`EP${r.ep} 不相等，第 ${r.at} 字起\n  稿: ${r.src}\n  站: ${r.md}`); }
   }
-  process.exit(bad ? 1 : 0);
+  if (bad) process.exit(1);
+  console.log(`check:transcript 綠 —— ${eps.length} 集逐字稿與原稿相符。`);
+  process.exit(0);
 }
