@@ -64,11 +64,13 @@ git push
 
 常用旗標：`--episode N`／`--from A --to B`／`--dry-run`／`--force`（重做已經有的集）／
 `--reuse-raw`（沿用快取裡的模型回覆，改站端檢查後重跑不用再花錢）／
-`--reclean`（自家 whisper 的清稿也重做）／`--backend api|cli`／`--model`。
+`--reclean`（自家 whisper 的清稿也重做）／`--model`。
 
-**模型後端**：預設 `cli` —— 無頭 `claude -p --output-format json`（OAuth，不需要 API key），
-`usage` 與 `total_cost_usd` 由它回報。機器上有 `ANTHROPIC_API_KEY` 時 `--backend api` 直接打 API。
-**repo 裡一個 key 都沒有**，`client.mjs` 只從環境變數或 `~/.ryvn-finance/env` 讀，而且從不印出值。
+**模型後端只有一條：訂閱制 CLI。** 無頭 `claude -p --output-format json --model claude-opus-5`
+（OAuth 憑證，不需要也不讀任何 key），`usage` 與 `total_cost_usd` 由它回報。
+**以 key 計費的 API 路徑由主人拍板禁止**（2026-09-23：「不能用 api 沒儲值也絕對不能用 用訂閱」
+「直接把key那個做法刪掉」），`client.mjs` 裡那一條已經整段刪掉 —— 沒有後端選項、沒有 key 查找、
+沒有任何 HTTP endpoint。要再開那條路要先有新的拍板。
 
 ## 三、還是人在做的那幾件
 

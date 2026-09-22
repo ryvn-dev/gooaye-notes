@@ -24,7 +24,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as OpenCC from 'opencc-js';
 
-import { ask, defaultBackend, parseJsonReply, DEFAULT_MODEL } from './client.mjs';
+import { ask, parseJsonReply, DEFAULT_MODEL } from './client.mjs';
 import { numbered, parseStructured, pIndex } from './blocks.mjs';
 import { buildGateRows, runGates } from './gates.mjs';
 import {
@@ -456,12 +456,11 @@ const opts = {
   notes: has('notes') || displayModeOf(show) === 'notes',
   reuseRaw: has('reuse-raw'),
   reclean: has('reclean'),
-  backend: flag('backend', defaultBackend()),
   model: flag('model', DEFAULT_MODEL),
 };
 console.log(
   `節目 ${show.name}・${wanted.length} 集（EP${wanted[0].ep}…EP${wanted[wanted.length - 1].ep}）` +
-    `・backend=${opts.backend}・model=${opts.model}${opts.dryRun ? '・dry-run' : ''}`,
+    `・model=${opts.model}${opts.dryRun ? '・dry-run' : ''}`,
 );
 
 let bad = 0;

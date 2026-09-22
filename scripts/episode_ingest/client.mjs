@@ -1,35 +1,21 @@
-// 呼叫 Opus 的那一層。**兩條路，先看哪一條真的通得了**：
+// 呼叫 Opus 的那一層。**只有一條路：訂閱制 CLI**。
 //
-// 1. `api` —— Anthropic Messages API，`ANTHROPIC_API_KEY`。
-//    key 從環境變數或 `~/.ryvn-finance/env` 讀，**值一個字都不印**（CLAUDE.md：token 不進對話）。
-// 2. `cli` —— 這台機器上的 `claude -p --output-format json`（OAuth 憑證，不用 key）。
-//    repo 裡已經有兩支排程在用這條（ryvn-finance `autonomy/runners/research-scan.sh`、
-//    `scripts/auditor_run.sh`），所以它不是新東西。
+// `cli` —— 這台機器上的 `claude -p --output-format json`（OAuth 憑證，不用 key）。
+// repo 裡已經有兩支排程在用這條（ryvn-finance `autonomy/runners/research-scan.sh`、
+// `scripts/auditor_run.sh`），所以它不是新東西。
 //
-// **2026-09-23 量到 `~/.ryvn-finance/env` 裡沒有 `ANTHROPIC_API_KEY`**（九個 key 名，沒有這一把），
-// 所以預設是 `cli`；key 給了之後 `--backend api` 就會走 API，兩條回同一個形狀。
+// **以 key 計費的 Messages API 路徑由主人拍板禁止**（2026-09-23）：
+// 「不能用 api 沒儲值也絕對不能用 用訂閱」「直接把key那個做法刪掉」。
+// 這一層因此不讀任何 key、不打任何 HTTP endpoint；要再開那條路要先有新的拍板。
 //
 // 回：{ text, model, usage: { input, output, cache_read, cache_write }, cost_usd, backend }
-// `cost_usd` 只有 CLI 那條回得出來（它自己算）；API 那條回 `null`，由呼叫端照價目表算。
+// `cost_usd` 由 CLI 自己算。
 import { execFile } from 'node:child_process';
-import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
 const run = promisify(execFile);
-
-/** 只回「有沒有這把 key」與它的值，**永遠不印**。找不到回 null。 */
-export const anthropicKey = () => {
-  if (process.env.ANTHROPIC_API_KEY) return process.env.ANTHROPIC_API_KEY;
-  const f = path.join(os.homedir(), '.ryvn-finance', 'env');
-  if (!fs.existsSync(f)) return null;
-  for (const line of fs.readFileSync(f, 'utf8').split('\n')) {
-    const m = line.match(/^\s*(?:export\s+)?ANTHROPIC_API_KEY\s*=\s*(.*)$/);
-    if (m) return m[1].trim().replace(/^["']|["']$/g, '') || null;
-  }
-  return null;
-};
 
 export const DEFAULT_MODEL = 'claude-opus-5';
 const CLI_BIN = process.env.CLAUDE_BIN || path.join(os.homedir(), '.local', 'bin', 'claude');
@@ -77,52 +63,12 @@ const askCli = async (prompt, { model, timeoutMs }) => {
   };
 };
 
-const askApi = async (prompt, { model, timeoutMs, maxTokens }) => {
-  const key = anthropicKey();
-  if (!key) throw new Error('沒有 ANTHROPIC_API_KEY（環境變數與 ~/.ryvn-finance/env 都沒有）');
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      system: SYSTEM,
-      messages: [{ role: 'user', content: prompt }],
-    }),
-    signal: AbortSignal.timeout(timeoutMs),
-  });
-  if (!res.ok) throw new Error(`Anthropic API ${res.status}：${(await res.text()).slice(0, 300)}`);
-  const d = await res.json();
-  const u = d.usage ?? {};
-  return {
-    text: (d.content ?? []).filter((c) => c.type === 'text').map((c) => c.text).join(''),
-    model: d.model ?? model,
-    usage: {
-      input: u.input_tokens ?? 0,
-      output: u.output_tokens ?? 0,
-      cache_read: u.cache_read_input_tokens ?? 0,
-      cache_write: u.cache_creation_input_tokens ?? 0,
-    },
-    cost_usd: null,
-    backend: 'api',
-  };
-};
-
-/** 預設挑得通的那一條：有 key 就 API，沒有就 CLI。 */
-export const defaultBackend = () => (anthropicKey() ? 'api' : 'cli');
-
 export const ask = async (prompt, opts = {}) => {
   const o = {
-    backend: opts.backend ?? defaultBackend(),
     model: opts.model ?? DEFAULT_MODEL,
     timeoutMs: opts.timeoutMs ?? 20 * 60 * 1000,
-    maxTokens: opts.maxTokens ?? 16000,
   };
-  return o.backend === 'api' ? askApi(prompt, o) : askCli(prompt, o);
+  return askCli(prompt, o);
 };
 
 /** 模型有時候會包一層 ```json；剝掉之後取第一個完整的 JSON 物件。 */
