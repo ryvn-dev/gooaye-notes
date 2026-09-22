@@ -119,6 +119,20 @@ export default async function EpisodePage({ params }: { params: Promise<{ show: 
         {minutes(ep.duration_s)} 分鐘 · <time dateTime={ep.published_at}>{ep.published_at}</time>
       </p>
 
+      {/* 原作者與原集連結（2026-09-23 01:39 拍）：這一頁是別人的節目的筆記，
+          作者與回到原集的路要在標題底下就看得到，不是只藏在頁尾。 */}
+      <p className="mt-1 text-[13px] text-[#6b6b6b]">
+        來源：
+        <a href={ep.show_site} className="underline underline-offset-2" rel="noopener">
+          {ep.show_name}
+        </a>
+        {ep.host && ` · ${ep.host}`}
+        {' · '}
+        <a href={ep.source_url} className="underline underline-offset-2" rel="noopener">
+          {ep.source_is_episode ? '原集連結' : '節目頁'}
+        </a>
+      </p>
+
       <div className="divider" />
 
       {ep.summary && (

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import BottomNav from '@/components/BottomNav';
+import { getShows } from '@/lib/content';
 import { site, abs } from '@/lib/site';
 import { huninn } from '@/lib/fonts';
 
@@ -58,13 +59,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="mx-auto max-w-[680px] px-4 pb-28 pt-4 text-sm text-[#6b6b6b]">
           <p>地端 AI 模型與站主自我判斷，仍有可能出錯。非投資建議。</p>
           <p className="mt-1">
-            <a
-              href="https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63"
-              className="underline underline-offset-2"
-              rel="noopener"
-            >
-              節目來源
-            </a>{' '}
+            {/* 節目來源讀 shows.json，不寫死某一個節目的網址（加第二個節目時這裡不用改）。 */}
+            節目來源：
+            {getShows()
+              .shows.filter((s) => s.ingested)
+              .map((s, i) => (
+                <span key={s.id}>
+                  {i > 0 && '、'}
+                  <a href={s.site} className="underline underline-offset-2" rel="noopener">
+                    {s.name}
+                  </a>
+                  {s.host && ` · ${s.host}`}
+                </span>
+              ))}{' '}
             ·{' '}
             <Link href="/about/" className="underline underline-offset-2">
               聲明與聯絡

@@ -53,6 +53,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
   const prices = getPrices(t.ticker);
   const facts = getTranscriptFacts();
   const titleOf = new Map(idx.episodes.map((e) => [e.slug, e.site_title]));
+  const hostOf = new Map(idx.episodes.map((e) => [e.slug, e.host]));
   // 同一集看多也看空的那幾集，之前被 stancesOf(r)[0] 砍成單一方向，圖上只剩一個箭頭，
   // 首頁 chip 卻是雙向 icon —— 兩邊對不起來。整串 stances 交給圖，讓它自己畫兩個箭頭。
   const marks: Mark[] = t.timeline.map((r) => ({
@@ -149,6 +150,7 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
               </div>
               <div className="mt-0.5 text-[13px] text-[#6b6b6b]">
                 <time dateTime={r.published_at}>{r.published_at}</time> · {r.show_name ?? '股癌'}
+                {hostOf.get(r.slug) ? ` · ${hostOf.get(r.slug)}` : ''}
                 {n > 0 ? ` · ${n} 句` : ''}
               </div>
               {r.quote && (
