@@ -101,10 +101,11 @@ for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.json')).sort()) {
       const url = m[1];
       if (seen.has(url)) continue;
       seen.add(url);
+      // 網址帶 basePath（Pages 是 /gooaye-notes），`out/` 裡沒有那一層。
+      // 兩種都試 —— 這一關要答的是「這個檔在不在」，不是「前綴對不對」。
       const rel = url.replace(/^https?:\/\/[^/]+/, '');
-      const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-      const file = path.join(OUT, rel.startsWith(base) && base ? rel.slice(base.length) : rel);
-      if (!fs.existsSync(file)) {
+      const cands = [path.join(OUT, rel), path.join(OUT, rel.replace(/^\/[^/]+/, ''))];
+      if (!cands.some((f) => fs.existsSync(f))) {
         bad.push(`OG 圖不存在：${url}（${path.relative(ROOT, page)}）—— 跑 npm run og`);
       }
     }
