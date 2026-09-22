@@ -164,6 +164,53 @@ export const getTickers = () => read<{ ticker_count: number; tickers: TickerRow[
 
 export const getEpisode = (slug: string) => read<Episode>(path.join('episodes', `EP${slug}.json`));
 
+let _all: Episode[] | null = null;
+/** 所有集數 JSON（build 時讀一次就好，Next 每個 worker 各自快取）。 */
+export const getAllEpisodes = (): Episode[] => {
+  if (_all) return _all;
+  const d = path.join(DIR, 'episodes');
+  _all = fs
+    .readdirSync(d)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .map((f) => JSON.parse(fs.readFileSync(path.join(d, f), 'utf8')) as Episode);
+  return _all;
+};
+
+/**
+ * 逐字稿本身算出來的事實。`mentions.csv` 的 `mention_count` 對別名掃描進來的檔一律是 0
+ * （所以列表上出現過「1 集 · 0 次」），站上顯示的數字一律改用**逐字稿裡真的被標到的句子數**，
+ * 與螢光筆同一個口徑：頁面上數得出幾句，這裡就是幾句。
+ */
+export type TranscriptFacts = {
+  /** ticker -> 全站標到的句子數 */
+  sentences: Record<string, number>;
+  /** `${slug}|${ticker}` -> 那一集標到的句子數 */
+  perEpisode: Record<string, number>;
+  /** `${slug}|${ticker}` -> 那一集第一句的錨點 id（跳回逐字稿用） */
+  anchor: Record<string, string>;
+};
+
+let _facts: TranscriptFacts | null = null;
+export const getTranscriptFacts = (): TranscriptFacts => {
+  if (_facts) return _facts;
+  const f: TranscriptFacts = { sentences: {}, perEpisode: {}, anchor: {} };
+  for (const e of getAllEpisodes()) {
+    (e.blocks ?? []).forEach((b, bi) =>
+      (b.sentences ?? []).forEach((s, si) =>
+        s.marks.forEach((mk) => {
+          const key = `${e.slug}|${mk.ticker}`;
+          f.sentences[mk.ticker] = (f.sentences[mk.ticker] ?? 0) + 1;
+          f.perEpisode[key] = (f.perEpisode[key] ?? 0) + 1;
+          if (!f.anchor[key]) f.anchor[key] = `s-${bi}-${si}`;
+        }),
+      ),
+    );
+  }
+  _facts = f;
+  return f;
+};
+
 export const tickerSlug = (t: string) => t.replace(/[.:]/g, '-');
 export const findTicker = (slug: string) =>
   getTickers().tickers.find((t) => tickerSlug(t.ticker) === slug);
