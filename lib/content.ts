@@ -59,7 +59,19 @@ export type Mention = {
   first_anchor?: string | null;
 };
 
-export type Show = { id: string; name: string; language: string; rss: string; site: string };
+export type Show = {
+  id: string;
+  name: string;
+  /** 原作者／主持人。每一集標的是 feed 的 dc:creator，這一欄是 feed 缺時的底。 */
+  host: string | null;
+  language: string;
+  rss: string;
+  site: string;
+  /** full＝全文上站；excerpt＝只放摘要與被標到的段落（尚未取得主持人同意的節目）。 */
+  transcript_display: 'full' | 'excerpt';
+  /** 站上已經有這個節目的集數了沒。 */
+  ingested: boolean;
+};
 
 export type Bar = { d: string; o: number; h: number; l: number; c: number; v: number };
 
@@ -75,7 +87,15 @@ export type Episode = {
   duration_s: number;
   audio_url: string | null;
   youtube_id: string | null;
+  /** 這一集在節目端的原始連結（RSS `<link>`）；feed 沒給才退回節目頁。 */
   source_url: string;
+  source_is_episode: boolean;
+  show_site: string;
+  /** 原作者（RSS `<dc:creator>`）。 */
+  host: string | null;
+  /** RSS `pubDate` 逐字（含時刻與時區）；排序仍用 `published_at`。 */
+  published_at_rss: string | null;
+  transcript_display: 'full' | 'excerpt';
   feed_title: string | null;
   site_title: string;
   summary_answer_first: string | null;
@@ -86,6 +106,7 @@ export type Episode = {
   mentions: Mention[];
   ep_inferred?: boolean;
   blocks: Block[] | null;
+  transcript_mode: 'full' | 'excerpt';
   marked_sentences: number;
   key_point_hits: number;
   key_point_total: number;
@@ -103,6 +124,9 @@ export type IndexEntry = {
   duration_s: number;
   feed_title: string | null;
   site_title: string;
+  host: string | null;
+  source_url: string;
+  published_at_rss: string | null;
   summary_answer_first: string | null;
   has_summary: boolean;
   top_tickers: {
