@@ -1,0 +1,40 @@
+{
+  "ep": 687,
+  "show": "gooaye",
+  "mode": "community",
+  "schema": "summary-v2.1",
+  "generated_at": "2026-09-22T18:21:14Z",
+  "backend": "cli",
+  "model": "claude-opus-5",
+  "prompt_files": {
+    "summary": "scripts/episode_ingest/prompts/summary-v2.1.md"
+  },
+  "calls": [
+    {
+      "stage": "summary",
+      "prompt_sha256": "d54c2e920d35eddd2052f1f31453fe2c31fe3be4bfd3bab96c07725b968a255a",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 2,
+        "output": 20227,
+        "cache_read": 5166,
+        "cache_write": 36153
+      },
+      "cost_usd": 0.8697979999999998
+    }
+  ],
+  "totals": {
+    "input": 2,
+    "output": 20227,
+    "cache_read": 5166,
+    "cache_write": 36153,
+    "cost_usd": 0.8698
+  },
+  "blocks": 108,
+  "sim": null,
+  "rows_in": 21,
+  "rows_kept": 21,
+  "needs_review": 4,
+  "rejected": [],
+  "notes_ratio": null
+}

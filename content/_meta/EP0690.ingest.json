@@ -1,0 +1,46 @@
+{
+  "ep": 690,
+  "show": "gooaye",
+  "mode": "community",
+  "schema": "summary-v2.1",
+  "generated_at": "2026-09-22T18:17:01Z",
+  "backend": "cache",
+  "model": "claude-opus-5",
+  "prompt_files": {
+    "summary": "scripts/episode_ingest/prompts/summary-v2.1.md"
+  },
+  "calls": [
+    {
+      "stage": "summary-cached",
+      "prompt_sha256": "8e5c5c4cfed60aaf8dab9f01e91426ccde5fe2187c0c01451eef9a603223ce86",
+      "model": "claude-opus-5",
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "cache_read": 0,
+        "cache_write": 0
+      },
+      "cost_usd": 0
+    }
+  ],
+  "totals": {
+    "input": 0,
+    "output": 0,
+    "cache_read": 0,
+    "cache_write": 0,
+    "cost_usd": 0
+  },
+  "blocks": 118,
+  "sim": null,
+  "rows_in": 50,
+  "rows_kept": 45,
+  "needs_review": 9,
+  "rejected": [
+    "AMZN p-8：那一段沒有提到這一檔",
+    "TW:3661 p-32：那一段沒有提到這一檔",
+    "INTC p-34：那一段沒有提到這一檔",
+    "TW:2454 p-41：那一段沒有提到這一檔",
+    "AVGO p-42：那一段沒有提到這一檔"
+  ],
+  "notes_ratio": null
+}

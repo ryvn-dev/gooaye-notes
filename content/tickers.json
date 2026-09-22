@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "ticker_count": 25,
+  "ticker_count": 27,
   "tickers": [
     {
       "ticker": "GOOGL",
@@ -8,8 +8,8 @@
       "short_name": "Alphabet",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/GOOGL",
-      "episode_count": 10,
-      "mention_total": 45,
+      "episode_count": 13,
+      "mention_total": 94,
       "first_seen": "2026-07-22",
       "last_seen": "2026-09-19",
       "timeline": [
@@ -189,6 +189,97 @@
           "show": "gooaye",
           "show_name": "股癌",
           "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": 23,
+          "first_ts_s": 870,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.68,
+          "quote": "合作的範圍是講任何 attach 到 TPU 生態系的產品",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 348.06,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 0.4,
+            "d5": -2.5,
+            "d21": null
+          },
+          "px_1d": -0.0032,
+          "px_5d": -0.025,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/2b09a713-b103-4bf6-8cb8-745034ef0531",
+          "ep_number": 689,
+          "slug": "0689",
+          "published_at": "2026-08-19",
+          "mention_count": 1,
+          "first_ts_s": 1948,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": 0.19,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 344.72,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 1.4,
+            "d5": -0.8,
+            "d21": 1.4
+          },
+          "px_1d": -0.0117,
+          "px_5d": -0.0079,
+          "px_21d": 0.0146
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/63275cd6-e7a5-4ece-8432-e39884d94ae2",
+          "ep_number": 687,
+          "slug": "0687",
+          "published_at": "2026-08-12",
+          "mention_count": 25,
+          "first_ts_s": 850,
+          "stance": "mixed",
+          "stances": [
+            "bullish",
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.95,
+          "quote": "包含像是 Gemini 的一些大更新，本來預期該發生的而沒有發生",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 343.54,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 1.7,
+            "d5": 0.3,
+            "d21": -1.5
+          },
+          "px_1d": 0.0082,
+          "px_5d": 0.0034,
+          "px_21d": -0.014
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
           "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/fec2d61c-668c-4918-a7cb-19bfa09f7717",
           "ep_number": 685,
           "slug": "0685",
@@ -316,7 +407,7 @@
       "short_name": "輝達",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/NVDA",
-      "episode_count": 8,
+      "episode_count": 11,
       "mention_total": 3,
       "first_seen": "2026-07-22",
       "last_seen": "2026-09-19",
@@ -467,6 +558,96 @@
           "show": "gooaye",
           "show_name": "股癌",
           "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/2b09a713-b103-4bf6-8cb8-745034ef0531",
+          "ep_number": 689,
+          "slug": "0689",
+          "published_at": "2026-08-19",
+          "mention_count": null,
+          "first_ts_s": 1300,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.25,
+          "quote": "像 NVIDIA 他們就是去買一些裝置，然後交給一些封裝跟測試廠",
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 217.56,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": 2.2,
+            "d5": -3.6,
+            "d21": 2.2
+          },
+          "px_1d": -0.0033,
+          "px_5d": -0.0363,
+          "px_21d": 0.0228
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/986db49f-de3d-49e4-9ef7-dd721bdc240c",
+          "ep_number": 688,
+          "slug": "0688",
+          "published_at": "2026-08-15",
+          "mention_count": null,
+          "first_ts_s": 810,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "那像之前的 NVIDIA 又要去搞像 CPX 這樣子",
+          "perf": {
+            "base_date": "2026-08-17",
+            "base": 225.01,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": -1.2,
+            "d5": -7.3,
+            "d21": -4.9
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/0e0b7654-dec7-479d-8edd-b5d51f76126d",
+          "ep_number": 686,
+          "slug": "0686",
+          "published_at": "2026-08-08",
+          "mention_count": null,
+          "first_ts_s": 1198,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "那時候有一個 NVIDIA 的某材料，它也是先漲停",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 217.55,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": 2.2,
+            "d5": 3.4,
+            "d21": 2.8
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
           "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/fec2d61c-668c-4918-a7cb-19bfa09f7717",
           "ep_number": 685,
           "slug": "0685",
@@ -564,7 +745,7 @@
       "short_name": "台積電",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/TSM",
-      "episode_count": 8,
+      "episode_count": 10,
       "mention_total": 7,
       "first_seen": "2026-07-22",
       "last_seen": "2026-09-19",
@@ -676,6 +857,66 @@
             "pct": 4.7,
             "d5": 5.7,
             "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": null,
+          "first_ts_s": 1299,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "因為在 TSMC 這邊其實它的產能是比較難拿到",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 410.12,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 6,
+            "d5": 1.3,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/0e0b7654-dec7-479d-8edd-b5d51f76126d",
+          "ep_number": 686,
+          "slug": "0686",
+          "published_at": "2026-08-08",
+          "mention_count": null,
+          "first_ts_s": 740,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "像這波出狀況塞臺指、塞臺積，就是往最穩的方向去",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 418.47,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 3.9,
+            "d5": 3,
+            "d21": 4
           },
           "px_1d": null,
           "px_5d": null,
@@ -812,8 +1053,8 @@
       "short_name": "超微",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/AMD",
-      "episode_count": 6,
-      "mention_total": 33,
+      "episode_count": 9,
+      "mention_total": 41,
       "first_seen": "2026-07-22",
       "last_seen": "2026-09-19",
       "timeline": [
@@ -868,6 +1109,96 @@
           "px_1d": -0.002,
           "px_5d": 0.1018,
           "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": 5,
+          "first_ts_s": 1131,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.3,
+          "quote": "跟像 SemiAnalysis 提到說甚至連 AMD 都要加入競爭",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 456.75,
+            "last_date": "2026-09-18",
+            "last": 559.82,
+            "pct": 22.6,
+            "d5": 3.1,
+            "d21": null
+          },
+          "px_1d": 0.0491,
+          "px_5d": 0.0306,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/986db49f-de3d-49e4-9ef7-dd721bdc240c",
+          "ep_number": 688,
+          "slug": "0688",
+          "published_at": "2026-08-15",
+          "mention_count": 2,
+          "first_ts_s": 810,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.46,
+          "quote": "那像這家公司最近就有跟 AMD 去合作公佈 disaggregated inference 架構",
+          "perf": {
+            "base_date": "2026-08-17",
+            "base": 506,
+            "last_date": "2026-09-18",
+            "last": 559.82,
+            "pct": 10.6,
+            "d5": -9.7,
+            "d21": 1.3
+          },
+          "px_1d": -0.0427,
+          "px_5d": -0.0973,
+          "px_21d": 0.0128
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/63275cd6-e7a5-4ece-8432-e39884d94ae2",
+          "ep_number": 687,
+          "slug": "0687",
+          "published_at": "2026-08-12",
+          "mention_count": 1,
+          "first_ts_s": 2407,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.65,
+          "quote": "最早在 AMD 這邊就已經有看到這個東西",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 482.93,
+            "last_date": "2026-09-18",
+            "last": 559.82,
+            "pct": 15.9,
+            "d5": -3.4,
+            "d21": 6.9
+          },
+          "px_1d": 0.0002,
+          "px_5d": -0.0342,
+          "px_21d": 0.0687
         },
         {
           "show": "gooaye",
@@ -995,13 +1326,239 @@
       ]
     },
     {
+      "ticker": "AAPL",
+      "display_name": "蘋果",
+      "short_name": "蘋果",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
+      "episode_count": 7,
+      "mention_total": 29,
+      "first_seen": "2026-07-25",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 13,
+          "first_ts_s": 1064,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.08,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 333.08,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 0.9,
+            "d5": null,
+            "d21": null
+          },
+          "px_1d": -0.0052,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/dcff9355-4c66-4b25-8afc-bf70ffd57d0a",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": 2,
+          "first_ts_s": 602,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 316.85,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 6.1,
+            "d5": -0.2,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": 2,
+          "first_ts_s": 1099,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.15,
+          "quote": "有點像是學蘋果的一個解方",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 310.34,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 8.3,
+            "d5": 2.1,
+            "d21": null
+          },
+          "px_1d": -0.0014,
+          "px_5d": 0.021,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/2b09a713-b103-4bf6-8cb8-745034ef0531",
+          "ep_number": 689,
+          "slug": "0689",
+          "published_at": "2026-08-19",
+          "mention_count": 1,
+          "first_ts_s": 1422,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 316.83,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 6.1,
+            "d5": -1.1,
+            "d21": 6.1
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/63275cd6-e7a5-4ece-8432-e39884d94ae2",
+          "ep_number": 687,
+          "slug": "0687",
+          "published_at": "2026-08-12",
+          "mention_count": 1,
+          "first_ts_s": 879,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.26,
+          "quote": "嘴巴上大家爭論都說 Apple 輸了，但錢的部分沒有啊，就是錢是往 Apple 的方向去跑",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 302.25,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 11.2,
+            "d5": 4.8,
+            "d21": 9.9
+          },
+          "px_1d": 0.01,
+          "px_5d": 0.0482,
+          "px_21d": 0.0993
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/067686d8-d739-40ff-bbb9-5d2e7558b6ee",
+          "ep_number": 683,
+          "slug": "0683",
+          "published_at": "2026-07-29",
+          "mention_count": 8,
+          "first_ts_s": 576,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.13,
+          "quote": "那像在美股的話，就是你趴在蘋果的錢，你可能就拿出來買東西",
+          "perf": {
+            "base_date": "2026-07-29",
+            "base": 338.19,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": -0.6,
+            "d5": -8,
+            "d21": -7
+          },
+          "px_1d": -0.0141,
+          "px_5d": -0.0804,
+          "px_21d": -0.069
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/f0e5d2ea-7a8c-4058-ba11-8c2708e0a357",
+          "ep_number": 682,
+          "slug": "0682",
+          "published_at": "2026-07-25",
+          "mention_count": 2,
+          "first_ts_s": 1139,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.45,
+          "quote": "除非你像蘋果那樣子，你掌握了一些通路跟終端的使用者",
+          "perf": {
+            "base_date": "2026-07-27",
+            "base": 336.91,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": -0.2,
+            "d5": -9.9,
+            "d21": -8
+          },
+          "px_1d": 0.0094,
+          "px_5d": -0.0994,
+          "px_21d": -0.0794
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
       "ticker": "META",
       "display_name": "Meta",
       "short_name": "Meta",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/META",
-      "episode_count": 5,
-      "mention_total": 6,
+      "episode_count": 6,
+      "mention_total": 11,
       "first_seen": "2026-07-22",
       "last_seen": "2026-09-19",
       "timeline": [
@@ -1056,6 +1613,36 @@
           "px_1d": null,
           "px_5d": null,
           "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/63275cd6-e7a5-4ece-8432-e39884d94ae2",
+          "ep_number": 687,
+          "slug": "0687",
+          "published_at": "2026-08-12",
+          "mention_count": 5,
+          "first_ts_s": 1686,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.74,
+          "quote": "我覺得它真的蠻想去當 CoreWeave 這樣的一個味道",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 578.85,
+            "last_date": "2026-09-18",
+            "last": 665.75,
+            "pct": 15,
+            "d5": -5.7,
+            "d21": 12
+          },
+          "px_1d": 0.0278,
+          "px_5d": -0.0567,
+          "px_21d": 0.1195
         },
         {
           "show": "gooaye",
@@ -1153,285 +1740,13 @@
       ]
     },
     {
-      "ticker": "AAPL",
-      "display_name": "蘋果",
-      "short_name": "蘋果",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/AAPL",
-      "episode_count": 4,
-      "mention_total": 25,
-      "first_seen": "2026-07-25",
-      "last_seen": "2026-09-12",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 13,
-          "first_ts_s": 1064,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.08,
-          "quote": null,
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 333.08,
-            "last_date": "2026-09-18",
-            "last": 336.13,
-            "pct": 0.9,
-            "d5": null,
-            "d21": null
-          },
-          "px_1d": -0.0052,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/dcff9355-4c66-4b25-8afc-bf70ffd57d0a",
-          "ep_number": 692,
-          "slug": "0692",
-          "published_at": "2026-08-29",
-          "mention_count": 2,
-          "first_ts_s": 602,
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": null,
-          "jev_prob": null,
-          "quote": null,
-          "perf": {
-            "base_date": "2026-08-31",
-            "base": 316.85,
-            "last_date": "2026-09-18",
-            "last": 336.13,
-            "pct": 6.1,
-            "d5": -0.2,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/067686d8-d739-40ff-bbb9-5d2e7558b6ee",
-          "ep_number": 683,
-          "slug": "0683",
-          "published_at": "2026-07-29",
-          "mention_count": 8,
-          "first_ts_s": 576,
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.13,
-          "quote": "那像在美股的話，就是你趴在蘋果的錢，你可能就拿出來買東西",
-          "perf": {
-            "base_date": "2026-07-29",
-            "base": 338.19,
-            "last_date": "2026-09-18",
-            "last": 336.13,
-            "pct": -0.6,
-            "d5": -8,
-            "d21": -7
-          },
-          "px_1d": -0.0141,
-          "px_5d": -0.0804,
-          "px_21d": -0.069
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/f0e5d2ea-7a8c-4058-ba11-8c2708e0a357",
-          "ep_number": 682,
-          "slug": "0682",
-          "published_at": "2026-07-25",
-          "mention_count": 2,
-          "first_ts_s": 1139,
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.45,
-          "quote": "除非你像蘋果那樣子，你掌握了一些通路跟終端的使用者",
-          "perf": {
-            "base_date": "2026-07-27",
-            "base": 336.91,
-            "last_date": "2026-09-18",
-            "last": 336.13,
-            "pct": -0.2,
-            "d5": -9.9,
-            "d21": -8
-          },
-          "px_1d": 0.0094,
-          "px_5d": -0.0994,
-          "px_21d": -0.0794
-        }
-      ],
-      "shows": [
-        "gooaye"
-      ]
-    },
-    {
-      "ticker": "MRVL",
-      "display_name": "邁威爾",
-      "short_name": "邁威爾",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/MRVL",
-      "episode_count": 4,
-      "mention_total": 2,
-      "first_seen": "2026-07-22",
-      "last_seen": "2026-09-02",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
-          "ep_number": 693,
-          "slug": "0693",
-          "published_at": "2026-09-02",
-          "mention_count": 2,
-          "first_ts_s": 1602,
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": null,
-          "jev_prob": null,
-          "quote": null,
-          "perf": {
-            "base_date": "2026-09-02",
-            "base": 206.48,
-            "last_date": "2026-09-18",
-            "last": 244.25,
-            "pct": 18.3,
-            "d5": 9.9,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/dcff9355-4c66-4b25-8afc-bf70ffd57d0a",
-          "ep_number": 692,
-          "slug": "0692",
-          "published_at": "2026-08-29",
-          "mention_count": null,
-          "first_ts_s": 1129,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": null,
-          "quote": "Marvell 上修了它的財務預期，那這裡麵包含的我認為最大宗一定就是 XPU",
-          "perf": {
-            "base_date": "2026-08-31",
-            "base": 211.66,
-            "last_date": "2026-09-18",
-            "last": 244.25,
-            "pct": 15.4,
-            "d5": 6.5,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/067686d8-d739-40ff-bbb9-5d2e7558b6ee",
-          "ep_number": 683,
-          "slug": "0683",
-          "published_at": "2026-07-29",
-          "mention_count": null,
-          "first_ts_s": 2751,
-          "stance": "mentioned",
-          "stances": [
-            "mentioned"
-          ],
-          "speaker": "主持人",
-          "jev_prob": null,
-          "quote": "我想知道可能隨便舉例 Google 或是 Marvell 的某一顆晶片或什麼，我就稍微提一下",
-          "perf": {
-            "base_date": "2026-07-29",
-            "base": 163.4,
-            "last_date": "2026-09-18",
-            "last": 244.25,
-            "pct": 49.5,
-            "d5": 29.1,
-            "d21": 47.8
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/d18db2fa-bdd7-4c88-91ed-3b37648e0707",
-          "ep_number": 681,
-          "slug": "0681",
-          "published_at": "2026-07-22",
-          "mention_count": null,
-          "first_ts_s": 1016,
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "jev_prob": null,
-          "quote": "這一顆應該就是由 Marvell 去做設計的那一顆，就是專門去 for inference 加速使用",
-          "perf": {
-            "base_date": "2026-07-22",
-            "base": 210.99,
-            "last_date": "2026-09-18",
-            "last": 244.25,
-            "pct": 15.8,
-            "d5": -22.6,
-            "d21": 19
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ],
-      "shows": [
-        "gooaye"
-      ]
-    },
-    {
       "ticker": "MU",
       "display_name": "美光",
       "short_name": "美光",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/MU",
-      "episode_count": 4,
-      "mention_total": 3,
+      "episode_count": 6,
+      "mention_total": 8,
       "first_seen": "2026-07-25",
       "last_seen": "2026-09-02",
       "timeline": [
@@ -1464,6 +1779,66 @@
           "px_1d": 0.0022,
           "px_5d": 0.0223,
           "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": 2,
+          "first_ts_s": 2429,
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.08,
+          "quote": "因為跟同業比起來是真的非常小氣",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 910.43,
+            "last_date": "2026-09-18",
+            "last": 1015.8,
+            "pct": 11.6,
+            "d5": 5.3,
+            "d21": null
+          },
+          "px_1d": 0.0248,
+          "px_5d": 0.0531,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/2b09a713-b103-4bf6-8cb8-745034ef0531",
+          "ep_number": 689,
+          "slug": "0689",
+          "published_at": "2026-08-19",
+          "mention_count": 3,
+          "first_ts_s": 1877,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.44,
+          "quote": "但應該是沒有道理太小氣，特別是其實我們最近看一些那種缺料漲價相關的公司，其實蠻多人都拿很多錢",
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 937.11,
+            "last_date": "2026-09-18",
+            "last": 1015.8,
+            "pct": 8.4,
+            "d5": 0.1,
+            "d21": 8.4
+          },
+          "px_1d": 0.0397,
+          "px_5d": 0.0014,
+          "px_21d": 0.084
         },
         {
           "show": "gooaye",
@@ -1561,13 +1936,345 @@
       ]
     },
     {
+      "ticker": "MRVL",
+      "display_name": "邁威爾",
+      "short_name": "邁威爾",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/MRVL",
+      "episode_count": 5,
+      "mention_total": 2,
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 2,
+          "first_ts_s": 1602,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "jev_prob": null,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 206.48,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 18.3,
+            "d5": 9.9,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/dcff9355-4c66-4b25-8afc-bf70ffd57d0a",
+          "ep_number": 692,
+          "slug": "0692",
+          "published_at": "2026-08-29",
+          "mention_count": null,
+          "first_ts_s": 1129,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "Marvell 上修了它的財務預期，那這裡麵包含的我認為最大宗一定就是 XPU",
+          "perf": {
+            "base_date": "2026-08-31",
+            "base": 211.66,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 15.4,
+            "d5": 6.5,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": null,
+          "first_ts_s": 870,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "Marvell 跟 Google 搞了一個客製化半導體的商業協議",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 229.29,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 6.5,
+            "d5": -7.7,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/067686d8-d739-40ff-bbb9-5d2e7558b6ee",
+          "ep_number": 683,
+          "slug": "0683",
+          "published_at": "2026-07-29",
+          "mention_count": null,
+          "first_ts_s": 2751,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "我想知道可能隨便舉例 Google 或是 Marvell 的某一顆晶片或什麼，我就稍微提一下",
+          "perf": {
+            "base_date": "2026-07-29",
+            "base": 163.4,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 49.5,
+            "d5": 29.1,
+            "d21": 47.8
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/d18db2fa-bdd7-4c88-91ed-3b37648e0707",
+          "ep_number": 681,
+          "slug": "0681",
+          "published_at": "2026-07-22",
+          "mention_count": null,
+          "first_ts_s": 1016,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": null,
+          "quote": "這一顆應該就是由 Marvell 去做設計的那一顆，就是專門去 for inference 加速使用",
+          "perf": {
+            "base_date": "2026-07-22",
+            "base": 210.99,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 15.8,
+            "d5": -22.6,
+            "d21": 19
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
+      "ticker": "TW:2454",
+      "display_name": "聯發科",
+      "short_name": "聯發科",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/2454.TW",
+      "episode_count": 5,
+      "mention_total": 29,
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": 16,
+          "first_ts_s": 705,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.88,
+          "quote": "其實聯發科本身就是一個財務健全也很賺錢的公司",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 4275,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 15.1,
+            "d5": 8.2,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": 10,
+          "first_ts_s": 1009,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.49,
+          "quote": "以這些像是晶片設計業者 Marvell 或是 MTK 來講，他們就去收 NRE、IP 授權、或是一些設計服務的費用",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 3765,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 30.7,
+            "d5": 4.2,
+            "d21": 30.7
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/0e0b7654-dec7-479d-8edd-b5d51f76126d",
+          "ep_number": 686,
+          "slug": "0686",
+          "published_at": "2026-08-08",
+          "mention_count": 2,
+          "first_ts_s": 771,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.22,
+          "quote": "我可能做多 MTK，那我這時候就要去空一個",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 3960,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 24.2,
+            "d5": 2.3,
+            "d21": 18.9
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/fec2d61c-668c-4918-a7cb-19bfa09f7717",
+          "ep_number": 685,
+          "slug": "0685",
+          "published_at": "2026-08-05",
+          "mention_count": 1,
+          "first_ts_s": 1197,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.91,
+          "quote": "不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣，那就算有一些時程上的調整，它應該也不是什麼大不了的事情",
+          "perf": {
+            "base_date": "2026-08-05",
+            "base": 4000,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 23,
+            "d5": 0.4,
+            "d21": 8.5
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/40e92e32-94d9-44b5-a683-8bc2d8fcc8c2",
+          "ep_number": 684,
+          "slug": "0684",
+          "published_at": "2026-08-01",
+          "mention_count": null,
+          "first_ts_s": 587,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.83,
+          "quote": "外加其實發哥（聯發科）在禮拜五又給了一個非常好的 guidance，上修了他的 forecast，所以就是初判，下禮拜還是有蠻多新的動能，有可能把這個盤帶上去。",
+          "perf": {
+            "base_date": "2026-08-03",
+            "base": 3910,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 25.8,
+            "d5": 1.3,
+            "d21": 10.4
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
       "ticker": "AVGO",
       "display_name": "博通",
       "short_name": "博通",
       "market": "US",
       "yahoo_url": "https://finance.yahoo.com/quote/AVGO",
-      "episode_count": 3,
-      "mention_total": 14,
+      "episode_count": 4,
+      "mention_total": 20,
       "first_seen": "2026-07-22",
       "last_seen": "2026-09-02",
       "timeline": [
@@ -1599,6 +2306,37 @@
           },
           "px_1d": -0.0274,
           "px_5d": -0.0175,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": 6,
+          "first_ts_s": 950,
+          "stance": "mixed",
+          "stances": [
+            "bullish",
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.13,
+          "quote": "站在 Broadcom 的角度來說，是非常賺錢的一門生意",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 358.76,
+            "last_date": "2026-09-18",
+            "last": 357.61,
+            "pct": -0.3,
+            "d5": 3.2,
+            "d21": null
+          },
+          "px_1d": -0.0056,
+          "px_5d": 0.0323,
           "px_21d": null
         },
         {
@@ -1961,112 +2699,6 @@
       ]
     },
     {
-      "ticker": "TW:2454",
-      "display_name": "聯發科",
-      "short_name": "聯發科",
-      "market": "TW",
-      "yahoo_url": "https://finance.yahoo.com/quote/2454.TW",
-      "episode_count": 3,
-      "mention_total": 17,
-      "first_seen": "2026-08-01",
-      "last_seen": "2026-09-02",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
-          "ep_number": 693,
-          "slug": "0693",
-          "published_at": "2026-09-02",
-          "mention_count": 16,
-          "first_ts_s": 705,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.88,
-          "quote": "其實聯發科本身就是一個財務健全也很賺錢的公司",
-          "perf": {
-            "base_date": "2026-09-02",
-            "base": 4275,
-            "last_date": "2026-09-21",
-            "last": 4920,
-            "pct": 15.1,
-            "d5": 8.2,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/fec2d61c-668c-4918-a7cb-19bfa09f7717",
-          "ep_number": 685,
-          "slug": "0685",
-          "published_at": "2026-08-05",
-          "mention_count": 1,
-          "first_ts_s": 1197,
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.91,
-          "quote": "不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣，那就算有一些時程上的調整，它應該也不是什麼大不了的事情",
-          "perf": {
-            "base_date": "2026-08-05",
-            "base": 4000,
-            "last_date": "2026-09-21",
-            "last": 4920,
-            "pct": 23,
-            "d5": 0.4,
-            "d21": 8.5
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        },
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/40e92e32-94d9-44b5-a683-8bc2d8fcc8c2",
-          "ep_number": 684,
-          "slug": "0684",
-          "published_at": "2026-08-01",
-          "mention_count": null,
-          "first_ts_s": 587,
-          "stance": "bullish",
-          "stances": [
-            "bullish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.83,
-          "quote": "外加其實發哥（聯發科）在禮拜五又給了一個非常好的 guidance，上修了他的 forecast，所以就是初判，下禮拜還是有蠻多新的動能，有可能把這個盤帶上去。",
-          "perf": {
-            "base_date": "2026-08-03",
-            "base": 3910,
-            "last_date": "2026-09-21",
-            "last": 4920,
-            "pct": 25.8,
-            "d5": 1.3,
-            "d21": 10.4
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ],
-      "shows": [
-        "gooaye"
-      ]
-    },
-    {
       "ticker": "ASML",
       "display_name": "艾司摩爾",
       "short_name": "艾司摩爾",
@@ -2128,6 +2760,82 @@
           "px_1d": 0.065,
           "px_5d": 0.0822,
           "px_21d": 0.1189
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
+      "ticker": "QCOM",
+      "display_name": "高通",
+      "short_name": "高通",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/QCOM",
+      "episode_count": 2,
+      "mention_total": 2,
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 1,
+          "first_ts_s": 1270,
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.99,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 180.15,
+            "last_date": "2026-09-18",
+            "last": 177.72,
+            "pct": -1.3,
+            "d5": null,
+            "d21": null
+          },
+          "px_1d": 0.0425,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/0e0b7654-dec7-479d-8edd-b5d51f76126d",
+          "ep_number": 686,
+          "slug": "0686",
+          "published_at": "2026-08-08",
+          "mention_count": 1,
+          "first_ts_s": 771,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.15,
+          "quote": "不管什麼高通、瑞昱還是什麼啥小",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 162.17,
+            "last_date": "2026-09-18",
+            "last": 177.72,
+            "pct": 9.6,
+            "d5": 0,
+            "d21": 8.8
+          },
+          "px_1d": 0.0031,
+          "px_5d": 0.0001,
+          "px_21d": 0.0937
         }
       ],
       "shows": [
@@ -2211,6 +2919,158 @@
       ]
     },
     {
+      "ticker": "TW:3661",
+      "display_name": "世芯",
+      "short_name": "世芯",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/3661.TW",
+      "episode_count": 2,
+      "mention_total": 0,
+      "first_seen": "2026-08-22",
+      "last_seen": "2026-09-02",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
+          "ep_number": 693,
+          "slug": "0693",
+          "published_at": "2026-09-02",
+          "mention_count": null,
+          "first_ts_s": 806,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.95,
+          "quote": "世芯有拿到 Amazon 的一個投資",
+          "perf": {
+            "base_date": "2026-09-02",
+            "base": 4200,
+            "last_date": "2026-09-21",
+            "last": 3605,
+            "pct": -14.2,
+            "d5": -7,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+          "ep_number": 690,
+          "slug": "0690",
+          "published_at": "2026-08-22",
+          "mention_count": null,
+          "first_ts_s": 1243,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.47,
+          "quote": "好像什麼世芯或是發哥",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 3735,
+            "last_date": "2026-09-21",
+            "last": 3605,
+            "pct": -3.5,
+            "d5": 9.1,
+            "d21": -3.5
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
+      "ticker": "TW:8299",
+      "display_name": "群聯",
+      "short_name": "群聯",
+      "market": "TW",
+      "yahoo_url": "https://finance.yahoo.com/quote/8299.TW",
+      "episode_count": 2,
+      "mention_total": 3,
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-09-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
+          "ep_number": 696,
+          "slug": "0696",
+          "published_at": "2026-09-12",
+          "mention_count": 2,
+          "first_ts_s": 2356,
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.57,
+          "quote": null,
+          "perf": {
+            "base_date": "2026-09-14",
+            "base": 1935,
+            "last_date": "2026-09-21",
+            "last": 2165,
+            "pct": 11.9,
+            "d5": 5.9,
+            "d21": null
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        },
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/0e0b7654-dec7-479d-8edd-b5d51f76126d",
+          "ep_number": 686,
+          "slug": "0686",
+          "published_at": "2026-08-08",
+          "mention_count": 1,
+          "first_ts_s": 1812,
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.77,
+          "quote": "其實我非常喜歡這家公司跟裡面的很多大大們",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 2040,
+            "last_date": "2026-09-21",
+            "last": 2165,
+            "pct": 6.1,
+            "d5": 2.2,
+            "d21": 2.2
+          },
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
       "ticker": "BABA",
       "display_name": "阿里巴巴",
       "short_name": "阿里巴巴",
@@ -2238,6 +3098,44 @@
           "speaker": null,
           "jev_prob": 0.1,
           "quote": null,
+          "perf": null,
+          "px_1d": null,
+          "px_5d": null,
+          "px_21d": null
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
+      "ticker": "BRK.B",
+      "display_name": "波克夏 B",
+      "short_name": "波克夏 B",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/BRK.B",
+      "episode_count": 1,
+      "mention_total": 3,
+      "first_seen": "2026-08-12",
+      "last_seen": "2026-08-12",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/63275cd6-e7a5-4ece-8432-e39884d94ae2",
+          "ep_number": 687,
+          "slug": "0687",
+          "published_at": "2026-08-12",
+          "mention_count": 3,
+          "first_ts_s": 1331,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.79,
+          "quote": "接著私募認購了 100 億美元",
           "perf": null,
           "px_1d": null,
           "px_5d": null,
@@ -2341,6 +3239,44 @@
       ]
     },
     {
+      "ticker": "MCD",
+      "display_name": "麥當勞",
+      "short_name": "麥當勞",
+      "market": "US",
+      "yahoo_url": "https://finance.yahoo.com/quote/MCD",
+      "episode_count": 1,
+      "mention_total": 1,
+      "first_seen": "2026-08-15",
+      "last_seen": "2026-08-15",
+      "timeline": [
+        {
+          "show": "gooaye",
+          "show_name": "股癌",
+          "host": "謝孟恭",
+          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/986db49f-de3d-49e4-9ef7-dd721bdc240c",
+          "ep_number": 688,
+          "slug": "0688",
+          "published_at": "2026-08-15",
+          "mention_count": 1,
+          "first_ts_s": 2851,
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "jev_prob": 0.08,
+          "quote": "有時候有點麥當勞",
+          "perf": null,
+          "px_1d": 0.0055,
+          "px_5d": 0.0264,
+          "px_21d": -0.0572
+        }
+      ],
+      "shows": [
+        "gooaye"
+      ]
+    },
+    {
       "ticker": "PEP",
       "display_name": "百事",
       "short_name": "百事",
@@ -2378,52 +3314,6 @@
             "d21": null
           },
           "px_1d": -0.0051,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ],
-      "shows": [
-        "gooaye"
-      ]
-    },
-    {
-      "ticker": "QCOM",
-      "display_name": "高通",
-      "short_name": "高通",
-      "market": "US",
-      "yahoo_url": "https://finance.yahoo.com/quote/QCOM",
-      "episode_count": 1,
-      "mention_total": 1,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-12",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 1,
-          "first_ts_s": 1270,
-          "stance": "bearish",
-          "stances": [
-            "bearish"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.99,
-          "quote": null,
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 180.15,
-            "last_date": "2026-09-18",
-            "last": 177.72,
-            "pct": -1.3,
-            "d5": null,
-            "d21": null
-          },
-          "px_1d": 0.0425,
           "px_5d": null,
           "px_21d": null
         }
@@ -2479,52 +3369,6 @@
       ]
     },
     {
-      "ticker": "TW:3661",
-      "display_name": "世芯",
-      "short_name": "世芯",
-      "market": "TW",
-      "yahoo_url": "https://finance.yahoo.com/quote/3661.TW",
-      "episode_count": 1,
-      "mention_total": 0,
-      "first_seen": "2026-09-02",
-      "last_seen": "2026-09-02",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8523446e-c80a-4aac-a9cd-34adad88e4c2",
-          "ep_number": 693,
-          "slug": "0693",
-          "published_at": "2026-09-02",
-          "mention_count": null,
-          "first_ts_s": 806,
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.95,
-          "quote": "世芯有拿到 Amazon 的一個投資",
-          "perf": {
-            "base_date": "2026-09-02",
-            "base": 4200,
-            "last_date": "2026-09-21",
-            "last": 3605,
-            "pct": -14.2,
-            "d5": -7,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ],
-      "shows": [
-        "gooaye"
-      ]
-    },
-    {
       "ticker": "TW:6239",
       "display_name": "力成",
       "short_name": "力成",
@@ -2559,52 +3403,6 @@
             "last": 293,
             "pct": 7.9,
             "d5": 7.9,
-            "d21": null
-          },
-          "px_1d": null,
-          "px_5d": null,
-          "px_21d": null
-        }
-      ],
-      "shows": [
-        "gooaye"
-      ]
-    },
-    {
-      "ticker": "TW:8299",
-      "display_name": "群聯",
-      "short_name": "群聯",
-      "market": "TW",
-      "yahoo_url": "https://finance.yahoo.com/quote/8299.TW",
-      "episode_count": 1,
-      "mention_total": 2,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-12",
-      "timeline": [
-        {
-          "show": "gooaye",
-          "show_name": "股癌",
-          "host": "謝孟恭",
-          "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/8001cf1a-4104-4db2-b349-447f2866da76",
-          "ep_number": 696,
-          "slug": "0696",
-          "published_at": "2026-09-12",
-          "mention_count": 2,
-          "first_ts_s": 2356,
-          "stance": "neutral",
-          "stances": [
-            "neutral"
-          ],
-          "speaker": "主持人",
-          "jev_prob": 0.57,
-          "quote": null,
-          "perf": {
-            "base_date": "2026-09-14",
-            "base": 1935,
-            "last_date": "2026-09-21",
-            "last": 2165,
-            "pct": 11.9,
-            "d5": 5.9,
             "d21": null
           },
           "px_1d": null,

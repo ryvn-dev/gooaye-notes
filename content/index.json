@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-22T18:21:25.186Z",
-  "episode_count": 11,
+  "generated_at": "2026-09-22T18:21:52.908Z",
+  "episode_count": 16,
   "coverage": {
     "from": "2026-07-22",
     "to": "2026-09-19"
@@ -825,6 +825,576 @@
         }
       ],
       "mention_total": 2
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 690,
+      "slug": "0690",
+      "published_at": "2026-08-22",
+      "duration_s": 2999,
+      "feed_title": "EP690 | ⛳",
+      "site_title": "EP690 | ⛳",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/028c8a8c-0fb3-4c46-b2c4-28e2df4be37b",
+      "published_at_rss": "Sat, 22 Aug 2026 07:30:59 GMT",
+      "summary_answer_first": "他說 Google 更往 COT 走，博通最受影響，其他 IC design 偏利多。前半他聊電影、布根地紅酒跟盤面。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "AVGO",
+          "display_name": "博通",
+          "short_name": "博通",
+          "stance": "mixed",
+          "stances": [
+            "bullish",
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 358.76,
+            "last_date": "2026-09-18",
+            "last": 357.61,
+            "pct": -0.3,
+            "d5": 3.2,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "MU",
+          "display_name": "美光",
+          "short_name": "美光",
+          "stance": "bearish",
+          "stances": [
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 910.43,
+            "last_date": "2026-09-18",
+            "last": 1015.8,
+            "pct": 11.6,
+            "d5": 5.3,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "MRVL",
+          "display_name": "邁威爾",
+          "short_name": "邁威爾",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 229.29,
+            "last_date": "2026-09-18",
+            "last": 244.25,
+            "pct": 6.5,
+            "d5": -7.7,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 348.06,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 0.4,
+            "d5": -2.5,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TW:2454",
+          "display_name": "聯發科",
+          "short_name": "聯發科",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 3765,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 30.7,
+            "d5": 4.2,
+            "d21": 30.7
+          }
+        },
+        {
+          "ticker": "AMD",
+          "display_name": "超微",
+          "short_name": "超微",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 456.75,
+            "last_date": "2026-09-18",
+            "last": 559.82,
+            "pct": 22.6,
+            "d5": 3.1,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "short_name": "蘋果",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 310.34,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 8.3,
+            "d5": 2.1,
+            "d21": null
+          }
+        },
+        {
+          "ticker": "TW:3661",
+          "display_name": "世芯",
+          "short_name": "世芯",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 3735,
+            "last_date": "2026-09-21",
+            "last": 3605,
+            "pct": -3.5,
+            "d5": 9.1,
+            "d21": -3.5
+          }
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "short_name": "台積電",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-24",
+            "base": 410.12,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 6,
+            "d5": 1.3,
+            "d21": null
+          }
+        }
+      ],
+      "mention_total": 9
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 689,
+      "slug": "0689",
+      "published_at": "2026-08-19",
+      "duration_s": 3055,
+      "feed_title": "EP689 | 🏐",
+      "site_title": "EP689 | 🏐",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/2b09a713-b103-4bf6-8cb8-745034ef0531",
+      "published_at_rss": "Wed, 19 Aug 2026 08:43:14 GMT",
+      "summary_answer_first": "他說這波回檔沒那麼可怕，因為前面彈太多，重點是看哪個族群先站回前高。他七月回吐三成，靠上半年的底氣留在場內，用年度績效當風控。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "MU",
+          "display_name": "美光",
+          "short_name": "美光",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 937.11,
+            "last_date": "2026-09-18",
+            "last": 1015.8,
+            "pct": 8.4,
+            "d5": 0.1,
+            "d21": 8.4
+          }
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "short_name": "輝達",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 217.56,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": 2.2,
+            "d5": -3.6,
+            "d21": 2.2
+          }
+        },
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "short_name": "蘋果",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 316.83,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 6.1,
+            "d5": -1.1,
+            "d21": 6.1
+          }
+        },
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": null,
+          "perf": {
+            "base_date": "2026-08-19",
+            "base": 344.72,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 1.4,
+            "d5": -0.8,
+            "d21": 1.4
+          }
+        }
+      ],
+      "mention_total": 4
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 688,
+      "slug": "0688",
+      "published_at": "2026-08-15",
+      "duration_s": 3088,
+      "feed_title": "EP688 | 🥽",
+      "site_title": "EP688 | 🥽",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/986db49f-de3d-49e4-9ef7-dd721bdc240c",
+      "published_at_rss": "Sat, 15 Aug 2026 06:36:40 GMT",
+      "summary_answer_first": "他說功能性訓練和走路姿勢調整，讓下背痛明顯減少。市場部分他談籌碼釋出，和 800V DC 白皮書的受惠環節。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "AMD",
+          "display_name": "超微",
+          "short_name": "超微",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-17",
+            "base": 506,
+            "last_date": "2026-09-18",
+            "last": 559.82,
+            "pct": 10.6,
+            "d5": -9.7,
+            "d21": 1.3
+          }
+        },
+        {
+          "ticker": "MCD",
+          "display_name": "麥當勞",
+          "short_name": "麥當勞",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": null
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "short_name": "輝達",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-17",
+            "base": 225.01,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": -1.2,
+            "d5": -7.3,
+            "d21": -4.9
+          }
+        }
+      ],
+      "mention_total": 3
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 687,
+      "slug": "0687",
+      "published_at": "2026-08-12",
+      "duration_s": 3145,
+      "feed_title": "EP687 | 🐧",
+      "site_title": "EP687 | 🐧",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/63275cd6-e7a5-4ece-8432-e39884d94ae2",
+      "published_at_rss": "Wed, 12 Aug 2026 07:27:46 GMT",
+      "summary_answer_first": "他說 Google 人事大搬風不算利空，敘事只是從 frontier 轉向雲端基建，波克夏早就看懂才進場。這一集也談處置股新制下的假單與互相算計，還有台股族群怎麼挑。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "GOOGL",
+          "display_name": "Alphabet",
+          "short_name": "Alphabet",
+          "stance": "mixed",
+          "stances": [
+            "bullish",
+            "bearish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 343.54,
+            "last_date": "2026-09-18",
+            "last": 349.54,
+            "pct": 1.7,
+            "d5": 0.3,
+            "d21": -1.5
+          }
+        },
+        {
+          "ticker": "META",
+          "display_name": "Meta",
+          "short_name": "Meta",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 578.85,
+            "last_date": "2026-09-18",
+            "last": 665.75,
+            "pct": 15,
+            "d5": -5.7,
+            "d21": 12
+          }
+        },
+        {
+          "ticker": "BRK.B",
+          "display_name": "波克夏 B",
+          "short_name": "波克夏 B",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": null
+        },
+        {
+          "ticker": "AAPL",
+          "display_name": "蘋果",
+          "short_name": "蘋果",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 302.25,
+            "last_date": "2026-09-18",
+            "last": 336.13,
+            "pct": 11.2,
+            "d5": 4.8,
+            "d21": 9.9
+          }
+        },
+        {
+          "ticker": "AMD",
+          "display_name": "超微",
+          "short_name": "超微",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-12",
+            "base": 482.93,
+            "last_date": "2026-09-18",
+            "last": 559.82,
+            "pct": 15.9,
+            "d5": -3.4,
+            "d21": 6.9
+          }
+        }
+      ],
+      "mention_total": 5
+    },
+    {
+      "show": "gooaye",
+      "show_name": "股癌",
+      "ep_number": 686,
+      "slug": "0686",
+      "published_at": "2026-08-08",
+      "duration_s": 3002,
+      "feed_title": "EP686 | 🕸️",
+      "site_title": "EP686 | 🕸️",
+      "host": "謝孟恭",
+      "source_url": "https://player.soundon.fm/p/954689a5-3096-43a4-a80b-7810b219cef3/episodes/0e0b7654-dec7-479d-8edd-b5d51f76126d",
+      "published_at_rss": "Sat, 08 Aug 2026 06:40:06 GMT",
+      "summary_answer_first": "他說七月是籌碼面的屠殺，產業面到現在都沒有轉弱。他說資金已經回到軟體與光通，而他自己開始把保本放在賺更多前面。",
+      "has_summary": true,
+      "top_tickers": [
+        {
+          "ticker": "TW:8299",
+          "display_name": "群聯",
+          "short_name": "群聯",
+          "stance": "bullish",
+          "stances": [
+            "bullish"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 2040,
+            "last_date": "2026-09-21",
+            "last": 2165,
+            "pct": 6.1,
+            "d5": 2.2,
+            "d21": 2.2
+          }
+        },
+        {
+          "ticker": "TW:2454",
+          "display_name": "聯發科",
+          "short_name": "聯發科",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 3960,
+            "last_date": "2026-09-21",
+            "last": 4920,
+            "pct": 24.2,
+            "d5": 2.3,
+            "d21": 18.9
+          }
+        },
+        {
+          "ticker": "QCOM",
+          "display_name": "高通",
+          "short_name": "高通",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 162.17,
+            "last_date": "2026-09-18",
+            "last": 177.72,
+            "pct": 9.6,
+            "d5": 0,
+            "d21": 8.8
+          }
+        },
+        {
+          "ticker": "TSM",
+          "display_name": "台積電 ADR",
+          "short_name": "台積電",
+          "stance": "mentioned",
+          "stances": [
+            "mentioned"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 418.47,
+            "last_date": "2026-09-18",
+            "last": 434.67,
+            "pct": 3.9,
+            "d5": 3,
+            "d21": 4
+          }
+        },
+        {
+          "ticker": "NVDA",
+          "display_name": "輝達",
+          "short_name": "輝達",
+          "stance": "neutral",
+          "stances": [
+            "neutral"
+          ],
+          "speaker": "主持人",
+          "perf": {
+            "base_date": "2026-08-10",
+            "base": 217.55,
+            "last_date": "2026-09-18",
+            "last": 222.27,
+            "pct": 2.2,
+            "d5": 3.4,
+            "d21": 2.8
+          }
+        }
+      ],
+      "mention_total": 5
     },
     {
       "show": "gooaye",
