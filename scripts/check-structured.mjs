@@ -26,7 +26,9 @@ export const spokenFromMarkdown = (md) =>
     .join('')
     .replace(/\s+/g, '');
 
-const OWN = /<!--\s*source:\s*own-whisper-cleaned\s*-->/;
+const OWN = /<!--\s*source:\s*own-whisper-cleaned/;
+/** 檔頭自己寫了 `source_id: own-whisper:<檔名>` 的那幾集（`summarise.mjs` 產的）。 */
+const OWN_ID = /<!--[^>]*source_id:\s*own-whisper:([A-Za-z0-9._-]+)/;
 export const MIN_SIM = 0.9;
 
 const bigrams = (t) => {
@@ -57,11 +59,19 @@ export const similarity = (rawA, rawB) => {
   return (2 * hit) / (a.length - 1 + (b.length - 1));
 };
 
-/** 自家 whisper 稿：用 site-json/EP<n>.json 的 source_id 找回原檔。 */
-const whisperText = (ep) => {
+/**
+ * 自家 whisper 稿：先看 `structured.md` 檔頭自己寫的 `source_id`，
+ * 沒寫才回頭找 site-json/EP<n>.json 的那一欄 —— 抽取層還沒跑過的集（EP694／EP695）
+ * 沒有那個檔，而閘門不該因為「另一條 lane 還沒跑」就紅。
+ */
+const whisperText = (ep, raw = '') => {
+  const inline = raw.match(OWN_ID)?.[1] ?? null;
   const meta = path.join(CACHE, 'site-json', `EP${ep}.json`);
-  if (!fs.existsSync(meta)) return null;
-  const sid = JSON.parse(fs.readFileSync(meta, 'utf8')).source_id ?? '';
+  const sid = inline
+    ? `own-whisper:${inline}`
+    : fs.existsSync(meta)
+      ? (JSON.parse(fs.readFileSync(meta, 'utf8')).source_id ?? '')
+      : '';
   const name = sid.startsWith('own-whisper:') ? sid.slice('own-whisper:'.length) : null;
   if (!name) return null;
   const f = path.join(CACHE, 'transcripts', `${name}.json`);
@@ -74,7 +84,7 @@ export function checkEpisode(ep) {
   const mdPath = path.join(DIR, `EP${ep}.structured.md`);
   const raw = fs.readFileSync(mdPath, 'utf8');
   if (OWN.test(raw)) {
-    const src = whisperText(ep);
+    const src = whisperText(ep, raw);
     const site = spokenFromMarkdown(raw);
     if (src === null) return { ep, ok: false, at: 0, src: '找不到原始 whisper 稿（source_id 對不到檔）', md: '' };
     const sim = similarity(src, site);

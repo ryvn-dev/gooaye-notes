@@ -16,7 +16,12 @@
     "check:marks": "node scripts/check-marks.mjs",
     "check:render": "node scripts/check-render.mjs",
     "postbuild": "node scripts/check-render.mjs",
-    "aliases:sync": "node scripts/sync-aliases.mjs"
+    "aliases:sync": "node scripts/sync-aliases.mjs",
+    "test:gates": "node --test scripts/episode_ingest/gates.test.mjs",
+    "test": "node --test scripts/episode_ingest/",
+    "summarise": "node scripts/episode_ingest/summarise.mjs",
+    "feed": "node scripts/episode_ingest/fetch-feed.mjs",
+    "ingest:dry": "node scripts/episode_ingest/dry-run.mjs"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",

@@ -7,21 +7,80 @@ import path from 'node:path';
 const HOME = process.env.HOME;
 export const FIN = process.env.FIN_REPO || `${HOME}/code/gh-ryvn-dev/ryvn-finance`;
 
-/** 一個節目：feed 在哪、快取在哪、集號怎麼來、逐字稿有哪幾種來源。 */
+/**
+ * 一個節目：feed 在哪、快取在哪、集號怎麼來、逐字稿有哪幾種來源、站上放多少字。
+ *
+ * `transcript_display` 是**授權欄，不是排版欄**（主人 2026-09-23 01:37、01:56、01:59 拍）：
+ * - `full`：整份逐字稿上站。**股癌永久留在這一格**（01:59 拍，不改）。
+ * - `excerpt`：只放摘要與被標到的那幾段短引用，不放全文。
+ * - `notes`：**聽打筆記** —— 每一段用我們自己的話寫 1–2 句，只有標到立場的地方
+ *   才附一句 ≤40 字的逐字原話當證據。**全文不進 `content/`、不進 `out/`**，
+ *   原稿只留在本機快取。整集筆記長度 ≤ 逐字稿的 ~35%（`NOTES_MAX_RATIO`）。
+ *
+ * **沒有寫這一欄的節目一律 `notes`** —— 預設不替別人決定要不要放全文。
+ */
 export const SHOWS = [
   {
     id: 'gooaye',
     name: '股癌',
+    // 原作者。主人 2026-09-23 01:39：每一集都要標作者與來源連結。
+    // 逐集的 `dc:creator` 由 `fetch-feed.mjs` 從 feed 補，這一欄是 feed 缺的時候的底。
+    host: '謝孟恭',
     language: 'zh-TW',
     rss: 'https://feeds.soundon.fm/podcasts/954689a5-3096-43a4-a80b-7810b219cef3.xml',
     site: 'https://player.soundon.fm/p/6cdedf8b-4b8d-4e2b-99e7-d8ec2ca19d63',
     cache: process.env.GOOAYE_CACHE || `${HOME}/.ryvn-finance/podcasts/gooaye`,
     stats: path.join(FIN, 'data/podcasts/gooaye'),
-    // 集號先信 feed 的 itunes:episode；沒有才退回日期錨點（見 build-content.mjs）。
-    ep_number: { from: 'itunes_episode', anchor: { date: '2026-09-19', ep: 698 } },
+    // 集號信 feed 的 itunes:episode；沒有那一欄才用日期序推（見 build-content.mjs）。
+    ep_number: { from: 'itunes_episode' },
     transcript_sources: ['whatmkreallysaid', 'own-whisper'],
+    transcript_display: 'full',
+    ingested: true,
+  },
+  {
+    id: 'yutinghao',
+    name: '游庭皓的財經皓角',
+    host: '游庭皓',
+    language: 'zh-TW',
+    // SoundCloud 代管，feed 只留最近 500 集（docs/second-host-candidates-2026-09-23.md）。
+    rss: 'https://feeds.soundcloud.com/users/soundcloud:users:735679489/sounds.rss',
+    site: 'https://www.youtube.com/@yutinghaofinance',
+    youtube: '@yutinghaofinance',
+    cache: process.env.YUTINGHAO_CACHE || `${HOME}/.ryvn-finance/podcasts/yutinghao`,
+    stats: path.join(FIN, 'data/podcasts/yutinghao'),
+    ep_number: { from: 'itunes_episode' },
+    // 直播存檔每天一支，captionTracks 有 zh-TW 且不是 asr（＝上傳的字幕檔）。
+    transcript_sources: ['youtube-captions', 'own-whisper'],
+    transcript_display: 'notes',
+    ingested: false,
+  },
+  {
+    id: 'miula',
+    name: 'M觀點',
+    host: 'Miula',
+    language: 'zh-TW',
+    rss: 'https://feeds.soundon.fm/podcasts/b8f5a471-f4f7-4763-9678-65887beda63a.xml',
+    site: 'https://www.youtube.com/@miulaviewpoint',
+    youtube: '@miulaviewpoint',
+    cache: process.env.MIULA_CACHE || `${HOME}/.ryvn-finance/podcasts/miula`,
+    stats: path.join(FIN, 'data/podcasts/miula'),
+    ep_number: { from: 'itunes_episode' },
+    // 字幕軌只蓋到 EP318（2026-07-09），EP319 之後一定落到 own-whisper。
+    transcript_sources: ['youtube-captions', 'own-whisper'],
+    transcript_display: 'notes',
+    ingested: false,
   },
 ];
+
+/** 整集筆記字數 ÷ 逐字稿字數的上限（主人 2026-09-23 01:56 拍）。 */
+export const NOTES_MAX_RATIO = 0.35;
+/** 筆記模式下，每一條立場證據的逐字原話上限。 */
+export const NOTES_QUOTE_MAX = 40;
+
+const MODES = new Set(['full', 'excerpt', 'notes']);
+/** 站上放全文／只放引用／放聽打筆記。沒寫或寫錯就是 `notes`（預設最保守）。 */
+export const displayModeOf = (show) =>
+  MODES.has(show?.transcript_display) ? show.transcript_display : 'notes';
 
 export const showById = (id) => SHOWS.find((s) => s.id === id) ?? null;
 
@@ -41,22 +100,29 @@ const readCsv = (f) => {
 export const listEpisodes = (show) => {
   const feed = readJson(path.join(show.cache, 'feed.json')) ?? [];
   const titles = readJson(path.join(show.cache, 'titles.json')) ?? {};
+  const links = readJson(path.join(show.cache, 'links.json')) ?? {};
   const rows = [...feed].sort((a, b) => a.published.localeCompare(b.published));
-  const anchor = show.ep_number.anchor;
-  const anchorIdx = anchor ? rows.findIndex((r) => r.published === anchor.date) : -1;
-  return rows.map((r, i) => {
-    const t = titles[r.episode_id] ?? {};
-    const fromFeed = Number(t.itunes_episode);
-    const ep = Number.isFinite(fromFeed) && fromFeed > 0
-      ? fromFeed
-      : anchorIdx >= 0 ? anchor.ep - (anchorIdx - i) : null;
-    return {
-      ...r,
-      title: t.title ?? null,
-      ep,
-      ep_source: Number.isFinite(fromFeed) && fromFeed > 0 ? 'feed' : anchorIdx >= 0 ? 'derived' : 'unknown',
-    };
+  // 集號一律先信 feed 的 `itunes:episode`。feed 沒寫那一欄的集，才由**日期序**
+  // 往最近一個有集號的鄰居推 —— 舊的錨點 + 「間隔只能是 3 或 4 天」那一版，
+  // 節目休一次就整條紅（docs/plan-2026-09-23.md §A2.7）。
+  const nums = rows.map((r) => {
+    const n = Number(titles[r.episode_id]?.itunes_episode);
+    return Number.isFinite(n) && n > 0 ? n : null;
   });
+  const derive = (i) => {
+    for (let j = i - 1; j >= 0; j--) if (nums[j] !== null) return nums[j] + (i - j);
+    for (let j = i + 1; j < nums.length; j++) if (nums[j] !== null) return nums[j] - (j - i);
+    return null;
+  };
+  return rows.map((r, i) => ({
+    ...r,
+    title: titles[r.episode_id]?.title ?? null,
+    pub_date: links[r.episode_id]?.pub_date ?? titles[r.episode_id]?.pubDate ?? null,
+    link: links[r.episode_id]?.link ?? null,
+    creator: links[r.episode_id]?.creator ?? show.host ?? null,
+    ep: nums[i] ?? derive(i),
+    ep_source: nums[i] !== null ? 'feed' : derive(i) !== null ? 'derived' : 'unknown',
+  }));
 };
 
 /**

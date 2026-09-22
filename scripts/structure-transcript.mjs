@@ -100,7 +100,7 @@ export function structure(segs, extra = []) {
   return out;
 }
 
-const render = (blocks) => {
+export const render = (blocks) => {
   const lines = [];
   let inAd = false;
   const close = () => { if (inAd) { lines.push(':::', ''); inAd = false; } };
@@ -126,7 +126,9 @@ const sections = (blocks) => {
   return out.filter((s) => s.chars > 0);
 };
 
-const eps = process.argv.slice(2);
+// CLI：`npm run structure -- 691 692`。**被 import 的時候不要跑** ——
+// `episode_ingest/summarise.mjs` 用的是 `structure()` 與 `render()` 兩個函式。
+const eps = import.meta.url === `file://${process.argv[1]}` ? process.argv.slice(2) : [];
 for (const ep of eps) {
   const segs = JSON.parse(fs.readFileSync(path.join(DIR, `EP${ep}.json`), 'utf8')).segments;
   const hf = path.resolve(import.meta.dirname, '..', 'headings', `EP${ep}.json`);
