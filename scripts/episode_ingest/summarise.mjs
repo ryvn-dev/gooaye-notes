@@ -87,8 +87,16 @@ const writeMeta = (ep, show, mode, ledger, extra = {}) => {
     { input: 0, output: 0, cache_read: 0, cache_write: 0, cost_usd: 0 },
   );
   fs.mkdirSync(META, { recursive: true });
+  // **沿用快取的那一趟不可以把上一趟的帳洗掉。** 2026-09-23：EP694 第一趟花了錢但在閘門紅，
+  // 第二趟 `--reuse-raw` 免費跑完，帳被覆寫成 0，那一集的花費就再也量不回來了。
+  // 新的一趟沒有付費呼叫時，保留舊帳的 `calls`／`totals`，只更新結果欄位。
+  const metaFile = path.join(META, `EP${String(ep).padStart(4, '0')}.ingest.json`);
+  const prev = fs.existsSync(metaFile) ? JSON.parse(fs.readFileSync(metaFile, 'utf8')) : null;
+  const paid = tot.cost_usd > 0;
+  const calls = paid ? ledger : [...(prev?.calls ?? []), ...ledger.map((l) => ({ stage: l.stage, cost_usd: 0 }))];
+  const totals = paid ? tot : (prev?.totals ?? tot);
   fs.writeFileSync(
-    path.join(META, `EP${String(ep).padStart(4, '0')}.ingest.json`),
+    metaFile,
     JSON.stringify(
       {
         ep, show: show.id, mode, schema: SCHEMA,
@@ -99,11 +107,14 @@ const writeMeta = (ep, show, mode, ledger, extra = {}) => {
           summary: 'scripts/episode_ingest/prompts/summary-v2.1.md',
           ...(mode === 'own-whisper' ? { clean: 'scripts/episode_ingest/prompts/clean-own-whisper-v1.md' } : {}),
         },
-        calls: ledger.map((l) => ({
-          stage: l.stage ?? 'summary', prompt_sha256: l.prompt_sha256,
-          model: l.model, usage: l.usage, cost_usd: l.cost_usd,
-        })),
-        totals: { ...tot, cost_usd: Number(tot.cost_usd.toFixed(4)) },
+        calls: paid
+          ? ledger.map((l) => ({
+            stage: l.stage ?? 'summary', prompt_sha256: l.prompt_sha256,
+            model: l.model, usage: l.usage, cost_usd: l.cost_usd,
+          }))
+          : calls,
+        totals: { ...totals, cost_usd: Number(totals.cost_usd.toFixed(4)) },
+        ...(paid ? {} : { cost_from_earlier_run: Boolean(prev) }),
         ...extra,
       },
       null,
