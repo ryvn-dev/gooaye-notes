@@ -155,9 +155,10 @@ export default async function TickerPage({ params }: { params: Promise<{ symbol:
               </div>
               {r.quote && (
                 <p className="mt-1 truncate font-serif text-[14px] text-[#6b6b6b]">
-                  <a href={anchor ? `${href}#${anchor}` : href} className="no-underline">
+                  {/* 跨頁又帶錨點的連結一律走 next/link：手寫 <a> 不會補 basePath，Pages 上就是 404。 */}
+                  <Link href={anchor ? `${href}#${anchor}` : href} className="no-underline">
                     「{r.quote}」
-                  </a>
+                  </Link>
                 </p>
               )}
             </li>
